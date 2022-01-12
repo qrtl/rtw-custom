@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <report
+        string="quotation"
+        id="report_quotation"
+        model="sale.order"
+        report_type="qweb-pdf"
+        name="report_rtw.report_quotation"
+        file="report_rtw.report_quotation"
+    />
+
+</odoo>
