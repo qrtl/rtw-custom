@@ -11,6 +11,10 @@
                     <field name="height" class="height"/>
                     <field name="depth" class="depth"/>
                 </xpath>
+                <xpath expr="//div[@name='options']" position="before">
+                    <label for="summary" string="summary"/>
+                    <field name="summary" class="summary"/>
+                </xpath>
             </field>
         </record>
     </data>

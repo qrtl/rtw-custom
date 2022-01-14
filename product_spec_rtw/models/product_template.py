@@ -6,6 +6,10 @@ from odoo import models, fields, api
 class ProductSpecRtw(models.Model):
     _inherit = "product.template"
     _description = 'product_spec_rtw.product_spec_rtw'
+    summary = fields.Char(
+        name="summary",
+        string="summary"
+    )
     product_no = fields.Char(
         name="product_no",
         string="product no"
