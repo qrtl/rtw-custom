@@ -9,5 +9,12 @@
         name="report_rtw.report_quotation"
         file="report_rtw.report_quotation"
     />
-
+        <report
+        string="unit price list"
+        id="report_unit_price_list"
+        model="sale.order"
+        report_type="qweb-pdf"
+        name="report_rtw.report_unit_price_list"
+        file="report_rtw.report_unit_price_list"
+    />
 </odoo>

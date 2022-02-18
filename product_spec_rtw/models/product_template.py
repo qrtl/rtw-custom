@@ -26,7 +26,10 @@ class ProductSpecRtw(models.Model):
         name="depth",
         string="depth"
     )
-
+    sh = fields.Integer(
+        name="sh",
+        string="sheet height"
+    )
 
 class SaleOrderLine(models.Model):
     _inherit = 'sale.order.line'

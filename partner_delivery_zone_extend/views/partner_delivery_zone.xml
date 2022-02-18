@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_partner_delivery_zone_form_inherit" model="ir.ui.view">
+            <field name="name">partner.delivery.zone.form</field>
+            <field name="model">partner.delivery.zone</field>
+            <field name="inherit_id" ref="partner_delivery_zone.view_partner_delivery_zone_form" />
+              <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="coefficient" class="coefficient"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

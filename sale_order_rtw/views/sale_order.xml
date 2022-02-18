@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="sale_view_order_rtw_form" model="ir.ui.view">
+            <field name="name">Sale Order RTW</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@class='oe_title']" position="after">
+                    <group>
+                    <field name="status" string="status"/>
+                    </group>
+                </xpath>
+                <xpath expr="//field[@name='payment_term_id']" position="after">
+                    <field name="preferred_delivery_date" string="Preferred delivery date"/>
+                    <field name="preferred_delivery_period" string="Preferred delivery period"/>
+                </xpath>
+                <xpath expr="//group[@name='partner_details']" position="inside">
+                    <field name="forwarding_address" string="forwarding address"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

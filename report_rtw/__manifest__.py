@@ -24,6 +24,7 @@
         'views/views.xml',
         'views/templates.xml',
         "report/report_invoice_rtw.xml",
+        "report/report_unit_price_list_rtw.xml",
         "report/report.xml",
     ],
     # only loaded in demonstration mode
