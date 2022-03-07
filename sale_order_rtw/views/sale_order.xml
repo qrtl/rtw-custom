@@ -8,12 +8,15 @@
             <field name="arch" type="xml">
                 <xpath expr="//div[@class='oe_title']" position="after">
                     <group>
-                    <field name="status" string="status"/>
+                    <field name="status" string="status" widget="radio"/>
                     </group>
                 </xpath>
                 <xpath expr="//field[@name='payment_term_id']" position="after">
                     <field name="preferred_delivery_date" string="Preferred delivery date"/>
                     <field name="preferred_delivery_period" string="Preferred delivery period"/>
+                    <field name="shiratani_entry_date" string="Shiratani entry Date"/>
+                    <field name="depo_date" string="Depo Date"/>
+
                 </xpath>
                 <xpath expr="//group[@name='partner_details']" position="inside">
                     <field name="forwarding_address" string="forwarding address"/>
