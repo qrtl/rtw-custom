@@ -11,6 +11,13 @@
                     <field name="height" class="height"/>
                     <field name="depth" class="depth"/>
                     <field name="sh" class="sh"/>
+                    <field name="ah" class="ah"/>
+                    <field name="cloth" class="cloth(M)"/>
+                    <field name="leather" class="leather(sheet)"/>
+                    <field name="leather_ds" class="leather(ds)"/>
+                    <field name="sai" class="sai"/>
+<!--                    <field name="shipping_cost" class="shipping cost"/>-->
+                    <field name="lx_key_figure" class="LX Key Figure"/>
                 </xpath>
                 <xpath expr="//div[@name='options']" position="before">
                     <label for="summary" string="summary"/>

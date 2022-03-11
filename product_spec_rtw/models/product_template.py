@@ -30,6 +30,25 @@ class ProductSpecRtw(models.Model):
         name="sh",
         string="sheet height"
     )
+    ah = fields.Integer(
+        name="ah",
+        string="arm height"
+    )
+    cloth = fields.Float('cloth(m)')
+    leather = fields.Float('leather(sheet)')
+    leather_ds = fields.Float('leather(ds)')
+    shipping_cost_unit_price = fields.Integer('shipping cost unit price')
+    leather_ds = fields.Float('leather(ds)')
+    sai = fields.Float('sai')
+    # shipping_cost = fields.Integer('sipping cost', compute="_shipping_cost_calc")
+    lx_key_figure = fields.Integer('LX Key Figure')
+
+    @api.depends('shipping_cost_unit_price', 'sai')
+    def _shipping_cost_calc(self):
+        cost = 0
+        if self.shipping_cost_unit_price > 0 and self.sai:
+            cost = self.shipping_cost_unit_price * self.sai
+        return round(cost)
 
 class SaleOrderLine(models.Model):
     _inherit = 'sale.order.line'
@@ -51,4 +70,5 @@ class SaleOrderLine(models.Model):
                 string += 'w/' + str(self.product_id.width) + 'mm\n'
             self.print_description = string
             return res
+
 
