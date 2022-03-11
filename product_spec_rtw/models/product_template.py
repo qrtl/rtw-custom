@@ -49,11 +49,9 @@ class ProductSpecRtw(models.Model):
         required=False,
         ondelete="set null",
     )
-    storage_location = fields.Many2one(
-        comodel_name="res.partner",
+    storage_location = fields.Many2many(
+        comodel_name="stock.warehouse",
         string="storage location",
-        required=False,
-        ondelete="set null",
     )
     @api.depends('shipping_cost_unit_price', 'sai')
     def _shipping_cost_calc(self):
