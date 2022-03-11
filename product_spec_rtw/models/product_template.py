@@ -42,7 +42,19 @@ class ProductSpecRtw(models.Model):
     sai = fields.Float('sai')
     # shipping_cost = fields.Integer('sipping cost', compute="_shipping_cost_calc")
     lx_key_figure = fields.Integer('LX Key Figure')
-
+    #部材情報
+    classification = fields.Many2one(
+        comodel_name="product.classification",
+        string="Classification",
+        required=False,
+        ondelete="set null",
+    )
+    storage_location = fields.Many2one(
+        comodel_name="res.partner",
+        string="storage location",
+        required=False,
+        ondelete="set null",
+    )
     @api.depends('shipping_cost_unit_price', 'sai')
     def _shipping_cost_calc(self):
         cost = 0

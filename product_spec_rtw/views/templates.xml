@@ -23,6 +23,17 @@
                     <label for="summary" string="summary"/>
                     <field name="summary" class="summary"/>
                 </xpath>
+                <xpath expr="//page[@name='variants']" position="after">
+                    <page name="bom_info" string="BOM info">
+                        <group>
+                            <field name="classification"/>
+                            <field name="storage_location"/>
+                        </group>
+                        <group>
+                            
+                        </group>
+                    </page>
+                </xpath>
             </field>
         </record>
     </data>
