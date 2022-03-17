@@ -9,6 +9,7 @@
                 <xpath expr="//div[@class='oe_title']" position="after">
                     <group>
                     <field name="status" string="status" widget="radio"/>
+                        <field name="customer_order_number" string="Customer Order Number"/>
                     </group>
                 </xpath>
                 <xpath expr="//field[@name='payment_term_id']" position="after">

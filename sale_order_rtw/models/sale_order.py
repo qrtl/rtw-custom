@@ -22,7 +22,7 @@ class sale_order_rtw(models.Model):
     )
     shiratani_entry_date = fields.Date(string="Shiratani entry Date")
     depo_date = fields.Date(string="Depo Date")
-
+    customer_order_number = fields.Char('Customer Order Number')
 #     value = fields.Integer()
 #     value2 = fields.Float(compute="_value_pc", store=True)
 #     description = fields.Text()

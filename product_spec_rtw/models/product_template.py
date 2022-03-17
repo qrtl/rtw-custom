@@ -53,6 +53,7 @@ class ProductSpecRtw(models.Model):
         comodel_name="stock.warehouse",
         string="storage location",
     )
+
     @api.depends('shipping_cost_unit_price', 'sai')
     def _shipping_cost_calc(self):
         cost = 0
