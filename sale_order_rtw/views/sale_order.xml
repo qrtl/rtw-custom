@@ -16,7 +16,7 @@
                     <field name="preferred_delivery_date" string="Preferred delivery date"/>
                     <field name="preferred_delivery_period" string="Preferred delivery period"/>
                     <field name="shiratani_entry_date" string="Shiratani entry Date"/>
-                   
+
 
                 </xpath>
                 <xpath expr="//group[@name='partner_details']" position="inside">
@@ -24,5 +24,16 @@
                 </xpath>
             </field>
         </record>
+        <record id="order_tree" model="ir.ui.view">
+            <field name="name">sale.order.tree</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_tree"/>
+            <field name="arch" type="xml">
+                 <xpath expr="//field[@name='name']" position="after">
+                    <field name="customer_order_number" string="customer_order_number"/>
+
+                 </xpath>
+            </field>
+    </record>
     </data>
 </odoo>
