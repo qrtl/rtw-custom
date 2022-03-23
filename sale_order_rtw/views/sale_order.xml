@@ -16,7 +16,7 @@
                     <field name="preferred_delivery_date" string="Preferred delivery date"/>
                     <field name="preferred_delivery_period" string="Preferred delivery period"/>
                     <field name="shiratani_entry_date" string="Shiratani entry Date"/>
-                    <field name="depo_date" string="Depo Date"/>
+                   
 
                 </xpath>
                 <xpath expr="//group[@name='partner_details']" position="inside">
