@@ -16,6 +16,7 @@ class StockPicking(models.Model):
         "Confirmed shipping Date",
         compute="_compute_date_shipped",
         store=True,
+
     )
 
     @api.depends("shipping_due_date")
@@ -43,3 +44,13 @@ class StockPicking(models.Model):
         return super(StockPicking, self).fields_view_get(
             view_id=view_id, view_type=view_type, toolbar=toolbar, submenu=submenu
         )
+
+    def action_picking_form(self):
+        self.ensure_one()
+        action = self.env.ref("stock.action_picking_form")
+        form = self.env.ref("stock.view_picking_form")
+        action = action.read()[0]
+        action["views"] = [(form.id, "form")]
+        action["target"] = "new"
+        action["res_id"] = self.id
+        return action

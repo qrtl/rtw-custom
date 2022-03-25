@@ -11,8 +11,12 @@
                 <field name="shipping_due_date" attrs="{'invisible':[('picking_type_code','!=','outgoing')]}"/>
                 <field name="confirmed_shipping_date" attrs="{'required':[('picking_type_code','=','outgoing'),('state','=','done')]}" readonly="0"/>
             </xpath>
+
         </field>
+
     </record>
+
+
 
     <record id="vpicktree_outgoing" model="ir.ui.view">
         <field name="name">vpicktree.outgoing</field>
@@ -20,10 +24,22 @@
         <field name="inherit_id" ref="stock.vpicktree"/>
         <field name="mode">primary</field>
         <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="before">
+                <button
+                    name="action_picking_form"
+                    string="Open Picking"
+                    type="object"
+                    icon="fa-external-link"
+                    class="oe_stat_button"
+                />
+            </xpath>
             <xpath expr="//field[@name='date_deadline']" position="before">
                 <field name="shipping_due_date"/>
-                <field name="confirmed_shipping_date"/>
+                <field name="confirmed_shipping_date" readonly="False"/>
             </xpath>
+            <xpath expr="//tree" position="attributes">
+                <attribute name="editable">top</attribute>
+             </xpath>
         </field>
     </record>
 
