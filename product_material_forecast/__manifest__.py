@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "confirmed_shipping_date",
+    'name': "product_material_forecast",
 
     'summary': """
         Short (1 phrase/line) summary of the module's purpose, used as
@@ -20,13 +20,13 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'sale_stock', 'sale_order_line_input'],
+    'depends': ['base', 'sale_management', 'purchase', 'stock'],
 
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
-        'views/stock_picking_views.xml',
-        'views/purchase_order_line.xml',
+        'views/product_material_forecast.xml',
+        'views/views.xml',
         'views/templates.xml',
     ],
     # only loaded in demonstration mode
