@@ -11,6 +11,12 @@ class sale_order_rtw(models.Model):
         ('done', 'done')
     ],
         string="status", default='draft')
+    process = fields.Selection([
+        ('draft', 'draft'),
+        ('manufactured', 'manufactured'),
+        ('delivered', 'delivered'),
+    ],
+        string="status", default='draft')
     preferred_delivery_date = fields.Date(string="Preferred delivery date", tracking=True)
     preferred_delivery_period = fields.Char(string="Preferred delivery period")
 

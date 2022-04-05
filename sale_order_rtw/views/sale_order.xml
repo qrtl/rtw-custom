@@ -6,9 +6,12 @@
             <field name="model">sale.order</field>
             <field name="inherit_id" ref="sale.view_order_form"/>
             <field name="arch" type="xml">
+                <xpath expr="//field[@name='state']" position="before">
+                    <field name="process" widget="statusbar" options="{'clickable':1}"/>
+                </xpath>
                 <xpath expr="//div[@class='oe_title']" position="after">
                     <group>
-                    <field name="status" string="status" widget="radio"/>
+                        <field name="status" string="status" widget="radio"/>
                         <field name="customer_order_number" string="Customer Order Number"/>
                     </group>
                 </xpath>
@@ -29,11 +32,22 @@
             <field name="model">sale.order</field>
             <field name="inherit_id" ref="sale.view_order_tree"/>
             <field name="arch" type="xml">
-                 <xpath expr="//field[@name='name']" position="after">
+                <xpath expr="//field[@name='name']" position="after">
                     <field name="customer_order_number" string="customer_order_number"/>
-
-                 </xpath>
+                    <field name="process" />
+                </xpath>
             </field>
-    </record>
+        </record>
+        <record id="order_tree_quotation" model="ir.ui.view">
+            <field name="name">sale.order.tree_quotation</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_quotation_tree_with_onboarding"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="customer_order_number" string="customer_order_number"/>
+                    <field name="process" />
+                </xpath>
+            </field>
+        </record>
     </data>
 </odoo>
