@@ -1,0 +1,25 @@
+<odoo>
+    <data>
+        <record id="view_partner_form_sf" model="ir.ui.view">
+            <field name="name">partner sf</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='user_ids']" position="before">
+                    <field name="fax" widget="phone"/>
+                    <field name="channel" widget="many2one" />
+                </xpath>
+                <xpath expr="//page[@name='internal_notes']" position="after">
+                    <page name="sf" string="sf">
+                        <group>
+                            <field name="field4__c"/>
+                        </group>
+                        <group>
+
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
