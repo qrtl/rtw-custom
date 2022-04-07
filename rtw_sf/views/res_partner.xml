@@ -9,10 +9,13 @@
                     <field name="fax" widget="phone"/>
                     <field name="channel" widget="many2one" />
                 </xpath>
+                <xpath expr="//field[@name='company_type']" position="after">
+<!--                    <field name="contact_type" widget="many2one"/>-->
+                </xpath>
                 <xpath expr="//page[@name='internal_notes']" position="after">
                     <page name="sf" string="sf">
                         <group>
-                            <field name="field4__c"/>
+
                         </group>
                         <group>
 
