@@ -8,6 +8,7 @@ class rtw_sf_partner(models.Model):
     _description = 'Account.csv'
 
     fax = fields.Char(string="fax")  # X
-    # contact_type = fields.Many2one('res.partner.contact_type')  # E
+    contact_type = fields.Many2one('res.partner.contact_type')  # E
     channel = fields.Many2one('res.partner.channel')  # BG
+    # case = fields.One2many('case')
 
