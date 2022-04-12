@@ -6,6 +6,7 @@ from odoo import models, fields, api
 class sale_order_rtw(models.Model):
     _inherit = "sale.order"
     _description = 'sale_order_rtw.sale_order_rtw'
+    title = fields.Char('title')
     status = fields.Selection([
         ('draft', 'draft'),
         ('done', 'done')

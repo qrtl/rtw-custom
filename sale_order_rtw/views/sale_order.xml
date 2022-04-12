@@ -6,6 +6,12 @@
             <field name="model">sale.order</field>
             <field name="inherit_id" ref="sale.view_order_form"/>
             <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="before">
+                    <div class="o_row d-flex">
+                        <label for="title" string="title"/>
+                    <field name="title" />
+                    </div>
+                </xpath>
                 <xpath expr="//field[@name='state']" position="before">
                     <field name="process" widget="statusbar" options="{'clickable':1}"/>
                 </xpath>
@@ -33,6 +39,7 @@
             <field name="inherit_id" ref="sale.view_order_tree"/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='name']" position="after">
+                    <field name="title" />
                     <field name="customer_order_number" string="customer_order_number"/>
                     <field name="process" />
                 </xpath>
@@ -44,6 +51,7 @@
             <field name="inherit_id" ref="sale.view_quotation_tree_with_onboarding"/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='name']" position="after">
+                    <field name="title" />
                     <field name="customer_order_number" string="customer_order_number"/>
                     <field name="process" />
                 </xpath>
