@@ -29,6 +29,7 @@
                             <field name="classification"/>
                             <field name="storage_location"/>
                             <field name="two_legs_scale"/>
+                            <field name="minimum_scale"/>
                             <field name="necessary_length_of_the_cloth_a"/>
                             <field name="necessary_length_of_the_cloth_b"/>
                         </group>
