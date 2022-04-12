@@ -53,6 +53,9 @@ class ProductSpecRtw(models.Model):
         comodel_name="stock.warehouse",
         string="storage location",
     )
+    two_legs_scale = fields.Float("2Legs Scale")
+    necessary_length_of_the_cloth_a = fields.Float("necessary length of the cloth A")
+    necessary_length_of_the_cloth_b = fields.Float("necessary length of the cloth B")
 
     @api.depends('shipping_cost_unit_price', 'sai')
     def _shipping_cost_calc(self):

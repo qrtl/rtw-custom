@@ -43,6 +43,9 @@
                     <field name="customer_order_number" string="customer_order_number"/>
                     <field name="process" />
                 </xpath>
+                <xpath expr="//field[@name='name']" position="attributes">
+                    <attribute name="readonly">1</attribute>
+                </xpath>
             </field>
         </record>
         <record id="order_tree_quotation" model="ir.ui.view">
@@ -54,6 +57,9 @@
                     <field name="title" />
                     <field name="customer_order_number" string="customer_order_number"/>
                     <field name="process" />
+                </xpath>
+                <xpath expr="//field[@name='name']" position="attributes">
+                    <attribute name="readonly">1</attribute>
                 </xpath>
             </field>
         </record>
