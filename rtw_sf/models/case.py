@@ -9,5 +9,5 @@ class rtw_sf_case(models.Model):
     _rec_name = "subject"
 
     subject = fields.Char('Subject')
-    contacts = fields.Many2one('res.partner', "Contact", copy=False)
+    contacts = fields.Many2one('res.partner', "Contact", copy=False)  #コンタクト
 
