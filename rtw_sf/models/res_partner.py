@@ -45,7 +45,7 @@ class rtw_sf_partner(models.Model):
     dummy = fields.Boolean("Field29__c", default=0)
     # relation
 
-    case = fields.One2many('rtw_sf_case', 'subject')
+    case = fields.One2many('rtw_sf_case', inverse_name='accounts')
     # contact
     account_id = fields.Char("AccountId")
     first_name = fields.Char("FirstName")
