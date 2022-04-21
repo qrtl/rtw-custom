@@ -13,9 +13,19 @@
 <!--                    <field name="contact_type" widget="many2one"/>-->
                 </xpath>
                 <xpath expr="//page[@name='internal_notes']" position="after">
-                    <page name="sf" string="sf">
+                    <page name="case" string="case">
+                        <group>
+                            <field name="case" />
+                        </group>
                         <group>
 
+                        </group>
+                    </page>
+                    <page name="sf" string="sf">
+                        <group>
+                             <field name="contact_type" />
+                             <field name="account_number" />
+                             <field name="annual_revenue" />
                         </group>
                         <group>
 

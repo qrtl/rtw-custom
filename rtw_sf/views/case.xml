@@ -1,29 +1,35 @@
 <odoo>
   <data>
     <!-- explicit list view definition -->
-<!--
-    <record model="ir.ui.view" id="rtw_sf.list">
-      <field name="name">rtw_sf list</field>
-      <field name="model">rtw_sf.rtw_sf</field>
+
+    <record model="ir.ui.view" id="rtw_sf_case_list">
+      <field name="name">rtw_sf_case_list</field>
+      <field name="model">rtw_sf_case</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="name"/>
-          <field name="value"/>
-          <field name="value2"/>
+          <field name="subject"/>
+<!--          <field name="contacts"/>-->
+<!--          <field name="accounts"/>-->
+<!--          <field name="parents"/>-->
         </tree>
       </field>
     </record>
--->
+
 
     <!-- actions opening views on models -->
-<!--
-    <record model="ir.actions.act_window" id="rtw_sf.action_window">
-      <field name="name">rtw_sf window</field>
-      <field name="res_model">rtw_sf.rtw_sf</field>
-      <field name="view_mode">tree,form</field>
+    <record id="action_case_tree" model="ir.actions.act_window">
+        <field name="name">case</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">rtw_sf_case</field>
+        <field name="view_mode">tree,form,pivot,graph</field>
+        <field name="view_id" ref="rtw_sf_case_list" />
     </record>
--->
-
+    <menuitem
+        id="menu_case_tree"
+        action="action_case_tree"
+        parent="contacts.menu_contacts"
+        sequence="30"
+    />
     <!-- server action to the one above -->
 <!--
     <record model="ir.actions.server" id="rtw_sf.action_server">
