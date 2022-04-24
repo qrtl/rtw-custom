@@ -64,5 +64,20 @@
                 </xpath>
             </field>
         </record>
+
+        <record id="rtw_sale_search_view" model="ir.ui.view">
+            <field name="name">sale.order.search.inherit.sale.rtw</field>
+            <field name="model">sale.order</field>
+            <field name="mode">primary</field>
+            <field name="inherit_id" ref="sale.sale_order_view_search_inherit_quotation"/>
+            <field name="arch" type="xml">
+                <xpath expr="//filter[@name='filter_create_date']" position="after">
+                     <separator/>
+                    <filter name="status" string="Done" domain="[('status','=','done')]"/>
+                     <separator/>
+                </xpath>
+
+             </field>
+        </record>
     </data>
 </odoo>
