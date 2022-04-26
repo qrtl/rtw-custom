@@ -19,10 +19,10 @@ class rtw_sf_partner(models.Model):
     ticker_symbol = fields.Char("TickerSymbol")  # AF 銘柄コード OK
     description = fields.Text("Description")  # OK
     rating = fields.Char(string="Rating")  # ok
-    site = fields.Char("Site")   # OK
-    supplier_no = fields.Char("Field5__c")  # OK
-    kana = fields.Char("Field2__c")  # OK
-    corporate_mail = fields.Boolean("Field6__c", default=0)   # 法人宛郵便 OK
+    site = fields.Char("Site")  # OK
+    supplier_no = fields.Char("Field5__c")  # OK 仕入先番号
+    kana = fields.Char("Field2__c")  # OK フリガナ
+    corporate_mail = fields.Boolean("Field6__c", default=0)  # 法人宛郵便 OK
     transactions = fields.Many2one('res.partner.transactions', string="Field4__c")  # 取引方法 OK
     payment_terms_1 = fields.Char("X1__c")  # 支払い条件１ OK
     payment_terms_2 = fields.Char("X2__c")  # 支払い条件2 OK
@@ -35,7 +35,8 @@ class rtw_sf_partner(models.Model):
     last_contract_date = fields.Datetime("Field13__c")  # 最新成約日 OK
     total_number_of_transactions = fields.Integer("Field14__c")  # 累計取引回数 OK
     cumulative_sales = fields.Float("Field15__c")  # 累計売上金額 OK
-    potential = fields.Selection([('a', 'A'), ('b', 'B'), ('c', 'C'), ('d', 'D')], string="Field16__c", default='')   # ポテンシャル OK
+    potential = fields.Selection([('a', 'A'), ('b', 'B'), ('c', 'C'), ('d', 'D')], string="Field16__c",
+                                 default='')  # ポテンシャル OK
     kubun = fields.Char("Field20__c")  # 区分 OK
     rival_companies = fields.Boolean("Field23__c", default=0)  # 競合他社 OK
     group = fields.Char("Field21__c")  # G OK
@@ -56,7 +57,7 @@ class rtw_sf_partner(models.Model):
     other_state = fields.Char("OtherState")  # OK
     other_city = fields.Char("OtherCity")  # OK
     other_street = fields.Char("OtherStreet")  # OK
-    mailing_country = fields.Char("MailingCountry")   # OK
+    mailing_country = fields.Char("MailingCountry")  # OK
     mailing_postal_code = fields.Char("MailingPostalCode")  # OK
     mailing_state = fields.Char("MailingState")  # OK
     mailing_city = fields.Char("MailingCity")  # OK
@@ -96,7 +97,8 @@ class rtw_sf_partner(models.Model):
     calender = fields.Boolean("calendar__c", default=0)  # ｶﾚﾝﾀﾞｰ OK
     key_man = fields.Boolean("Field17__c", default=0)  # キーマン OK
     r_owner = fields.Boolean("R_1__c", default=0, help="Ritzwell家具の購入実績がある")  # Rオーナー OK
-    sansancard = fields.Boolean("sansancard__CreatedByScanToSalesforce__c", default=0)  # Created by Scan to Salesforce OK
+    sansancard = fields.Boolean("sansancard__CreatedByScanToSalesforce__c",
+                                default=0)  # Created by Scan to Salesforce OK
     retirement = fields.Char("Field18__c")  # 退職 OK
     change = fields.Boolean("Field19__c", default=0)  # 異動 OK
     maternity_leave_and_vacation = fields.Boolean("Field20__c2", default=0)  # 育休・休暇 OK
@@ -124,3 +126,22 @@ class rtw_sf_partner(models.Model):
     joint_name = fields.Char("X1__c")  # 連名1 OK
     web = fields.Char("WEB__c")  # WEBサイト OK
     media_name = fields.Char("Field39__c")  # 媒体名 OK
+    case_count = fields.Integer(string="case count", compute="_compute_case_count")
+
+    def _compute_case_count(self):
+        for rec in self:
+            case_count = self.env['rtw_sf_case'].search_count([('accounts', '=', rec.id)])
+            rec.case_count = case_count
+
+    def action_open_case(self):
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'case',
+            'res_model': 'rtw_sf_case',
+            'domain': [('accounts', '=', self.id)],
+            'view_mode': 'tree,form',
+            'target': 'current',
+            'context': {
+                'default_id': self.id,
+            }
+        }

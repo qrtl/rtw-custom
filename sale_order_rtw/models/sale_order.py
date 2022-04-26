@@ -9,15 +9,15 @@ class sale_order_rtw(models.Model):
     title = fields.Char('title')
     status = fields.Selection([
         ('draft', 'draft'),
-        ('done', 'done')
+        ('done', 'done'),
     ],
-        string="status", default='draft')
+        string="status", default='draft', store=True)
     process = fields.Selection([
         ('draft', 'draft'),
         ('manufactured', 'manufactured'),
         ('delivered', 'delivered'),
     ],
-        string="status", default='draft')
+        string="process", default='draft')
     preferred_delivery_date = fields.Date(string="Preferred delivery date", tracking=True)
     preferred_delivery_period = fields.Char(string="Preferred delivery period")
 

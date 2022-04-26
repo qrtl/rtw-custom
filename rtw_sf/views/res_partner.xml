@@ -5,6 +5,15 @@
             <field name="model">res.partner</field>
             <field name="inherit_id" ref="base.view_partner_form"/>
             <field name="arch" type="xml">
+                <xpath expr="//div[@name='button_box']" position="inside">
+
+                    <button name="action_open_case" class="oe_stat_button" type="object" icon="fa-sticky-note-o">
+                        <div class="o_stat_info">
+                            <field name="case_count" class="o_stat_value"/>
+                            <span class="o_stat_text">Case</span>
+                        </div>
+                    </button>
+                 </xpath>
                  <xpath expr="//field[@name='name']" position="after">
                      <br/><field name="kana" />
                  </xpath>
