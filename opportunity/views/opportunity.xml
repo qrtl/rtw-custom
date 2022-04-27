@@ -1,32 +1,23 @@
 <odoo>
     <data>
         <!-- explicit list view definition -->
-        <record model="ir.ui.view" id="opportunity_stage_list">
-            <field name="name">opportunity_stage_list</field>
-            <field name="model">opportunity_stage</field>
+        <record model="ir.ui.view" id="opportunity_list">
+            <field name="name">opportunity_list</field>
+            <field name="model">opportunity.opportunity</field>
             <field name="arch" type="xml">
                 <tree>
-                    <field name="subject"/>
+                    <field name="subject_name" string="subject_name"/>
                 </tree>
             </field>
         </record>
 
         <!-- actions opening views on models -->
-        <record id="action_opportunity_tree" model="ir.actions.act_window">
+        <record model="ir.actions.act_window" id="opportunity.action_window">
             <field name="name">opportunity</field>
-            <field name="type">ir.actions.act_window</field>
-            <field name="res_model">opportunity_stage</field>
-            <field name="view_mode">tree,form,pivot,graph</field>
-            <field name="view_id" ref="opportunity_stage_list" />
-        </record>
-
-        <!--
-        <record model="ir.actions.act_window" id="car.action_window">
-            <field name="name">car window</field>
-            <field name="res_model">car.car</field>
+            <field name="res_model">opportunity.opportunity</field>
             <field name="view_mode">kanban,tree,form</field>
         </record>
-        -->
+
 
 
         <!-- server action to the one above -->
@@ -47,18 +38,21 @@
 
         <!-- Top menu item -->
 
-        <menuitem name="car" id="car.menu_root" web_icon="car,static/description/taxi_car_icon.png" sequence="1"/>
+        <menuitem name="opportunity" id="opportunity.menu_root" action="opportunity.action_window"/>
 
         <!-- menu categories -->
+        <!--
+        <menuitem name="opportunity" id="opportunity.menu_1" parent="opportunity.menu_root"/>
+        -->
 
-        <menuitem name="car" id="car.menu_1" parent="car.menu_root"/>
         <!--
             <menuitem name="Menu 2" id="car.menu_2" parent="car.menu_root"/>
         -->
         <!-- actions -->
-
-        <menuitem name="List" id="car.menu_1_list" parent="car.menu_1"
-                  action="car.action_window"/>
+        <!--
+        <menuitem name="List" id="opportunity.menu_1_list" parent="opportunity.menu_1"
+                  action="opportunity.action_window"/>
+        -->
         <!--
             <menuitem name="Server to list" id="car" parent="car.menu_2"
                       action="car.action_server"/>

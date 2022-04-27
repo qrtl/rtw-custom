@@ -4,12 +4,12 @@ from odoo import models, fields, api
 
 
 class opportunity(models.Model):
-    _name = 'opportunity.stage'
-    _description = 'opportunity stage'
+    _name = 'opportunity.opportunity'
+    _description = 'opportunity.opportunity'
 
     accounts = fields.Many2one('res.partner', "Account", copy=False)  # アカウント
-    subject = fields.Char('Name')  # 案件名 E列
-    Description = fields.Text('Description')  # 説明 F列
+    subject_name = fields.Char('Name')  # 案件名 E列
+    description = fields.Text('Description')  # 説明 F列
     stage_name = fields.Char('StageName')  # 段階名 G列
     stage_sort_order = fields.Integer('StageSortOrder')  # 受注段階コード H列
     amount = fields.Float('Amount')  # 金額 I列
@@ -37,7 +37,7 @@ class opportunity(models.Model):
     last_stage_changed_date = fields.Datetime('LastStageChangeDate')  # 最終ステージ変更日
     fiscal_year = fields.Integer('FiscalYear')  # 会計年度
     fiscal_quarter = fields.Integer('FiscalQuarter')  # 会計四半期
-    # contact_id = fields.Char('ContactId')  # コンタクトId
+    contact_id = fields.Char('ContactId')  # コンタクトId
     primary_partner_Account_id = fields.Char('PrimaryPartnerAccountId')  # プライマリーパートナーId
     # synced_quote_id = fields.Char('SyncedQuoteId')  # 同期引用Id
     # contract_id = fields.Char('ContractId')  # 契約Id
@@ -160,7 +160,7 @@ class opportunity(models.Model):
     address_no = fields.Char('Field78__c')  # 〒 EX列
     address = fields.Char('Field79__c')  # 住所 EY列
     tel = fields.Char('Field80__c')  # 電話 EZ列
-    name = fields.Char('Field81__c')  # 名前 FA列
+    person_name = fields.Char('Field81__c')  # 名前 FA列
     furigana = fields.Char('Field82__c')  # フリガナ FB列
     depot = fields.Char('Field83__c')  # デポ FC列
     depot_arrival_date = fields.Datetime('Field84__c')  # デポ着日 FD列
