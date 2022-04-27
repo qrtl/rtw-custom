@@ -30,6 +30,7 @@ class sale_order_rtw(models.Model):
     shiratani_entry_date = fields.Date(string="Shiratani entry Date")
     depo_date = fields.Date(string="Depo Date")
     customer_order_number = fields.Char('Customer Order Number')
+    items_under_consideration = fields.Boolean('Items under consideration', default=0)
 #     value = fields.Integer()
 #     value2 = fields.Float(compute="_value_pc", store=True)
 #     description = fields.Text()
@@ -38,3 +39,7 @@ class sale_order_rtw(models.Model):
 #     def _value_pc(self):
 #         for record in self:
 #             record.value2 = float(record.value) / 100
+
+    def toggle_under_consideration(self):
+        for record in self:
+            record.items_under_consideration = not record.items_under_consideration
