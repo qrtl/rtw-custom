@@ -1,89 +1,32 @@
 <odoo>
     <data>
         <!-- explicit list view definition -->
-
-        <record model="ir.ui.view" id="car.tree">
-            <field name="name">car list</field>
-            <field name="model">car.car</field>
+        <record model="ir.ui.view" id="opportunity_stage_list">
+            <field name="name">opportunity_stage_list</field>
+            <field name="model">opportunity_stage</field>
             <field name="arch" type="xml">
                 <tree>
-                    <field name="name"/>
-                    <field name="no"/>
-                    <field name="size"/>
+                    <field name="subject"/>
                 </tree>
             </field>
         </record>
 
-        <record model="ir.ui.view" id="car.form">
-            <field name="name">car list</field>
-            <field name="model">car.car</field>
-            <field name="arch" type="xml">
-                <form>
-                    <group>
-                        <group>
-                            <field name="name"/>
-                            <field name="no"/>
-                            <field name="customer"/>
-                            <field name="image" widget="image" class="oe_avatar"/>
-                        </group>
-                        <group>
-                            <field name="size" widget="selection"/>
-                            <field name="length"/>
-                            <field name="wide"/>
-                            <field name="height"/>
-                        </group>
-                    </group>
-                    <group>
-                        <notebook>
-                            <page string="memo">
-                                <group>
-                                    <field name="memo"/>
-                                </group>
-                            </page>
-                        </notebook>
-                    </group>
-                </form>
-            </field>
-        </record>
-
-        <record id="view_car_kanban" model="ir.ui.view">
-            <field name="name">car.car.kanban</field>
-            <field name="model">car.car</field>
-
-            <field name="arch" type="xml">
-                <kanban class="o_kanban_small_column" sample="1">
-                    <field name="name" string="Name"/>
-                    <field name="no" string="no"/>
-                    <field name="image" widget="image" class="oe_avatar"/>
-
-                    <templates>
-                        <t t-name="kanban-box">
-                            <div t-attf-class="oe_kanban_global_click">
-                                <div class="oe_kanban_global_image">
-                                    <field name="image" widget="image" class="oe_avatar"/>
-                                </div>
-                                <div class="oe_kanban_details">
-                                    <ul>
-                                        <li>
-                                            <field name="name"/>
-                                            <field name="no"/>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </t>
-                    </templates>
-                </kanban>
-            </field>
-        </record>
-
         <!-- actions opening views on models -->
+        <record id="action_opportunity_tree" model="ir.actions.act_window">
+            <field name="name">opportunity</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">opportunity_stage</field>
+            <field name="view_mode">tree,form,pivot,graph</field>
+            <field name="view_id" ref="opportunity_stage_list" />
+        </record>
 
+        <!--
         <record model="ir.actions.act_window" id="car.action_window">
             <field name="name">car window</field>
             <field name="res_model">car.car</field>
             <field name="view_mode">kanban,tree,form</field>
         </record>
+        -->
 
 
         <!-- server action to the one above -->

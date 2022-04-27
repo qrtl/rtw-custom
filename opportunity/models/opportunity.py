@@ -8,7 +8,7 @@ class opportunity(models.Model):
     _description = 'opportunity stage'
 
     accounts = fields.Many2one('res.partner', "Account", copy=False)  # アカウント
-    name = fields.Char('Name')  # 名称 E列
+    subject = fields.Char('Name')  # 案件名 E列
     Description = fields.Text('Description')  # 説明 F列
     stage_name = fields.Char('StageName')  # 段階名 G列
     stage_sort_order = fields.Integer('StageSortOrder')  # 受注段階コード H列
@@ -34,7 +34,7 @@ class opportunity(models.Model):
     last_modified_by_id = fields.Char('LastModifiedById')  # 最終更新者
     system_mod_stamp = fields.Datetime('SystemModstamp')  # システム最終更新日
     last_activity_date = fields.Datetime('LastActivityDate')  # システム最終活動日
-    last_stage_change_date = fields.Datetime('LastStageChangeDate')  # 最終ステージ変更日
+    last_stage_changed_date = fields.Datetime('LastStageChangeDate')  # 最終ステージ変更日
     fiscal_year = fields.Integer('FiscalYear')  # 会計年度
     fiscal_quarter = fields.Integer('FiscalQuarter')  # 会計四半期
     # contact_id = fields.Char('ContactId')  # コンタクトId
@@ -48,7 +48,7 @@ class opportunity(models.Model):
     quote_number = fields.Char('Field3_del__c')  # 見積番号 AP列
     previous_amount = fields.Float('previousamount__c')  # 直前の金額 AQ列
     opportunity_number = fields.Char('Field4__c')  # 商談番号 AR列
-    last_amount_change_datetime = fields.Datetime('lastamountchangedatetime__c')  # 最終金額変更日時 AS列
+    last_amount_changed_datetime = fields.Datetime('lastamountchangedatetime__c')  # 最終金額変更日時 AS列
     presentation = fields.Integer('presentation__c')  # 通常プレゼン AT列 ★0，1，空白あり
     project_details = fields.Text('Field60__c')  # 案件詳細 AU列
     Determined_on_the_day = fields.Integer('Determinedontheday__c')  # 当日確定 AV列 ★0，1，空白あり
@@ -90,7 +90,7 @@ class opportunity(models.Model):
     branch = fields.Char('Branch__c')  # Branch CF列
     action2 = fields.Char('Field24__c')  # アクション② CG列
     last_event_comment = fields.Text('LastEventComment__c')  # 最終行動コメント CH列
-    diana = fields.Integer('DIANA__c')  # DIANA台数 CI列
+    diana_count = fields.Integer('DIANA__c')  # DIANA台数 CI列
     sample_sale = fields.Char('Field25__c')  # サンプル販売 CJ列
     sample_sales_amount = fields.Integer('Field26__c')  # サンプル販売金額 CK列
     push_c = fields.Integer('Push_Counter__c')  # Push C(完了予定日を翌月以降に変更した回数をカウント) CL列
@@ -110,8 +110,62 @@ class opportunity(models.Model):
     product_list_st2 = fields.Char('St2__c')  # 商品リスト(St2) CZ列
     product_list_st1 = fields.Char('St1__c')  # 商品リスト(St1) DA列
     opportunity_completion_date = fields.Datetime('Field72__c')  # 商談完了日 DB列
-
-
+    product_list_ot_st1 = fields.Char('ST1_1__c')  # 商品リスト(OT/ST1) DC列
+    term = fields.Char('Term__c')  # Term DD列
+    product_list_ot_st2 = fields.Char('ST2_2__c')  # 商品リスト(OT/ST2) DE列
+    product_list_board1 = fields.Char('BOARD1__c')  # 商品リスト(BOARD1) DF列
+    product_list_board2 = fields.Char('BOARD2__c')  # 商品リスト(BOARD2) DG列
+    year = fields.Integer('Year__c')  # Year DH列
+    product_list_sofa3 = fields.Char('X3__c')  # 商品リスト(ソファ3) DI列
+    completion_scheduled_date = fields.Datetime('A__c')  # 完了予定日（A) DJ列
+    product_list_sofa1 = fields.Char('X1__c')  # 商品リスト(ソファ1) DK列
+    product_list_sofa2 = fields.Char('X2_2__c')  # 商品リスト(ソファ2) DL列
+    product_list_ec3 = fields.Char('EC3__c')  # 商品リスト(EC3) DM列
+    product_list_chair1 = fields.Char('Field29__c')  # 商品リスト(ﾁｪｱ1) DN列
+    product_list_chair2 = fields.Char('X2_5__c')  # 商品リスト(ﾁｪｱ2) DO列
+    product_list_chair3 = fields.Char('X3_4__c')  # 商品リスト(ﾁｪｱ3) DP列
+    product_list_chair4 = fields.Char('X4_1__c')  # 商品リスト(ﾁｪｱ4) DQ列
+    progress_check = fields.Text('Field36__c')  # 進捗確認/経過報告 DR列
+    opportunity_type = fields.Char('Field37__c')  # 商談種別 DS列
+    accuracy = fields.Float('Field38__c')  # 確度（変更前） DT列
+    last_accuracy_changed_date = fields.Datetime('Field39__c')  # 最終確度変更日時 DU列
+    result = fields.Char('Field40__c')  # 結果 DV列
+    On_site_delivery_date = fields.Datetime('Field43__c')  # 現場納品日 DW列
+    beatrix_count = fields.Integer('BEATRIX_count__c')  # BEATRIX台数 DX列
+    jabara_count = fields.Integer('JABARA__c')  # JABARA台数 DY列
+    lf_set_count = fields.Integer('LF__c')  # LFセット数 DZ列
+    product_list_sofa_ot1 = fields.Char('Sofa_OT__c')  # 商品リスト(ソファOT1) EA列
+    product_list_sofa_ot2 = fields.Char('OT2__c')  # 商品リスト(ソファOT2) EB列
+    rate = fields.Float('Field74__c')  # 掛率 EC列
+    dummy = fields.Integer('Field75__c')  # ﾀﾞﾐｰ ED列
+    lw_set_count = fields.Integer('LW_5__c')  # LWセット数 EE列
+    trw_candidate = fields.Integer('TRW__c')  # TRW候補 EF列
+    questionnaire = fields.Integer('Field50__c')  # アンケート EG列
+    letter_of_acceptance = fields.Integer('Field51__c')  # 承諾書 EH列
+    how_to_get_photos = fields.Char('Field52__c')  # 写真入手方法 EI列
+    memo_trw = fields.Text('TRW_2__c')  # TRWメモ EJ列
+    examination = fields.Char('Field53__c')  # 審査 EK列
+    cost = fields.Integer('Field54__c')  # 経費 EL列
+    photographer = fields.Char('Field55__c')  # Photographer EM列
+    shooting_date = fields.Datetime('Field56__c')  # 撮影日 EN列
+    installation_floor = fields.Char('Field57__c')  # 設置階 EO列
+    delivery_route_required_confirmation = fields.Integer('Field58__c')  # 搬入経路要確認 EP列
+    elevator_having = fields.Integer('EV__c')  # EV有 EQ列
+    budget_data = fields.Integer('SFDC_Budget__c')  # 予算データ ER列
+    lost = fields.Integer('Field59__c')  # ロスト ES列
+    p_author = fields.Char('P__c')  # P作成者(代表） ET列
+    product_list_sofa_bench1 = fields.Char('Bench1__c')  # 商品リスト（Bench1) EU列
+    product_list_sofa_bench2 = fields.Char('Bench2__c')  # 商品リスト（Bench2) EV列
+    procurement_company = fields.Char('Field77__c')  # 調達会社 EW列
+    address_no = fields.Char('Field78__c')  # 〒 EX列
+    address = fields.Char('Field79__c')  # 住所 EY列
+    tel = fields.Char('Field80__c')  # 電話 EZ列
+    name = fields.Char('Field81__c')  # 名前 FA列
+    furigana = fields.Char('Field82__c')  # フリガナ FB列
+    depot = fields.Char('Field83__c')  # デポ FC列
+    depot_arrival_date = fields.Datetime('Field84__c')  # デポ着日 FD列
+    to_arrangement_depot = fields.Integer('Field85__c')  # 手配デポまで FE列
+    special_remarks = fields.Text('Field86__c')  # Photographer FF列
 
 #     value = fields.Integer()
 #     value2 = fields.Float(compute="_value_pc", store=True)
