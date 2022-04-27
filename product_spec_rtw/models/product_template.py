@@ -34,7 +34,8 @@ class ProductSpecRtw(models.Model):
         name="ah",
         string="arm height"
     )
-    cloth = fields.Float('cloth(m)')
+    cloth = fields.Float('cloth A(m)')
+    cloth_b = fields.Float('cloth B(m)')
     leather = fields.Float('leather(sheet)')
     leather_ds = fields.Float('leather(ds)')
     shipping_cost_unit_price = fields.Integer('shipping cost unit price')
