@@ -6,10 +6,20 @@
             <field name="model">sale.order</field>
             <field name="inherit_id" ref="sale.view_order_form"/>
             <field name="arch" type="xml">
+                <xpath expr="//div[@class='oe_button_box']" position="inside">
+
+                    <button name="toggle_under_consideration" type="object" class="oe_stat_button" icon="fa-check-square">
+                        <field name="items_under_consideration" widget="boolean_button"  options="{&quot;active&quot;: &quot;under_consideration&quot;, &quot;inactive&quot;: &quot;OK&quot;}" />
+                    </button>
+                </xpath>
+                <xpath expr="//div[@class='oe_button_box']" position="after">
+                    <widget name="web_ribbon" title="under review" bg_color="bg-danger"
+                            attrs="{'invisible': [('items_under_consideration', '=', False)]}"/>
+                </xpath>
                 <xpath expr="//field[@name='name']" position="before">
                     <div class="o_row d-flex">
                         <label for="title" string="title"/>
-                    <field name="title" />
+                        <field name="title"/>
                     </div>
                 </xpath>
                 <xpath expr="//field[@name='state']" position="before">
@@ -17,8 +27,10 @@
                 </xpath>
                 <xpath expr="//div[@class='oe_title']" position="after">
                     <group>
+<!--                        <field name="items_under_consideration" string="Items under consideration" widget="toggle_button"/>-->
                         <field name="status" string="status" widget="radio"/>
                         <field name="customer_order_number" string="Customer Order Number"/>
+
                     </group>
                 </xpath>
                 <xpath expr="//field[@name='payment_term_id']" position="after">
@@ -39,9 +51,10 @@
             <field name="inherit_id" ref="sale.view_order_tree"/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='name']" position="after">
-                    <field name="title" />
+                    <field name="title"/>
                     <field name="customer_order_number" string="customer_order_number"/>
-                    <field name="process" />
+                    <field name="process"/>
+                    <field name="items_under_consideration" string="Items under consideration"/>
                 </xpath>
                 <xpath expr="//field[@name='name']" position="attributes">
                     <attribute name="readonly">1</attribute>
@@ -54,14 +67,46 @@
             <field name="inherit_id" ref="sale.view_quotation_tree_with_onboarding"/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='name']" position="after">
-                    <field name="title" />
+                    <field name="title"/>
                     <field name="customer_order_number" string="customer_order_number"/>
-                    <field name="process" />
+                    <field name="process"/>
+                    <field name="status"/>
+                    <field name="items_under_consideration" string="Items under consideration"/>
                 </xpath>
                 <xpath expr="//field[@name='name']" position="attributes">
                     <attribute name="readonly">1</attribute>
                 </xpath>
             </field>
         </record>
+
+        <record id="rtw_sale_search_view" model="ir.ui.view">
+            <field name="name">sale.order.search.inherit.sale.rtw</field>
+            <field name="model">sale.order</field>
+            <!--            <field name="mode">primary</field>-->
+            <field name="inherit_id" ref="sale.sale_order_view_search_inherit_quotation"/>
+            <field name="arch" type="xml">
+                <xpath expr="//filter[@name='my_quotation']" position="after">
+                    <separator/>
+                    <filter name="status" string="Done" domain="[('status','=','done')]"/>
+                    <filter string="Items under consideration" name="items_under_consideration"
+                            domain="[('items_under_consideration', '=', True)]"/>
+                    <separator/>
+                </xpath>
+
+            </field>
+        </record>
+
+        <record id="view_order_line_cusom_rtw" model="ir.ui.view">
+            <field name="name">sale.order.custom_rtw_tree</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="/form/sheet/notebook/page/field[@name='order_line']/tree/field[@name='product_uom_qty']"
+                       position="after">
+                    <field name="memo"/>
+                </xpath>
+            </field>
+        </record>
+
     </data>
 </odoo>
