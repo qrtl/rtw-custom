@@ -93,7 +93,7 @@ class opportunity(models.Model):
     diana_count = fields.Integer('DIANA__c')  # DIANA台数 CI列
     sample_sale = fields.Char('Field25__c')  # サンプル販売 CJ列
     sample_sales_amount = fields.Integer('Field26__c')  # サンプル販売金額 CK列
-    push_c = fields.Integer('Push_Counter__c')  # Push C(完了予定日を翌月以降に変更した回数をカウント) CL列
+    push_c = fields.Float('Push_Counter__c')  # Push C(完了予定日を翌月以降に変更した回数をカウント) CL列
     area = fields.Char('Field32_del__c')  # エリア CM列
     pre_contract_presentation = fields.Integer('Field34_plan2__c')  # 契約前プレゼン CN列
     overlap = fields.Char('Field34__c')  # Overlap CO列
@@ -132,7 +132,7 @@ class opportunity(models.Model):
     result = fields.Char('Field40__c')  # 結果 DV列
     On_site_delivery_date = fields.Datetime('Field43__c')  # 現場納品日 DW列
     beatrix_count = fields.Integer('BEATRIX_count__c')  # BEATRIX台数 DX列
-    jabara_count = fields.Integer('JABARA__c')  # JABARA台数 DY列
+    jabara_count = fields.Float('JABARA__c')  # JABARA台数 DY列
     lf_set_count = fields.Integer('LF__c')  # LFセット数 DZ列
     product_list_sofa_ot1 = fields.Char('Sofa_OT__c')  # 商品リスト(ソファOT1) EA列
     product_list_sofa_ot2 = fields.Char('OT2__c')  # 商品リスト(ソファOT2) EB列
