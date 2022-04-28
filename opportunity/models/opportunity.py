@@ -57,8 +57,8 @@ class opportunity(models.Model):
     order_amount = fields.Float('Field7__c')  # 受注額 AY列
     omotesando_visit = fields.Integer('Field87__c')  # 表参道来店 AZ列 ★0，1，空白あり
     fair = fields.Char('Field22__c')  # Fair BA列
-    million_amount = fields.Integer('X100_amount__c')  # 100万金額 BB列
-    million_order_amount = fields.Integer('X100_amount_a__c')  # 100万受注額 BC列
+    million_amount = fields.Float('X100_amount__c')  # 100万金額 BB列
+    million_order_amount = fields.Float('X100_amount_a__c')  # 100万受注額 BC列
     competition_a = fields.Char('Field16__c')  # 競合A BD列
     fair_advance_plan = fields.Integer('Field34_plan__c')  # フェア事前プラン BE列 ★0，1，空白あり
     product_others = fields.Char('Field14__c')  # 商品その他（補足） BF列
@@ -152,7 +152,7 @@ class opportunity(models.Model):
     delivery_route_required_confirmation = fields.Integer('Field58__c')  # 搬入経路要確認 EP列
     elevator_having = fields.Integer('EV__c')  # EV有 EQ列
     budget_data = fields.Integer('SFDC_Budget__c')  # 予算データ ER列
-    lost = fields.Integer('Field59__c')  # ロスト ES列
+    lost = fields.Float('Field59__c')  # ロスト ES列
     p_author = fields.Char('P__c')  # P作成者(代表） ET列
     product_list_sofa_bench1 = fields.Char('Bench1__c')  # 商品リスト（Bench1) EU列
     product_list_sofa_bench2 = fields.Char('Bench2__c')  # 商品リスト（Bench2) EV列

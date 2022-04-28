@@ -38,7 +38,7 @@
 
         <!-- Top menu item -->
 
-        <menuitem name="opportunity" id="opportunity.menu_root" action="opportunity.action_window"/>
+        <menuitem name="opportunity" id="opportunity.menu_root" action="opportunity.action_window" web_icon="opportunity,static/description/opportunity_icon.png"/>
 
         <!-- menu categories -->
         <!--
