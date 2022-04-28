@@ -90,7 +90,7 @@ class opportunity(models.Model):
     branch = fields.Char('Branch__c')  # Branch CF列
     action2 = fields.Char('Field24__c')  # アクション② CG列
     last_event_comment = fields.Text('LastEventComment__c')  # 最終行動コメント CH列
-    diana_count = fields.Integer('DIANA__c')  # DIANA台数 CI列
+    diana_count = fields.Float('DIANA__c')  # DIANA台数 CI列
     sample_sale = fields.Char('Field25__c')  # サンプル販売 CJ列
     sample_sales_amount = fields.Integer('Field26__c')  # サンプル販売金額 CK列
     push_c = fields.Float('Push_Counter__c')  # Push C(完了予定日を翌月以降に変更した回数をカウント) CL列
@@ -131,14 +131,14 @@ class opportunity(models.Model):
     last_accuracy_changed_date = fields.Datetime('Field39__c')  # 最終確度変更日時 DU列
     result = fields.Char('Field40__c')  # 結果 DV列
     On_site_delivery_date = fields.Datetime('Field43__c')  # 現場納品日 DW列
-    beatrix_count = fields.Integer('BEATRIX_count__c')  # BEATRIX台数 DX列
+    beatrix_count = fields.Float('BEATRIX_count__c')  # BEATRIX台数 DX列
     jabara_count = fields.Float('JABARA__c')  # JABARA台数 DY列
-    lf_set_count = fields.Integer('LF__c')  # LFセット数 DZ列
+    lf_set_count = fields.Float('LF__c')  # LFセット数 DZ列
     product_list_sofa_ot1 = fields.Char('Sofa_OT__c')  # 商品リスト(ソファOT1) EA列
     product_list_sofa_ot2 = fields.Char('OT2__c')  # 商品リスト(ソファOT2) EB列
     rate = fields.Float('Field74__c')  # 掛率 EC列
     dummy = fields.Integer('Field75__c')  # ﾀﾞﾐｰ ED列
-    lw_set_count = fields.Integer('LW_5__c')  # LWセット数 EE列
+    lw_set_count = fields.Float('LW_5__c')  # LWセット数 EE列
     trw_candidate = fields.Integer('TRW__c')  # TRW候補 EF列
     questionnaire = fields.Integer('Field50__c')  # アンケート EG列
     letter_of_acceptance = fields.Integer('Field51__c')  # 承諾書 EH列
