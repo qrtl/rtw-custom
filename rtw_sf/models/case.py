@@ -36,7 +36,7 @@ class rtw_sf_case(models.Model):
     created_by_id = fields.Many2one('res.users', 'CreatedById')  # 作成ID
     last_modified_date = fields.Datetime('LastModifiedDate')  # 最終更新日
     last_modified_by_id = fields.Many2one('res.users', 'LastModifiedById')  # 最終更新者
-    system_mod_stamp = fields.Datetime('SystemModstamp')  # システム最終更新日
+    system_mod_stamp = fields.Datetime('SystemModstamp')  # システム最終更新日 v
     order_no = fields.Char('Field1__c')  # 受注番号
     cope_order_no_1 = fields.Integer('X1__c')  # 対処受注番号1
     cope_order_no_2 = fields.Integer('X2__c')  # 対処受注番号2
