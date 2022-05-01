@@ -1,20 +1,20 @@
 <odoo>
     <data>
         <!-- explicit list view definition -->
-        <record model="ir.ui.view" id="opportunity_list">
-            <field name="name">opportunity_list</field>
-            <field name="model">opportunity.opportunity</field>
+        <record model="ir.ui.view" id="contract_list">
+            <field name="name">contract_list</field>
+            <field name="model">contract.contract</field>
             <field name="arch" type="xml">
                 <tree>
-                    <field name="subject_name" string="subject_name"/>
+                    <field name="contract_number" string="contract_number"/>
                 </tree>
             </field>
         </record>
 
         <!-- actions opening views on models -->
-        <record model="ir.actions.act_window" id="opportunity.action_window">
-            <field name="name">opportunity</field>
-            <field name="res_model">opportunity.opportunity</field>
+        <record model="ir.actions.act_window" id="contract.action_window">
+            <field name="name">contract</field>
+            <field name="res_model">contract.contract</field>
             <field name="view_mode">kanban,tree,form</field>
         </record>
 
@@ -38,7 +38,7 @@
 
         <!-- Top menu item -->
 
-        <menuitem name="opportunity" id="opportunity.menu_root" action="opportunity.action_window" web_icon="opportunity,static/description/opportunity_icon.png"/>
+        <menuitem name="contract" id="contract.menu_root" action="contract.action_window" web_icon="contract,static/description/contract_icon.png"/>
 
         <!-- menu categories -->
         <!--
