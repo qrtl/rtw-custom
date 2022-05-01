@@ -1,2 +1,6 @@
 
 opportunity/__pycache__/
+
+opportunity/models/__pycache__/
+
+*.pyc
