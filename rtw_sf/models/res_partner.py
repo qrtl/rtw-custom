@@ -113,7 +113,8 @@ class rtw_sf_partner(models.Model):
     haihai_count = fields.Integer("Field25__c2")  # 配配送信数 OK
     region = fields.Char("Field34__c")  # 地域 OK
     stop_letter = fields.Boolean("LETTER__c", default=0)  # LETTER停止 OK
-    kin = fields.Char("Field36__c")  # 親類（親戚・家族） OK
+    # kin = fields.Char("Field36__c")  # 親類（親戚・家族） OK
+    kin = fields.Many2one('res.partner', "Field36__c", copy=False)
     mail3 = fields.Char("X3__c")  # メール3 OK
     company_name = fields.Char("Field37__c")  # 会社名 OK
     x20 = fields.Boolean("X20__c", default=0)  # OK
