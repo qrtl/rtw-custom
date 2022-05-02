@@ -6,6 +6,7 @@ from odoo import models, fields, api
 class opportunity(models.Model):
     _name = 'opportunity.opportunity'
     _description = 'opportunity.opportunity'
+    _rec_name = "subject_name"
 
     accounts = fields.Many2one('res.partner', "Account", copy=False)  # アカウント
     subject_name = fields.Char('Name')  # 案件名 E列
