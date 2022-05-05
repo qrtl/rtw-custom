@@ -18,6 +18,30 @@
             <field name="view_mode">kanban,tree,form</field>
         </record>
 
+        <record id="view_partner_form_sf_oppo" model="ir.ui.view">
+            <field name="name">partner sf oppo</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='button_box']" position="inside">
+
+                    <button name="action_open_opportunity" class="oe_stat_button" type="object" icon="fa-handshake-o">
+                        <div class="o_stat_info">
+                            <field name="opportunity_count" class="o_stat_value"/>
+                            <span class="o_stat_text">opportunity</span>
+                        </div>
+                    </button>
+                 </xpath>
+                <xpath expr="//page[@name='internal_notes']" position="after">
+                    <page name="opportunity" string="opportunity">
+                        <group>
+                            <field name="opportunity" />
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
 
 
         <!-- server action to the one above -->
@@ -44,7 +68,12 @@
         <!--
         <menuitem name="opportunity" id="opportunity.menu_1" parent="opportunity.menu_root"/>
         -->
-
+        <menuitem
+                id="menu_opportunity_tree"
+                action="opportunity.action_window"
+                parent="contacts.menu_contacts"
+                sequence="30"
+        />
         <!--
             <menuitem name="Menu 2" id="car.menu_2" parent="car.menu_root"/>
         -->
