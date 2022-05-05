@@ -100,7 +100,10 @@ class rtw_sf_case(models.Model):
 
     def _compute_percentage_of_fault(self):
         for rec in self:
-            pof = (1 - (rec.billing_coping_cost + rec.billed_freight_cost) / (rec.coping_cost + rec.freight_cost)) * 100
+            if rec.coping_cost == 0 and rec.freight_cost == 0:
+                pof = 0
+            else:
+                pof = (1 - (rec.billing_coping_cost + rec.billed_freight_cost) / (rec.coping_cost + rec.freight_cost)) * 100
             # print(pof)
             rec.percentage_of_fault = pof
 

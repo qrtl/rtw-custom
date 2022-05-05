@@ -8,6 +8,9 @@
             <field name="arch" type="xml">
                 <tree>
                     <field name="subject"/>
+                    <field name="status"/>
+                     <field name="created_date" string="CreatedDate"/>
+                     <field name="owner_id" string="OwnerId"/>
                     <!--          <field name="contacts"/>-->
                     <!--          <field name="accounts"/>-->
                     <!--          <field name="parents"/>-->
