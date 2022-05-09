@@ -6,13 +6,11 @@ class rtw_sf_partner_oppo(models.Model):
     _description = 'opportunity'
 
     opportunity = fields.One2many('opportunity.opportunity', inverse_name='accounts')  # ケース OK
-    opportunity_count = fields.Integer(string="opportunity count", compute="_compute_opportunity_count")
+    opportunity_count = fields.Integer(string="case count", compute="_compute_oppo_count")
 
-    def _compute_opportunity_count(self):
-        print("test")
+    def _compute_oppo_count(self):
         for rec in self:
             opportunity_count = self.env['opportunity.opportunity'].search_count([('accounts', '=', rec.id)])
-            print(opportunity_count)
             rec.opportunity_count = opportunity_count
 
     def action_open_opportunity(self):

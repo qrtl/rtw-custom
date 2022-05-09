@@ -5,6 +5,10 @@ from odoo import models, fields, api
 
 class opportunity(models.Model):
     _name = 'opportunity.opportunity'
+    _inherit = [
+        'mail.thread',
+        'mail.activity.mixin'
+    ]
     _description = 'opportunity.opportunity'
     _rec_name = "subject_name"
 
@@ -28,51 +32,51 @@ class opportunity(models.Model):
     campaign_id = fields.Char('CampaignId')  # キャンペーンId U列
     # has_opportunity_line_item = fields.Char('HasOpportunityLineItem')  # 段階名 V列
     # price_book2_id = fields.Char('Pricebook2Id')  # 段階名 W列
-    owner_id = fields.Char('OwnerId')  # 所有者Id X列
+    owner_id = fields.Many2one('res.users', 'OwnerId')  # 所有者Id X列 1
     created_date = fields.Datetime('CreatedDate')  # 作成日 Y列
-    created_by_id = fields.Char('CreatedById')  # 作成ID Z列
+    created_by_id = fields.Many2one('res.users', 'CreatedById')  # 作成ID Z列
     last_modified_date = fields.Datetime('LastModifiedDate')  # 最終更新日
-    last_modified_by_id = fields.Char('LastModifiedById')  # 最終更新者
+    last_modified_by_id = fields.Many2one('res.users', 'LastModifiedById')  # 最終更新者
     system_mod_stamp = fields.Datetime('SystemModstamp')  # システム最終更新日
     last_activity_date = fields.Datetime('LastActivityDate')  # システム最終活動日
     last_stage_changed_date = fields.Datetime('LastStageChangeDate')  # 最終ステージ変更日
     fiscal_year = fields.Integer('FiscalYear')  # 会計年度
     fiscal_quarter = fields.Integer('FiscalQuarter')  # 会計四半期
-    contact_id = fields.Char('ContactId')  # コンタクトId
+    contact_id = fields.Many2one('res.partner', 'ContactId')  # コンタクトId
     primary_partner_Account_id = fields.Char('PrimaryPartnerAccountId')  # プライマリーパートナーId
     # synced_quote_id = fields.Char('SyncedQuoteId')  # 同期引用Id
-    # contract_id = fields.Char('ContractId')  # 契約Id
+    contract_id = fields.Many2one('contract.contract', 'ContractId')  # 契約Id
     last_amount_changed_history_id = fields.Char('LastAmountChangedHistoryId')  # 最終金額変更履歴
     last_close_date_changed_history_id = fields.Char('LastCloseDateChangedHistoryId')  # 最終完了日変更履歴
     progress_check_date = fields.Datetime('Field1__c')  # 進捗確認日 AN列
     quote_number_by_hukusuke = fields.Char('Field2__c')  # 福助で採番される見積番号 AO列
     quote_number = fields.Char('Field3_del__c')  # 見積番号 AP列
     previous_amount = fields.Float('previousamount__c')  # 直前の金額 AQ列
-    opportunity_number = fields.Char('Field4__c')  # 商談番号 AR列
+    opportunity_number = fields.Char('Field4__c')  # 商談番号 AR列　
     last_amount_changed_datetime = fields.Datetime('lastamountchangedatetime__c')  # 最終金額変更日時 AS列
     presentation = fields.Integer('presentation__c')  # 通常プレゼン AT列 ★0，1，空白あり
     project_details = fields.Text('Field60__c')  # 案件詳細 AU列
-    Determined_on_the_day = fields.Integer('Determinedontheday__c')  # 当日確定 AV列 ★0，1，空白あり
-    delivery_date_unknown = fields.Integer('Field5__c')  # 納期不明 AW列 ★0，1，空白あり
+    Determined_on_the_day = fields.Boolean('Determinedontheday__c', default=0)  # 当日確定 AV列 ★0，1，空白あり
+    delivery_date_unknown = fields.Boolean('Field5__c', default=0)  # 納期不明 AW列 ★0，1，空白あり
     delivery_type = fields.Char('Field6__c')  # 納入先種別 AX列
     order_amount = fields.Float('Field7__c')  # 受注額 AY列
-    omotesando_visit = fields.Integer('Field87__c')  # 表参道来店 AZ列 ★0，1，空白あり
+    omotesando_visit = fields.Boolean('Field87__c', default=0)  # 表参道来店 AZ列 ★0，1，空白あり
     fair = fields.Char('Field22__c')  # Fair BA列
     million_amount = fields.Float('X100_amount__c')  # 100万金額 BB列
     million_order_amount = fields.Float('X100_amount_a__c')  # 100万受注額 BC列
     competition_a = fields.Char('Field16__c')  # 競合A BD列
-    fair_advance_plan = fields.Integer('Field34_plan__c')  # フェア事前プラン BE列 ★0，1，空白あり
+    fair_advance_plan = fields.Boolean('Field34_plan__c', default=0)  # フェア事前プラン BE列 ★0，1，空白あり
     product_others = fields.Char('Field14__c')  # 商品その他（補足） BF列
     our_strengths = fields.Text('Field30__c')  # 自社の強み BG列
-    million_order_count = fields.Integer('X100_count_a__c')  # 100万受注数 BH列 ★0，1，空白あり
-    total_million_order_count = fields.Integer('X100_count__c')  # 100万総数 BI列 ★0，1，空白あり
+    million_order_count = fields.Boolean('X100_count_a__c', default=0)  # 100万受注数 BH列 ★0，1，空白あり
+    total_million_order_count = fields.Boolean('X100_count__c', default=0)  # 100万総数 BI列 ★0，1，空白あり
     Use_Purpose = fields.Text('Field61__c')  # 使用用途(その他） BJ列
     reason_selection = fields.Text('Field62__c')  # 選定理由 BK列
     Use_Purpose1 = fields.Char('Field63_purpose__c')  # 使用用途① BL列
     Use_Purpose2 = fields.Char('Field64_purpose__c')  # 使用用途② BM列
     Use_Purpose3 = fields.Char('Field65_purpose__c')  # 使用用途③ BN列
-    other = fields.Integer('ITEM_other_08__c')  # その他 BO列 ★0，1，空白あり
-    ac = fields.Integer('CHAI_2__c')  # AC BP列 ★0，空白あり
+    other = fields.Boolean('ITEM_other_08__c', default=0)  # その他 BO列 ★0，1，空白あり
+    ac = fields.Boolean('CHAI_2__c', default=0)  # AC BP列 ★0，空白あり
     website = fields.Char('WEB__c')  # WEBサイト BQ列
     competitive_reason = fields.Text('Field31__c')  # 競合理由 BR列
     order_no = fields.Char('NO__c')  # 受注NO BS列
@@ -138,11 +142,11 @@ class opportunity(models.Model):
     product_list_sofa_ot1 = fields.Char('Sofa_OT__c')  # 商品リスト(ソファOT1) EA列
     product_list_sofa_ot2 = fields.Char('OT2__c')  # 商品リスト(ソファOT2) EB列
     rate = fields.Float('Field74__c')  # 掛率 EC列
-    dummy = fields.Integer('Field75__c')  # ﾀﾞﾐｰ ED列
+    dummy = fields.Boolean('Field75__c', defaule=0)  # ﾀﾞﾐｰ ED列
     lw_set_count = fields.Float('LW_5__c')  # LWセット数 EE列
-    trw_candidate = fields.Integer('TRW__c')  # TRW候補 EF列
-    questionnaire = fields.Integer('Field50__c')  # アンケート EG列
-    letter_of_acceptance = fields.Integer('Field51__c')  # 承諾書 EH列
+    trw_candidate = fields.Boolean('TRW__c', defaule=0)  # TRW候補 EF列
+    questionnaire = fields.Boolean('Field50__c', default=0)  # アンケート EG列
+    letter_of_acceptance = fields.Boolean('Field51__c', default=0)  # 承諾書 EH列
     how_to_get_photos = fields.Char('Field52__c')  # 写真入手方法 EI列
     memo_trw = fields.Text('TRW_2__c')  # TRWメモ EJ列
     examination = fields.Char('Field53__c')  # 審査 EK列
@@ -150,9 +154,9 @@ class opportunity(models.Model):
     photographer = fields.Char('Field55__c')  # Photographer EM列
     shooting_date = fields.Datetime('Field56__c')  # 撮影日 EN列
     installation_floor = fields.Char('Field57__c')  # 設置階 EO列
-    delivery_route_required_confirmation = fields.Integer('Field58__c')  # 搬入経路要確認 EP列
-    elevator_having = fields.Integer('EV__c')  # EV有 EQ列
-    budget_data = fields.Integer('SFDC_Budget__c')  # 予算データ ER列
+    delivery_route_required_confirmation = fields.Boolean('Field58__c', default=0)  # 搬入経路要確認 EP列
+    elevator_having = fields.Boolean('EV__c', default=0)  # EV有 EQ列
+    budget_data = fields.Boolean('SFDC_Budget__c', default=0)  # 予算データ ER列
     lost = fields.Float('Field59__c')  # ロスト ES列
     p_author = fields.Char('P__c')  # P作成者(代表） ET列
     product_list_sofa_bench1 = fields.Char('Bench1__c')  # 商品リスト（Bench1) EU列
@@ -165,7 +169,7 @@ class opportunity(models.Model):
     furigana = fields.Char('Field82__c')  # フリガナ FB列
     depot = fields.Char('Field83__c')  # デポ FC列
     depot_arrival_date = fields.Datetime('Field84__c')  # デポ着日 FD列
-    to_arrangement_depot = fields.Integer('Field85__c')  # 手配デポまで FE列
+    to_arrangement_depot = fields.Boolean('Field85__c', default=0)  # 手配デポまで FE列
     special_remarks = fields.Text('Field86__c')  # Photographer FF列
 
 #     value = fields.Integer()

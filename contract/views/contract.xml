@@ -18,8 +18,103 @@
             <field name="view_mode">kanban,tree,form</field>
         </record>
 
+        <record id="rtw_sf_contract_form" model="ir.ui.view">
+            <field name="name">rtw_sf_contract.form</field>
+            <field name="model">contract.contract</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="record_type_id" string="record_type_id"/>
+                                <field name="owner_id" string="owner_id"/>
+                                <field name="contract_number" string="contract_number"/>
+                                <field name="customer_signed_id" string="contract_number"/>
+                                <field name="customer_signed_date" string="contract_number"/>
+                                <field name="rate_black" string="rate_black"/>
+                                <field name="rate_green" string="rate_green"/>                                <field name="rate_black" string="rate_black"/>
+                                <field name="rate_black_personal" string="rate_black_personal"/>
+                                <field name="rate_green_personal" string="rate_green_personal"/>
+                                <field name="transaction_category" string="transaction_category"/>
+                                <field name="transaction_method" string="transaction_method"/>
+                                <field name="payment_terms1_personal" string="payment_terms1_personal"/>
+                                <field name="payment_terms2_personal" string="payment_terms2_personal"/>
+                                <field name="payment_terms_fare_personal" string="payment_terms_fare_personal"/>
+                                <field name="website" string="website"/>
+                                <field name="related_opportunity" string="related_opportunity"/>
+                            </group>
+                            <group>
+                                <field name="status" string="status"/>
+                                <field name="start_date" string="start_date"/>
+                                <field name="contract_term" string="contract_term"/>
+                                <field name="company_signed_id" string="company_signed_id"/>
+                                <field name="company_signed_date" string="company_signed_date"/>
+                                <field name="owner_expiration_notice" string="owner_expiration_notice"/>
+                                <field name="activated_date" string="activated_date"/>
+                                <field name="activated_by_id" string="activated_by_id"/>
+                                <field name="created_date" string="created_date"/>
+                                <field name="created_by_id" string="created_by_id"/>
+                                <field name="last_modified_date" string="last_modified_date"/>
+                                <field name="last_modified_by_id" string="last_modified_by_id"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="description" string="description"/>
+                        </group>
+                        <notebook>
+                            <page string="住所情報">
+                                <group>
+                                    <group string="請求先">
+                                        <field name="billing_country" string="billing_country"/>
+                                        <field name="billing_postal_code" string="billing_postal_code"/>
+                                        <field name="billing_state" string="billing_state"/>
+                                        <field name="billing_city" string="billing_city"/>
+                                        <field name="billing_Street" string="billing_Street"/>
+                                    </group>
+                                    <group string="配送先">
+                                        <field name="shipping_country" string="shipping_country"/>
+                                        <field name="shipping_postal_code" string="shipping_postal_code"/>
+                                        <field name="shipping_state" string="shipping_state"/>
+                                        <field name="shipping_city" string="shipping_city"/>
+                                        <field name="shipping_street" string="shipping_street"/>                                    </group>
+                                </group>
+                                <field name="last_modified_by_id" string="last_modified_by_id"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" modifiers="{}" id="activity_ids"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
 
 
+        <record id="view_partner_form_sf_contract" model="ir.ui.view">
+            <field name="name">partner sf contract</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='button_box']" position="inside">
+
+                    <button name="action_open_contract" class="oe_stat_button" type="object" icon="fa-book-o">
+                        <div class="o_stat_info">
+                            <field name="contract_count" class="o_stat_value"/>
+                            <span class="o_stat_text">contract</span>
+                        </div>
+                    </button>
+                </xpath>
+                <xpath expr="//page[@name='internal_notes']" position="after">
+                    <page name="contract" string="contract">
+                        <group>
+                            <field name="contract"/>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
         <!-- server action to the one above -->
         <!--
             <record model="ir.actions.server" id="car.action_server">
@@ -38,7 +133,8 @@
 
         <!-- Top menu item -->
 
-        <menuitem name="contract" id="contract.menu_root" action="contract.action_window" web_icon="contract,static/description/contract_icon.png"/>
+        <menuitem name="contract" id="contract.menu_root" action="contract.action_window"
+                  web_icon="contract,static/description/contract_icon.png"/>
 
         <!-- menu categories -->
         <!--
