@@ -43,7 +43,7 @@ class contract(models.Model):
     activated_date = fields.Datetime('ActivatedDate')  # 有効期限日 AE列
     status_code = fields.Char('StatusCode')  # 状態コード AF列
     description = fields.Text('Description')  # 説明 AG列
-    record_type_id = fields.Char('RecordTypeId')  # レコードタイプId AH列
+    record_type_id = fields.Many2one('rtw_sf.record_type', 'RecordTypeId')  # レコードタイプId AH列
     # name = fields.Char('Name')  # 名前 AI列　★空白のみ
     # is_deleted = fields.Char('IsDeleted')  # 削除フラグ AJ列　★0のみ
     contract_number = fields.Char('ContractNumber')  # 契約番号 AK列

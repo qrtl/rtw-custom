@@ -48,7 +48,7 @@ class rtw_sf_partner(models.Model):
 
     case = fields.One2many('rtw_sf_case', inverse_name='accounts')  # ケース OK
     # contact
-    account_id = fields.Char("AccountId")  # OK
+    account_id = fields.Many2one('res.partner', "AccountId")  # OK
     first_name = fields.Char("FirstName")  # OK
     last_name = fields.Char("LastName")  # OK
     record_type = fields.Char("RecordTypeId")  # OK
@@ -81,7 +81,7 @@ class rtw_sf_partner(models.Model):
                           help="Customers, business partners, and suppliers who need to send gifts, gifts, mid-year gifts, New Year's gifts, and year-end gifts"
                           )  # 進物 OK
     summer_greeting = fields.Boolean("Field3__c", default=0)  # 暑中見舞 OK
-    send_catalog = fields.Boolean("Field4__c2", default=0)  # カタログ配布 OK
+    send_catalog = fields.Char("Field4__c2", default=0)  # カタログ配布 OK
     gender = fields.Char("Field6__c")  # 性別 OK
     in_has = fields.Char("R__c")  # R社内所有者 OK
     do_not_dm = fields.Boolean("DoNotDM", default=0)  # DM不要 OK
