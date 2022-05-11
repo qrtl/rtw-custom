@@ -1,0 +1,794 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* contract
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-05-11 00:02+0000\n"
+"PO-Revision-Date: 2022-05-11 00:02+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: contract
+#: model_terms:ir.ui.view,arch_db:contract.view_partner_form_sf_contract
+msgid "<span class=\"o_stat_text\">contract</span>"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__accounts
+msgid "Account"
+msgstr ""
+
+#. module: contract
+#: model:ir.model,name:contract.model_res_partner
+msgid "Account.csv"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__activated_by_id
+msgid "ActivatedById"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__activated_date
+msgid "ActivatedDate"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__billing_city
+msgid "BillingCity"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__billing_country
+msgid "BillingCountry"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__billing_postal_code
+msgid "BillingPostalCode"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__billing_state
+msgid "BillingState"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__billing_Street
+msgid "BillingStreet"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__company_signed_date
+msgid "CompanySignedDate"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__company_signed_id
+msgid "CompanySignedId"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_res_partner__contract
+#: model:ir.model.fields,field_description:contract.field_res_users__contract
+msgid "Contract"
+msgstr "契約"
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__contract_number
+msgid "ContractNumber"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__contract_term
+msgid "ContractTerm"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__created_by_id
+msgid "CreatedById"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__created_date
+msgid "CreatedDate"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__customer_signed_date
+msgid "CustomerSignedDate"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__customer_signed_id
+msgid "CustomerSignedId"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__description
+msgid "Description"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__display_name
+#: model:ir.model.fields,field_description:contract.field_res_partner__display_name
+msgid "Display Name"
+msgstr "表示名"
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__tel_fax
+msgid "FAX__c"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__campaign_id
+msgid "Field12__c"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__transaction_method
+msgid "Field14__c"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__payment_terms_fare
+msgid "Field15__c"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__address_change
+msgid "Field17__c"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__transaction_terms_change
+msgid "Field18__c"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__change_description
+msgid "Field19__c"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__lending_reason
+msgid "Field1__c"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__consolidation
+msgid "Field20__c"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__name_change
+msgid "Field21__c"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__transaction_category
+msgid "Field26__c"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__related_opportunity
+msgid "Field27__c"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__partner_manager
+msgid "Field29__c"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__confirmed_by_superior
+msgid "Field2__c"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__transaction_method_personal
+msgid "Field37__c"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__payment_terms_fare_personal
+msgid "Field38__c"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__transaction_method_personal2
+msgid "Field39__c"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__implementation_plan
+msgid "Field3__c"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__rate_black
+msgid "Field40__c"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__rate_green
+msgid "Field41__c"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__rate_black_personal
+msgid "Field42__c"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__rate_green_personal
+msgid "Field43__c"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__update_reason
+msgid "Field5__c"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__long_term_lending
+msgid "Field7__c"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__classification1
+msgid "Field8__c"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__message_channel_ids
+msgid "Followers (Channels)"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,help:contract.field_contract_contract__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__id
+#: model:ir.model.fields,field_description:contract.field_res_partner__id
+msgid "ID"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,help:contract.field_contract_contract__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,help:contract.field_contract_contract__message_needaction
+#: model:ir.model.fields,help:contract.field_contract_contract__message_unread
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,help:contract.field_contract_contract__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract____last_update
+#: model:ir.model.fields,field_description:contract.field_res_partner____last_update
+msgid "Last Modified on"
+msgstr "最終更新日"
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__last_modified_by_id
+msgid "LastModifiedById"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__last_modified_date
+msgid "LastModifiedDate"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__message_main_attachment_id
+msgid "Main Attachment"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,help:contract.field_contract_contract__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,help:contract.field_contract_contract__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,help:contract.field_contract_contract__message_unread_counter
+msgid "Number of unread messages"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__owner_expiration_notice
+msgid "OwnerExpirationNotice"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__owner_id
+msgid "OwnerId"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__record_type_id
+msgid "RecordTypeId"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__activity_user_id
+msgid "Responsible User"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__sales_amount_declaration
+msgid "Sales_amount_declaration__c"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__shipping_city
+msgid "ShippingCity"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__shipping_country
+msgid "ShippingCountry"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__shipping_postal_code
+msgid "ShippingPostalCode"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__shipping_state
+msgid "ShippingState"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__shipping_street
+msgid "ShippingStreet"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__special_terms
+msgid "SpecialTerms"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__start_date
+msgid "StartDate"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__status
+msgid "Status"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,help:contract.field_contract_contract__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__status_code
+msgid "StatusCode"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__system_mod_stamp
+msgid "SystemModstamp"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,help:contract.field_contract_contract__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__message_unread
+msgid "Unread Messages"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__website
+msgid "WEB__c"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__payment_terms1_personal
+msgid "X1_100__c"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__payment_terms2_personal
+msgid "X2_100__c"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__classification2
+msgid "X2__c"
+msgstr ""
+
+#. module: contract
+#: model_terms:ir.ui.view,arch_db:contract.rtw_sf_contract_form
+msgid "activated_by_id"
+msgstr "有効化設定者"
+
+#. module: contract
+#: model_terms:ir.ui.view,arch_db:contract.rtw_sf_contract_form
+msgid "activated_date"
+msgstr "有効日"
+
+#. module: contract
+#: model_terms:ir.ui.view,arch_db:contract.rtw_sf_contract_form
+msgid "billing_Street"
+msgstr "番地"
+
+#. module: contract
+#: model_terms:ir.ui.view,arch_db:contract.rtw_sf_contract_form
+msgid "billing_city"
+msgstr "市町村"
+
+#. module: contract
+#: model_terms:ir.ui.view,arch_db:contract.rtw_sf_contract_form
+msgid "billing_country"
+msgstr "国"
+
+#. module: contract
+#: model_terms:ir.ui.view,arch_db:contract.rtw_sf_contract_form
+msgid "billing_postal_code"
+msgstr "郵便番号"
+
+#. module: contract
+#: model_terms:ir.ui.view,arch_db:contract.rtw_sf_contract_form
+msgid "billing_state"
+msgstr "都道府県"
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_res_partner__contract_count
+#: model:ir.model.fields,field_description:contract.field_res_users__contract_count
+msgid "case count"
+msgstr ""
+
+#. module: contract
+#: model_terms:ir.ui.view,arch_db:contract.rtw_sf_contract_form
+msgid "company_signed_date"
+msgstr "自社調印日"
+
+#. module: contract
+#: model_terms:ir.ui.view,arch_db:contract.rtw_sf_contract_form
+msgid "company_signed_id"
+msgstr "自社調印者"
+
+#. module: contract
+#: model:ir.actions.act_window,name:contract.action_window
+#: model:ir.ui.menu,name:contract.menu_root
+#: model_terms:ir.ui.view,arch_db:contract.view_partner_form_sf_contract
+msgid "contract"
+msgstr "契約"
+
+#. module: contract
+#: model:ir.model,name:contract.model_contract_contract
+msgid "contract.contract"
+msgstr ""
+
+#. module: contract
+#: model_terms:ir.ui.view,arch_db:contract.contract_list
+#: model_terms:ir.ui.view,arch_db:contract.rtw_sf_contract_form
+msgid "contract_number"
+msgstr "契約番号"
+
+#. module: contract
+#: model_terms:ir.ui.view,arch_db:contract.rtw_sf_contract_form
+msgid "contract_term"
+msgstr "契約期間（月）"
+
+#. module: contract
+#: model_terms:ir.ui.view,arch_db:contract.rtw_sf_contract_form
+msgid "created_by_id"
+msgstr "作成者"
+
+#. module: contract
+#: model_terms:ir.ui.view,arch_db:contract.rtw_sf_contract_form
+msgid "created_date"
+msgstr "作成日"
+
+#. module: contract
+#: model_terms:ir.ui.view,arch_db:contract.rtw_sf_contract_form
+msgid "customer_signed_date"
+msgstr "顧客調印日"
+
+#. module: contract
+#: model_terms:ir.ui.view,arch_db:contract.rtw_sf_contract_form
+msgid "customer_signed_id"
+msgstr "顧客調印者"
+
+#. module: contract
+#: model_terms:ir.ui.view,arch_db:contract.rtw_sf_contract_form
+msgid "description"
+msgstr "説明"
+
+#. module: contract
+#: model_terms:ir.ui.view,arch_db:contract.rtw_sf_contract_form
+msgid "last_modified_by_id"
+msgstr "最終更新者"
+
+#. module: contract
+#: model_terms:ir.ui.view,arch_db:contract.rtw_sf_contract_form
+msgid "last_modified_date"
+msgstr "最終更新日"
+
+#. module: contract
+#: model_terms:ir.ui.view,arch_db:contract.rtw_sf_contract_form
+msgid "owner_expiration_notice"
+msgstr "所有者に対する終了通知"
+
+#. module: contract
+#: model_terms:ir.ui.view,arch_db:contract.rtw_sf_contract_form
+msgid "owner_id"
+msgstr "契約所有者"
+
+#. module: contract
+#: model_terms:ir.ui.view,arch_db:contract.rtw_sf_contract_form
+msgid "payment_terms1_personal"
+msgstr "支払条件1"
+
+#. module: contract
+#: model_terms:ir.ui.view,arch_db:contract.rtw_sf_contract_form
+msgid "payment_terms2_personal"
+msgstr "支払条件2"
+
+#. module: contract
+#: model_terms:ir.ui.view,arch_db:contract.rtw_sf_contract_form
+msgid "payment_terms_fare_personal"
+msgstr "支払条件運賃"
+
+#. module: contract
+#: model_terms:ir.ui.view,arch_db:contract.rtw_sf_contract_form
+msgid "rate_black"
+msgstr "掛率（黒）"
+
+#. module: contract
+#: model_terms:ir.ui.view,arch_db:contract.rtw_sf_contract_form
+msgid "rate_black_personal"
+msgstr "掛率（黒）個"
+
+#. module: contract
+#: model_terms:ir.ui.view,arch_db:contract.rtw_sf_contract_form
+msgid "rate_green"
+msgstr "掛率（緑）"
+
+#. module: contract
+#: model_terms:ir.ui.view,arch_db:contract.rtw_sf_contract_form
+msgid "rate_green_personal"
+msgstr "掛率（緑）個"
+
+#. module: contract
+#: model_terms:ir.ui.view,arch_db:contract.rtw_sf_contract_form
+msgid "record_type_id"
+msgstr "契約レコードタイプ"
+
+#. module: contract
+#: model_terms:ir.ui.view,arch_db:contract.rtw_sf_contract_form
+msgid "related_opportunity"
+msgstr "関連商談"
+
+#. module: contract
+#: model:ir.model.fields,field_description:contract.field_contract_contract__sales_amount_results
+msgid "sales_results__c"
+msgstr ""
+
+#. module: contract
+#: model_terms:ir.ui.view,arch_db:contract.rtw_sf_contract_form
+msgid "shipping_city"
+msgstr "市町村"
+
+#. module: contract
+#: model_terms:ir.ui.view,arch_db:contract.rtw_sf_contract_form
+msgid "shipping_country"
+msgstr "国"
+
+#. module: contract
+#: model_terms:ir.ui.view,arch_db:contract.rtw_sf_contract_form
+msgid "shipping_postal_code"
+msgstr "郵便番号"
+
+#. module: contract
+#: model_terms:ir.ui.view,arch_db:contract.rtw_sf_contract_form
+msgid "shipping_state"
+msgstr "都道府県"
+
+#. module: contract
+#: model_terms:ir.ui.view,arch_db:contract.rtw_sf_contract_form
+msgid "shipping_street"
+msgstr "番地"
+
+#. module: contract
+#: model_terms:ir.ui.view,arch_db:contract.rtw_sf_contract_form
+msgid "start_date"
+msgstr "契約開始日"
+
+#. module: contract
+#: model_terms:ir.ui.view,arch_db:contract.rtw_sf_contract_form
+msgid "status"
+msgstr "状況"
+
+#. module: contract
+#: model_terms:ir.ui.view,arch_db:contract.rtw_sf_contract_form
+msgid "transaction_category"
+msgstr "取引区分"
+
+#. module: contract
+#: model_terms:ir.ui.view,arch_db:contract.rtw_sf_contract_form
+msgid "transaction_method"
+msgstr "取引方法"
+
+#. module: contract
+#: model_terms:ir.ui.view,arch_db:contract.rtw_sf_contract_form
+msgid "website"
+msgstr "WEBサイト"
+
+#. module: contract
+#: model:ir.model.fields.selection,name:contract.selection__contract_contract__status__draft
+msgid "ドラフト"
+msgstr ""
+
+#. module: contract
+#: model_terms:ir.ui.view,arch_db:contract.rtw_sf_contract_form
+msgid "住所情報"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields.selection,name:contract.selection__contract_contract__status__active
+msgid "有効"
+msgstr ""
+
+#. module: contract
+#: model:ir.model.fields.selection,name:contract.selection__contract_contract__status__close
+msgid "終了"
+msgstr ""
+
+#. module: contract
+#: model_terms:ir.ui.view,arch_db:contract.rtw_sf_contract_form
+msgid "請求先"
+msgstr ""
+
+#. module: contract
+#: model_terms:ir.ui.view,arch_db:contract.rtw_sf_contract_form
+msgid "配送先"
+msgstr ""

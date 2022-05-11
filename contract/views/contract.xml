@@ -15,7 +15,7 @@
         <record model="ir.actions.act_window" id="contract.action_window">
             <field name="name">contract</field>
             <field name="res_model">contract.contract</field>
-            <field name="view_mode">kanban,tree,form</field>
+            <field name="view_mode">tree,kanban,form</field>
         </record>
 
         <record id="rtw_sf_contract_form" model="ir.ui.view">
@@ -29,8 +29,8 @@
                                 <field name="record_type_id" string="record_type_id"/>
                                 <field name="owner_id" string="owner_id"/>
                                 <field name="contract_number" string="contract_number"/>
-                                <field name="customer_signed_id" string="contract_number"/>
-                                <field name="customer_signed_date" string="contract_number"/>
+                                <field name="customer_signed_id" string="customer_signed_id"/>
+                                <field name="customer_signed_date" string="customer_signed_date"/>
                                 <field name="rate_black" string="rate_black"/>
                                 <field name="rate_green" string="rate_green"/>                                <field name="rate_black" string="rate_black"/>
                                 <field name="rate_black_personal" string="rate_black_personal"/>
@@ -78,7 +78,7 @@
                                         <field name="shipping_city" string="shipping_city"/>
                                         <field name="shipping_street" string="shipping_street"/>                                    </group>
                                 </group>
-                                <field name="last_modified_by_id" string="last_modified_by_id"/>
+<!--                                <field name="last_modified_by_id" string="last_modified_by_id"/>-->
                             </page>
                         </notebook>
                     </sheet>

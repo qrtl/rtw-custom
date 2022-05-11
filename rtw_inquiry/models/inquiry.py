@@ -63,3 +63,4 @@ class contract(models.Model):
         ('22', '訪問'),
     ], string="Field3__c",
      default='')   # 対応
+    product_name1 = fields.Char("Field37__c")
