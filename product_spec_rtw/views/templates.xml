@@ -12,7 +12,8 @@
                     <field name="depth" class="depth"/>
                     <field name="sh" class="sh"/>
                     <field name="ah" class="ah"/>
-                    <field name="cloth" class="cloth(M)"/>
+                    <field name="cloth" class="cloth A(M)"/>
+                    <field name="cloth_b" class="cloth B(M)"/>
                     <field name="leather" class="leather(sheet)"/>
                     <field name="leather_ds" class="leather(ds)"/>
                     <field name="sai" class="sai"/>

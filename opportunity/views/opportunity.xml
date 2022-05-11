@@ -1,0 +1,346 @@
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+        <record model="ir.ui.view" id="opportunity_list">
+            <field name="name">opportunity_list</field>
+            <field name="model">opportunity.opportunity</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="subject_name" string="subject_name"/>
+                    <field name="stage_name" string="stage_name"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- actions opening views on models -->
+        <record model="ir.actions.act_window" id="opportunity.action_window">
+            <field name="name">opportunity</field>
+            <field name="res_model">opportunity.opportunity</field>
+            <field name="view_mode">tree,kanban,form</field>
+        </record>
+
+        <record id="view_partner_form_sf_oppo" model="ir.ui.view">
+            <field name="name">partner sf oppo</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='button_box']" position="inside">
+
+                    <button name="action_open_opportunity" class="oe_stat_button" type="object" icon="fa-handshake-o">
+                        <div class="o_stat_info">
+                            <span class="o_field_widget o_stat_info"><field name="opportunity_count"/></span>
+                            <span class="o_stat_text">opportunity</span>
+                        </div>
+                    </button>
+                </xpath>
+                <xpath expr="//page[@name='internal_notes']" position="after">
+                    <page name="opportunity" string="opportunity">
+                        <group>
+                            <field name="opportunity"/>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="rtw_sf_oppo_form" model="ir.ui.view">
+            <field name="name">rtw_sf_oppo.form</field>
+            <field name="model">opportunity.opportunity</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group string="詳細">
+                            <group>
+                                <field name="owner_id" string="owner_id"/>
+                                <field name="opportunity_number" string="opportunity_number"/>
+                                <field name="order_no" string="order_no"/>
+                                <field name="subject_name" string="subject_name"/>
+                                <field name="quote_number_by_hukusuke" string="quote_number_by_hukusuke"/>
+                                <field name="quote_number" string="quote_number"/>
+                                <field name="contact_id" string="contact_id"/>
+                                <field name="procurement_company" string="procurement_company"/>
+                                <field name="type" string="type"/>
+                                <field name="delivery_type" string="delivery_type"/>
+                                <field name="facility_name" string="facility_name"/>
+                                <field name="website" string="website"/>
+                                <field name="Use_Purpose1" string="Use_Purpose1"/>
+                                <field name="Use_Purpose2" string="Use_Purpose2"/>
+                                <field name="Use_Purpose3" string="Use_Purpose3"/>
+                                <field name="Use_Purpose" string="Use_Purpose"/>
+                                <field name="lead_source" string="lead_source"/>
+                                <field name="action1" string="action1"/>
+                                <field name="action2" string="action2"/>
+                                <field name="omotesando_visit" string="omotesando_visit"/>
+                            </group>
+                            <group>
+                                <field name="amount" string="amount"/>
+                                <field name="previous_amount" string="previous_amount"/>
+                                <field name="sample_sale" string="sample_sale"/>
+                                <field name="sample_sales_amount" string="sample_sales_amount"/>
+                                <field name="expected_revenue" string="expected_revenue"/>
+                                <field name="rate" string="rate"/>
+                                <field name="progress_check_date" string="progress_check_date"/>
+                                <field name="close_date" string="close_date"/>
+                                <field name="completion_scheduled_date" string="completion_scheduled_date"/>
+                                <field name="delivery_date_unknown" string="delivery_date_unknown"/>
+                                <field name="nextstep" string="nextstep"/>
+                                <field name="stage_name" string="stage_name"/>
+                                <field name="probability" string="probability"/>
+                                <field name="accuracy" string="accuracy"/>
+                                <field name="forecast_category_name" string="forecast_category_name"/>
+                                <field name="push_c" string="push_c"/>
+                                <field name="campaign_id" string="campaign_id"/>
+                                <field name="created_by_id" string="created_by_id"/>
+                                <field name="last_modified_by_id" string="last_modified_by_id"/>
+                            </group>
+
+                        </group>
+                        <group>
+                            <field name="description" string="description"/>
+                            <field name="progress_check" string="progress_check"/>
+                        </group>
+                        <notebook>
+                            <page string="納品先情報">
+                                <group>
+                                    <group>
+                                        <field name="furigana" string="furigana"/>
+                                        <field name="person_name" string="person_name"/>
+                                        <field name="tel" string="tel"/>
+                                        <field name="installation_floor" string="installation_floor"/>
+                                        <field name="elevator_having" string="elevator_having"/>
+                                        <field name="address_no" string="address_no"/>
+                                        <field name="address" string="address"/>
+                                    </group>
+                                    <group>
+                                        <field name="to_arrangement_depot" string="to_arrangement_depot"/>
+                                        <field name="depot" string="depot"/>
+                                        <field name="depot_arrival_date" string="depot_arrival_date"/>
+                                        <field name="On_site_delivery_date" string="On_site_delivery_date"/>
+                                        <field name="delivery_route_required_confirmation"
+                                               string="delivery_route_required_confirmation"/>
+                                    </group>
+
+                                </group>
+                                <group>
+                                    <field name="special_remarks" string="special_remarks"/>
+                                </group>
+                            </page>
+                            <page string="フェア情報">
+                                <group>
+                                    <group>
+                                        <field name="Determined_on_the_day" string="Determined_on_the_day"/>
+                                        <field name="branch" string="branch"/>
+                                        <field name="fair" string="fair"/>
+                                    </group>
+                                    <group>
+                                        <field name="year" string="year"/>
+                                        <field name="term" string="term"/>
+                                        <field name="overlap" string="overlap"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="プレゼン">
+                                <group>
+                                    <group>
+                                        <field name="presentation" string="presentation"/>
+                                        <field name="p_author" string="p_author"/>
+                                        <field name="memo" string="memo"/>
+                                    </group>
+                                    <group>
+                                        <field name="fair_advance_plan" string="fair_advance_plan"/>
+                                        <field name="pre_contract_presentation" string="pre_contract_presentation"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="商品情報">
+                                <notebook>
+                                    <page string="1">
+                                        <group>
+                                            <group>
+                                                <field name="product_list_dt1" string="product_list_dt1"/>
+                                                <field name="product_list_dt2" string="product_list_dt2"/>
+                                                <field name="product_list_sofa_bench1" string="product_list_sofa_bench1"/>
+                                                <field name="product_list_sofa_bench2" string="product_list_sofa_bench2"/>
+                                            </group>
+                                            <group>
+                                                <field name="product_list_chair1" string="product_list_chair1"/>
+                                                <field name="product_list_chair2" string="product_list_chair2"/>
+                                                <field name="product_list_chair3" string="product_list_chair3"/>
+                                                <field name="product_list_chair4" string="product_list_chair4"/>
+                                            </group>
+                                        </group>
+                                    </page>
+                                    <page string="2">
+                                        <group>
+                                            <group>
+                                                <field name="product_list_sofa1" string="product_list_sofa1"/>
+                                                <field name="product_list_sofa2" string="product_list_sofa2"/>
+                                                <field name="product_list_sofa3" string="product_list_sofa3"/>
+                                                <field name="product_list_sofa_ot1" string="product_list_sofa_ot1"/>
+                                                <field name="product_list_sofa_ot2" string="product_list_sofa_ot2"/>
+                                            </group>
+                                            <group>
+                                                <field name="product_list_ec1" string="product_list_ec1"/>
+                                                <field name="product_list_ec2" string="product_list_ec2"/>
+                                                <field name="product_list_ec3" string="product_list_ec3"/>
+                                                <field name="product_list_ot_st1" string="product_list_ot_st1"/>
+                                                <field name="product_list_ot_st2" string="product_list_ot_st2"/>
+                                            </group>
+                                        </group>
+                                    </page>
+                                    <page string="3">
+                                        <group>
+                                            <group>
+                                                <field name="product_list_lt1" string="product_list_lt1"/>
+                                                <field name="product_list_lt2" string="product_list_lt2"/>
+                                                <field name="product_list_st1" string="product_list_st1"/>
+                                                <field name="product_list_st2" string="product_list_st2"/>
+                                            </group>
+                                            <group>
+                                                <field name="product_list_board1" string="product_list_board1"/>
+                                                <field name="product_list_board2" string="product_list_board2"/>
+                                                <field name="product_list_rug" string="product_list_rug"/>
+                                                <field name="product_list_other" string="product_list_other"/>
+                                                <field name="product_others" string="product_others"/>
+                                            </group>
+                                        </group>
+                                    </page>
+                                </notebook>
+                            </page>
+                            <page string="戦略商品">
+                                <group>
+                                    <group>
+                                        <field name="lf_set_count" string="lf_set_count"/>
+                                        <field name="lw_set_count" string="lw_set_count"/>
+                                        <field name="diana_count" string="diana_count"/>
+                                        <field name="beatrix_count" string="beatrix_count"/>
+                                        <field name="jabara_count" string="jabara_count"/>
+                                    </group>
+                                    <group>
+
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="セット内容">
+                                <group>
+                                    <group>
+                                        <field name="l_set" string="l_set"/>
+                                    </group>
+                                    <group></group>
+                                </group>
+                            </page>
+                            <page string="競合情報">
+                                <group>
+                                    <group>
+                                        <field name="competition_a" string="competition_a"/>
+                                        <field name="competition_b" string="competition_b"/>
+                                        <field name="competition_other" string="competition_other"/>
+                                    </group>
+                                    <group>
+                                        <field name="competitive_product_d" string="competitive_product_d"/>
+                                        <field name="competitive_product_l" string="competitive_product_l"/>
+                                        <field name="competitive_product_other" string="competitive_product_other"/>
+                                        <field name="competitive_product_name" string="competitive_product_name"/>
+                                    </group>
+                                </group>
+                                <group>
+                                    <field name="competitive_reason" string="competitive_reason"/>
+                                    <field name="our_strengths" string="our_strengths"/>
+                                    <field name="other_strengths" string="other_strengths"/>
+                                    <field name="result" string="result"/>
+                                </group>
+                            </page>
+                            <page string="The Ritzwell Works">
+                                <group string="候補には上長承認が必要です">
+                                    <group>
+                                        <field name="trw_candidate" string="trw_candidate"/>
+                                        <field name="examination" string="examination"/>
+                                    </group>
+                                    <group>
+                                        <field name="letter_of_acceptance" string="letter_of_acceptance"/>
+                                        <field name="questionnaire" string="questionnaire"/>
+                                        <field name="how_to_get_photos" string="how_to_get_photos"/>
+                                        <field name="photographer" string="photographer"/>
+                                        <field name="shooting_date" string="shooting_date"/>
+                                        <field name="cost" string="cost"/>
+                                    </group>
+                                </group>
+                                <group>
+                                    <field name="memo_trw" string="memo_trw"/>
+                                </group>
+                            </page>
+                            <page string="システム管理者チェック用">
+                                <group>
+                                    <group>
+                                        <field name="budget_data" string="budget_data"/>
+                                        <field name="opportunity_completion_date" string="opportunity_completion_date"/>
+                                        <field name="dummy" string="dummy"/>
+                                    </group>
+                                    <group>
+                                        <field name="order_amount" string="order_amount"/>
+                                        <field name="lost" string="lost"/>
+                                        <field name="million_amount" string="million_amount"/>
+                                        <field name="million_order_amount" string="million_order_amount"/>
+                                        <field name="million_order_count" string="million_order_count"/>
+                                        <field name="total_million_order_count" string="total_million_order_count"/>
+                                    </group>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" modifiers="{}" id="activity_ids"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                        <field name="Determined_on_the_day" widget="Determined_on_the_day"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+
+        <!-- server action to the one above -->
+        <!--
+            <record model="ir.actions.server" id="car.action_server">
+              <field name="name">car server</field>
+              <field name="model_id" ref="model_car_car"/>
+              <field name="state">code</field>
+              <field name="code">
+                action = {
+                  "type": "ir.actions.act_window",
+                  "view_mode": "tree,form",
+                  "res_model": model._name,
+                }
+              </field>
+            </record>
+        -->
+
+        <!-- Top menu item -->
+
+        <menuitem name="opportunity" id="opportunity.menu_root" action="opportunity.action_window"
+                  web_icon="opportunity,static/description/opportunity_icon.png"/>
+
+        <!-- menu categories -->
+        <!--
+        <menuitem name="opportunity" id="opportunity.menu_1" parent="opportunity.menu_root"/>
+        -->
+        <menuitem
+                id="menu_opportunity_tree"
+                action="opportunity.action_window"
+                parent="contacts.menu_contacts"
+                sequence="30"
+        />
+        <!--
+            <menuitem name="Menu 2" id="car.menu_2" parent="car.menu_root"/>
+        -->
+        <!-- actions -->
+        <!--
+        <menuitem name="List" id="opportunity.menu_1_list" parent="opportunity.menu_1"
+                  action="opportunity.action_window"/>
+        -->
+        <!--
+            <menuitem name="Server to list" id="car" parent="car.menu_2"
+                      action="car.action_server"/>
+        -->
+    </data>
+</odoo>
