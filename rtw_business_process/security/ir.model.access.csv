@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_rtw_business_process_rtw_business_process,rtw_business_process,model_rtw_sf_business_process,base.group_user,1,1,1,1
