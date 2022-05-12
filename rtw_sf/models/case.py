@@ -22,14 +22,14 @@ class rtw_sf_case(models.Model):
     supplied_company = fields.Char('SuppliedCompany')  # N列
     type = fields.Char('Type')  # O列
     status = fields.Selection([('new', '新規'),
-                                ('sales_representative_is_responding', '営業担当対応中'),
-                                ('sales_representative_response_completed', '営業担当対応完了'),
-                                ('under_discussion', '協議中'),
-                                ('pending', '保留'),
-                                ('under_investigation', '調査中'),
-                                ('processing_cost', 'コスト処理中'),
-                                ('close', 'クローズ')], string="Status",
-                                 default='new')  # ステータス
+                               ('sales_representative_is_responding', '営業担当対応中'),
+                               ('sales_representative_response_completed', '営業担当対応完了'),
+                               ('under_discussion', '協議中'),
+                               ('pending', '保留'),
+                               ('under_investigation', '調査中'),
+                               ('processing_cost', 'コスト処理中'),
+                               ('close', 'クローズ')], string="Status",
+                              default='new')  # ステータス
     reason = fields.Char('Reason')  # 理由
     origin = fields.Char('Origin')  # 発生場所 v
     is_visible_in_self_service = fields.Boolean('IsVisibleInSelfService')  # 表示確認
@@ -95,24 +95,26 @@ class rtw_sf_case(models.Model):
     product_number = fields.Char('Field49__c')  # 品番
     specification = fields.Char('Field50__c')  # 仕様
     quantity = fields.Integer('Field51__c')  # 数量
-    percentage_of_fault = fields.Float('percentage of fault', compute="_compute_percentage_of_fault")
-    final_cost_total_sales = fields.Float('Final cost/total sales', compute="_compute_final_cost_total_sales")
+    percentage_of_fault = fields.Float('percentage of fault')
+    # , compute="_compute_percentage_of_fault")
+    final_cost_total_sales = fields.Float('Final cost/total sales')
+    # , compute="_compute_final_cost_total_sales")
 
-    def _compute_percentage_of_fault(self):
-        for rec in self:
-            if rec.coping_cost == 0 and rec.freight_cost == 0:
-                pof = 0
-            else:
-                pof = (1 - (rec.billing_coping_cost + rec.billed_freight_cost) / (rec.coping_cost + rec.freight_cost)) * 100
-            # print(pof)
-            rec.percentage_of_fault = pof
-
-    def _compute_final_cost_total_sales(self):
-        for rec in self:
-            fcts = (
-                    (rec.coping_cost + rec.freight_cost)
-                    -
-                    (rec.billing_coping_cost + rec.billed_freight_cost)
-            ) / rec.total_sales * 100
-            print(fcts)
-            rec.final_cost_total_sales = fcts
+    # def _compute_percentage_of_fault(self):
+    #     for rec in self:
+    #         if rec.coping_cost == 0 and rec.freight_cost == 0:
+    #             pof = 0
+    #         else:
+    #             pof = (1 - (rec.billing_coping_cost + rec.billed_freight_cost) / (rec.coping_cost + rec.freight_cost)) * 100
+    #         # print(pof)
+    #         rec.percentage_of_fault = pof
+    #
+    # def _compute_final_cost_total_sales(self):
+    #     for rec in self:
+    #         fcts = (
+    #                 (rec.coping_cost + rec.freight_cost)
+    #                 -
+    #                 (rec.billing_coping_cost + rec.billed_freight_cost)
+    #         ) / rec.total_sales * 100
+    #         print(fcts)
+    #         rec.final_cost_total_sales = fcts

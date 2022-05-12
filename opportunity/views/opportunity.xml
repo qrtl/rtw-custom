@@ -49,6 +49,18 @@
             <field name="arch" type="xml">
                 <form>
                     <sheet>
+                        <group>
+                            <group>
+                                <field name="order_no" string="order_no"/>
+                                <field name="accounts" string="accounts"/>
+                                <field name="opportunity_type" string="opportunity_type"/>
+
+                            </group>
+                            <group>
+                                <field name="stage_name" string="stage_name"/>
+                                <field name="amount" string="amount"/>
+                            </group>
+                        </group>
                         <group string="詳細">
                             <group>
                                 <field name="owner_id" string="owner_id"/>
