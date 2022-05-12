@@ -5,6 +5,10 @@ from odoo import models, fields, api
 
 class contract(models.Model):
     _name = 'contract.contract'
+    _inherit = [
+        'mail.thread',
+        'mail.activity.mixin'
+    ]
     _description = 'contract.contract'
 
     accounts = fields.Many2one('res.partner', "Account", copy=False)  # アカウント
@@ -24,27 +28,30 @@ class contract(models.Model):
     shipping_postal_code = fields.Char('ShippingPostalCode')  # 配送先郵便番号 P列
     shipping_country = fields.Char('ShippingCountry')  # 配送先国名 Q列
     contract_term = fields.Integer('ContractTerm')  # 契約期間 U列
-    owner_id = fields.Char('OwnerId')  # 所有者Id V列
-    status = fields.Char('Status')  # ステータス W列
-    company_signed_id = fields.Char('CompanySignedId')  # 会社署名Id X列
+    owner_id = fields.Many2one('res.users', 'OwnerId')  # 所有者Id V列
+    status = fields.Selection([('draft', 'ドラフト'),
+                               ('close', '終了'),
+                               ('active', '有効')], string='Status',
+                              default="draft")  # ステータス W列
+    company_signed_id = fields.Many2one('res.users', 'CompanySignedId')  # 会社署名Id X列
     company_signed_date = fields.Datetime('CompanySignedDate')  # 会社署名日 Y列
-    customer_signed_id = fields.Char('CustomerSignedId')  # 顧客署名Id Z列
+    customer_signed_id = fields.Many2one('res.partner', 'CustomerSignedId')  # 顧客署名Id Z列
     # customer_signed_title = fields.Char('CustomerSignedTitle')  # 顧客署名表題 AA列　★空白のみ
     customer_signed_date = fields.Datetime('CustomerSignedDate')  # 顧客署名日 AB列
     special_terms = fields.Text('SpecialTerms')  # 特別条件 AC列
-    activated_by_id = fields.Char('ActivatedById')  # 有効化Id AD列
+    activated_by_id = fields.Many2one('res.users', 'ActivatedById')  # 有効化Id AD列
     activated_date = fields.Datetime('ActivatedDate')  # 有効期限日 AE列
     status_code = fields.Char('StatusCode')  # 状態コード AF列
     description = fields.Text('Description')  # 説明 AG列
-    record_type_id = fields.Char('RecordTypeId')  # レコードタイプId AH列
+    record_type_id = fields.Many2one('rtw_sf.record_type', 'RecordTypeId')  # レコードタイプId AH列
     # name = fields.Char('Name')  # 名前 AI列　★空白のみ
     # is_deleted = fields.Char('IsDeleted')  # 削除フラグ AJ列　★0のみ
     contract_number = fields.Char('ContractNumber')  # 契約番号 AK列
     # last_approved_date = fields.Datetime('LastApprovedDate')  # 最終承認日 AL列　★空白のみ
     created_date = fields.Datetime('CreatedDate')  # 作成日 AM列
-    created_by_id = fields.Char('CreatedById')  # 作成ID AN列
+    created_by_id = fields.Many2one('res.users', 'CreatedById')  # 作成ID AN列
     last_modified_date = fields.Datetime('LastModifiedDate')  # 最終更新日 AO列
-    last_modified_by_id = fields.Char('LastModifiedById')  # 最終更新者 AP列
+    last_modified_by_id = fields.Many2one('res.users', 'LastModifiedById')  # 最終更新者 AP列
     system_mod_stamp = fields.Datetime('SystemModstamp')  # システム最終更新日 AQ列
     # last_activity_date = fields.Datetime('LastActivityDate')  # システム最終活動日 AR列　★空白のみ
     lending_reason = fields.Text('Field1__c')  # 貸出理由 AS列
