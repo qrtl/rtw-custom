@@ -16,7 +16,7 @@ class rtw_sf_partner_oppo(models.Model):
     def action_open_contract(self):
         return {
             'type': 'ir.actions.act_window',
-            'name': 'contract',
+            'name': 'c',
             'res_model': 'contract.contract',
             'domain': [('accounts', '=', self.id)],
             'view_mode': 'tree,form',

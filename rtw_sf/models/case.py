@@ -41,7 +41,7 @@ class rtw_sf_case(models.Model):
     is_escalated = fields.Boolean('IsEscalated')  # エスカレーションフラグ
     has_comments_unread_by_owner = fields.Boolean('HasCommentsUnreadByOwner')  # 所有者によるコメント未読の有無
     has_self_service_comments = fields.Boolean('HasSelfServiceComments')  # セルフサービスコメント
-    owner_id = fields.Many2one('res.users', 'OwnerId')  # 所有者Id
+    owner_id = fields.Many2one('res.users', 'OwnerId', default=lambda self: self.env.user)  # 所有者Id
     is_closed_on_create = fields.Boolean('IsClosedOnCreate')  # 作成同時完了フラグ
     is_self_service_closed = fields.Boolean('IsSelfServiceClosed')  # 自己完了
     created_date = fields.Datetime('CreatedDate')  # 作成日

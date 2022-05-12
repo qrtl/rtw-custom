@@ -144,5 +144,7 @@ class rtw_sf_partner(models.Model):
             'target': 'current',
             'context': {
                 'default_id': self.id,
+                'default_accounts': self.id,
+                'default_created_by_id': self.env.user.id
             }
         }
