@@ -119,3 +119,7 @@ class rtw_sf_case(models.Model):
     #         ) / rec.total_sales * 100
     #         print(fcts)
     #         rec.final_cost_total_sales = fcts
+    @api.onchange('contacts')
+    def _parents_set(self):
+        if self.contacts:
+            self.accounts = self.contacts.parent_id

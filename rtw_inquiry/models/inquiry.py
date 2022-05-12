@@ -63,4 +63,22 @@ class contract(models.Model):
         ('22', '訪問'),
     ], string="Field3__c",
      default='')   # 対応
-    product_name1 = fields.Char("Field37__c")
+    product_name1 = fields.Char("Field37__c")  # ①商品名
+    product_name2 = fields.Char("Field38__c")  # ②商品名
+    product_name3 = fields.Char("Field39__c")  # ③商品名
+    product_name4 = fields.Char("Field40__c")  # ④商品名
+    product_name5 = fields.Char("Field41__c")  # ⑤商品名
+    product_name6 = fields.Char("Field42__c")  # ⑥商品名
+    contact_person = fields.Many2one("res.partner", 'contact_person__c')  # 取引先担当者
+    accounts = fields.Many2one("res.partner", 'Contact__c')  # 取引先
+    summary = fields.Text("Field6")  # 概要
+    customer_testimonials = fields.Text("Field7_voice__c")  # お客様の声
+    satisfaction_level = fields.Selection([
+        ('5', '大変満足'),
+        ('4', 'やや満足'),
+        ('3', '普通'),
+        ('2', 'やや不満'),
+        ('1', '大変不満'),
+    ], string="Satisfactionlevel_2018__c",
+     default='')  # 商品の満足度
+    name_of_magazine_other = fields.Char("Field8__c")  # 雑誌名（その他）
