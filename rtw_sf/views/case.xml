@@ -55,9 +55,9 @@
                                 <field name="manufacturing_department_status" string="manufacturing department status"/>
                                 <field name="occurrence_status" string="occurrence status"/>
                                 <field name="priority" string="priority"/>
-                                <field name="cope_order_no_1" string="cope order no 1"/>
-                                <field name="cope_order_no_2" string="cope order no 2"/>
-                                <field name="cope_order_no_3" string="cope order no 3"/>
+                                <field name="cope_order_no_1" string="cope order no 1" widget="char"/>
+                                <field name="cope_order_no_2" string="cope order no 2" widget="char"/>
+                                <field name="cope_order_no_3" string="cope order no 3" widget="char"/>
 
                                 <field name="supplied_name" string="Supplied Name"/>
                                 <field name="supplied_email" string="Supplied Email"/>
@@ -86,6 +86,7 @@
                                         <field name="order_no" string="order no"/>
                                         <field name="product_category" string="product category"/>
                                         <field name="product_name" string="product name"/>
+                                        <field name="product_name2" string="product name2"/>
                                         <field name="product_number" string="product number"/>
                                         <field name="size" string="size"/>
                                         <field name="specification" string="specification"/>
@@ -207,6 +208,12 @@
                 action="action_case_tree"
                 parent="contacts.menu_contacts"
                 sequence="30"
+        />
+        <menuitem
+                name="case"
+                id="menu_case_root"
+                action="action_case_tree"
+                web_icon="rtw_sf,static/description/case.png"
         />
         <!-- server action to the one above -->
         <!--
