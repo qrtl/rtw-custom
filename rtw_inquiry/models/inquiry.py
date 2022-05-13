@@ -82,3 +82,26 @@ class contract(models.Model):
     ], string="Satisfactionlevel_2018__c",
      default='')  # 商品の満足度
     name_of_magazine_other = fields.Char("Field8__c")  # 雑誌名（その他）
+    situation = fields.Selection([
+        ('buy', '購入後'),
+        ('not_buy', '購入前'),
+    ], string="Field9__c",
+     default='')  # 状況
+    magazine_site = fields.Selection([
+        ('1', 'モダンリビング'),
+        ('2', 'エルデコ'),
+        ('3', "I'm home"),
+        ('4', '商店建築'),
+        ('5', 'シグネチャー'),
+        ('6', 'ゲーテ'),
+        ('7', 'Pen'),
+        ('8', 'Passione'),
+        ('9', 'ONLINEサイト'),
+        ('10', 'その他'),
+        ('11', '不明'),
+    ], string="Field7__c",
+     default='')  # 雑誌／サイト名
+    proposal_to_send_catalog = fields.Boolean('Field10_teian__c', default=0)  # カタログ送付提案
+    sr_attracting = fields.Boolean('Field10_sr__c', default=0)  # ＳＲ誘致
+    confirm_user_information = fields.Boolean('Field10_user__c', default=0)  # ユーザー情報確認
+    event_information_notices = fields.Boolean('Field10_event__c', default=0)  # イベント情報告知
