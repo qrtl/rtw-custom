@@ -148,3 +148,18 @@ class rtw_sf_partner(models.Model):
                 'default_created_by_id': self.env.user.id
             }
         }
+
+    @api.onchange("first_name", "last_name", "company_type")
+    def _compute_name(self):
+        for rec in self:
+            name = rec.name
+            print(rec.company_type)
+            if rec.company_type == "person":
+                if rec.last_name == False and rec.first_name:
+                    name = rec.first_name
+                if rec.first_name == False and rec.last_name:
+                    name = rec.last_name
+                if rec.first_name and rec.last_name:
+                    name = rec.last_name + " " + rec.first_name
+            rec.name = name
+            print(name)
