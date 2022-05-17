@@ -12,7 +12,7 @@
                     <field name="status" string="status"/>
                     <field name="start_date" string="start_date"/>
                     <field name="contract_term" string="contract_term"/>
-                    <field name="related_opportunity" string="related_opportunity"/>
+                    <field name="related_opportunity" string="related_opportunity" widget="many2many_tags"/>
 
                 </tree>
             </field>
@@ -49,7 +49,7 @@
                                 <field name="payment_terms2_personal" string="payment_terms2_personal"/>
                                 <field name="payment_terms_fare_personal" string="payment_terms_fare_personal"/>
                                 <field name="website" string="website"/>
-                                <field name="related_opportunity" string="related_opportunity"/>
+                                <field name="related_opportunity" string="related_opportunity" widget="many2many_tags"/>
                             </group>
                             <group>
                                 <field name="status" string="status"/>
