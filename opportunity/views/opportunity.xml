@@ -16,7 +16,7 @@
         <record model="ir.actions.act_window" id="opportunity.action_window">
             <field name="name">opportunity</field>
             <field name="res_model">opportunity.opportunity</field>
-            <field name="view_mode">tree,kanban,form</field>
+            <field name="view_mode">tree,kanban,pivot,graph,form</field>
         </record>
 
         <record id="view_partner_form_sf_oppo" model="ir.ui.view">

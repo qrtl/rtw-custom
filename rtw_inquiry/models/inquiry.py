@@ -131,7 +131,7 @@ class contract(models.Model):
     inet_reputation_and_wom = fields.Boolean('Field19__c')  # ネット評判・口コミ
     glad_bought_it_before = fields.Boolean('Field20__c')  # 以前購入してよかった
     non_response = fields.Boolean('Field21__c')  # 無回答
-    oppotunity = fields.Many2one('opportunity.opportunity', 'oppotunity_2__c')
+    # oppotunity = fields.Many2one('opportunity.opportunity', 'oppotunity_2__c')
     evaluation_of_delivery_staff = fields.Selection([
         ('5', '大変満足'),
         ('4', 'やや満足'),
@@ -182,7 +182,7 @@ class contract(models.Model):
      default='')  # 内容
     survey_no = fields.Char('NO_4__c')  # アンケートNO
     other = fields.Boolean('X4__c')  # その他(4)
-    oppotunity_2 = fields.Many2one('opportunity.opportunity', 'Field52__c')  # 関連商談②
+    # oppotunity_2 = fields.Many2one('opportunity.opportunity', 'Field52__c')  # 関連商談②
     date_time = fields.Datetime('Field34__c')  # 日時
     means = fields.Selection([
         ('1', 'WEBフォーム'),

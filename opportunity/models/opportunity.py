@@ -45,7 +45,7 @@ class opportunity(models.Model):
     contact_id = fields.Many2one('res.partner', 'ContactId')  # コンタクトId
     primary_partner_Account_id = fields.Char('PrimaryPartnerAccountId')  # プライマリーパートナーId
     # synced_quote_id = fields.Char('SyncedQuoteId')  # 同期引用Id
-    contract_id = fields.Many2one('contract.contract', 'ContractId')  # 契約Id
+    contract_id = fields.One2many('contract.contract', inverse_name="related_opportunity", string='ContractId')  # 契約Id
     last_amount_changed_history_id = fields.Char('LastAmountChangedHistoryId')  # 最終金額変更履歴
     last_close_date_changed_history_id = fields.Char('LastCloseDateChangedHistoryId')  # 最終完了日変更履歴
     progress_check_date = fields.Datetime('Field1__c')  # 進捗確認日 AN列
