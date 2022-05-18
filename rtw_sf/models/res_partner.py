@@ -46,7 +46,7 @@ class rtw_sf_partner(models.Model):
     dummy = fields.Boolean("Field29__c", default=0)  # ダミー OK
     # relation
 
-    case = fields.One2many('rtw_sf_case', inverse_name='accounts')  # ケース OK
+    case = fields.One2many('rtw_sf_case', inverse_name='contacts')  # ケース OK
     # contact
     account_id = fields.Many2one('res.partner', "AccountId")  # OK
     first_name = fields.Char("FirstName")  # OK
@@ -131,7 +131,7 @@ class rtw_sf_partner(models.Model):
 
     def _compute_case_count(self):
         for rec in self:
-            case_count = self.env['rtw_sf_case'].search_count([('accounts', '=', rec.id)])
+            case_count = self.env['rtw_sf_case'].search_count([('contacts', '=', rec.id)])
             rec.case_count = case_count
 
     def action_open_case(self):
@@ -139,10 +139,27 @@ class rtw_sf_partner(models.Model):
             'type': 'ir.actions.act_window',
             'name': 'case',
             'res_model': 'rtw_sf_case',
-            'domain': [('accounts', '=', self.id)],
+            'domain': [('contacts', '=', self.id)],
             'view_mode': 'tree,form',
             'target': 'current',
             'context': {
                 'default_id': self.id,
+                'default_contacts': self.id,
+                'default_created_by_id': self.env.user.id
             }
         }
+
+    @api.onchange("first_name", "last_name", "company_type")
+    def _compute_name(self):
+        for rec in self:
+            name = rec.name
+            print(rec.company_type)
+            if rec.company_type == "person":
+                if rec.last_name == False and rec.first_name:
+                    name = rec.first_name
+                if rec.first_name == False and rec.last_name:
+                    name = rec.last_name
+                if rec.first_name and rec.last_name:
+                    name = rec.last_name + " " + rec.first_name
+            rec.name = name
+            print(name)

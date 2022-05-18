@@ -74,7 +74,8 @@ class contract(models.Model):
     consolidation = fields.Boolean('Field20__c')  # 統廃合 BJ列　★0,1,空白
     name_change = fields.Boolean('Field21__c')  # 取引先名・部門名変更 BK列　★0,1,空白
     transaction_category = fields.Char('Field26__c')  # 取引区分 BL列
-    related_opportunity = fields.Char('Field27__c')  # 関連商談 BM列
+    related_opportunity = fields.Many2one(comodel_name='opportunity.opportunity', string='Field27__c')  # 関連商談 BM列
+    # oppotunity = fields.Many2one('opportunity.opportunity', 'Field27__c')
     partner_manager = fields.Char('Field29__c')  # 取引先責任者 BN列
     transaction_method_personal = fields.Char('Field37__c')  # 取引方法（個） BO列
     payment_terms_fare_personal = fields.Char('Field38__c')  # 支払条件運賃（個） BP列

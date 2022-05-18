@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-09 05:55+0000\n"
-"PO-Revision-Date: 2022-05-09 05:55+0000\n"
+"POT-Creation-Date: 2022-05-17 06:09+0000\n"
+"PO-Revision-Date: 2022-05-17 06:09+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -23,17 +23,12 @@ msgstr "<span class=\"o_stat_text\">商談</span>"
 #. module: opportunity
 #: model:ir.model.fields,field_description:opportunity.field_opportunity_opportunity__completion_scheduled_date
 msgid "A__c"
-msgstr ""
+msgstr "完了予定日（A)"
 
 #. module: opportunity
 #: model:ir.model.fields,field_description:opportunity.field_opportunity_opportunity__accounts
 msgid "Account"
-msgstr ""
-
-#. module: opportunity
-#: model:ir.model,name:opportunity.model_res_partner
-msgid "Account.csv"
-msgstr ""
+msgstr "取引先"
 
 #. module: opportunity
 #: model:ir.model.fields,field_description:opportunity.field_opportunity_opportunity__message_needaction
@@ -158,7 +153,7 @@ msgstr ""
 #. module: opportunity
 #: model:ir.model.fields,field_description:opportunity.field_opportunity_opportunity__description
 msgid "Description"
-msgstr ""
+msgstr "説明"
 
 #. module: opportunity
 #: model_terms:ir.ui.view,arch_db:opportunity.rtw_sf_oppo_form
@@ -239,7 +234,7 @@ msgstr ""
 #. module: opportunity
 #: model:ir.model.fields,field_description:opportunity.field_opportunity_opportunity__progress_check_date
 msgid "Field1__c"
-msgstr ""
+msgstr "進捗確認日"
 
 #. module: opportunity
 #: model:ir.model.fields,field_description:opportunity.field_opportunity_opportunity__competitive_product_other
@@ -489,7 +484,7 @@ msgstr ""
 #. module: opportunity
 #: model:ir.model.fields,field_description:opportunity.field_opportunity_opportunity__rate
 msgid "Field74__c"
-msgstr ""
+msgstr "掛率"
 
 #. module: opportunity
 #: model:ir.model.fields,field_description:opportunity.field_opportunity_opportunity__dummy
@@ -625,6 +620,7 @@ msgstr ""
 
 #. module: opportunity
 #: model:ir.model.fields,help:opportunity.field_opportunity_opportunity__message_has_error
+#: model:ir.model.fields,help:opportunity.field_opportunity_opportunity__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr ""
 
@@ -656,7 +652,7 @@ msgstr ""
 #. module: opportunity
 #: model:ir.model.fields,field_description:opportunity.field_opportunity_opportunity__lw_set_count
 msgid "LW_5__c"
-msgstr ""
+msgstr "LWセット数"
 
 #. module: opportunity
 #: model:ir.model.fields,field_description:opportunity.field_opportunity_opportunity__competitive_product_l
@@ -762,7 +758,7 @@ msgstr ""
 #. module: opportunity
 #: model:ir.model.fields,field_description:opportunity.field_opportunity_opportunity__subject_name
 msgid "Name"
-msgstr ""
+msgstr "案件名"
 
 #. module: opportunity
 #: model:ir.model.fields,field_description:opportunity.field_opportunity_opportunity__activity_date_deadline
@@ -863,6 +859,11 @@ msgid "SFDC_Budget__c"
 msgstr ""
 
 #. module: opportunity
+#: model:ir.model.fields,field_description:opportunity.field_opportunity_opportunity__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: opportunity
 #: model:ir.model.fields,field_description:opportunity.field_opportunity_opportunity__product_list_ot_st1
 msgid "ST1_1__c"
 msgstr ""
@@ -890,7 +891,7 @@ msgstr ""
 #. module: opportunity
 #: model:ir.model.fields,field_description:opportunity.field_opportunity_opportunity__stage_name
 msgid "StageName"
-msgstr ""
+msgstr "ステージ"
 
 #. module: opportunity
 #: model:ir.model.fields,field_description:opportunity.field_opportunity_opportunity__stage_sort_order
@@ -977,6 +978,16 @@ msgid "WEB__c"
 msgstr ""
 
 #. module: opportunity
+#: model:ir.model.fields,field_description:opportunity.field_opportunity_opportunity__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: opportunity
+#: model:ir.model.fields,help:opportunity.field_opportunity_opportunity__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: opportunity
 #: model:ir.model.fields,field_description:opportunity.field_opportunity_opportunity__million_amount
 msgid "X100_amount__c"
 msgstr ""
@@ -1029,6 +1040,11 @@ msgstr ""
 #. module: opportunity
 #: model:ir.model.fields,field_description:opportunity.field_opportunity_opportunity__year
 msgid "Year__c"
+msgstr ""
+
+#. module: opportunity
+#: model_terms:ir.ui.view,arch_db:opportunity.rtw_sf_oppo_form
+msgid "accounts"
 msgstr ""
 
 #. module: opportunity
@@ -1318,6 +1334,7 @@ msgstr "表参道来店"
 
 #. module: opportunity
 #: model:ir.actions.act_window,name:opportunity.action_window
+#: model:ir.model,name:opportunity.model_res_partner
 #: model:ir.ui.menu,name:opportunity.menu_opportunity_tree
 #: model:ir.ui.menu,name:opportunity.menu_root
 #: model_terms:ir.ui.view,arch_db:opportunity.view_partner_form_sf_oppo
@@ -1338,6 +1355,11 @@ msgstr "商談完了日"
 #: model_terms:ir.ui.view,arch_db:opportunity.rtw_sf_oppo_form
 msgid "opportunity_number"
 msgstr "商談番号"
+
+#. module: opportunity
+#: model_terms:ir.ui.view,arch_db:opportunity.rtw_sf_oppo_form
+msgid "opportunity_type"
+msgstr ""
 
 #. module: opportunity
 #: model_terms:ir.ui.view,arch_db:opportunity.rtw_sf_oppo_form
@@ -1694,6 +1716,11 @@ msgstr ""
 #. module: opportunity
 #: model_terms:ir.ui.view,arch_db:opportunity.rtw_sf_oppo_form
 msgid "商品情報"
+msgstr ""
+
+#. module: opportunity
+#: model_terms:ir.ui.view,arch_db:opportunity.rtw_sf_oppo_form
+msgid "商談名："
 msgstr ""
 
 #. module: opportunity

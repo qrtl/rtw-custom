@@ -41,7 +41,7 @@ class rtw_sf_case(models.Model):
     is_escalated = fields.Boolean('IsEscalated')  # エスカレーションフラグ
     has_comments_unread_by_owner = fields.Boolean('HasCommentsUnreadByOwner')  # 所有者によるコメント未読の有無
     has_self_service_comments = fields.Boolean('HasSelfServiceComments')  # セルフサービスコメント
-    owner_id = fields.Many2one('res.users', 'OwnerId')  # 所有者Id
+    owner_id = fields.Many2one('res.users', 'OwnerId', default=lambda self: self.env.user)  # 所有者Id
     is_closed_on_create = fields.Boolean('IsClosedOnCreate')  # 作成同時完了フラグ
     is_self_service_closed = fields.Boolean('IsSelfServiceClosed')  # 自己完了
     created_date = fields.Datetime('CreatedDate')  # 作成日
@@ -50,9 +50,9 @@ class rtw_sf_case(models.Model):
     last_modified_by_id = fields.Many2one('res.users', 'LastModifiedById')  # 最終更新者
     system_mod_stamp = fields.Datetime('SystemModstamp')  # システム最終更新日 v
     order_no = fields.Char('Field1__c')  # 受注番号
-    cope_order_no_1 = fields.Integer('X1__c')  # 対処受注番号1
-    cope_order_no_2 = fields.Integer('X2__c')  # 対処受注番号2
-    cope_order_no_3 = fields.Integer('X3__c')  # 対処受注番号3
+    cope_order_no_1 = fields.Char('X1__c')  # 対処受注番号1
+    cope_order_no_2 = fields.Char('X2__c')  # 対処受注番号2
+    cope_order_no_3 = fields.Char('X3__c')  # 対処受注番号3
     probate_by_president = fields.Boolean('Field6__c')  # 社長検認
     discoverer = fields.Char('Field52__c')  # 発見者
     opportunity = fields.Char('opportunity__c')  # 商談
@@ -92,6 +92,7 @@ class rtw_sf_case(models.Model):
     manufacturing_department_status = fields.Char('Field46__c')  # 製造部状況
     product_category = fields.Char('Field47__c')  # 商品カテゴリ
     product_name = fields.Char('Field48__c')  # 商品名
+    product_name2 = fields.Many2one('product.template', 'Field48__c')  # 商品名
     product_number = fields.Char('Field49__c')  # 品番
     specification = fields.Char('Field50__c')  # 仕様
     quantity = fields.Integer('Field51__c')  # 数量
@@ -118,3 +119,7 @@ class rtw_sf_case(models.Model):
     #         ) / rec.total_sales * 100
     #         print(fcts)
     #         rec.final_cost_total_sales = fcts
+    @api.onchange('contacts')
+    def _parents_set(self):
+        if self.contacts:
+            self.accounts = self.contacts.parent_id
