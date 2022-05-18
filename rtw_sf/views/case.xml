@@ -29,7 +29,7 @@
                     <sheet>
                         <group>
                             <h2>
-                                <field name="subject"/>
+                                件名：<field name="subject"/>
                             </h2>
                         </group>
                         <group>
