@@ -14,6 +14,83 @@
       </field>
     </record>
 -->
+    <record id="view_partner_form_sf_inq" model="ir.ui.view">
+            <field name="name">partner sf inq</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='button_box']" position="inside">
+
+                    <button name="action_open_inquiry" class="oe_stat_button" type="object" icon="fa-question-circle-o">
+                        <div class="o_stat_info">
+                            <span class="o_field_widget o_stat_info"><field name="inquiry_count"/></span>
+                            <span class="o_stat_text">inquiry</span>
+                        </div>
+                    </button>
+                </xpath>
+                <xpath expr="//page[@name='internal_notes']" position="after">
+                    <page name="inquiry" string="inquiry">
+                        <group>
+                            <field name="inquiry"/>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+            <record id="rtw_sf_inquiry_form" model="ir.ui.view">
+            <field name="name">rtw_sf_inquiry.form</field>
+            <field name="model">rtw_sf.inquiry</field>
+            <field name="arch" type="xml">
+                <form>
+<!--                    <header>-->
+<!--                        <field name="status" widget="statusbar"  options="{'clickable':1}"/>-->
+<!--                    </header>-->
+                    <sheet>
+
+                      <group>
+                        <h2>
+                        件名：<field name="name"/>
+                        </h2>
+                      </group>
+                      <group>
+                        <group>
+                          <field name="owner_id" string="owner_id"/>
+                          <field name="no" string="no"/>
+                          <field name="contact_person" string="contact_person"/>
+                          <field name="situation" string="situation"/>
+                          <field name="date_time" string="date_time"/>
+                          <field name="originator" string="originator"/>
+                          <field name="means" string="means"/>
+                          <field name="broad_category" string="broad_category"/>
+                          <field name="mid_category" string="mid_category"/>
+                          <field name="detail" string="detail"/>
+                          <field name="support" string="support"/>
+                        </group>
+                        <group>
+                          <field name="magazine_site" string="magazine_site"/>
+                          <field name="name_of_magazine_other" string="name_of_magazine_other"/>
+                          <field name="proposal_to_send_catalog" string="proposal_to_send_catalog"/>
+                          <field name="sr_attracting" string="sr_attracting"/>
+                          <field name="event_information_notices" string="event_information_notices"/>
+                          <field name="confirm_user_information" string="confirm_user_information"/>
+                        </group>
+                      </group>
+                      <group>
+                        <field name="name" string="name"/>
+                        <field name="summary" string="summary"/>
+                        <field name="customer_testimonials" string="customer_testimonials"/>
+                        <field name="handover_matters" string="handover_matters"/>
+                      </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" modifiers="{}" id="activity_ids"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+            </record>
 
     <!-- actions opening views on models -->
 
@@ -46,6 +123,12 @@
                   web_icon="rtw_inquiry,static/description/inquiry_icon.png"/>
 
     <!-- menu categories -->
+      <menuitem
+                id="menu_inquiry_tree"
+                action="rtw_inquiry.action_window"
+                parent="contacts.menu_contacts"
+                sequence="30"
+        />
 <!--
     <menuitem name="Menu 1" id="rtw_inquiry.menu_1" parent="rtw_inquiry.menu_root"/>
     <menuitem name="Menu 2" id="rtw_inquiry.menu_2" parent="rtw_inquiry.menu_root"/>
