@@ -8,10 +8,9 @@
                 <tree>
                     <field name="subject" string="subject"/>
                     <field name="who_id" string="who_id"/>
-                    <!--関連先(商談他)は以下の項目で合っている？-->
-                    <field name="account_id" string="account_id"/>
+                    <field name="what_id" string="what_id"/>
                     <field name="activity_date" string="activity_date"/>
-                    <field name="who_id" string="who_id"/>
+                    <field name="owner_id" string="owner_id"/>
                 </tree>
             </field>
         </record>
@@ -57,23 +56,22 @@
                         <group>
                             <group>
                                 <field name="who_id" string="who_id"/>
-                                <field name="account_id" string="account_id"/>
+                                <field name="what_id" string="what_id"/>
                             </group>
                             <group>
                                 <field name="status" string="status"/>
-                                <field name="who_id" string="who_id"/>
+                                <field name="owner_id" string="owner_id"/>
                             </group>
                         </group>
                         <group string="詳細">
                             <group>
-                                <field name="who_id" string="who_id"/>
+                                <field name="owner_id" string="owner_id"/>
                                 <field name="subject" string="subject"/>
                                 <field name="activity_date" string="activity_date"/>
-                                <!--取引先責任者　不明-->
+                                <field name="who_id" string="who_id"/>
                                 <field name="client_id" string="client_id"/>
                                 <field name="activity_origin_type" string="activity_origin_type"/>
-                                <!--関連先(商談他)は以下の項目で合っている？-->
-                                <field name="account_id" string="account_id"/>
+                                <field name="what_id" string="what_id"/>
                                 <field name="campaign_id" string="campaign_id"/>
                                 <field name="activity_origin_type" string="activity_origin_type"/>
                                 <field name="description" string="description"/>
@@ -89,16 +87,16 @@
                         </group>
                         <group>
                             <field name="is_reminder_set" string="is_reminder_set"/>
-                            <field name="created_by_id" string="created_by_id"/>
                             <field name="last_modified_by_id" string="last_modified_by_id"/>
+                            <field name="created_by_id" string="created_by_id"/>
                         </group>
                     </sheet>
-                    <div class="oe_chatter">
-                        <field name="message_follower_ids" widget="mail_followers"/>
-                        <field name="activity_ids" modifiers="{}" id="activity_ids"/>
-                        <field name="message_ids" widget="mail_thread"/>
-                        <field name="Determined_on_the_day" widget="Determined_on_the_day"/>
-                    </div>
+<!--                    <div class="oe_chatter">-->
+<!--                        <field name="message_follower_ids" widget="mail_followers"/>-->
+<!--                        <field name="activity_ids" modifiers="{}" id="activity_ids"/>-->
+<!--                        <field name="message_ids" widget="mail_thread"/>-->
+<!--                        <field name="Determined_on_the_day" widget="Determined_on_the_day"/>-->
+<!--                    </div>-->
                 </form>
             </field>
         </record>

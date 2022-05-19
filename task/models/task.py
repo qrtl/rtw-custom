@@ -7,28 +7,27 @@ class task(models.Model):
     _name = 'task.task'
     _description = 'task.task'
 
-    who_id = fields.Char('WhoId')  # 対象者id B列
-    what_id = fields.Char('WhatId')  # タスクid C列
-    who_count = fields.Integer('WhoCount')  # 対象者カウント D列
-    what_count = fields.Integer('WhatCount')  # タスク件数 E列
+    who_id = fields.Many2one('res.partner', 'WhoId')  # 取引先責任者id B列
+    # who_id = fields.Char('WhoId')  # 取引先責任者id B列
+    what_id = fields.Many2one('res.partner', 'WhatId')  # 関連先(商談他)id C列
+    # what_id = fields.Char('WhatId')  # 関連先(商談他)id C列
+    who_count = fields.Integer('WhoCount')  # 取引先責任者カウント D列
+    what_count = fields.Integer('WhatCount')  # 関連先(商談他)件数 E列
     subject = fields.Char('Subject')  # 件名 F列
     activity_date = fields.Datetime('ActivityDate')  # 活動日 G列
     status = fields.Char('Status')  # ステータス H列
     priority = fields.Char('Priority')  # 優先順位 I列
-    owner_id = fields.Char('OwnerId')  # 所有者Id J列 ※
-    # owner_id = fields.Many2one('res.users', 'OwnerId')  # 所有者Id J列 ※
+    owner_id = fields.Many2one('res.users', 'OwnerId')  # 割り当て先Id J列
     description = fields.Text('Description')  # 説明 K列
     type = fields.Char('Type')  # 種類 L列
     # is_deleted = fields.Boolean('IsDeleted')  # 削除フラグ M列 ★0のみ
-    # accounts = fields.Many2one('res.partner', "Account", copy=False)  # アカウント
-    account_id = fields.Char('AccountId')  # アカウントid N列
+    account_id = fields.Many2one('res.partner', "AccountId", copy=False)  # アカウント
+    # account_id = fields.Char('AccountId')  # アカウントid N列
     isclosed = fields.Boolean('IsClosed')  # 完了済みフラグ O列
     created_date = fields.Datetime('CreatedDate')  # 作成日 P列
-    created_by_id = fields.Char('CreatedById')  # 作成ID Q列 ※
-    # created_by_id = fields.Many2one('res.users', 'CreatedById')  # 作成ID Q列 ※
+    created_by_id = fields.Many2one('res.users', 'CreatedById')  # 作成ID Q列
     last_modified_date = fields.Datetime('LastModifiedDate')  # 最終更新日 R列
-    last_modified_by_id = fields.Char('LastModifiedById')  # 最終更新者 S列 ※
-    # last_modified_by_id = fields.Many2one('res.users', 'LastModifiedById')  # 最終更新者 S列 ※
+    last_modified_by_id = fields.Many2one('res.users', 'LastModifiedById')  # 最終更新者 S列
     system_mod_stamp = fields.Datetime('SystemModstamp')  # システム最終更新日 T列
     is_archived = fields.Boolean('IsArchived')  # アーカイブフラグ U列
     email_message_id = fields.Char('EmailMessageId')  # emailメッセージid V列
@@ -58,7 +57,7 @@ class task(models.Model):
     # kpi1 = fields.Char('KPI_1__c')  # KPI項目 AT ★空白のみ
     # f = fields.Char('KPI__c')  # F AU ★空白のみ
     # study_meeting_count = fields.Integer('Field4__c')  # 勉強会人数 AV ★空白のみ
-    campaign_id = fields.Char('campaign_5__c')  # 関連先(キャンペーン)id AW
+    campaign_id = fields.Many2one('res.partner', 'campaign_5__c')  # 関連先(キャンペーン)id AW
     situation = fields.Char('Field1__c')  # 状況 AX
     sr = fields.Char('SR__c')  # SR AY
     new_sales = fields.Boolean('new_customer_2__c')  # 新規営業 AZ ★0,空白のみ
