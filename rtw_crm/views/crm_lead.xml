@@ -5,9 +5,9 @@
             <field name="model">crm.lead</field>
             <field name="inherit_id" ref="crm.crm_lead_view_form"/>
             <field name="arch" type="xml">
-                <xpath expr="//button[@name='436']" position="after">
+                <xpath expr="//header" position="inside">
                         <button string="Create case" name="create_case" type="object" class="oe_highlight"/>
-            </xpath>
+                </xpath>
                 <xpath expr="//div[@name='button_box']" position="inside">
 
                     <button name="action_open_case" class="oe_stat_button" type="object" icon="fa-sticky-note-o">
