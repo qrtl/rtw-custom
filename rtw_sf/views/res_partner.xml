@@ -17,14 +17,14 @@
                 <xpath expr="//field[@name='name']" position="after">
                     <group attrs="{'invisible': [('is_company','=', True)]}">
                         <group>
-                            <field name="last_name" attrs="{'invisible': [('is_company','=', True)]}"/>
+                            <field name="last_name" attrs="{'invisible': [('is_company','=', True)], 'required': [('is_company','=', False)]}" />
                         </group>
                         <group>
                             <field name="first_name" attrs="{'invisible': [('is_company','=', True)]}"/>
                         </group>
                     </group>
                     <group>
-                        <field name="kana"/>
+                        <field name="kana" required="1"/>
                         <field name="site"/>
                     </group>
                 </xpath>
@@ -175,8 +175,8 @@
                                 <field name="fare_payment_terms" string="fare_payment_terms"/>
                             </group>
                             <group>
-                                <field name="contact_type" string="contact_type"/>
-                                <field name="channel" string="channel"/>
+                                <field name="industry_id" string="Industry" attrs="{'required': [('is_company','=', True)]}"/>
+                                <field name="channel" string="channel" attrs="{'required': [('is_company','=', True)]}"/>
                                 <field name="rival_companies" string="rival_companies"/>
                                 <field name="evaluation" string="evaluation"/>
                                 <field name="annual_revenue" string="annual_revenue"/>
@@ -201,7 +201,7 @@
                                 <field name="department" string="department"/>
                                 <field name="birthdate" string="birthdate"/>
                                 <field name="gender" string="gender"/>
-                                <field name="lead_source" string="lead_source"/>
+                                <field name="lead_source" string="lead_source" attrs="{'required': [('is_company','=', False)]}"/>
                                 <field name="media_name" string="media_name"/>
                                 <field name="r_web_site" string="r_web_site"/>
                                 <field name="need_dm" string="need_dm"/>
