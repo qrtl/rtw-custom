@@ -215,6 +215,12 @@
                 action="action_case_tree"
                 web_icon="rtw_sf,static/description/case.png"
         />
+                <menuitem
+                id="menu_case_tree_crm"
+                action="action_case_tree"
+                parent="crm.crm_menu_root"
+                sequence="30"
+        />
         <!-- server action to the one above -->
         <!--
             <record model="ir.actions.server" id="rtw_sf.action_server">
