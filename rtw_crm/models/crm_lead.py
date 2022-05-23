@@ -167,7 +167,7 @@ class rtw_crm(models.Model):
 
     def _compute_case_count(self):
         for rec in self:
-            case_count = self.env['rtw_sf_case'].search_count([('contacts', '=', rec.id)])
+            case_count = self.env['rtw_sf_case'].search_count([('crm_id', '=', rec.id)])
             rec.case_count = case_count
 
     def action_open_case(self):
