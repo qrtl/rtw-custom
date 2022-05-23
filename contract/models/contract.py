@@ -10,7 +10,8 @@ class contract(models.Model):
         'mail.activity.mixin'
     ]
     _description = 'contract.contract'
-
+    _rec_name = "contract_number"
+    
     accounts = fields.Many2one('res.partner', "Account", copy=False)  # アカウント
     owner_expiration_notice = fields.Integer('OwnerExpirationNotice')  # 所有者有効期限通知 C列
     start_date = fields.Datetime('StartDate')  # 開始日 D列

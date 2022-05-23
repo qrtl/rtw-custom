@@ -21,6 +21,7 @@
                     <group>
                         <group>
                             <field name="quote_number_by_hukusuke" string="quote_number_by_hukusuke"/>
+                            <field name="contract_id" string="contract_id" widget="many2many_tags"/>
                             <field name="procurement_company" string="procurement_company"/>
                             <field name="type" string="type"/>
                             <field name="delivery_type" string="delivery_type"/>
