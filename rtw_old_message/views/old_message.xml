@@ -1,0 +1,26 @@
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+        <record model="ir.ui.view" id="contract_list">
+            <field name="name">old_message_list</field>
+            <field name="model">rtw.old_message</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="created_date" string="created_date"/>
+                    <field name="title" string="title"/>
+                    <field name="body" string="body"/>
+                    <field name="link_url" string="link_url"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="rtw_old_message.action_window">
+            <field name="name">old message</field>
+            <field name="res_model">rtw.old_message</field>
+            <field name="view_mode">tree,kanban,form</field>
+        </record>
+
+        <menuitem name="old message" id="rtw_old_message.menu_root" action="rtw_old_message.action_window"
+                  web_icon="rtw_old_message,static/description/icons-archive.png"/>
+    </data>
+</odoo>
