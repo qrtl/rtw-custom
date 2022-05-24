@@ -6,7 +6,7 @@ from odoo import models, fields, api
 class rtw_old_message_crm_lead(models.Model):
     _inherit = 'crm.lead'
 
-    old_messages = fields.Many2one(comodel_name="rtw.old_message",
+    old_messages = fields.One2many(comodel_name="rtw.old_message",
                                    compute="_compute_message_ids",
                                    string="old message",
                                    readonly=True,)

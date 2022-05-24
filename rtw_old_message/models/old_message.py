@@ -23,7 +23,7 @@ class opportunity(models.Model):
     created_date = fields.Datetime('CreatedDate')  # 作成日 Y列
     system_mod_stamp = fields.Datetime('SystemModstamp')  # システム最終更新日
     title = fields.Char("Title")
-    body = fields.Text("Body")
+    body = fields.Html("Body")
     link_url = fields.Char("LinkUrl")
     content_id = fields.Char("ContentId")
     related_record_id = fields.Char("RelatedRecordId")

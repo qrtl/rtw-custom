@@ -9,6 +9,7 @@
                     <field name="created_date" string="created_date"/>
                     <field name="title" string="title"/>
                     <field name="body" string="body"/>
+                    <field name="created_by_id" string="created_by_id"/>
                     <field name="link_url" string="link_url"/>
                 </tree>
             </field>

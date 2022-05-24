@@ -8,7 +8,7 @@
                 <xpath expr="//notebook" position="inside">
                     <page string="チャターログ">
 
-                        <field name="old_messages" widget="many2one"/>
+                        <field name="old_messages"/>
 
                     </page>
                 </xpath>
