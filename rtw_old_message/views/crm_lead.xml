@@ -7,9 +7,7 @@
             <field name="arch" type="xml">
                 <xpath expr="//notebook" position="inside">
                     <page string="チャターログ">
-
                         <field name="old_messages"/>
-
                     </page>
                 </xpath>
             </field>

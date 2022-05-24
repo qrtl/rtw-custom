@@ -1,0 +1,28 @@
+<odoo>
+    <data>
+        <record id="view_form_sf_campaign" model="ir.ui.view">
+            <field name="name">campaign</field>
+            <field name="model">utm.campaign</field>
+            <field name="inherit_id" ref="utm.utm_campaign_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@id='top-group']" position="after">
+                    <group>
+                        <group>
+                            <field name="parent_id"/>
+                            <field name="start_date"/>
+                        </group>
+                        <group>
+                            <field name="budgeted_cost"/>
+                            <field name="actual_cost"/>
+                            <field name="amount_all_opportunities"/>
+                            <field name="amount_won_opportunities"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="description"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
