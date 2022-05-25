@@ -14,17 +14,22 @@ class contract(models.Model):
 
     owner_id = fields.Many2one('res.users', 'OwnerId')  # 所有者Id
     name = fields.Char('Name')
-    record_type_id = fields.Many2one('rtw_sf.record_type', 'RecordTypeId')  # レコードタイプId AH列
+    record_type_id = fields.Many2one('rtw_sf.record_type', 'RecordTypeId',
+                                     domain="['|', '|','|',('name', '=', '問合せ'),"
+                                            " ('name', '=', 'アンケート2018'), "
+                                            "('name', '=', '出張報告書'), "
+                                            "('name', '=', 'アンケート2019')]"　)
+    record_type_id_name = fields.Char(related="record_type_id.name", string="record_type_id_name")
     created_date = fields.Datetime('CreatedDate')  # 作成日 AM列
     created_by_id = fields.Many2one('res.users', 'CreatedById')  # 作成ID AN列
     last_modified_date = fields.Datetime('LastModifiedDate')  # 最終更新日 AO列
     last_modified_by_id = fields.Many2one('res.users', 'LastModifiedById')  # 最終更新者 AP列
     system_mod_stamp = fields.Datetime('SystemModstamp')  # システム最終更新日 AQ列
     last_activity_date = fields.Datetime('LastActivityDate')  # システム最終活動日 AR列　★空白のみ
-    no = fields.Char('NO__c')  # 問い合わせNo
-    vendor = fields.Char('Field36__c')  # 納品業者
-    # campaign = fields.Many2one()  # キャンペーン
-    lead_source = fields.Char(string="Field1__c")  # リードソース
+    toi_no = fields.Char('toi_no')  # 問い合わせNo
+    vendor = fields.Char('vendor')  # 納品業者
+    campaign_id = fields.Many2one('utm.campaign', 'campaign')  # キャンペーン
+    lead_source = fields.Char(string="lead_source")  # リードソース
     broad_category = fields.Selection([
         ('event_sale', 'イベント・セール'),
         ('catalog', 'カタログ依頼（メール・ＦＡＸ）'),
@@ -36,7 +41,7 @@ class contract(models.Model):
         ('merchandise', '商品関連'),
         ('delivery_problems', '納品トラブル'),
         ('delivery_related', '納品関連')
-    ], string="Field2__c",
+    ], string="broad_category",
      default='')  # 大分類 OK
     support = fields.Selection([
         ('1', 'ＳＲ予約'),
@@ -61,31 +66,31 @@ class contract(models.Model):
         ('20', '納品日決定'),
         ('21', '納品日変更'),
         ('22', '訪問'),
-    ], string="Field3__c",
+    ], string="support",
      default='')   # 対応
-    product_name1 = fields.Char("Field37__c")  # ①商品名
-    product_name2 = fields.Char("Field38__c")  # ②商品名
-    product_name3 = fields.Char("Field39__c")  # ③商品名
-    product_name4 = fields.Char("Field40__c")  # ④商品名
-    product_name5 = fields.Char("Field41__c")  # ⑤商品名
-    product_name6 = fields.Char("Field42__c")  # ⑥商品名
-    contact_person = fields.Many2one("res.partner", 'contact_person__c')  # 取引先担当者
-    accounts = fields.Many2one("res.partner", 'Contact__c')  # 取引先
-    summary = fields.Text("Field6")  # 概要
-    customer_testimonials = fields.Text("Field7_voice__c")  # お客様の声
+    product_name1 = fields.Char("product_name1")  # ①商品名
+    product_name2 = fields.Char("product_name2")  # ②商品名
+    product_name3 = fields.Char("product_name3")  # ③商品名
+    product_name4 = fields.Char("product_name4")  # ④商品名
+    product_name5 = fields.Char("product_name5")  # ⑤商品名
+    product_name6 = fields.Char("product_name6")  # ⑥商品名
+    contact_person = fields.Many2one("res.partner", 'contact_person')  # 取引先担当者
+    accounts = fields.Many2one("res.partner", 'accounts')  # 取引先
+    summary = fields.Text("summary")  # 概要
+    customer_testimonials = fields.Text("customer_testimonials")  # お客様の声
     satisfaction_level = fields.Selection([
         ('5', '大変満足'),
         ('4', 'やや満足'),
         ('3', '普通'),
         ('2', 'やや不満'),
         ('1', '大変不満'),
-    ], string="Satisfactionlevel_2018__c",
+    ], string="satisfaction_level",
      default='')  # 商品の満足度
-    name_of_magazine_other = fields.Char("Field8__c")  # 雑誌名（その他）
+    name_of_magazine_other = fields.Char("name_of_magazine_other")  # 雑誌名（その他）
     situation = fields.Selection([
         ('buy', '購入後'),
         ('not_buy', '購入前'),
-    ], string="Field9__c",
+    ], string="situation",
      default='')  # 状況
     magazine_site = fields.Selection([
         ('1', 'モダンリビング'),
@@ -99,51 +104,50 @@ class contract(models.Model):
         ('9', 'ONLINEサイト'),
         ('10', 'その他'),
         ('11', '不明'),
-    ], string="Field7__c",
+    ], string="magazine_site",
      default='')  # 雑誌／サイト名
-    proposal_to_send_catalog = fields.Boolean('Field10_teian__c', default=0)  # カタログ送付提案
-    sr_attracting = fields.Boolean('Field10_sr__c', default=0)  # ＳＲ誘致
-    confirm_user_information = fields.Boolean('Field10_user__c', default=0)  # ユーザー情報確認
-    event_information_notices = fields.Boolean('Field10_event__c', default=0)  # イベント情報告知
-    handover_matters = fields.Text('Field10_toiawase__c')  # 引継ぎ事項
-    deign = fields.Boolean('Field12__c')  # デザイン
-    use = fields.Boolean('Field13__c')  # 使い心地
-    sense_of_materials = fields.Boolean('Field14__c')  # 素材感
+    proposal_to_send_catalog = fields.Boolean('proposal_to_send_catalog', default=0)  # カタログ送付提案
+    sr_attracting = fields.Boolean('sr_attracting', default=0)  # ＳＲ誘致
+    confirm_user_information = fields.Boolean('confirm_user_information', default=0)  # ユーザー情報確認
+    event_information_notices = fields.Boolean('event_information_notices', default=0)  # イベント情報告知
+    handover_matters = fields.Text('handover_matters')  # 引継ぎ事項
+    deign = fields.Boolean('deign')  # デザイン
+    use = fields.Boolean('use')  # 使い心地
+    sense_of_materials = fields.Boolean('sense_of_materials')  # 素材感
     sales_staff_evaluation = fields.Selection([
         ('5', '大変満足'),
         ('4', 'やや満足'),
         ('3', '普通'),
         ('2', 'やや不満'),
         ('1', '大変不満'),
-    ], string="Q3_evaluate_2018__c",
+    ], string="sales_staff_evaluation",
      default='')  # 営業スタッフの評価
     originator = fields.Selection([
         ('1', 'IC・設計・クライアント'),
         ('2', 'オーナー・エンドユーザー'),
         ('3', 'その他'),
         ('4', 'メーカー・サプライヤー'),
-    ], string="Field43__c",
+    ], string="originator",
      default='')  # 発信者
-    price = fields.Boolean('Field15__c')  # 価格
-    image_atmosphere = fields.Boolean('Field16__c')  # イメージ雰囲気
-    sales_staff_response = fields.Boolean('eigyo_2018__c')  # 営業スタッフの対応
-    recommendation_from_a_friend = fields.Boolean('Field18__c')  # 友人の勧め
-    inet_reputation_and_wom = fields.Boolean('Field19__c')  # ネット評判・口コミ
-    glad_bought_it_before = fields.Boolean('Field20__c')  # 以前購入してよかった
-    non_response = fields.Boolean('Field21__c')  # 無回答
-    # oppotunity = fields.Many2one('opportunity.opportunity', 'oppotunity_2__c')
+    price = fields.Boolean('price')  # 価格
+    image_atmosphere = fields.Boolean('image_atmosphere')  # イメージ雰囲気
+    sales_staff_response = fields.Boolean('sales_staff_response')  # 営業スタッフの対応
+    recommendation_from_a_friend = fields.Boolean('recommendation_from_a_friend')  # 友人の勧め
+    inet_reputation_and_wom = fields.Boolean('inet_reputation_and_wom')  # ネット評判・口コミ
+    glad_bought_it_before = fields.Boolean('glad_bought_it_before')  # 以前購入してよかった
+    non_response = fields.Boolean('non_response')  # 無回答
     evaluation_of_delivery_staff = fields.Selection([
         ('5', '大変満足'),
         ('4', 'やや満足'),
         ('3', '普通'),
         ('2', 'やや不満'),
         ('1', '大変不満'),
-    ], string="Q4_evaluate_2018__c",
+    ], string="evaluation_of_delivery_staff",
      default='')  # 納品スタッフの評価
-    yes = fields.Boolean('Q5__c')  # YES
-    no = fields.Boolean('NO_2__c')  # NO
-    need_dm = fields.Boolean('DM_1__c')  # DM希望
-    not_need_dm = fields.Boolean('DM_3__c')  # DM不要
+    yes = fields.Boolean('yes')  # YES
+    no = fields.Boolean('no')  # NO
+    need_dm = fields.Boolean('need_dm')  # DM希望
+    not_need_dm = fields.Boolean('not_need_dm')  # DM不要
     mid_category = fields.Selection([
         ('1', '-'),
         ('2', 'ＳＲ展示品について'),
@@ -161,7 +165,7 @@ class contract(models.Model):
         ('14', '新規注文検討'),
         ('15', '注文済商品'),
         ('16', '納品済商品（メンテ）'),
-    ], string="Field45__c",
+    ], string="mid_category",
      default='')  # 中分類
     detail = fields.Selection([
         ('1', '-'),
@@ -178,21 +182,22 @@ class contract(models.Model):
         ('12', '納品日の確認'),
         ('13', '納品方法の確認'),
         ('14', '補修的なメンテ'),
-    ], string="Field44__c",
+    ], string="detail",
      default='')  # 内容
-    survey_no = fields.Char('NO_4__c')  # アンケートNO
-    other = fields.Boolean('X4__c')  # その他(4)
-    # oppotunity_2 = fields.Many2one('opportunity.opportunity', 'Field52__c')  # 関連商談②
-    date_time = fields.Datetime('Field34__c')  # 日時
+    survey_no = fields.Char('survey_no')  # アンケートNO
+    other = fields.Boolean('other')  # その他(4)
+    date_time = fields.Datetime('date_time')  # 日時
     means = fields.Selection([
         ('1', 'WEBフォーム'),
         ('2', 'メール'),
         ('3', "来場"),
         ('4', '電話'),
         ('5', 'その他'),
-    ], string="Field35__c",
+    ], string="means",
      default='')  # 手段
-    number = fields.Char('X4__c')  # NO
-    confirmation = fields.Boolean('Field47__c')  # 確認
-    not_meet = fields.Boolean('Field48__c')  # 会っていない
-    not_meet_2 = fields.Boolean('Field49__c')  # 会っていない
+    number = fields.Char('no')  # NO
+    confirmation = fields.Boolean('confirmation')  # 確認
+    not_meet = fields.Boolean('not_meet')  # 会っていない
+    not_meet_2 = fields.Boolean('not_meet_2')  # 会っていない
+    crm_1 = fields.Many2one('crm.lead', 'crm_1')  # 関連商談①
+    crm_2 = fields.Many2one('crm.lead', 'crm_2')  # 関連商談②
