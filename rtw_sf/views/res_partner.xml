@@ -198,6 +198,19 @@
                 </xpath>
             </field>
         </record>
+
+        <record id="customer_search_view_sf" model="ir.ui.view">
+            <field name="name">customer.sf.search</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_res_partner_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="site" string="支店"/>
+                </xpath>
+            </field>
+        </record>
+
+
         <record id="view_partner_kanban_sf" model="ir.ui.view">
             <field name="name">partner sf kanban</field>
             <field name="model">res.partner</field>
