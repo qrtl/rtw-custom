@@ -3,13 +3,13 @@
 from odoo import models, fields, api
 
 
-class old_message(models.Model):
-    _name = 'rtw.old_message'
+class old_message_comment(models.Model):
+    _name = 'rtw.old_message_comment'
     _inherit = [
         'mail.thread',
         'mail.activity.mixin'
     ]
-    _description = 'old_message'
+    _description = 'old_message_comment'
     _rec_name = "body"
 
     feed_item_id = fields.Char("FeedItemId")

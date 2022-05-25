@@ -149,7 +149,7 @@ class rtw_crm(models.Model):
     p_author = fields.Char('P__c')  # P作成者(代表） ET列
     product_list_sofa_bench1 = fields.Char('Bench1__c')  # 商品リスト（Bench1) EU列
     product_list_sofa_bench2 = fields.Char('Bench2__c')  # 商品リスト（Bench2) EV列
-    procurement_company = fields.Char('Field77__c')  # 調達会社 EW列
+    procurement_company = fields.Many2one('res.partner', 'Field77__c')  # 調達会社 EW列
     address_no = fields.Char('Field78__c')  # 〒 EX列
     address = fields.Char('Field79__c')  # 住所 EY列
     tel = fields.Char('Field80__c')  # 電話 EZ列
