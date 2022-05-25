@@ -1,0 +1,16 @@
+<odoo>
+    <data>
+        <record id="view_crm_form_sf_old_message" model="ir.ui.view">
+            <field name="name">sf old message</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position="inside">
+                    <page string="チャターログ">
+                        <field name="old_messages"/>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

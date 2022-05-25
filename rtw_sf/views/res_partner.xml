@@ -17,14 +17,14 @@
                 <xpath expr="//field[@name='name']" position="after">
                     <group attrs="{'invisible': [('is_company','=', True)]}">
                         <group>
-                            <field name="last_name" attrs="{'invisible': [('is_company','=', True)]}"/>
+                            <field name="last_name" attrs="{'invisible': [('is_company','=', True)], 'required': [('is_company','=', False)]}" />
                         </group>
                         <group>
                             <field name="first_name" attrs="{'invisible': [('is_company','=', True)]}"/>
                         </group>
                     </group>
                     <group>
-                        <field name="kana"/>
+                        <field name="kana" required="1"/>
                         <field name="site"/>
                     </group>
                 </xpath>
@@ -54,114 +54,7 @@
 
                         </group>
                     </page>
-                    <!--                    <page name="sf" string="sf">-->
-                    <!--                        <group>-->
-                    <!--                            <group>-->
-                    <!--                                <field name="contact_type"/>-->
-                    <!--                                <field name="account_number"/>-->
-                    <!--                                <field name="annual_revenue"/>-->
-                    <!--                                <field name="number_of_employees"/>-->
-                    <!--                                <field name="ownership"/>-->
-                    <!--                                <field name="ticker_symbol"/>-->
-                    <!--                                <field name="description"/>-->
-                    <!--                                <field name="rating"/>-->
-                    <!--                                <field name="site"/>-->
-                    <!--                                <field name="supplier_no" string="supplier no"/>-->
-                    <!--                                <field name="corporate_mail" string="corporate mail"/>-->
-                    <!--                                <field name="categorization" string="categorization"/>-->
-                    <!--                                <field name="categorization" string="categorization"/>-->
-                    <!--                                <field name="address_confirmation_required" string="address_confirmation_required"/>-->
-                    <!--                                <field name="last_contract_date" string="last_contract_date"/>-->
-                    <!--                                <field name="total_number_of_transactions" string="total_number_of_transactions"/>-->
-                    <!--                                <field name="cumulative_sales" string="cumulative_sales"/>-->
-                    <!--                                <field name="potential" string="potential"/>-->
-                    <!--                                <field name="kubun" string="kubun"/>-->
-                    <!--                                <field name="rival_companies" string="rival_companies"/>-->
-                    <!--                                <field name="group" string="group"/>-->
-                    <!--                                <field name="transaction_category" string="transaction_category"/>-->
-                    <!--                                <field name="campaign_1" string="campaign_1"/>-->
-                    <!--                                <field name="campaign_2" string="campaign_2"/>-->
-                    <!--                            </group>-->
-                    <!--                            <group>-->
-                    <!--                                <field name="account_id" string="account_id"/>-->
-                    <!--                                <field name="first_name" string="first_name"/>-->
-                    <!--                                <field name="last_name" string="last_name"/>-->
-                    <!--                                <field name="record_type" string="record_type"/>-->
-                    <!--                                <field name="other_country" string="other_country"/>-->
-                    <!--                                <field name="other_postal_code" string="other_postal_code"/>-->
-                    <!--                                <field name="other_state" string="other_state"/>-->
-                    <!--                                <field name="other_city" string="other_city"/>-->
-                    <!--                                <field name="other_street" string="other_street"/>-->
-                    <!--                                <field name="mailing_country" string="mailing_country"/>-->
-                    <!--                                <field name="mailing_postal_code" string="mailing_postal_code"/>-->
-                    <!--                                <field name="mailing_state" string="mailing_state"/>-->
-                    <!--                                <field name="mailing_city" string="mailing_city"/>-->
-                    <!--                                <field name="mailing_street" string="mailing_street"/>-->
-                    <!--                                <field name="home_phone" string="home_phone"/>-->
-                    <!--                                <field name="other_phone" string="other_phone"/>-->
-                    <!--                                <field name="reports_to_id" string="reports_to_id"/>-->
-                    <!--                                <field name="department" string="department"/>-->
-                    <!--                                <field name="lead_source" string="lead_source"/>-->
-                    <!--                                <field name="birthdate" string="birthdate"/>-->
-                    <!--                                <field name="opt_out_email" string="opt_out_email"/>-->
-                    <!--                                <field name="opt_out_fax" string="opt_out_fax"/>-->
-                    <!--                                <field name="do_not_call" string="do_not_call"/>-->
-                    <!--                                <field name="last_cu_request_date" string="last_cu_request_date"/>-->
-                    <!--                                <field name="last_cu_update_date" string="last_cu_update_date"/>-->
-                    <!--                                <field name="email_bounced_reason" string="email_bounced_reason"/>-->
-                    <!--                                <field name="email_bounced_date" string="email_bounced_date"/>-->
-                    <!--                                <field name="email_bounced_date" string="email_bounced_date"/>-->
-                    <!--                                <field name="ny_card" string="ny_card"/>-->
-                    <!--                                <field name="need_dm" string="need_dm"/>-->
-                    <!--                                <field name="gift" string="gift"/>-->
-                    <!--                                <field name="summer_greeting" string="summer_greeting"/>-->
-                    <!--                                <field name="send_catalog" string="send_catalog"/>-->
-                    <!--                                <field name="gender" string="gender"/>-->
-                    <!--                                <field name="in_has" string="in_has"/>-->
-                    <!--                                <field name="do_not_dm" string="do_not_dm"/>-->
-                    <!--                                <field name="evaluation" string="evaluation"/>-->
-                    <!--                                <field name="dm_unknown" string="dm_unknown"/>-->
-                    <!--                                <field name="r_web_site" string="r_web_site"/>-->
-                    <!--                                <field name="related_attributes" string="related_attributes"/>-->
-                    <!--                                <field name="cs_number" string="cs_number"/>-->
-                    <!--                                <field name="mc_subscriber" string="mc_subscriber"/>-->
-                    <!--                                <field name="haihai_id" string="haihai_id"/>-->
-                    <!--                                <field name="mail_change" string="mail_change"/>-->
-                    <!--                                <field name="haihai_open_count" string="haihai_open_count"/>-->
-                    <!--                                <field name="calender" string="calender"/>-->
-                    <!--                                <field name="key_man" string="key_man"/>-->
-                    <!--                                <field name="r_owner" string="r_owner"/>-->
-                    <!--                                <field name="sansancard" string="sansancard"/>-->
-                    <!--                                <field name="retirement" string="retirement"/>-->
-                    <!--                                <field name="change" string="change"/>-->
-                    <!--                                <field name="maternity_leave_and_vacation" string="maternity_leave_and_vacation"/>-->
-                    <!--                                <field name="unknown" string="unknown"/>-->
-                    <!--                                <field name="lead_source_roc" string="lead_source_roc"/>-->
-                    <!--                                <field name="interest_roc" string="interest_roc"/>-->
-                    <!--                                <field name="Influencers" string="Influencers"/>-->
-                    <!--                                <field name="occupational_category" string="occupational_category"/>-->
-                    <!--                                <field name="not_use" string="not_use"/>-->
-                    <!--                                <field name="mail2" string="mail2"/>-->
-                    <!--                                <field name="mail_1_2" string="mail_1_2"/>-->
-                    <!--                                <field name="haihai_count" string="haihai_count"/>-->
-                    <!--                                <field name="region" string="region"/>-->
-                    <!--                                <field name="stop_letter" string="stop_letter"/>-->
-                    <!--                                <field name="kin" string="kin"/>-->
-                    <!--                                <field name="mail3" string="mail3"/>-->
-                    <!--                                <field name="company_name" string="company_name"/>-->
-                    <!--                                <field name="x20" string="x20"/>-->
-                    <!--                                <field name="x30" string="x30"/>-->
-                    <!--                                <field name="x40" string="x40"/>-->
-                    <!--                                <field name="x50" string="x50"/>-->
-                    <!--                                <field name="x60" string="x60"/>-->
-                    <!--                                <field name="x70" string="x70"/>-->
-                    <!--                                <field name="x80" string="x80"/>-->
-                    <!--                                <field name="joint_name" string="joint_name"/>-->
-                    <!--                                <field name="web" string="web"/>-->
-                    <!--                                <field name="media_name" string="media_name"/>-->
-                    <!--                            </group>-->
-                    <!--                        </group>-->
-                    <!--                    </page>-->
+
                     <page name="account_info" string="account info">
                         <group>
                             <group>
@@ -175,8 +68,8 @@
                                 <field name="fare_payment_terms" string="fare_payment_terms"/>
                             </group>
                             <group>
-                                <field name="contact_type" string="contact_type"/>
-                                <field name="channel" string="channel"/>
+                                <field name="industry_id" string="Industry" attrs="{'required': [('is_company','=', True)]}"/>
+                                <field name="channel" string="channel" attrs="{'required': [('is_company','=', True)]}"/>
                                 <field name="rival_companies" string="rival_companies"/>
                                 <field name="evaluation" string="evaluation"/>
                                 <field name="annual_revenue" string="annual_revenue"/>
@@ -201,7 +94,7 @@
                                 <field name="department" string="department"/>
                                 <field name="birthdate" string="birthdate"/>
                                 <field name="gender" string="gender"/>
-                                <field name="lead_source" string="lead_source"/>
+                                <field name="lead_source" string="lead_source" attrs="{'required': [('is_company','=', False)]}"/>
                                 <field name="media_name" string="media_name"/>
                                 <field name="r_web_site" string="r_web_site"/>
                                 <field name="need_dm" string="need_dm"/>
@@ -301,17 +194,31 @@
             <field name="inherit_id" ref="base.view_partner_tree"/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='display_name']" position="after">
+                    <field name="parent_id" string="parent_id"/>
                     <field name="site"/>
                 </xpath>
             </field>
         </record>
+
+        <record id="customer_search_view_sf" model="ir.ui.view">
+            <field name="name">customer.sf.search</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_res_partner_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="site" string="支店"/>
+                </xpath>
+            </field>
+        </record>
+
+
         <record id="view_partner_kanban_sf" model="ir.ui.view">
             <field name="name">partner sf kanban</field>
             <field name="model">res.partner</field>
             <field name="inherit_id" ref="base.res_partner_kanban_view"/>
             <field name="arch" type="xml">
                 <field name="display_name" position="after">
-                    <field name="site"/>
+                    <field name="site" string="site"/>
                 </field>
                 <xpath expr="//span[hasclass('oe_kanban_partner_links')]" position="after">
                     <field name="site" />

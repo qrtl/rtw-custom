@@ -6,3 +6,5 @@ opportunity/models/__pycache__/
 *.pyc
 
 rtw_sf/models/__pycache__/
+
+rtw_attachment/

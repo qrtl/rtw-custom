@@ -28,7 +28,7 @@ class rtw_crm(models.Model):
     # system_mod_stamp = fields.Datetime('SystemModstamp')  # システム最終更新日
     last_activity_date = fields.Datetime('LastActivityDate')  # システム最終活動日
     last_stage_changed_date = fields.Datetime('LastStageChangeDate')  # 最終ステージ変更日
-    fiscal_year = fields.Integer('FiscalYear')  # 会計年度
+    fiscal_year = fields.Integer('FiscalYear')  # 会計年度　注意
     fiscal_quarter = fields.Integer('FiscalQuarter')  # 会計四半期
     # contact_id = fields.Many2one('res.partner', 'ContactId')  # コンタクトId
     primary_partner_Account_id = fields.Char('PrimaryPartnerAccountId')  # プライマリーパートナーId
@@ -47,11 +47,11 @@ class rtw_crm(models.Model):
     Determined_on_the_day = fields.Boolean('Determinedontheday__c', default=0)  # 当日確定 AV列 ★0，1，空白あり
     delivery_date_unknown = fields.Boolean('Field5__c', default=0)  # 納期不明 AW列 ★0，1，空白あり
     delivery_type = fields.Char('Field6__c')  # 納入先種別 AX列
-    order_amount = fields.Float('Field7__c')  # 受注額 AY列
+    order_amount = fields.Float('Field7__c')  # 受注額 AY列　注意
     omotesando_visit = fields.Boolean('Field87__c', default=0)  # 表参道来店 AZ列 ★0，1，空白あり
     fair = fields.Char('Field22__c')  # Fair BA列
     million_amount = fields.Float('X100_amount__c')  # 100万金額 BB列
-    million_order_amount = fields.Float('X100_amount_a__c')  # 100万受注額 BC列
+    million_order_amount = fields.Float('X100_amount_a__c')  # 100万受注額 BC列 注意
     competition_a = fields.Char('Field16__c')  # 競合A BD列
     fair_advance_plan = fields.Boolean('Field34_plan__c', default=0)  # フェア事前プラン BE列 ★0，1，空白あり
     product_others = fields.Char('Field14__c')  # 商品その他（補足） BF列
@@ -120,7 +120,7 @@ class rtw_crm(models.Model):
     product_list_chair4 = fields.Char('X4_1__c')  # 商品リスト(ﾁｪｱ4) DQ列
     progress_check = fields.Text('Field36__c')  # 進捗確認/経過報告 DR列
     opportunity_type = fields.Char('Field37__c')  # 商談種別 DS列
-    accuracy = fields.Float('Field38__c')  # 確度（変更前） DT列
+    accuracy = fields.Float('Field38__c')  # 確度（変更前） DT列　注意
     last_accuracy_changed_date = fields.Datetime('Field39__c')  # 最終確度変更日時 DU列
     result = fields.Char('Field40__c')  # 結果 DV列
     On_site_delivery_date = fields.Datetime('Field43__c')  # 現場納品日 DW列
@@ -149,7 +149,7 @@ class rtw_crm(models.Model):
     p_author = fields.Char('P__c')  # P作成者(代表） ET列
     product_list_sofa_bench1 = fields.Char('Bench1__c')  # 商品リスト（Bench1) EU列
     product_list_sofa_bench2 = fields.Char('Bench2__c')  # 商品リスト（Bench2) EV列
-    procurement_company = fields.Char('Field77__c')  # 調達会社 EW列
+    procurement_company = fields.Many2one('res.partner', 'Field77__c')  # 調達会社 EW列
     address_no = fields.Char('Field78__c')  # 〒 EX列
     address = fields.Char('Field79__c')  # 住所 EY列
     tel = fields.Char('Field80__c')  # 電話 EZ列
@@ -159,3 +159,44 @@ class rtw_crm(models.Model):
     depot_arrival_date = fields.Datetime('Field84__c')  # デポ着日 FD列
     to_arrangement_depot = fields.Boolean('Field85__c', default=0)  # 手配デポまで FE列
     special_remarks = fields.Text('Field86__c')  # Photographer FF列
+    case_ids = fields.One2many(
+        comodel_name="rtw_sf_case",
+        inverse_name="crm_id",
+        string="case", )
+    case_count = fields.Integer(string="case count", compute="_compute_case_count")
+
+    def _compute_case_count(self):
+        for rec in self:
+            case_count = self.env['rtw_sf_case'].search_count([('crm_id', '=', rec.id)])
+            rec.case_count = case_count
+
+    def action_open_case(self):
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'case',
+            'res_model': 'rtw_sf_case',
+            'domain': [('contacts', '=', self.id)],
+            'view_mode': 'tree,form',
+            'target': 'current',
+            'context': {
+                'default_id': self.id,
+                'default_contacts': self.partner_id.id,
+                'default_created_by_id': self.env.user.id,
+                'default_crm_id': self.id
+            }
+        }
+
+    def create_case(self):
+        return {
+            'type': 'ir.actions.act_window',
+            'res_model': 'rtw_sf_case',
+            'view_type': 'form',
+            'view_mode': 'form',
+            'target': 'current',
+            'context': {
+                'default_id': self.id,
+                'default_contacts': self.partner_id.id,
+                'default_created_by_id': self.env.user.id,
+                'default_crm_id': self.id
+            }
+        }

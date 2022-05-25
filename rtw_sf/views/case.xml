@@ -35,7 +35,7 @@
                         <group>
                             <group>
                                 <field name="owner_id" string="OwnerId"/>
-                                <field name="opportunity" string="opportunity"/>
+                                <field name="crm_id" string="crm_id"/>
                                 <field name="parents" string="parents case"/>
                                 <field name="accounts" string="account"/>
                                 <field name="contacts" string="contact"/>
@@ -214,6 +214,12 @@
                 id="menu_case_root"
                 action="action_case_tree"
                 web_icon="rtw_sf,static/description/case.png"
+        />
+                <menuitem
+                id="menu_case_tree_crm"
+                action="action_case_tree"
+                parent="crm.crm_menu_root"
+                sequence="30"
         />
         <!-- server action to the one above -->
         <!--

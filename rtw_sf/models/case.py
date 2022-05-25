@@ -12,6 +12,7 @@ class rtw_sf_case(models.Model):
     _description = 'case'
     _rec_name = "subject"
 
+    crm_id = fields.Many2one('crm.lead')
     partner_ids = fields.Many2one('res.partner')
     contacts = fields.Many2one('res.partner', "Contact", copy=False)  # コンタクト
     accounts = fields.Many2one('res.partner', "Account", copy=False)  # アカウント
@@ -55,7 +56,7 @@ class rtw_sf_case(models.Model):
     cope_order_no_3 = fields.Char('X3__c')  # 対処受注番号3
     probate_by_president = fields.Boolean('Field6__c')  # 社長検認
     discoverer = fields.Char('Field52__c')  # 発見者
-    opportunity = fields.Char('opportunity__c')  # 商談
+    opportunity = fields.Many2one('crm.lead')  # 商談
     delivery_date = fields.Datetime('Field5__c')  # 納品日
     occurrence_status = fields.Char('Field53__c')  # 発生状況
     accounting_department_probate = fields.Boolean('Field7__c')  # 経理部検認
