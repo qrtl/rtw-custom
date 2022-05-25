@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-09 05:55+0000\n"
-"PO-Revision-Date: 2022-05-09 05:55+0000\n"
+"POT-Creation-Date: 2022-05-25 03:11+0000\n"
+"PO-Revision-Date: 2022-05-25 03:11+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,121 +16,422 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: task
+#: model:ir.model.fields,field_description:task.field_task_task__account_id
+msgid "AccountId"
+msgstr ""
+
+#. module: task
+#: model:ir.model.fields,field_description:task.field_task_task__activity_date
+msgid "ActivityDate"
+msgstr ""
+
+#. module: task
+#: model:ir.model.fields,field_description:task.field_task_task__activity_origin_type
+msgid "ActivityOriginType"
+msgstr ""
+
+#. module: task
+#: model:ir.model.fields,field_description:task.field_task_task__call_duration_in_seconds
+msgid "CallDurationInSeconds"
+msgstr ""
+
+#. module: task
+#: model:ir.model.fields,field_description:task.field_task_task__completed_datetime
+msgid "CompletedDateTime"
+msgstr ""
+
+#. module: task
+#: model:ir.model.fields,field_description:task.field_task_task__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: task
+#: model:ir.model.fields,field_description:task.field_task_task__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: task
+#: model:ir.model.fields,field_description:task.field_task_task__created_by_id
+msgid "CreatedById"
+msgstr ""
+
+#. module: task
+#: model:ir.model.fields,field_description:task.field_task_task__created_date
+msgid "CreatedDate"
+msgstr ""
+
+#. module: task
+#: model:ir.model.fields,field_description:task.field_task_task__description
+msgid "Description"
+msgstr ""
+
+#. module: task
+#: model:ir.model.fields,field_description:task.field_task_task__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: task
+#: model:ir.model.fields,field_description:task.field_task_task__email_message_id
+msgid "EmailMessageId"
+msgstr ""
+
+#. module: task
+#: model:ir.model.fields,field_description:task.field_task_task__visitor_count
+msgid "Field10__c"
+msgstr ""
+
+#. module: task
+#: model:ir.model.fields,field_description:task.field_task_task__visitor_set_count
+msgid "Field11__c"
+msgstr ""
+
+#. module: task
+#: model:ir.model.fields,field_description:task.field_task_task__customer_service_staff
+msgid "Field12__c"
+msgstr ""
+
+#. module: task
+#: model:ir.model.fields,field_description:task.field_task_task__visitor_purpose
+msgid "Field16__c"
+msgstr ""
+
+#. module: task
+#: model:ir.model.fields,field_description:task.field_task_task__lead
+msgid "Field17__c"
+msgstr ""
+
+#. module: task
+#: model:ir.model.fields,field_description:task.field_task_task__visitor_type
+msgid "Field18__c"
+msgstr ""
+
+#. module: task
+#: model:ir.model.fields,field_description:task.field_task_task__estimate_flg
+msgid "Field19__c"
+msgstr ""
+
+#. module: task
+#: model:ir.model.fields,field_description:task.field_task_task__situation
+msgid "Field1__c"
+msgstr ""
+
+#. module: task
+#: model:ir.model.fields,field_description:task.field_task_task__with_reservation
+msgid "Field21__c"
+msgstr ""
+
+#. module: task
+#: model:ir.model.fields,field_description:task.field_task_task__no_reservation
+msgid "Field22__c"
+msgstr ""
+
+#. module: task
+#: model:ir.model.fields,field_description:task.field_task_task__start_datetime
+msgid "Field25__c"
+msgstr ""
+
+#. module: task
+#: model:ir.model.fields,field_description:task.field_task_task__payment_method
+msgid "Field26__c"
+msgstr ""
+
+#. module: task
+#: model:ir.model.fields,field_description:task.field_task_task__cost
+msgid "Field2__c"
+msgstr ""
+
+#. module: task
+#: model:ir.model.fields,field_description:task.field_task_task__estimated_accrual
+msgid "Field31__c"
+msgstr ""
+
+#. module: task
+#: model:ir.model.fields,field_description:task.field_task_task__omotesando
+msgid "Field35__c"
+msgstr ""
+
+#. module: task
+#: model:ir.model.fields,field_description:task.field_task_task__bill_amount
+msgid "Field3__c"
+msgstr ""
+
+#. module: task
+#: model:ir.model.fields,field_description:task.field_task_task__belongs
+msgid "Field7__c"
+msgstr ""
+
+#. module: task
+#: model:ir.model.fields,field_description:task.field_task_task__client_id
+msgid "Field8__c"
+msgstr ""
+
+#. module: task
+#: model:ir.model.fields,field_description:task.field_task_task__id
+msgid "ID"
+msgstr ""
+
+#. module: task
+#: model:ir.model.fields,field_description:task.field_task_task__is_archived
+msgid "IsArchived"
+msgstr ""
+
+#. module: task
+#: model:ir.model.fields,field_description:task.field_task_task__isclosed
+msgid "IsClosed"
+msgstr ""
+
+#. module: task
+#: model:ir.model.fields,field_description:task.field_task_task__is_recurrence
+msgid "IsRecurrence"
+msgstr ""
+
+#. module: task
+#: model:ir.model.fields,field_description:task.field_task_task__is_reminder_set
+msgid "IsReminderSet"
+msgstr ""
+
+#. module: task
+#: model:ir.model.fields,field_description:task.field_task_task____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: task
+#: model:ir.model.fields,field_description:task.field_task_task__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: task
+#: model:ir.model.fields,field_description:task.field_task_task__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: task
+#: model:ir.model.fields,field_description:task.field_task_task__last_modified_by_id
+msgid "LastModifiedById"
+msgstr ""
+
+#. module: task
+#: model:ir.model.fields,field_description:task.field_task_task__last_modified_date
+msgid "LastModifiedDate"
+msgstr ""
+
+#. module: task
+#: model:ir.model.fields,field_description:task.field_task_task__owner_id
+msgid "OwnerId"
+msgstr ""
+
+#. module: task
+#: model:ir.model.fields,field_description:task.field_task_task__priority
+msgid "Priority"
+msgstr ""
+
+#. module: task
+#: model:ir.model.fields,field_description:task.field_task_task__recurrence_activity_id
+msgid "RecurrenceActivityId"
+msgstr ""
+
+#. module: task
+#: model:ir.model.fields,field_description:task.field_task_task__recurrence_day_of_week_mask
+msgid "RecurrenceDayOfWeekMask"
+msgstr ""
+
+#. module: task
+#: model:ir.model.fields,field_description:task.field_task_task__recurrence_end_date_only
+msgid "RecurrenceEndDateOnly"
+msgstr ""
+
+#. module: task
+#: model:ir.model.fields,field_description:task.field_task_task__recurrence_interval
+msgid "RecurrenceInterval"
+msgstr ""
+
+#. module: task
+#: model:ir.model.fields,field_description:task.field_task_task__recurrence_start_date_only
+msgid "RecurrenceStartDateOnly"
+msgstr ""
+
+#. module: task
+#: model:ir.model.fields,field_description:task.field_task_task__recurrence_time_zone_sid_key
+msgid "RecurrenceTimeZoneSidKey"
+msgstr ""
+
+#. module: task
+#: model:ir.model.fields,field_description:task.field_task_task__recurrence_type
+msgid "RecurrenceType"
+msgstr ""
+
+#. module: task
+#: model:ir.model.fields,field_description:task.field_task_task__reminder_datetime
+msgid "ReminderDateTime"
+msgstr ""
+
+#. module: task
+#: model:ir.model.fields,field_description:task.field_task_task__sr
+msgid "SR__c"
+msgstr ""
+
+#. module: task
+#: model:ir.model.fields,field_description:task.field_task_task__status
+msgid "Status"
+msgstr ""
+
+#. module: task
+#: model:ir.model.fields,field_description:task.field_task_task__subject
+msgid "Subject"
+msgstr ""
+
+#. module: task
+#: model:ir.model.fields,field_description:task.field_task_task__system_mod_stamp
+msgid "SystemModstamp"
+msgstr ""
+
+#. module: task
+#: model_terms:ir.ui.view,arch_db:task.rtw_sf_task_form
+msgid "ToDo："
+msgstr ""
+
+#. module: task
+#: model:ir.model.fields,field_description:task.field_task_task__type
+msgid "Type"
+msgstr ""
+
+#. module: task
+#: model:ir.model.fields,field_description:task.field_task_task__what_count
+msgid "WhatCount"
+msgstr ""
+
+#. module: task
+#: model:ir.model.fields,field_description:task.field_task_task__what_id
+msgid "WhatId"
+msgstr ""
+
+#. module: task
+#: model:ir.model.fields,field_description:task.field_task_task__who_count
+msgid "WhoCount"
+msgstr ""
+
+#. module: task
+#: model:ir.model.fields,field_description:task.field_task_task__who_id
+msgid "WhoId"
+msgstr ""
+
+#. module: task
+#: model_terms:ir.ui.view,arch_db:task.rtw_sf_task_form
+#: model_terms:ir.ui.view,arch_db:task.task_list
+msgid "activity_date"
+msgstr ""
+
+#. module: task
+#: model_terms:ir.ui.view,arch_db:task.rtw_sf_task_form
+msgid "activity_origin_type"
+msgstr ""
+
+#. module: task
+#: model_terms:ir.ui.view,arch_db:task.rtw_sf_task_form
+msgid "bill_amount"
+msgstr ""
+
+#. module: task
+#: model:ir.model.fields,field_description:task.field_task_task__campaign_id
+msgid "campaign_5__c"
+msgstr ""
+
+#. module: task
+#: model_terms:ir.ui.view,arch_db:task.rtw_sf_task_form
+msgid "campaign_id"
+msgstr ""
+
+#. module: task
+#: model_terms:ir.ui.view,arch_db:task.rtw_sf_task_form
+msgid "client_id"
+msgstr ""
+
+#. module: task
+#: model_terms:ir.ui.view,arch_db:task.rtw_sf_task_form
+msgid "cost"
+msgstr ""
+
+#. module: task
+#: model_terms:ir.ui.view,arch_db:task.rtw_sf_task_form
+msgid "created_by_id"
+msgstr ""
+
+#. module: task
+#: model_terms:ir.ui.view,arch_db:task.rtw_sf_task_form
+msgid "description"
+msgstr ""
+
+#. module: task
+#: model_terms:ir.ui.view,arch_db:task.rtw_sf_task_form
+msgid "is_reminder_set"
+msgstr ""
+
+#. module: task
+#: model_terms:ir.ui.view,arch_db:task.rtw_sf_task_form
+msgid "last_modified_by_id"
+msgstr ""
+
+#. module: task
+#: model:ir.model.fields,field_description:task.field_task_task__new_sales
+msgid "new_customer_2__c"
+msgstr ""
+
+#. module: task
+#: model_terms:ir.ui.view,arch_db:task.rtw_sf_task_form
+#: model_terms:ir.ui.view,arch_db:task.task_list
+msgid "owner_id"
+msgstr ""
+
+#. module: task
+#: model_terms:ir.ui.view,arch_db:task.rtw_sf_task_form
+msgid "priority"
+msgstr ""
+
+#. module: task
+#: model_terms:ir.ui.view,arch_db:task.rtw_sf_task_form
+msgid "start_datetime"
+msgstr ""
+
+#. module: task
+#: model_terms:ir.ui.view,arch_db:task.rtw_sf_task_form
+msgid "status"
+msgstr ""
+
+#. module: task
+#: model_terms:ir.ui.view,arch_db:task.rtw_sf_task_form
+#: model_terms:ir.ui.view,arch_db:task.task_list
+msgid "subject"
+msgstr ""
+
+#. module: task
 #: model:ir.actions.act_window,name:task.action_window
 #: model:ir.ui.menu,name:task.menu_root
-#: model_terms:ir.ui.view,arch_db:task.rtw_sf_task_form
 msgid "task"
-msgstr "タスク"
+msgstr ""
 
 #. module: task
-#: model_terms:ir.ui.view,arch_db:task.task_list
-#: model_terms:ir.ui.view,arch_db:opportunity.rtw_sf_task_form
-msgid "subject"
-msgstr "件名"
+#: model:ir.model,name:task.model_task_task
+msgid "task.task"
+msgstr ""
 
 #. module: task
-#: model_terms:ir.ui.view,arch_db:task.task_list
-#: model_terms:ir.ui.view,arch_db:opportunity.rtw_sf_task_form
-msgid "who_id"
-msgstr "取引先責任者"
-
-#. module: task
-#: model_terms:ir.ui.view,arch_db:task.task_list
-#: model_terms:ir.ui.view,arch_db:opportunity.rtw_sf_task_form
-msgid "what_id"
-msgstr "関連先(商談他)"
-
-#. module: task
-#: model_terms:ir.ui.view,arch_db:task.task_list
-#: model_terms:ir.ui.view,arch_db:opportunity.rtw_sf_task_form
-msgid "activity_date"
-msgstr "期日"
-
-#. module: task
-#: model_terms:ir.ui.view,arch_db:task.task_list
-msgid "owner_id"
-msgstr "割り当て先(別名)"
-
-
-#. module: task
-#: model_terms:ir.ui.view,arch_db:opportunity.rtw_sf_task_form
-msgid "status"
-msgstr "状況"
-
-
-#. module: task
-#: model_terms:ir.ui.view,arch_db:opportunity.rtw_sf_task_form
-msgid "owner_id"
-msgstr "割り当て先"
-
-
-#. module: task
-#: model_terms:ir.ui.view,arch_db:opportunity.rtw_sf_task_form
-msgid "client_id"
-msgstr "関連先(取引先)"
-
-
-#. module: task
-#: model_terms:ir.ui.view,arch_db:opportunity.rtw_sf_task_form
-msgid "activity_origin_type"
-msgstr "チャネル"
-
-
-#. module: task
-#: model_terms:ir.ui.view,arch_db:opportunity.rtw_sf_task_form
-msgid "campaign_id"
-msgstr "関連先(キャンペーン)"
-
-
-#. module: task
-#: model_terms:ir.ui.view,arch_db:opportunity.rtw_sf_task_form
-msgid "description"
-msgstr "コメント"
-
-
-#. module: task
-#: model_terms:ir.ui.view,arch_db:opportunity.rtw_sf_task_form
+#: model_terms:ir.ui.view,arch_db:task.rtw_sf_task_form
 msgid "type"
-msgstr "種別"
-
-
-#. module: task
-#: model_terms:ir.ui.view,arch_db:opportunity.rtw_sf_task_form
-msgid "priority"
-msgstr "優先度"
-
+msgstr ""
 
 #. module: task
-#: model_terms:ir.ui.view,arch_db:opportunity.rtw_sf_task_form
-msgid "start_datetime"
-msgstr "開始時間"
-
-
-#. module: task
-#: model_terms:ir.ui.view,arch_db:opportunity.rtw_sf_task_form
-msgid "cost"
-msgstr "コスト"
-
+#: model_terms:ir.ui.view,arch_db:task.rtw_sf_task_form
+#: model_terms:ir.ui.view,arch_db:task.task_list
+msgid "what_id"
+msgstr ""
 
 #. module: task
-#: model_terms:ir.ui.view,arch_db:opportunity.rtw_sf_task_form
-msgid "bill_amount"
-msgstr "請求額"
-
-
-#. module: task
-#: model_terms:ir.ui.view,arch_db:opportunity.rtw_sf_task_form
-msgid "is_reminder_set"
-msgstr "アラーム設定"
-
+#: model_terms:ir.ui.view,arch_db:task.rtw_sf_task_form
+#: model_terms:ir.ui.view,arch_db:task.task_list
+msgid "who_id"
+msgstr ""
 
 #. module: task
-#: model_terms:ir.ui.view,arch_db:opportunity.rtw_sf_task_form
-msgid "last_modified_by_id"
-msgstr "最終更新者"
-
-
-#. module: task
-#: model_terms:ir.ui.view,arch_db:opportunity.rtw_sf_task_form
-msgid "created_by_id"
-msgstr "作成者"
+#: model_terms:ir.ui.view,arch_db:task.rtw_sf_task_form
+msgid "詳細"
+msgstr ""

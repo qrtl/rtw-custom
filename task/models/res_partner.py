@@ -1,9 +1,9 @@
 from odoo import models, fields, api
 
 
-class rtw_sf_partner_oppo(models.Model):
+class rtw_sf_partner_task(models.Model):
     _inherit = "res.partner"
-    _description = 'opportunity'
+    _description = 'task'
 
     opportunity = fields.One2many('opportunity.opportunity', inverse_name='accounts')  # ケース OK
     opportunity_count = fields.Integer(string="case count", compute="_compute_oppo_count")

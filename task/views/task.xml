@@ -73,7 +73,6 @@
                                 <field name="activity_origin_type" string="activity_origin_type"/>
                                 <field name="what_id" string="what_id"/>
                                 <field name="campaign_id" string="campaign_id"/>
-                                <field name="activity_origin_type" string="activity_origin_type"/>
                                 <field name="description" string="description"/>
                             </group>
                             <group>
@@ -127,12 +126,11 @@
         <!--
         <menuitem name="opportunity" id="opportunity.menu_1" parent="opportunity.menu_root"/>
         -->
-        <!--        <menuitem-->
-        <!--                id="menu_task_tree"-->
-        <!--                action="task.action_window"-->
-        <!--                parent="contacts.menu_contacts"-->
-        <!--                sequence="30"-->
-        <!--        />-->
+<!--         <menuitem-->
+<!--                 id="menu_task_tree"-->
+<!--                 action="task.action_window"-->
+<!--                 sequence="30"-->
+<!--         />-->
         <!--
             <menuitem name="Menu 2" id="car.menu_2" parent="car.menu_root"/>
         -->

@@ -9,8 +9,8 @@ class task(models.Model):
 
     who_id = fields.Many2one('res.partner', 'WhoId')  # 取引先責任者id B列
     # who_id = fields.Char('WhoId')  # 取引先責任者id B列
-    what_id = fields.Many2one('res.partner', 'WhatId')  # 関連先(商談他)id C列
-    # what_id = fields.Char('WhatId')  # 関連先(商談他)id C列
+    # what_id = fields.Many2one('res.partner', 'WhatId')  # 関連先(商談他)id C列
+    what_id = fields.Char('WhatId')  # 関連先(商談他)id C列
     who_count = fields.Integer('WhoCount')  # 取引先責任者カウント D列
     what_count = fields.Integer('WhatCount')  # 関連先(商談他)件数 E列
     subject = fields.Char('Subject')  # 件名 F列
