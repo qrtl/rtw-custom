@@ -26,3 +26,22 @@ class rtw_sf_partner_oppo(models.Model):
                 'default_contact_person': self.id,
             }
         }
+
+    def create_inquiry(self):
+        return {
+            'type': 'ir.actions.act_window',
+            'res_model': 'rtw_sf.inquiry',
+            'view_type': 'form',
+            'view_mode': 'form',
+            'target': 'current',
+            'context': {
+                'default_id': self.id,
+                'default_contact_person': self.id,
+                'default_created_by_id': self.env.user.id,
+                'default_last_modified_by_id': self.env.user.id,
+                'default_owner_id': self.env.user.id,
+            }
+        }
+
+
+
