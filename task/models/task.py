@@ -57,7 +57,7 @@ class task(models.Model):
     # kpi1 = fields.Char('KPI_1__c')  # KPI項目 AT ★空白のみ
     # f = fields.Char('KPI__c')  # F AU ★空白のみ
     # study_meeting_count = fields.Integer('Field4__c')  # 勉強会人数 AV ★空白のみ
-    campaign_id = fields.Many2one('res.partner', 'campaign_5__c')  # 関連先(キャンペーン)id AW
+    campaign_id = fields.Many2one('utm.campaign', 'campaign_5__c')  # 関連先(キャンペーン)id AW
     situation = fields.Char('Field1__c')  # 状況 AX
     sr = fields.Char('SR__c')  # SR AY
     new_sales = fields.Boolean('new_customer_2__c')  # 新規営業 AZ ★0,空白のみ

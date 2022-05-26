@@ -18,7 +18,7 @@ class contract(models.Model):
                                      domain="['|', '|','|',('name', '=', '問合せ'),"
                                             " ('name', '=', 'アンケート2018'), "
                                             "('name', '=', '出張報告書'), "
-                                            "('name', '=', 'アンケート2019')]"　)
+                                            "('name', '=', 'アンケート2019')]")
     record_type_id_name = fields.Char(related="record_type_id.name", string="record_type_id_name")
     created_date = fields.Datetime('CreatedDate')  # 作成日 AM列
     created_by_id = fields.Many2one('res.users', 'CreatedById')  # 作成ID AN列
@@ -201,3 +201,102 @@ class contract(models.Model):
     not_meet_2 = fields.Boolean('not_meet_2')  # 会っていない
     crm_1 = fields.Many2one('crm.lead', 'crm_1')  # 関連商談①
     crm_2 = fields.Many2one('crm.lead', 'crm_2')  # 関連商談②
+    order_no = fields.Char("order_no")
+    product_category_1 = fields.Char("product_category_1")
+    product_category_2 = fields.Char("product_category_2")
+    product_category_3 = fields.Char("product_category_3")
+    product_category_4 = fields.Char("product_category_4")
+    product_category_5 = fields.Char("product_category_5")
+    product_category_6 = fields.Char("product_category_6")
+    score = fields.Integer("score")
+    status_report = fields.Html("status_report")
+    request = fields.Html("request")
+    comment = fields.Text("comment")
+    classification = fields.Selection([
+        ('1', '社内業務改善'),
+        ('2', 'ツール・資料制作依頼'),
+    ], string="classification",
+     default='')
+    progress = fields.Selection([
+        ('1', '申請'),
+        ('2', '完了'),
+    ], string="progress",
+     default='')
+    contact = fields.Many2one('res.users', 'contact')
+    admitted = fields.Selection([
+        ('1', '未'),
+        ('2', '済'),
+    ], string="admitted",
+     default='1')
+    report_progress = fields.Selection([
+        ('1', '提出'),
+        ('2', '受理'),
+        ('3', '承認'),
+        ('4', '総務受理'),
+        ('5', '差し戻し'),
+    ], string="report_progress",
+     default='1')
+    proposal_ability = fields.Selection([
+        ('5', '感動'),
+        ('4', '満足'),
+        ('3', '普通'),
+        ('2', '不満'),
+        ('1', '大変不満'),
+    ], string="proposal_ability",
+     default='')  #
+    speed = fields.Selection([
+        ('5', '感動'),
+        ('4', '満足'),
+        ('3', '普通'),
+        ('2', '不満'),
+        ('1', '大変不満'),
+    ], string="speed",
+     default='')  #
+    greeting1 = fields.Selection([
+        ('5', '感動'),
+        ('4', '満足'),
+        ('3', '普通'),
+        ('2', '不満'),
+        ('1', '大変不満'),
+    ], string="greeting1",
+     default='')  #
+    appearance = fields.Selection([
+        ('5', '感動'),
+        ('4', '満足'),
+        ('3', '普通'),
+        ('2', '不満'),
+        ('1', '大変不満'),
+    ], string="appearance",
+     default='')  #
+    delivery_work = fields.Selection([
+        ('5', '感動'),
+        ('4', '満足'),
+        ('3', '普通'),
+        ('2', '不満'),
+        ('1', '大変不満'),
+    ], string="delivery_work",
+     default='')  #
+    description = fields.Selection([
+        ('5', '感動'),
+        ('4', '満足'),
+        ('3', '普通'),
+        ('2', '不満'),
+        ('1', '大変不満'),
+    ], string="description",
+     default='')  #
+    greeting_2 = fields.Selection([
+        ('5', '感動'),
+        ('4', '満足'),
+        ('3', '普通'),
+        ('2', '不満'),
+        ('1', '大変不満'),
+    ], string="greeting_2",
+     default='')  #
+    appearance_2 = fields.Selection([
+        ('5', '感動'),
+        ('4', '満足'),
+        ('3', '普通'),
+        ('2', '不満'),
+        ('1', '大変不満'),
+    ], string="appearance_2",
+     default='')  #

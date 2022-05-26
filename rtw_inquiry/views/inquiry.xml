@@ -89,7 +89,7 @@
                                 <field name="handover_matters" string="handover_matters"/>
                             </group>
                         </div>
-                        <div attrs="{'invisible': [('record_type_id_name','!=', 'アンケート2018')]}">
+                        <div attrs="{'invisible': [('record_type_id_name','!=','アンケート2018')]}">
                             <group>
                                 <h2>
                                     件名：
@@ -99,15 +99,189 @@
                             <group>
                                 <group>
                                     <field name="owner_id" string="owner_id"/>
-                                    <field name="no" string="no"/>
                                     <field name="contact_person" string="contact_person"/>
                                     <field name="accounts" string="accounts"/>
                                     <field name="vendor" string="vendor"/>
                                 </group>
                                 <group>
                                     <field name="crm_1" string="crm_1"/>
+                                    <field name="order_no" string="order_no"/>
+                                    <field name="campaign_id" string="campaign_id"/>
+                                    <field name="created_by_id" string="created_by_id"/>
+                                    <field name="last_modified_by_id" string="last_modified_by_id"/>
                                 </group>
                             </group>
+                            <notebook>
+                                <page string="アンケート">
+                                    <group string="Q1_商品の満足度">
+                                        <field name="satisfaction_level"/>
+                                    </group>
+                                    <group string="Q2＿購入理由">
+                                        <group>
+                                            <field name="deign" string="Design"/>
+                                            <field name="use"/>
+                                            <field name="sense_of_materials"/>
+                                            <field name="price"/>
+                                            <field name="image_atmosphere"/>
+                                        </group>
+                                        <group>
+                                            <field name="sales_staff_response"/>
+                                            <field name="recommendation_from_a_friend"/>
+                                            <field name="glad_bought_it_before"/>
+                                            <field name="inet_reputation_and_wom"/>
+                                            <field name="non_response"/>
+                                        </group>
+                                    </group>
+                                    <group string="Q3＿営業スタッフの対応">
+                                        <field name="sales_staff_evaluation"/>
+                                    </group>
+                                    <group string="Q4_納品スタッフの作業・身だしなみ・あいさつ">
+                                        <field name="evaluation_of_delivery_staff"/>
+                                    </group>
+                                    <group string="Q5_メンテナンスの興味">
+                                        <group>
+                                            <field name="yes"/>
+                                        </group>
+                                        <group>
+                                            <field name="no"/>
+                                        </group>
+                                    </group>
+                                    <group string="Q6_DMの可否">
+                                        <group>
+                                            <field name="need_dm"/>
+                                        </group>
+                                        <group>
+                                            <field name="not_need_dm"/>
+                                        </group>
+                                    </group>
+                                    <group string="Q7_ご意見・ご要望">
+                                        <field name="customer_testimonials"/>
+                                    </group>
+                                </page>
+                                <page string="商品情報">
+                                    <group>
+                                        <group>
+                                            <field name="product_category_1"/>
+                                            <field name="product_name1"/>
+                                            <field name="product_category_2"/>
+                                            <field name="product_name2"/>
+                                            <field name="product_category_3"/>
+                                            <field name="product_name3"/>
+                                        </group>
+                                        <group>
+                                            <field name="product_category_4"/>
+                                            <field name="product_name4"/>
+                                            <field name="product_category_5"/>
+                                            <field name="product_name5"/>
+                                            <field name="product_category_6"/>
+                                            <field name="product_name6"/>
+                                        </group>
+                                    </group>
+                                </page>
+                            </notebook>
+                        </div>
+                        <div attrs="{'invisible': [('record_type_id_name','!=','アンケート2019')]}">
+                            <group>
+                                <h2>
+                                    件名：
+                                    <field name="name"/>
+                                </h2>
+                            </group>
+                            <group>
+                                <group>
+                                    <field name="owner_id" string="owner_id"/>
+                                    <field name="contact_person" string="contact_person"/>
+                                    <field name="accounts" string="accounts"/>
+                                    <field name="vendor" string="vendor"/>
+                                </group>
+                                <group>
+                                    <field name="crm_1" string="crm_1"/>
+                                    <field name="order_no" string="order_no"/>
+                                    <field name="campaign_id" string="campaign_id"/>
+                                    <field name="created_by_id" string="created_by_id"/>
+                                    <field name="last_modified_by_id" string="last_modified_by_id"/>
+                                </group>
+                            </group>
+                            <notebook>
+                                <page string="アンケート">
+                                    <group string="Q1_リードソース">
+                                        <field name="lead_source"/>
+                                    </group>
+                                    <group string="Q2_商品情報">
+                                        <group>
+                                            <field name="product_category_1"/>
+                                            <field name="product_name1"/>
+                                            <field name="product_category_2"/>
+                                            <field name="product_name2"/>
+                                            <field name="product_category_3"/>
+                                            <field name="product_name3"/>
+                                        </group>
+                                        <group>
+                                            <field name="product_category_4"/>
+                                            <field name="product_name4"/>
+                                            <field name="product_category_5"/>
+                                            <field name="product_name5"/>
+                                            <field name="product_category_6"/>
+                                            <field name="product_name6"/>
+                                        </group>
+                                    </group>
+                                    <group string="Q3＿Rを紹介したいか">
+                                        <field name="score"/>
+                                    </group>
+                                    <group string="Q4＿購入理由">
+                                        <group>
+                                            <field name="deign" string="Design"/>
+                                            <field name="use"/>
+                                            <field name="sense_of_materials"/>
+                                            <field name="price"/>
+                                            <field name="image_atmosphere"/>
+                                        </group>
+                                        <group>
+                                            <field name="sales_staff_response"/>
+                                            <field name="recommendation_from_a_friend"/>
+                                            <field name="glad_bought_it_before"/>
+                                            <field name="inet_reputation_and_wom"/>
+                                            <field name="non_response"/>
+                                        </group>
+                                    </group>
+                                    <group string="Q5＿販売・営業スタッフの対応">
+                                        <group>
+                                            <field name="proposal_ability"/>
+                                            <field name="speed"/>
+                                        </group>
+                                        <group>
+                                            <field name="greeting1"/>
+                                            <field name="appearance"/>
+                                            <field name="not_meet"/>
+                                        </group>
+                                    </group>
+                                    <group string="Q6_納品スタッフの作業・身だしなみ・あいさつ">
+                                        <group>
+                                            <field name="delivery_work"/>
+                                            <field name="description"/>
+                                        </group>
+                                        <group>
+                                            <field name="greeting_2"/>
+                                            <field name="appearance_2"/>
+                                            <field name="not_meet_2"/>
+                                        </group>
+                                    </group>
+                                    <group string="Q7_ご意見・ご要望">
+                                        <field name="customer_testimonials"/>
+                                    </group>
+                                    <group string="Q8_DMの可否">
+                                        <group>
+                                            <field name="need_dm"/>
+                                        </group>
+                                        <group>
+                                            <field name="not_need_dm"/>
+                                        </group>
+                                    </group>
+                                    <group string="">
+                                        <field name="confirmation"/>
+                                    </group>
+                                </page>
+                            </notebook>
                         </div>
                     </sheet>
                     <div class="oe_chatter">
