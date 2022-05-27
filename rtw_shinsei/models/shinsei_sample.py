@@ -18,6 +18,10 @@ class ShinseSampleRequest(models.Model):
 
     _tier_validation_manual_config = True
 
+    @api.model
+    def _get_default_requested_by(self):
+        return self.env["res.users"].browse(self.env.uid)
+
     name = fields.Char("name")
     state = fields.Selection(
         selection=_STATES,
@@ -27,6 +31,21 @@ class ShinseSampleRequest(models.Model):
         required=True,
         copy=False,
         default="draft",
+    )
+    requested_by = fields.Many2one(
+        comodel_name="res.users",
+        string="Requested by",
+        required=True,
+        copy=False,
+        tracking=True,
+        default=_get_default_requested_by,
+        index=True,
+    )
+    date_start = fields.Date(
+        string="Creation date",
+        help="Date when the user initiated the request.",
+        default=fields.Date.context_today,
+        tracking=True,
     )
 
     @api.model

@@ -43,6 +43,8 @@
                         </div>
                         <group>
                             <field name="name"/>
+                            <field name="requested_by" widget="many2one_avatar_user" />
+                            <field name="date_start"/>
                         </group>
                     </sheet>
                     <div class="oe_chatter">
