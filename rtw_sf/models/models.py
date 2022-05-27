@@ -16,3 +16,9 @@
 #     def _value_pc(self):
 #         for record in self:
 #             record.value2 = float(record.value) / 100
+ fields.Selection([
+        ('h', '高'),
+        ('m', '中'),
+        ('l', '低'),
+        ], default='',
+        string=

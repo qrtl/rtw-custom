@@ -101,7 +101,7 @@
                                 <field name="lead_source" string="lead_source"
                                        attrs="{'required': [('is_company','=', False)]}"/>
                                 <field name="media_name" string="media_name"/>
-                                <field name="r_web_site" string="r_web_site"/>
+                                <field name="web" string="web"/>
                                 <field name="need_dm" string="need_dm"/>
                                 <field name="do_not_dm" string="do_not_dm"/>
                                 <field name="dm_unknown" string="dm_unknown"/>
@@ -160,24 +160,24 @@
                             </group>
                         </group>
                         <group string="ROC">
-                            <group>
+
                                 <group>
                                     <field name="lead_source_roc" string="lead_source_roc"/>
                                 </group>
                                 <group>
                                     <field name="interest_roc" string="interest_roc"/>
                                 </group>
-                            </group>
+
                         </group>
                         <group string="キャンペーン">
-                            <group>
+
                                 <group>
                                     <field name="campaign_1" string="campaign_1"/>
                                 </group>
                                 <group>
                                     <field name="campaign_2" string="campaign_2"/>
                                 </group>
-                            </group>
+
                         </group>
                         <group string="管理者">
                             <group>
