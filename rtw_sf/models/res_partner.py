@@ -15,10 +15,23 @@ class rtw_sf_partner(models.Model):
     account_number = fields.Char("AccountNumber")  # Y OK
     annual_revenue = fields.Char("AnnualRevenue")  # AC 年間売上 OK
     number_of_employees = fields.Integer("NumberOfEmployees")  # AD 従業員数 OK
-    ownership = fields.Char(string="ownership", )  # OK
+    ownership = fields.Selection([
+        ('1', '公開'),
+        ('2', '非公開'),
+        ('3', '関連子会社'),
+        ('4', 'その他'),
+    ], default='',
+        string="ownership", )  # OK
     ticker_symbol = fields.Char("TickerSymbol")  # AF 銘柄コード OK
     description = fields.Text("Description")  # OK
-    rating = fields.Char(string="Rating")  # ok
+    rating =  fields.Selection([
+        ('1', '重要顧客'),
+        ('2', '平均的'),
+        ('3', '見込み有り'),
+        ('4', '見込み無し'),
+        ('5', '将来見込み有り'),
+    ], default='',
+        string="Rating")  # ok
     site = fields.Char("Site")  # OK
     supplier_no = fields.Char("supplier_no")  # OK 仕入先番号 Field5__c
     kana = fields.Char("kana")  # OK フリガナ Field5__c
@@ -34,15 +47,62 @@ class rtw_sf_partner(models.Model):
         ('3', '運賃込み（デポ入れまで）'),
     ], default='',
         string="fare_payment_terms")  # 支払条件運賃 OK Field9__c
-    categorization = fields.Char("categorization")  # 分類 OK Field10__c
-    situation = fields.Char("situation")  # 状況 OK Field11__c
+    categorization = fields.Selection([
+        ('1', '大手HM'),
+        ('2', 'その他HM'),
+        ('3', 'リフォーム'),
+        ('4', '大手マンション'),
+        ('5', 'その他マンション'),
+        ('6', 'リノベーション'),
+        ('7', 'IC事務所'),
+        ('8', 'ID事務所'),
+        ('9', '建築設計（アトリエ系）'),
+        ('10', 'オフィス設計'),
+        ('11', '内装施工'),
+        ('12', '組織設計'),
+        ('13', 'ゼネコン'),
+        ('14', '小売/百貨店'),
+        ('15', '商社/インテリア資材'),
+        ('16', '問屋'),
+        ('17', 'オフィス家具'),
+        ('18', '家具メーカー'),
+        ('19', 'リース業'),
+        ('20', 'OEM'),
+        ('21', '一般'),
+        ('22', '法人'),
+        ('23', '仕入会社'),
+        ('24', '住設関係'),
+        ('25', '関係者販売等'),
+        ('26', 'HM/ビルダー先'),
+        ('27', '競合他社'),
+        ('28', 'メディア'),
+        ('29', 'リクルート'),
+        ('30', 'フォトグラファー'),
+        ('31', 'プロダクトデザイナー'),
+        ('32', '企業ブランディングデザイナー'),
+        ('33', 'グラフィックデザイナー'),
+        ('34', '独占販売権ディーラー'),
+        ('34', '非独占販売権ディーラー'),
+        ('34', '販売代行エージェント'),
+        ('34', 'その他'),
+        ('34', 'Ritzwell'),
+    ], default='',
+        string="categorization")  # 分類 OK Field10__c
+    situation = fields.Selection([
+        ('1', '新規'),
+        ('2', '既存'),
+        ('3', '休眠'),
+        ('4', '未取引'),
+        ('5', '営業対象外'),
+    ], default='1',
+        string="situation")  # 状況 OK Field11__c
     address_confirmation_required = fields.Selection([('moving', '（不達）転居'), ('unknown', '（不達）不明')], string="address_confirmation_required")  # 住所要確認 OK Field12__c
     last_contract_date = fields.Datetime("last_contract_date")  # 最新成約日 OK Field13__c
     total_number_of_transactions = fields.Integer("total_number_of_transactions")  # 累計取引回数 OK Field14__c
     cumulative_sales = fields.Float("cumulative_sales")  # 累計売上金額 OK Field15__c
     potential = fields.Selection([('a', 'A'), ('b', 'B'), ('c', 'C'), ('d', 'D')], string="potential",
                                  default='')  # ポテンシャル OK Field16__c
-    kubun = fields.Char("kubun")  # 区分 OK  Field20__c
+    kubun = fields.Selection([('internal', '国内'), ('external', '国外')], string="kubun")  # 区分 OK  Field20__c
     rival_companies = fields.Boolean("rival_companies", default=0)  # 競合他社 OK Field23__c
     group = fields.Char("group")  # G OK Field21__c
     transaction_category = fields.Selection([
