@@ -12,11 +12,54 @@ class rtw_crm(models.Model):
     # close_date = fields.Datetime('CloseDate')  # 完了日 M列
     x_type = fields.Char('Type')  # N列
     nextstep = fields.Char('NextStep')  # 次の段階 O列
-    lead_source = fields.Char('LeadSource')  # 見込み顧客の獲得方法 P列
+    lead_source = fields.Selection([
+        ('1', '通常営業'),
+        ('2', 'リサーチ・新規開拓'),
+        ('3', '紹介・提案(ＩＣ・設計)'),
+        ('4', '紹介・提案(販売店FFE)'),
+        ('5', '紹介・提案(小売店・百貨店)'),
+        ('6', '納入先展示(展示場・MR)'),
+        ('7', '納入先展示(店舗・施設等)'),
+        ('8', '異動(取責)'),
+        ('9', 'Web検索サイト'),
+        ('10', 'SNS'),
+        ('11', 'TABROOM'),
+        ('12', '広報(広告）'),
+        ('13', '広報（PR）'),
+        ('14', 'DM・ニュースレター'),
+        ('15', 'カタログギフト'),
+        ('16', 'ふるさと納税'),
+        ('17', 'G住宅ﾎﾟｲﾝﾄ'),
+        ('18', 'ROC'),
+        ('19', 'カレンダー購入'),
+        ('20', 'Rオーナー(追加・リピート)'),
+        ('21', 'Rオーナー（アフター）'),
+        ('22', 'イベント参加'),
+        ('23', '通りがかり'),
+        ('24', 'フェア・展示会'),
+        ('25', '外部イベント'),
+        ('26', '紹介（知人・外部）'),
+        ('27', '紹介(施主指定)'),
+        ('28', '紹介（従業員）'),
+        ('29', '海外展示会'),
+        ('30', 'ミラノサローネ'),
+        ('31', 'Architonic'),
+        ('32', 'Archiproducts'),
+        ('33', 'その他'),
+        ('34', '不明'),
+    ], default='',
+        string='LeadSource')  # 見込み顧客の獲得方法 P列
     isclosed = fields.Boolean('IsClosed')  # 完了済みフラグ Q列
     is_won = fields.Boolean('IsWon')  # 成約フラグ R列
     forecast_category = fields.Char('ForecastCategory')  # 予測カテゴリ S列
-    forecast_category_name = fields.Char('ForecastCategoryName')  # 予測カテゴリ名 T列
+    forecast_category_name = fields.Selection([
+        ('1', 'ロスト'),
+        ('2', '進行中'),
+        ('3', '見込み有'),
+        ('4', '最終交渉'),
+        ('5', '受注成立'),
+    ], default='',
+        string='ForecastCategoryName')  # 予測カテゴリ名 T列
     # campaign_id = fields.Char('CampaignId')  # キャンペーンId U列
     # has_opportunity_line_item = fields.Char('HasOpportunityLineItem')  # 段階名 V列
     # price_book2_id = fields.Char('Pricebook2Id')  # 段階名 W列
@@ -46,13 +89,49 @@ class rtw_crm(models.Model):
     project_details = fields.Text('Field60__c')  # 案件詳細 AU列
     Determined_on_the_day = fields.Boolean('Determinedontheday__c', default=0)  # 当日確定 AV列 ★0，1，空白あり
     delivery_date_unknown = fields.Boolean('Field5__c', default=0)  # 納期不明 AW列 ★0，1，空白あり
-    delivery_type = fields.Char('Field6__c')  # 納入先種別 AX列
+    delivery_type = fields.Selection([
+        ('1', '住宅系（戸建・マンション）'),
+        ('2', '医療福祉（病院・老健等）'),
+        ('3', '宿泊施設（旅館・ホテル等）'),
+        ('4', '公共施設（大学・図書館・他文化施設等）'),
+        ('5', '商業施設（飲食・物販等）'),
+        ('6', 'オフィス・金融関連'),
+        ('7', '小物（家具以外）'),
+        ('8', 'その他'),
+    ], default='',
+        string='Field6__c')  # 納入先種別 AX列
     order_amount = fields.Float('Field7__c')  # 受注額 AY列　注意
     omotesando_visit = fields.Boolean('Field87__c', default=0)  # 表参道来店 AZ列 ★0，1，空白あり
     fair = fields.Char('Field22__c')  # Fair BA列
     million_amount = fields.Float('X100_amount__c')  # 100万金額 BB列
     million_order_amount = fields.Float('X100_amount_a__c')  # 100万受注額 BC列 注意
-    competition_a = fields.Char('Field16__c')  # 競合A BD列
+    competition_a = fields.Selection([
+        ('1', '競合なし'),
+        ('2', 'ACTUS'),
+        ('3', 'ＡＤコア'),
+        ('4', 'arflex'),
+        ('5', 'cassina ixc.'),
+        ('6', 'B&B Italia Japan'),
+        ('7', 'Bo concept'),
+        ('8', 'DREXEL HERITAGE'),
+        ('9', 'Time&Style'),
+        ('10', 'Minotti'),
+        ('11', 'アイデック'),
+        ('12', 'エスティック'),
+        ('13', '大塚家具'),
+        ('14', 'カリモク家具'),
+        ('15', 'カンディハウス'),
+        ('16', '日進木工'),
+        ('17', '日本フクラ'),
+        ('18', '飛騨産業'),
+        ('19', '広松木工'),
+        ('20', '冨士ファニチア'),
+        ('21', 'マスターウォール'),
+        ('22', 'マルニ木工'),
+        ('23', 'その他'),
+        ('24', '不明'),
+    ], default='24',
+        string='Field16__c')  # 競合A BD列
     fair_advance_plan = fields.Boolean('Field34_plan__c', default=0)  # フェア事前プラン BE列 ★0，1，空白あり
     product_others = fields.Char('Field14__c')  # 商品その他（補足） BF列
     our_strengths = fields.Text('Field30__c')  # 自社の強み BG列
@@ -60,9 +139,45 @@ class rtw_crm(models.Model):
     total_million_order_count = fields.Boolean('X100_count__c', default=0)  # 100万総数 BI列 ★0，1，空白あり
     Use_Purpose = fields.Text('Field61__c')  # 使用用途(その他） BJ列
     reason_selection = fields.Text('Field62__c')  # 選定理由 BK列
-    Use_Purpose1 = fields.Char('Field63_purpose__c')  # 使用用途① BL列
-    Use_Purpose2 = fields.Char('Field64_purpose__c')  # 使用用途② BM列
-    Use_Purpose3 = fields.Char('Field65_purpose__c')  # 使用用途③ BN列
+    Use_Purpose1 = fields.Selection([
+        ('1', 'ダイニング'),
+        ('2', 'ラウンジ・カフェ'),
+        ('3', 'バー'),
+        ('4', '待合・休憩（飲食なし）'),
+        ('5', '接客・商談用'),
+        ('6', '客室（病室/マンション含）'),
+        ('7', '応接室'),
+        ('8', '会議室'),
+        ('9', 'ワークスペース'),
+        ('10', 'その他'),
+    ], default='',
+        string='Field63_purpose__c')  # 使用用途① BL列
+    Use_Purpose2 = fields.Selection([
+        ('1', 'ダイニング'),
+        ('2', 'ラウンジ・カフェ'),
+        ('3', 'バー'),
+        ('4', '待合・休憩（飲食なし）'),
+        ('5', '接客・商談用'),
+        ('6', '客室（病室/マンション含）'),
+        ('7', '応接室'),
+        ('8', '会議室'),
+        ('9', 'ワークスペース'),
+        ('10', 'その他'),
+    ], default='',
+        string='Field64_purpose__c')  # 使用用途② BM列
+    Use_Purpose3 = fields.Selection([
+        ('1', 'ダイニング'),
+        ('2', 'ラウンジ・カフェ'),
+        ('3', 'バー'),
+        ('4', '待合・休憩（飲食なし）'),
+        ('5', '接客・商談用'),
+        ('6', '客室（病室/マンション含）'),
+        ('7', '応接室'),
+        ('8', '会議室'),
+        ('9', 'ワークスペース'),
+        ('10', 'その他'),
+    ], default='',
+        string='Field65_purpose__c')  # 使用用途③ BN列
     other = fields.Boolean('ITEM_other_08__c', default=0)  # その他 BO列 ★0，1，空白あり
     ac = fields.Boolean('CHAI_2__c', default=0)  # AC BP列 ★0，空白あり
     website = fields.Char('WEB__c')  # WEBサイト BQ列
@@ -70,85 +185,539 @@ class rtw_crm(models.Model):
     order_no = fields.Char('NO__c')  # 受注NO BS列
     facility_name = fields.Char('Field64__c')  # 施設名 BT列
     competition_other = fields.Char('Field17__c')  # 競合（その他） BU列
-    competitive_product_d = fields.Char('Field18__c')  # 競合商品(D) BV列
+    competitive_product_d = fields.Selection([
+        ('1', 'Dt'),
+        ('2', 'ﾁｪｱ'),
+        ('3', 'Dｾｯﾄ'),
+        ('4', 'その他'),
+    ], default='',
+        string='Field18__c')  # 競合商品(D) BV列
     competitive_product_name = fields.Char('Field19__c')  # 競合商品名 BW列
-    competitive_product_l = fields.Char('L__c')  # 競合商品(L) BX列
-    competitive_product_other = fields.Char('Field20__c')  # 競合商品（他） BY列
+    competitive_product_l = fields.Selection([
+        ('1', 'ｿﾌｧ'),
+        ('2', 'Lt'),
+        ('3', 'ﾎﾞｰﾄﾞ'),
+        ('4', 'Lｾｯﾄ'),
+    ], default='',
+        string='L__c')  # 競合商品(L) BX列
+    competitive_product_other = fields.Selection([
+        ('1', 'Sﾎﾞｰﾄﾞ'),
+        ('2', 'ﾗｸﾞ'),
+        ], default='',
+        string='Field20__c')  # 競合商品（他） BY列
     other_strengths = fields.Text('Field21__c')  # 他社の強み BZ列
-    competition_b = fields.Char('B__c')  # 競合B CA列
+    competition_b = fields.Selection([
+        ('1', 'ACTUS'),
+        ('2', 'ＡＤコア'),
+        ('3', 'arflex'),
+        ('4', 'cassina ixc.'),
+        ('5', 'B&B Italia Japan'),
+        ('6', 'Bo concept'),
+        ('7', 'DREXEL HERITAGE'),
+        ('8', 'Time&Style'),
+        ('9', 'Minotti'),
+        ('10', 'アイデック'),
+        ('11', 'エスティック'),
+        ('12', '大塚家具'),
+        ('13', 'カリモク家具'),
+        ('14', 'カンディハウス'),
+        ('15', '日進木工'),
+        ('16', '日本フクラ'),
+        ('17', '飛騨産業'),
+        ('18', '広松木工'),
+        ('19', '冨士ファニチア'),
+        ('20', 'マスターウォール'),
+        ('21', 'マルニ木工'),
+    ], default='',
+        string='B__c')  # 競合B CA列
     campaign = fields.Char('Field65__c')  # キャンペーン CB列
-    product_list_other = fields.Char('Field68__c')  # 商品リスト（その他） CC列
-    action1 = fields.Char('Field23__c')  # アクション① CD列
+    product_list_other = fields.Selection([
+        ('1', 'クッション'),
+        ('2', 'スペアカバー'),
+        ('3', '中材'),
+        ('4', 'スペアカバー+中材'),
+        ('5', 'プラパート'),
+        ('6', 'その他部材'),
+        ('7', 'オイルキット'),
+        ('8', 'レザーキット'),
+        ('9', 'オイル・レザーキット'),
+        ('10', 'カレンダー'),
+        ('11', 'その他'),
+    ], default='',
+        string='Field68__c')  # 商品リスト（その他） CC列
+    action1 = fields.Selection([
+        ('1', '電話'),
+        ('2', 'FAX'),
+        ('3', '（R）WEBフォーム'),
+        ('4', '（媒体）資料請求'),
+        ('5', 'E-mail'),
+        ('6', 'SR来場'),
+        ('7', '表参道来店'),
+        ('8', 'SRフェア'),
+        ('9', 'インテリアフェア'),
+        ('10', '訪問'),
+        ('11', 'イベント参加'),
+        ('12', 'ミラノサローネ'),
+        ('13', 'その他'),
+    ], default='',
+        string='Field23__c')  # アクション① CD列
     memo = fields.Text('Field35_del__c')  # メモ CE列
     branch = fields.Char('Branch__c')  # Branch CF列
-    action2 = fields.Char('Field24__c')  # アクション② CG列
+    action2 = fields.Selection([
+        ('1', '問合せ'),
+        ('2', '資料請求'),
+        ('3', '見積依頼'),
+        ('4', 'プレゼン依頼'),
+        ('5', '注文'),
+        ('6', 'SR来場'),
+        ('7', '表参道来店'),
+        ('8', 'インテリアフェア'),
+        ('9', '(R)WEBフォーム'),
+        ('10', 'その他'),
+    ], default='',
+        string='Field24__c')  # アクション② CG列
     last_event_comment = fields.Text('LastEventComment__c')  # 最終行動コメント CH列
     diana_count = fields.Float('DIANA__c')  # DIANA台数 CI列
-    sample_sale = fields.Char('Field25__c')  # サンプル販売 CJ列
+    sample_sale = fields.Selection([
+        ('all', '全て'),
+        ('same', '一部'),
+        ], default='',
+        string='Field25__c')  # サンプル販売 CJ列
     sample_sales_amount = fields.Integer('Field26__c')  # サンプル販売金額 CK列
     push_c = fields.Float('Push_Counter__c')  # Push C(完了予定日を翌月以降に変更した回数をカウント) CL列
     area = fields.Char('Field32_del__c')  # エリア CM列
     pre_contract_presentation = fields.Integer('Field34_plan2__c')  # 契約前プレゼン CN列
     overlap = fields.Char('Field34__c')  # Overlap CO列
     memo_other = fields.Char('Field28__c')  # メモ（台数など） CP列
-    product_list_rug = fields.Char('Field70__c')  # 商品リスト（ラグ） CQ列
-    product_list_dt2 = fields.Char('Dt2__c')  # 商品リスト(Dt2) CR列
-    product_list_dt1 = fields.Char('Dt1__c')  # 商品リスト(Dt1) CS列
-    product_list_lt2 = fields.Char('Lt2__c')  # 商品リスト(Lt2) CT列
+    product_list_rug = fields.Selection([
+        ('1', 'ペリーニ'),
+        ('2', 'キリム'),
+        ('3', 'その他'),
+    ], default='',
+        string='Field70__c')  # 商品リスト（ラグ） CQ列
+    product_list_dt2 = fields.Selection([
+        ('1', 'EX TABLE'),
+        ('2', 'FV TABLE'),
+        ('3', 'MC TABLE'),
+        ('4', 'MCM TABLE'),
+        ('5', 'MM TABLE'),
+        ('6', 'MO TABLE(RO)'),
+        ('7', 'MO TABLE(OB)'),
+        ('8', 'MT TABLE'),
+        ('9', 'QX TABLE'),
+        ('10', '廃盤品'),
+        ('11', '特注品'),
+    ], default='',
+        string='Dt2__c')  # 商品リスト(Dt2) CR列
+    product_list_dt1 = fields.Selection([
+        ('1', 'EX TABLE'),
+        ('2', 'FV TABLE'),
+        ('3', 'MC TABLE'),
+        ('4', 'MCM TABLE'),
+        ('5', 'MM TABLE'),
+        ('6', 'MO TABLE(RO)'),
+        ('7', 'MO TABLE(OB)'),
+        ('8', 'MT TABLE'),
+        ('9', 'QX TABLE'),
+        ('10', '廃盤品'),
+        ('11', '特注品'),
+    ], default='',
+        string='Dt1__c')  # 商品リスト(Dt1) CS列
+    product_list_lt2 = fields.Selection([
+        ('1', 'CM TABLE (L)'),
+        ('2', 'CB TABLE (L)'),
+        ('3', 'GO TABLE (L)'),
+        ('4', 'JK TABLE (L)'),
+        ('5', 'LW TABLE (L)'),
+        ('6', 'MO TABLE(L)'),
+        ('7', 'SI TABLE(L)'),
+        ('8', '特注品'),
+    ], default='',
+        string='Lt2__c')  # 商品リスト(Lt2) CT列
     fair_Year = fields.Datetime('Field33__c')  # フェア開催年 CU列
-    product_list_lt1 = fields.Char('Lt1__c')  # 商品リスト(Lt1) CV列
-    product_list_ec1 = fields.Char('EC1__c')  # 商品リスト(EC1) CW列
-    product_list_ec2 = fields.Char('EC2_2__c')  # 商品リスト(EC2) CX列
+    product_list_lt1 = fields.Selection([
+        ('1', 'CM TABLE (L)'),
+        ('2', 'CB TABLE (L)'),
+        ('3', 'GO TABLE (L)'),
+        ('4', 'JK TABLE (L)'),
+        ('5', 'LW TABLE (L)'),
+        ('6', 'MO TABLE(L)'),
+        ('7', 'SI TABLE(L)'),
+        ('8', '特注品'),
+    ], default='',
+        string='Lt1__c')  # 商品リスト(Lt1) CV列
+    product_list_ec1 = fields.Selection([
+        ('1', 'BEATRIX(M)'),
+        ('2', 'BEATRIX(L)'),
+        ('3', 'RIVAGE(EC)'),
+        ('4', 'RIVAGE(LC)'),
+        ('5', 'BLAVA(EC)'),
+        ('6', 'BLAVA(HEC)'),
+        ('7', 'CLAUDE(EC)'),
+        ('8', 'GRACE'),
+        ('9', 'JK(EC)'),
+        ('10', 'LE BEAU'),
+        ('11', 'LOS'),
+        ('12', 'LUPIN(LC)'),
+        ('13', 'OSCAR'),
+    ], default='',
+        string='EC1__c')  # 商品リスト(EC1) CW列
+    product_list_ec2 = fields.Selection([
+        ('1', 'BEATRIX(M)'),
+        ('2', 'BEATRIX(L)'),
+        ('3', 'RIVAGE(EC)'),
+        ('4', 'RIVAGE(LC)'),
+        ('5', 'BLAVA(EC)'),
+        ('6', 'BLAVA(HEC)'),
+        ('7', 'CLAUDE(EC)'),
+        ('8', 'GRACE'),
+        ('9', 'JK(EC)'),
+        ('10', 'LE BEAU'),
+        ('11', 'LOS'),
+        ('12', 'LUPIN(LC)'),
+        ('13', 'OSCAR'),
+    ], default='',
+        string='EC2_2__c')  # 商品リスト(EC2) CX列
     l_set = fields.Integer('Lset__c')  # Lセット CY列
-    product_list_st2 = fields.Char('St2__c')  # 商品リスト(St2) CZ列
-    product_list_st1 = fields.Char('St1__c')  # 商品リスト(St1) DA列
+    product_list_st2 = fields.Selection([
+        ('1', 'CM TABLE (S)'),
+        ('2', 'CB TABLE (S)'),
+        ('3', 'CR TABLE'),
+        ('4', 'GO TABLE (S)'),
+        ('5', 'JK TABLE(S)'),
+        ('6', 'LW TABLE (S)'),
+        ('7', 'MO TABLE (S)'),
+        ('8', 'OS TABLE(070)'),
+        ('9', 'OS TABLE(040)'),
+        ('10', 'RV TABLE'),
+    ], default='',
+        string='St2__c')  # 商品リスト(St2) CZ列
+    product_list_st1 = fields.Selection([
+        ('1', 'CM TABLE (S)'),
+        ('2', 'CB TABLE (S)'),
+        ('3', 'CR TABLE'),
+        ('4', 'GO TABLE (S)'),
+        ('5', 'JK TABLE(S)'),
+        ('6', 'LW TABLE (S)'),
+        ('7', 'MO TABLE (S)'),
+        ('8', 'OS TABLE(070)'),
+        ('9', 'OS TABLE(040)'),
+        ('10', 'RV TABLE'),
+    ], default='',
+        string='St1__c')  # 商品リスト(St1) DA列
     opportunity_completion_date = fields.Datetime('Field72__c')  # 商談完了日 DB列
-    product_list_ot_st1 = fields.Char('ST1_1__c')  # 商品リスト(OT/ST1) DC列
+    product_list_ot_st1 = fields.Selection([
+        ('1', 'BEATRIX(OT)'),
+        ('2', 'BLAVA（OT)'),
+        ('3', 'RIVAGE(ST)'),
+        ('4', 'VINCENT(ST)'),
+        ('5', 'C-LINE(ST)'),
+        ('6', 'MO STOOL(S)'),
+        ('7', 'MO STOOL(M)'),
+    ], default='',
+        string='ST1_1__c')  # 商品リスト(OT/ST1) DC列
     term = fields.Char('Term__c')  # Term DD列
-    product_list_ot_st2 = fields.Char('ST2_2__c')  # 商品リスト(OT/ST2) DE列
-    product_list_board1 = fields.Char('BOARD1__c')  # 商品リスト(BOARD1) DF列
-    product_list_board2 = fields.Char('BOARD2__c')  # 商品リスト(BOARD2) DG列
+    product_list_ot_st2 = fields.Selection([
+        ('1', 'BEATRIX(OT)'),
+        ('2', 'BLAVA（OT)'),
+        ('3', 'RIVAGE(ST)'),
+        ('4', 'VINCENT(ST)'),
+        ('5', 'C-LINE(ST)'),
+        ('6', 'MO STOOL(S)'),
+        ('7', 'MO STOOL(M)'),
+    ], default='',
+        string='ST2_2__c')  # 商品リスト(OT/ST2) DE列
+    product_list_board1 = fields.Selection([
+        ('1', 'JABARA(SB)'),
+        ('2', 'JABARA(TV)'),
+        ('3', 'UNO'),
+        ('4', 'CB 718'),
+        ('5', 'MO SMALL DESK'),
+    ], default='',
+        string='BOARD1__c')  # 商品リスト(BOARD1) DF列
+    product_list_board2 = fields.Selection([
+        ('1', 'JABARA(SB)'),
+        ('2', 'JABARA(TV)'),
+        ('3', 'UNO'),
+        ('4', 'CB 718'),
+        ('5', 'MO SMALL DESK'),
+    ], default='',
+        string='BOARD2__c')  # 商品リスト(BOARD2) DG列
     year = fields.Integer('Year__c')  # Year DH列
-    product_list_sofa3 = fields.Char('X3__c')  # 商品リスト(ソファ3) DI列
+    product_list_sofa3 = fields.Selection([
+        ('1', 'ARLES'),
+        ('2', 'ARMSTRONG'),
+        ('3', 'AVENUE'),
+        ('4', 'CARLOS'),
+        ('5', 'CB SOFA'),
+        ('6', 'DIANA'),
+        ('7', 'LEBEAU'),
+        ('8', 'LW SOFA'),
+        ('9', 'LF SOFA'),
+        ('10', 'PLAZA'),
+        ('11', '廃盤品'),
+    ], default='',
+        string='X3__c')  # 商品リスト(ソファ3) DI列
     completion_scheduled_date = fields.Datetime('A__c')  # 完了予定日（A) DJ列
-    product_list_sofa1 = fields.Char('X1__c')  # 商品リスト(ソファ1) DK列
-    product_list_sofa2 = fields.Char('X2_2__c')  # 商品リスト(ソファ2) DL列
-    product_list_ec3 = fields.Char('EC3__c')  # 商品リスト(EC3) DM列
-    product_list_chair1 = fields.Char('Field29__c')  # 商品リスト(ﾁｪｱ1) DN列
-    product_list_chair2 = fields.Char('X2_5__c')  # 商品リスト(ﾁｪｱ2) DO列
-    product_list_chair3 = fields.Char('X3_4__c')  # 商品リスト(ﾁｪｱ3) DP列
-    product_list_chair4 = fields.Char('X4_1__c')  # 商品リスト(ﾁｪｱ4) DQ列
+    product_list_sofa1 = fields.Selection([
+        ('1', 'ARLES'),
+        ('2', 'ARMSTRONG'),
+        ('3', 'AVENUE'),
+        ('4', 'CARLOS'),
+        ('5', 'CB SOFA'),
+        ('6', 'DIANA'),
+        ('7', 'LEBEAU'),
+        ('8', 'LW SOFA'),
+        ('9', 'LF SOFA'),
+        ('10', 'PLAZA'),
+        ('11', '廃盤品'),
+    ], default='',
+        string='X1__c')  # 商品リスト(ソファ1) DK列
+    product_list_sofa2 = fields.Selection([
+        ('1', 'ARLES'),
+        ('2', 'ARMSTRONG'),
+        ('3', 'AVENUE'),
+        ('4', 'CARLOS'),
+        ('5', 'CB SOFA'),
+        ('6', 'DIANA'),
+        ('7', 'LEBEAU'),
+        ('8', 'LW SOFA'),
+        ('9', 'LF SOFA'),
+        ('10', 'PLAZA'),
+        ('11', '廃盤品'),
+    ], default='',
+        string='X2_2__c')  # 商品リスト(ソファ2) DL列
+    product_list_ec3 = fields.Selection([
+        ('1', 'BEATRIX(M)'),
+        ('2', 'BEATRIX(L)'),
+        ('3', 'RIVAGE(EC)'),
+        ('4', 'RIVAGE(LC)'),
+        ('5', 'BLAVA(EC)'),
+        ('6', 'BLAVA(HEC)'),
+        ('7', 'CLAUDE(EC)'),
+        ('8', 'GRACE'),
+        ('9', 'JK(EC)'),
+        ('10', 'LE BEAU'),
+        ('11', 'LOS'),
+        ('12', 'LUPIN(LC)'),
+        ('13', 'OSCAR'),
+    ], default='',
+        string='EC3__c')  # 商品リスト(EC3) DM列
+    product_list_chair1 = fields.Selection([
+        ('1', 'ブラヴァ(C)'),
+        ('2', 'ブラヴァ(AC)'),
+        ('3', 'カレッツァ(C)'),
+        ('4', 'カレッツァ(AC)'),
+        ('5', 'チャーリー'),
+        ('6', 'クロード(C)'),
+        ('7', 'クロード(AC)'),
+        ('8', 'シーライン(AC)'),
+        ('9', 'JK(AC)'),
+        ('10', 'クリント(C)'),
+        ('11', 'クリント(AC)'),
+        ('12', 'ルパン(C)'),
+        ('13', 'ルパン(AC)'),
+        ('14', 'マルセル'),
+        ('15', 'リヴァージュ(AC)'),
+        ('16', 'スコラー'),
+        ('17', 'ルボー(AC)'),
+    ], default='',
+        string='Field29__c')  # 商品リスト(ﾁｪｱ1) DN列
+    product_list_chair2 = fields.Selection([
+        ('1', 'ブラヴァ(C)'),
+        ('2', 'ブラヴァ(AC)'),
+        ('3', 'カレッツァ(C)'),
+        ('4', 'カレッツァ(AC)'),
+        ('5', 'チャーリー'),
+        ('6', 'クロード(C)'),
+        ('7', 'クロード(AC)'),
+        ('8', 'シーライン(AC)'),
+        ('9', 'JK(AC)'),
+        ('10', 'クリント(C)'),
+        ('11', 'クリント(AC)'),
+        ('12', 'ルパン(C)'),
+        ('13', 'ルパン(AC)'),
+        ('14', 'マルセル'),
+        ('15', 'リヴァージュ(AC)'),
+        ('16', 'スコラー'),
+        ('17', 'ルボー(AC)'),
+    ], default='',
+        string='X2_5__c')  # 商品リスト(ﾁｪｱ2) DO列
+    product_list_chair3 = fields.Selection([
+        ('1', 'ブラヴァ(C)'),
+        ('2', 'ブラヴァ(AC)'),
+        ('3', 'カレッツァ(C)'),
+        ('4', 'カレッツァ(AC)'),
+        ('5', 'チャーリー'),
+        ('6', 'クロード(C)'),
+        ('7', 'クロード(AC)'),
+        ('8', 'シーライン(AC)'),
+        ('9', 'JK(AC)'),
+        ('10', 'クリント(C)'),
+        ('11', 'クリント(AC)'),
+        ('12', 'ルパン(C)'),
+        ('13', 'ルパン(AC)'),
+        ('14', 'マルセル'),
+        ('15', 'リヴァージュ(AC)'),
+        ('16', 'スコラー'),
+        ('17', 'ルボー(AC)'),
+    ], default='',
+        string='X3_4__c')  # 商品リスト(ﾁｪｱ3) DP列
+    product_list_chair4 = fields.Selection([
+        ('1', 'ブラヴァ(C)'),
+        ('2', 'ブラヴァ(AC)'),
+        ('3', 'カレッツァ(C)'),
+        ('4', 'カレッツァ(AC)'),
+        ('5', 'チャーリー'),
+        ('6', 'クロード(C)'),
+        ('7', 'クロード(AC)'),
+        ('8', 'シーライン(AC)'),
+        ('9', 'JK(AC)'),
+        ('10', 'クリント(C)'),
+        ('11', 'クリント(AC)'),
+        ('12', 'ルパン(C)'),
+        ('13', 'ルパン(AC)'),
+        ('14', 'マルセル'),
+        ('15', 'リヴァージュ(AC)'),
+        ('16', 'スコラー'),
+        ('17', 'ルボー(AC)'),
+    ], default='',
+        string='X4_1__c')  # 商品リスト(ﾁｪｱ4) DQ列
     progress_check = fields.Text('Field36__c')  # 進捗確認/経過報告 DR列
-    opportunity_type = fields.Char('Field37__c')  # 商談種別 DS列
+    opportunity_type = fields.Selection([
+        ('1', '1.フェア'),
+        ('2', '2.フェア外一般邸'),
+        ('3', '3.展示場/SR'),
+        ('4', '4.その他'),
+    ], default='',
+        string='Field37__c')  # 商談種別 DS列
+    crm_type = fields.Selection([
+        ('1', '戸建(ﾌｪｱ)'),
+        ('2', '戸建(ﾌｪｱ外)'),
+        ('3', 'ﾏﾝｼｮﾝ個人（ﾌｪｱ）'),
+        ('4', 'ﾏﾝｼｮﾝ個人（ﾌｪｱ外）'),
+        ('5', 'ﾏﾝｼｮﾝﾓﾃﾞﾙ'),
+        ('6', 'ﾏﾝｼｮﾝ共用部'),
+        ('7', 'ｺﾝﾄﾗｸﾄ'),
+        ('8', 'ｺﾝﾄﾗｸﾄ（直販）'),
+        ('9', 'OEM'),
+        ('10', '住宅展示場'),
+        ('11', 'SR・商談室'),
+        ('12', 'ｻﾝﾌﾟﾙ貸出（展示会他）'),
+        ('13', '撮影・セット用'),
+        ('14', '関係者直販'),
+        ('15', '海外レジデンシャル'),
+        ('16', '海外コントラクト'),
+        ('17', 'その他'),
+        ('18', '集計用'),
+        ('19', 'その他コントラクト'),
+        ('20', '既存ビジネス'),
+        ('21', '新規ビジネス'),
+        ('22', 'インテリアフェア'),
+        ('23', 'ハウスメーカーその他'),
+        ('24', 'マンション個人（販売会含む）'),
+        ('25', 'マンションその他'),
+        ('26', '代理店・OEM'),
+        ('27', 'ショールーム販売'),
+        ('28', 'セール販売'),
+        ('29', '海外'),
+        ('30', '該当なし（不明）'),
+        ('31', 'マンション一般邸（IC直販）'),
+    ], default='',
+        string="Type") #
     accuracy = fields.Float('Field38__c')  # 確度（変更前） DT列　注意
     last_accuracy_changed_date = fields.Datetime('Field39__c')  # 最終確度変更日時 DU列
-    result = fields.Char('Field40__c')  # 結果 DV列
+    result = fields.Selection([
+        ('1', 'R〇競×'),
+        ('2', 'R△競△'),
+        ('3', 'R×競〇'),
+        ('4', 'R×競×'),
+        ('5', '不明'),
+    ], default='',
+        string='Field40__c')  # 結果 DV列
     On_site_delivery_date = fields.Datetime('Field43__c')  # 現場納品日 DW列
     beatrix_count = fields.Float('BEATRIX_count__c')  # BEATRIX台数 DX列
     jabara_count = fields.Float('JABARA__c')  # JABARA台数 DY列
     lf_set_count = fields.Float('LF__c')  # LFセット数 DZ列
-    product_list_sofa_ot1 = fields.Char('Sofa_OT__c')  # 商品リスト(ソファOT1) EA列
-    product_list_sofa_ot2 = fields.Char('OT2__c')  # 商品リスト(ソファOT2) EB列
+    product_list_sofa_ot1 = fields.Selection([
+        ('1', 'ARLES(OT)'),
+        ('2', 'CB(OT)'),
+        ('3', 'DIANA(OT)'),
+        ('4', 'LF(OT)'),
+        ('5', 'LW(OT)'),
+        ('6', 'PLAZA(OT)'),
+        ('7', '廃番品'),
+        ('8', '特注'),
+    ], default='',
+        string='Sofa_OT__c')  # 商品リスト(ソファOT1) EA列
+    product_list_sofa_ot2 = fields.Selection([
+        ('1', 'ARLES(OT)'),
+        ('2', 'CB(OT)'),
+        ('3', 'DIANA(OT)'),
+        ('4', 'LF(OT)'),
+        ('5', 'LW(OT)'),
+        ('6', 'PLAZA(OT)'),
+        ('7', '廃番品'),
+        ('8', '特注'),
+    ], default='',
+        string='OT2__c')  # 商品リスト(ソファOT2) EB列
     rate = fields.Float('Field74__c')  # 掛率 EC列
     dummy = fields.Boolean('Field75__c', defaule=0)  # ﾀﾞﾐｰ ED列
     lw_set_count = fields.Float('LW_5__c')  # LWセット数 EE列
     trw_candidate = fields.Boolean('TRW__c', defaule=0)  # TRW候補 EF列
     questionnaire = fields.Boolean('Field50__c', default=0)  # アンケート EG列
     letter_of_acceptance = fields.Boolean('Field51__c', default=0)  # 承諾書 EH列
-    how_to_get_photos = fields.Char('Field52__c')  # 写真入手方法 EI列
+    how_to_get_photos = fields.Selection([
+        ('1', '建築写真を購入'),
+        ('2', '自社でカメラマン手配'),
+        ('3', 'その他'),
+    ], default='',
+        string='Field52__c')  # 写真入手方法 EI列
     memo_trw = fields.Text('TRW_2__c')  # TRWメモ EJ列
-    examination = fields.Char('Field53__c')  # 審査 EK列
+    examination = fields.Selection([
+        ('archive', 'Archive'),
+        ('project', 'Project'),
+        ('trw', '★TRW'),
+    ], default='archive',
+        string='Field53__c')  # 審査 EK列
     cost = fields.Integer('Field54__c')  # 経費 EL列
     photographer = fields.Char('Field55__c')  # Photographer EM列
     shooting_date = fields.Datetime('Field56__c')  # 撮影日 EN列
-    installation_floor = fields.Char('Field57__c')  # 設置階 EO列
+    installation_floor = fields.Selection([
+        ('1', '1F'),
+        ('2', '2F'),
+        ('3', '3F'),
+        ('4', '4F～'),
+        ('ug', '地下'),
+    ], default='',
+        string='Field57__c')  # 設置階 EO列
     delivery_route_required_confirmation = fields.Boolean('Field58__c', default=0)  # 搬入経路要確認 EP列
     elevator_having = fields.Boolean('EV__c', default=0)  # EV有 EQ列
     budget_data = fields.Boolean('SFDC_Budget__c', default=0)  # 予算データ ER列
     lost = fields.Float('Field59__c')  # ロスト ES列
     p_author = fields.Char('P__c')  # P作成者(代表） ET列
-    product_list_sofa_bench1 = fields.Char('Bench1__c')  # 商品リスト（Bench1) EU列
-    product_list_sofa_bench2 = fields.Char('Bench2__c')  # 商品リスト（Bench2) EV列
+    product_list_sofa_bench1 = fields.Selection([
+        ('1', 'MT BENCH(M)'),
+        ('2', 'MT BENCH(L)'),
+        ('3', 'MO BENCH(S)'),
+        ('4', 'MO BENCH(M)'),
+        ('5', 'MO BENCH(SQ)'),
+        ('6', 'CB BENCH'),
+        ('7', '廃番品'),
+        ('8', '特注品'),
+    ], default='',
+        string='Bench1__c')  # 商品リスト（Bench1) EU列
+    product_list_sofa_bench2 = fields.Selection([
+        ('1', 'MT BENCH(M)'),
+        ('2', 'MT BENCH(L)'),
+        ('3', 'MO BENCH(S)'),
+        ('4', 'MO BENCH(M)'),
+        ('5', 'MO BENCH(SQ)'),
+        ('6', 'CB BENCH'),
+        ('7', '廃番品'),
+        ('8', '特注品'),
+    ], default='',
+        string='Bench2__c')  # 商品リスト（Bench2) EV列
     procurement_company = fields.Many2one('res.partner', 'Field77__c')  # 調達会社 EW列
     address_no = fields.Char('Field78__c')  # 〒 EX列
     address = fields.Char('Field79__c')  # 住所 EY列
