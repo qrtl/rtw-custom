@@ -1,0 +1,55 @@
+<odoo>
+    <data>
+
+        <record id="view_shinsei_sample_form" model="ir.ui.view">
+                    <field name="name">shinsei.sample.form</field>
+        <field name="model">shinsei.sample</field>
+        <field name="arch" type="xml">
+            <form string="Purchase Request">
+                <header></header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box"></div>
+                    <group>
+                <field name="state"/>
+                <field name="name"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" modifiers="{}" id="activity_ids"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+            </form>
+        </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="rtw_shinsei.action_window">
+            <field name="name">rtw_inquiry window</field>
+            <field name="res_model">shinsei.sample</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <menuitem name="shinsei" id="rtw_shinsei.menu_root" action="rtw_shinsei.action_window"
+                  web_icon="rtw_shinsei,static/description/icon-approval.png"/>
+
+        <!-- menu categories -->
+<!--        <menuitem-->
+<!--                id="menu_shinsei_sample_tree"-->
+<!--                action="rtw_shinsei.action_window"-->
+<!--                parent="contacts.menu_contacts"-->
+<!--                sequence="30"-->
+<!--        />-->
+        <!--
+            <menuitem name="Menu 1" id="rtw_inquiry.menu_1" parent="rtw_inquiry.menu_root"/>
+            <menuitem name="Menu 2" id="rtw_inquiry.menu_2" parent="rtw_inquiry.menu_root"/>
+        -->
+        <!-- actions -->
+        <!--
+            <menuitem name="List" id="rtw_inquiry.menu_1_list" parent="rtw_inquiry.menu_1"
+                      action="rtw_inquiry.action_window"/>
+            <menuitem name="Server to list" id="rtw_inquiry" parent="rtw_inquiry.menu_2"
+                      action="rtw_inquiry.action_server"/>
+        -->
+    </data>
+</odoo>
