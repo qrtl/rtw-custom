@@ -1,36 +1,57 @@
 <odoo>
     <data>
 
-        <record id="view_shinsei_sample_form" model="ir.ui.view">
-                    <field name="name">shinsei.sample.form</field>
+        <record id="shinsei_sample_filter" model="ir.ui.view">
+        <field name="name" >shinsei sample sesrch view</field>
         <field name="model">shinsei.sample</field>
         <field name="arch" type="xml">
-            <form string="shinsei sample">
-                <header>
-                    <button string="test"/>
-                    <field
-                        name="state"
-                        widget="statusbar"
-                        statusbar_visible="draft,to_approve,approved,done,rejected"
-                        statusbar_colors='{"approved":"blue"}'
+            <search string="approval">
+
+                    <filter
+                        name="needs_review"
+                        string="Needs my Review"
+                        domain="[('reviewer_ids','in',uid), ('state', 'not in', ['done', 'cancel'])]"
+                        help="My Purchases to review"
                     />
-                </header>
-                <sheet>
-                    <div class="oe_button_box" name="button_box">
+                    <filter
+                        name="tier_validated"
+                        string="Validated"
+                        domain="[('validated', '=', True)]"
+                        help="Purchase Requests validated and ready to be confirmed"
+                    />
+
+            </search>
+        </field>
+        </record>
+
+        <record id="view_shinsei_sample_form" model="ir.ui.view">
+            <field name="name">shinsei.sample.form</field>
+            <field name="model">shinsei.sample</field>
+            <field name="arch" type="xml">
+                <form string="shinsei sample">
+                    <header>
                         <button string="test"/>
-                    </div>
-                    <group>
-<!--                <field name="state"/>-->
-                <field name="name"/>
-                    </group>
-                </sheet>
-                <div class="oe_chatter">
+                        <field
+                                name="state"
+                                widget="statusbar"
+                                statusbar_visible="draft,to_approve,approved,done,rejected"
+                                statusbar_colors='{"approved":"blue"}'
+                        />
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                        </div>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
                         <field name="message_follower_ids" widget="mail_followers"/>
-                        <field name="activity_ids" modifiers="{}" id="activity_ids"/>
+                        <field name="activity_ids" widget="mail_activity"/>
                         <field name="message_ids" widget="mail_thread"/>
                     </div>
-            </form>
-        </field>
+                </form>
+            </field>
         </record>
 
         <record model="ir.actions.act_window" id="rtw_shinsei.action_window">
@@ -44,12 +65,12 @@
                   web_icon="rtw_shinsei,static/description/icon-approval.png"/>
 
         <!-- menu categories -->
-<!--        <menuitem-->
-<!--                id="menu_shinsei_sample_tree"-->
-<!--                action="rtw_shinsei.action_window"-->
-<!--                parent="contacts.menu_contacts"-->
-<!--                sequence="30"-->
-<!--        />-->
+        <!--        <menuitem-->
+        <!--                id="menu_shinsei_sample_tree"-->
+        <!--                action="rtw_shinsei.action_window"-->
+        <!--                parent="contacts.menu_contacts"-->
+        <!--                sequence="30"-->
+        <!--        />-->
         <!--
             <menuitem name="Menu 1" id="rtw_inquiry.menu_1" parent="rtw_inquiry.menu_root"/>
             <menuitem name="Menu 2" id="rtw_inquiry.menu_2" parent="rtw_inquiry.menu_root"/>

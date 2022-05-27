@@ -10,7 +10,7 @@ _STATES = [
 ]
 
 
-class PurchaseRequest(models.Model):
+class ShinseSampleRequest(models.Model):
     _name = "shinsei.sample"
     _inherit = _inherit = ["mail.thread", "mail.activity.mixin", "tier.validation"]
     _state_from = ["draft"]
@@ -31,6 +31,6 @@ class PurchaseRequest(models.Model):
 
     @api.model
     def _get_under_validation_exceptions(self):
-        res = super(PurchaseRequest, self)._get_under_validation_exceptions()
+        res = super(ShinseSampleRequest, self)._get_under_validation_exceptions()
         res.append("route_id")
         return res
