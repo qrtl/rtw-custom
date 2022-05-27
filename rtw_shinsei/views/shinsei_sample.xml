@@ -5,12 +5,22 @@
                     <field name="name">shinsei.sample.form</field>
         <field name="model">shinsei.sample</field>
         <field name="arch" type="xml">
-            <form string="Purchase Request">
-                <header></header>
+            <form string="shinsei sample">
+                <header>
+                    <button string="test"/>
+                    <field
+                        name="state"
+                        widget="statusbar"
+                        statusbar_visible="draft,to_approve,approved,done,rejected"
+                        statusbar_colors='{"approved":"blue"}'
+                    />
+                </header>
                 <sheet>
-                    <div class="oe_button_box" name="button_box"></div>
+                    <div class="oe_button_box" name="button_box">
+                        <button string="test"/>
+                    </div>
                     <group>
-                <field name="state"/>
+<!--                <field name="state"/>-->
                 <field name="name"/>
                     </group>
                 </sheet>
