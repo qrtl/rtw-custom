@@ -8,6 +8,11 @@
                 <xpath expr="//header" position="inside">
                         <button string="Create inquiry" name="create_inquiry" type="object" class="oe_highlight"/>
                 </xpath>
+                <xpath expr="//notebook" position="inside">
+                    <page string="問合せ・アンケート">
+                        <field name="inquiry"/>
+                    </page>
+                </xpath>
             </field>
         </record>
     </data>

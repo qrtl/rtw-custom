@@ -7,7 +7,7 @@ class rtw_crm_role(models.Model):
     _name = 'rtw_crm_role'
     _description = 'rtw_crm_role'
     _rec_name = "contact_id"
-    
+
     opportunity_id = fields.Many2one('crm.lead', 'OpportunityId')
     contact_id = fields.Many2one('res.user', 'ContactId')
     role = fields.Selection([
