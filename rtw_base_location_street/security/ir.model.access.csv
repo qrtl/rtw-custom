@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_rtw_base_location_street_rtw_base_location_street,rtw_base_location_street.rtw_base_location_street,model_rtw_base_location_street_rtw_base_location_street,base.group_user,1,1,1,1
