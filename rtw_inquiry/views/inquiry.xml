@@ -1,29 +1,36 @@
 <odoo>
-  <data>
-    <!-- explicit list view definition -->
-<!--
-    <record model="ir.ui.view" id="rtw_inquiry.list">
-      <field name="name">rtw_inquiry list</field>
-      <field name="model">rtw_inquiry.rtw_inquiry</field>
-      <field name="arch" type="xml">
-        <tree>
-          <field name="name"/>
-          <field name="value"/>
-          <field name="value2"/>
-        </tree>
-      </field>
-    </record>
--->
-    <record id="view_partner_form_sf_inq" model="ir.ui.view">
+    <data>
+        <!-- explicit list view definition -->
+        <!--
+            <record model="ir.ui.view" id="rtw_inquiry.list">
+              <field name="name">rtw_inquiry list</field>
+              <field name="model">rtw_inquiry.rtw_inquiry</field>
+              <field name="arch" type="xml">
+                <tree>
+                  <field name="name"/>
+                  <field name="value"/>
+                  <field name="value2"/>
+                </tree>
+              </field>
+            </record>
+        -->
+        <record id="view_partner_form_sf_inq" model="ir.ui.view">
             <field name="name">partner sf inq</field>
             <field name="model">res.partner</field>
             <field name="inherit_id" ref="base.view_partner_form"/>
             <field name="arch" type="xml">
+                <xpath expr="//form//sheet" position="before">
+                    <header>
+                        <button string="Create inquiry" name="create_inquiry" type="object" class="oe_highlight"/>
+                    </header>
+                </xpath>
                 <xpath expr="//div[@name='button_box']" position="inside">
 
                     <button name="action_open_inquiry" class="oe_stat_button" type="object" icon="fa-question-circle-o">
                         <div class="o_stat_info">
-                            <span class="o_field_widget o_stat_info"><field name="inquiry_count"/></span>
+                            <span class="o_field_widget o_stat_info">
+                                <field name="inquiry_count"/>
+                            </span>
                             <span class="o_stat_text">inquiry</span>
                         </div>
                     </button>
@@ -38,50 +45,242 @@
             </field>
         </record>
 
-            <record id="rtw_sf_inquiry_form" model="ir.ui.view">
+        <record id="rtw_sf_inquiry_form" model="ir.ui.view">
             <field name="name">rtw_sf_inquiry.form</field>
             <field name="model">rtw_sf.inquiry</field>
             <field name="arch" type="xml">
                 <form>
-<!--                    <header>-->
-<!--                        <field name="status" widget="statusbar"  options="{'clickable':1}"/>-->
-<!--                    </header>-->
+                    <!--                    <header>-->
+                    <!--                        <field name="status" widget="statusbar"  options="{'clickable':1}"/>-->
+                    <!--                    </header>-->
                     <sheet>
 
-                      <group>
-                        <h2>
-                        件名：<field name="name"/>
-                        </h2>
-                      </group>
-                      <group>
+                        <field name="record_type_id"
+                               options="{'no_create': True, 'no_create_edit':True,'horizontal': True}" widget="radio"/>
+                        <field name="record_type_id_name" invisible="1"/>
                         <group>
-                          <field name="owner_id" string="owner_id"/>
-                          <field name="no" string="no"/>
-                          <field name="contact_person" string="contact_person"/>
-                          <field name="situation" string="situation"/>
-                          <field name="date_time" string="date_time"/>
-                          <field name="originator" string="originator"/>
-                          <field name="means" string="means"/>
-                          <field name="broad_category" string="broad_category"/>
-                          <field name="mid_category" string="mid_category"/>
-                          <field name="detail" string="detail"/>
-                          <field name="support" string="support"/>
+                            <h2>
+                                件名：
+                                <field name="name"/>
+                            </h2>
                         </group>
-                        <group>
-                          <field name="magazine_site" string="magazine_site"/>
-                          <field name="name_of_magazine_other" string="name_of_magazine_other"/>
-                          <field name="proposal_to_send_catalog" string="proposal_to_send_catalog"/>
-                          <field name="sr_attracting" string="sr_attracting"/>
-                          <field name="event_information_notices" string="event_information_notices"/>
-                          <field name="confirm_user_information" string="confirm_user_information"/>
-                        </group>
-                      </group>
-                      <group>
-                        <field name="name" string="name"/>
-                        <field name="summary" string="summary"/>
-                        <field name="customer_testimonials" string="customer_testimonials"/>
-                        <field name="handover_matters" string="handover_matters"/>
-                      </group>
+                        <div attrs="{'invisible': [('record_type_id_name','!=', '問合せ')]}">
+
+                            <group>
+                                <group>
+
+                                    <field name="owner_id" string="owner_id"/>
+                                    <field name="no" string="no"/>
+                                    <field name="contact_person" string="contact_person"/>
+                                    <field name="situation" string="situation"/>
+                                    <field name="date_time" string="date_time"/>
+                                    <field name="originator" string="originator"/>
+                                    <field name="means" string="means"/>
+                                    <field name="broad_category" string="broad_category"/>
+                                    <field name="mid_category" string="mid_category"/>
+                                    <field name="detail" string="detail"/>
+                                    <field name="support" string="support"/>
+                                </group>
+                                <group>
+                                    <field name="magazine_site" string="magazine_site"/>
+                                    <field name="name_of_magazine_other" string="name_of_magazine_other"/>
+                                    <field name="proposal_to_send_catalog" string="proposal_to_send_catalog"/>
+                                    <field name="sr_attracting" string="sr_attracting"/>
+                                    <field name="event_information_notices" string="event_information_notices"/>
+                                    <field name="confirm_user_information" string="confirm_user_information"/>
+                                </group>
+                            </group>
+                            <group>
+                                <field name="name" string="name"/>
+                                <field name="summary" string="summary"/>
+                                <field name="customer_testimonials" string="customer_testimonials"/>
+                                <field name="handover_matters" string="handover_matters"/>
+                            </group>
+                        </div>
+                        <div attrs="{'invisible': [('record_type_id_name','!=','アンケート2018')]}">
+
+                            <group>
+                                <group>
+                                    <field name="owner_id" string="owner_id"/>
+                                    <field name="contact_person" string="contact_person"/>
+                                    <field name="accounts" string="accounts"/>
+                                    <field name="vendor" string="vendor"/>
+                                </group>
+                                <group>
+                                    <field name="crm_1" string="crm_1"/>
+                                    <field name="order_no" string="order_no"/>
+                                    <field name="campaign_id" string="campaign_id"/>
+                                    <field name="created_by_id" string="created_by_id"/>
+                                    <field name="last_modified_by_id" string="last_modified_by_id"/>
+                                </group>
+                            </group>
+                            <notebook>
+                                <page string="アンケート">
+                                    <group string="Q1_商品の満足度">
+                                        <field name="satisfaction_level"/>
+                                    </group>
+                                    <group string="Q2＿購入理由">
+                                        <group>
+                                            <field name="deign" string="Design"/>
+                                            <field name="use"/>
+                                            <field name="sense_of_materials"/>
+                                            <field name="price"/>
+                                            <field name="image_atmosphere"/>
+                                        </group>
+                                        <group>
+                                            <field name="sales_staff_response"/>
+                                            <field name="recommendation_from_a_friend"/>
+                                            <field name="glad_bought_it_before"/>
+                                            <field name="inet_reputation_and_wom"/>
+                                            <field name="non_response"/>
+                                        </group>
+                                    </group>
+                                    <group string="Q3＿営業スタッフの対応">
+                                        <field name="sales_staff_evaluation"/>
+                                    </group>
+                                    <group string="Q4_納品スタッフの作業・身だしなみ・あいさつ">
+                                        <field name="evaluation_of_delivery_staff"/>
+                                    </group>
+                                    <group string="Q5_メンテナンスの興味">
+                                        <group>
+                                            <field name="yes"/>
+                                        </group>
+                                        <group>
+                                            <field name="no"/>
+                                        </group>
+                                    </group>
+                                    <group string="Q6_DMの可否">
+                                        <group>
+                                            <field name="need_dm"/>
+                                        </group>
+                                        <group>
+                                            <field name="not_need_dm"/>
+                                        </group>
+                                    </group>
+                                    <group string="Q7_ご意見・ご要望">
+                                        <field name="customer_testimonials"/>
+                                    </group>
+                                </page>
+                                <page string="商品情報">
+                                    <group>
+                                        <group>
+                                            <field name="product_category_1"/>
+                                            <field name="product_name1" string="product_name1"/>
+                                            <field name="product_category_2"/>
+                                            <field name="product_name2"/>
+                                            <field name="product_category_3"/>
+                                            <field name="product_name3"/>
+                                        </group>
+                                        <group>
+                                            <field name="product_category_4"/>
+                                            <field name="product_name4"/>
+                                            <field name="product_category_5"/>
+                                            <field name="product_name5"/>
+                                            <field name="product_category_6"/>
+                                            <field name="product_name6"/>
+                                        </group>
+                                    </group>
+                                </page>
+                            </notebook>
+                        </div>
+                        <div attrs="{'invisible': [('record_type_id_name','!=','アンケート2019')]}">
+
+                            <group>
+                                <group>
+                                    <field name="owner_id" string="owner_id"/>
+                                    <field name="contact_person" string="contact_person"/>
+                                    <field name="accounts" string="accounts"/>
+                                    <field name="vendor" string="vendor"/>
+                                </group>
+                                <group>
+                                    <field name="crm_1" string="crm_1"/>
+                                    <field name="order_no" string="order_no"/>
+                                    <field name="campaign_id" string="campaign_id"/>
+                                    <field name="created_by_id" string="created_by_id"/>
+                                    <field name="last_modified_by_id" string="last_modified_by_id"/>
+                                </group>
+                            </group>
+                            <notebook>
+                                <page string="アンケート">
+                                    <group string="Q1_リードソース">
+                                        <field name="lead_source" string="lead_source"/>
+                                    </group>
+                                    <group string="Q2_商品情報">
+                                        <group>
+                                            <field name="product_category_1"/>
+                                            <field name="product_name1"/>
+                                            <field name="product_category_2"/>
+                                            <field name="product_name2"/>
+                                            <field name="product_category_3"/>
+                                            <field name="product_name3"/>
+                                        </group>
+                                        <group>
+                                            <field name="product_category_4"/>
+                                            <field name="product_name4"/>
+                                            <field name="product_category_5"/>
+                                            <field name="product_name5"/>
+                                            <field name="product_category_6"/>
+                                            <field name="product_name6"/>
+                                        </group>
+                                    </group>
+                                    <group string="Q3＿Rを紹介したいか">
+                                        <field name="score"/>
+                                    </group>
+                                    <group string="Q4＿購入理由">
+                                        <group>
+                                            <field name="deign" string="Design"/>
+                                            <field name="use"/>
+                                            <field name="sense_of_materials"/>
+                                            <field name="price"/>
+                                            <field name="image_atmosphere"/>
+                                        </group>
+                                        <group>
+                                            <field name="sales_staff_response"/>
+                                            <field name="recommendation_from_a_friend"/>
+                                            <field name="glad_bought_it_before"/>
+                                            <field name="inet_reputation_and_wom"/>
+                                            <field name="non_response"/>
+                                        </group>
+                                    </group>
+                                    <group string="Q5＿販売・営業スタッフの対応">
+                                        <group>
+                                            <field name="proposal_ability"/>
+                                            <field name="speed"/>
+                                        </group>
+                                        <group>
+                                            <field name="greeting1"/>
+                                            <field name="appearance"/>
+                                            <field name="not_meet"/>
+                                        </group>
+                                    </group>
+                                    <group string="Q6_納品スタッフの作業・身だしなみ・あいさつ">
+                                        <group>
+                                            <field name="delivery_work"/>
+                                            <field name="description"/>
+                                        </group>
+                                        <group>
+                                            <field name="greeting_2"/>
+                                            <field name="appearance_2"/>
+                                            <field name="not_meet_2"/>
+                                        </group>
+                                    </group>
+                                    <group string="Q7_ご意見・ご要望">
+                                        <field name="customer_testimonials"/>
+                                    </group>
+                                    <group string="Q8_DMの可否">
+                                        <group>
+                                            <field name="need_dm"/>
+                                        </group>
+                                        <group>
+                                            <field name="not_need_dm"/>
+                                        </group>
+                                    </group>
+                                    <group string="">
+                                        <field name="confirmation"/>
+                                    </group>
+                                </page>
+                            </notebook>
+                        </div>
                     </sheet>
                     <div class="oe_chatter">
                         <field name="message_follower_ids" widget="mail_followers"/>
@@ -90,55 +289,55 @@
                     </div>
                 </form>
             </field>
+        </record>
+
+        <!-- actions opening views on models -->
+
+        <record model="ir.actions.act_window" id="rtw_inquiry.action_window">
+            <field name="name">rtw_inquiry window</field>
+            <field name="res_model">rtw_sf.inquiry</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <!-- server action to the one above -->
+        <!--
+            <record model="ir.actions.server" id="rtw_inquiry.action_server">
+              <field name="name">rtw_inquiry server</field>
+              <field name="model_id" ref="model_rtw_inquiry_rtw_inquiry"/>
+              <field name="state">code</field>
+              <field name="code">
+                action = {
+                  "type": "ir.actions.act_window",
+                  "view_mode": "tree,form",
+                  "res_model": model._name,
+                }
+              </field>
             </record>
+        -->
 
-    <!-- actions opening views on models -->
+        <!-- Top menu item -->
 
-    <record model="ir.actions.act_window" id="rtw_inquiry.action_window">
-      <field name="name">rtw_inquiry window</field>
-      <field name="res_model">rtw_sf.inquiry</field>
-      <field name="view_mode">tree,form</field>
-    </record>
-
-
-    <!-- server action to the one above -->
-<!--
-    <record model="ir.actions.server" id="rtw_inquiry.action_server">
-      <field name="name">rtw_inquiry server</field>
-      <field name="model_id" ref="model_rtw_inquiry_rtw_inquiry"/>
-      <field name="state">code</field>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "tree,form",
-          "res_model": model._name,
-        }
-      </field>
-    </record>
--->
-
-    <!-- Top menu item -->
-
-    <menuitem name="inquiry" id="rtw_inquiry.menu_root" action="rtw_inquiry.action_window"
+        <menuitem name="inquiry" id="rtw_inquiry.menu_root" action="rtw_inquiry.action_window"
                   web_icon="rtw_inquiry,static/description/inquiry_icon.png"/>
 
-    <!-- menu categories -->
-      <menuitem
+        <!-- menu categories -->
+        <menuitem
                 id="menu_inquiry_tree"
                 action="rtw_inquiry.action_window"
                 parent="contacts.menu_contacts"
                 sequence="30"
         />
-<!--
-    <menuitem name="Menu 1" id="rtw_inquiry.menu_1" parent="rtw_inquiry.menu_root"/>
-    <menuitem name="Menu 2" id="rtw_inquiry.menu_2" parent="rtw_inquiry.menu_root"/>
--->
-    <!-- actions -->
-<!--
-    <menuitem name="List" id="rtw_inquiry.menu_1_list" parent="rtw_inquiry.menu_1"
-              action="rtw_inquiry.action_window"/>
-    <menuitem name="Server to list" id="rtw_inquiry" parent="rtw_inquiry.menu_2"
-              action="rtw_inquiry.action_server"/>
--->
-  </data>
+        <!--
+            <menuitem name="Menu 1" id="rtw_inquiry.menu_1" parent="rtw_inquiry.menu_root"/>
+            <menuitem name="Menu 2" id="rtw_inquiry.menu_2" parent="rtw_inquiry.menu_root"/>
+        -->
+        <!-- actions -->
+        <!--
+            <menuitem name="List" id="rtw_inquiry.menu_1_list" parent="rtw_inquiry.menu_1"
+                      action="rtw_inquiry.action_window"/>
+            <menuitem name="Server to list" id="rtw_inquiry" parent="rtw_inquiry.menu_2"
+                      action="rtw_inquiry.action_server"/>
+        -->
+    </data>
 </odoo>

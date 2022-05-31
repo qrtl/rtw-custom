@@ -21,7 +21,17 @@ class rtw_sf_case(models.Model):
     supplied_email = fields.Char('SuppliedEmail')  # L列
     supplied_phone = fields.Char('SuppliedPhone')  # M列
     supplied_company = fields.Char('SuppliedCompany')  # N列
-    type = fields.Char('Type')  # O列
+    type = fields.Selection([
+        ('1', '問合せ/アフター'),
+        ('2', '問題/要対応'),
+        ('3', '過剰要求/苦情'),
+        ('4', 'その他'),
+        ('5', '商品問合せ'),
+        ('6', 'ショールームについて'),
+        ('7', '購入方法について'),
+        ('-', '-'),
+        ('8', 'アフターメンテナンス'),
+    ], string='Type')  # O列 種別
     status = fields.Selection([('new', '新規'),
                                ('sales_representative_is_responding', '営業担当対応中'),
                                ('sales_representative_response_completed', '営業担当対応完了'),
@@ -29,13 +39,60 @@ class rtw_sf_case(models.Model):
                                ('pending', '保留'),
                                ('under_investigation', '調査中'),
                                ('processing_cost', 'コスト処理中'),
-                               ('close', 'クローズ')], string="Status",
+                               ('close', 'クローズ'),
+                               ('1', '3'),
+                               ('2', '1'),
+                               ('3', '4'),
+                               ('4', '商品部調査中'),
+                               ('5', '商品部対応完了'),
+                               ('6', '工場打診中'),
+                               ('7', '工場対応中'),
+                               ('8', '営業部対応完了'),
+                               ('9', '10'),
+                               ('10', '18'),
+                               ('11', '9'),
+                               ('12', '2'),
+                               ('13', '16'),
+                               ], string="Status",
                               default='new')  # ステータス
-    reason = fields.Char('Reason')  # 理由
-    origin = fields.Char('Origin')  # 発生場所 v
+    reason =fields.Selection([
+        ('1', '(営業）業務・手配ミス'),
+        ('2', '（営業）打合せ・接客トラブル'),
+        ('3', '（営業）得意先手配ミス'),
+        ('4', '（工場）業務・手配ミス'),
+        ('5', '（工場）製品不良・製造上ミス'),
+        ('6', '（配送）運送・設置トラブル'),
+        ('7', '（素材）素材・製品の特性'),
+        ('8', '（環境）使用上の問題'),
+        ('9', '（開発）設計要因'),
+        ('10', '原因不明'),
+        ('11', 'その他の問題'),
+        ('-', '-'),
+        ('12', '過剰要求・不満'),
+        ('13', '部材部品の欠品'),
+    ], default='',
+        string='Reason')  # 原因
+    origin = fields.Selection([
+        ('1', '納品現場'),
+        ('2', '納品現場前の外'),
+        ('3', 'デポ先'),
+        ('4', '配送中・配送時'),
+        ('5', '工場検品・出荷時'),
+        ('-', '-'),
+        ('6', '電子メール'),
+        ('7', '電話'),
+        ('8', 'Web'),
+
+    ], default='',
+        string='Origin')  # 発生場所 v
     is_visible_in_self_service = fields.Boolean('IsVisibleInSelfService')  # 表示確認
     subject = fields.Char('Subject')  # 現象
-    priority = fields.Char('Priority')  # 優先順位 v
+    priority = fields.Selection([
+        ('h', '高'),
+        ('m', '中'),
+        ('l', '低'),
+        ], default='',
+        string='Priority')  # 優先順位 v
     description = fields.Char('Description')  # 説明
     isclosed = fields.Boolean('IsClosed')  # 完了済みフラグ
     closed_date = fields.Datetime('ClosedDate')  # 完了日
@@ -55,10 +112,26 @@ class rtw_sf_case(models.Model):
     cope_order_no_2 = fields.Char('X2__c')  # 対処受注番号2
     cope_order_no_3 = fields.Char('X3__c')  # 対処受注番号3
     probate_by_president = fields.Boolean('Field6__c')  # 社長検認
-    discoverer = fields.Char('Field52__c')  # 発見者
+    discoverer = fields.Selection([
+        ('1', '施主'),
+        ('2', 'IC・設計・建築家'),
+        ('3', '取扱店・代理店担当'),
+        ('4', '搬入業者'),
+        ('5', '運送業者'),
+        ('6', 'リッツウェル社員'),
+        ('7', '工場関係者'),
+    ], default='',
+        string='Field52__c')  # 発見者
     opportunity = fields.Many2one('crm.lead')  # 商談
     delivery_date = fields.Datetime('Field5__c')  # 納品日
-    occurrence_status = fields.Char('Field53__c')  # 発生状況
+    occurrence_status = fields.Selection([
+        ('1', '納品後・使用中'),
+        ('2', '納品時'),
+        ('3', '開梱時'),
+        ('4', '未開梱時'),
+        ('5', '出荷前'),
+    ], default='',
+        string='Field53__c')  # 発生状況
     accounting_department_probate = fields.Boolean('Field7__c')  # 経理部検認
     sales_department_probate = fields.Boolean('Field8__c')  # 営業部検認
     manufacturing_department_probate = fields.Boolean('Field9__c')  # 製造部検認
@@ -70,28 +143,109 @@ class rtw_sf_case(models.Model):
     carrier = fields.Char('Field54__c')  # 運送･搬入業者
     delivery_prefectures = fields.Char('Field4__c')  # 納品先都道府県
     delivery_municipality = fields.Char('Field55__c')  # 納品先市町村郡
-    delivery_type = fields.Char('Field56__c')  # 納品種別
+    delivery_type = fields.Selection([
+        ('1', '一般邸戸建'),
+        ('2', '一般邸マンション'),
+        ('3', 'モデル戸建'),
+        ('4', 'モデルマンション'),
+        ('5', 'コントラクト'),
+    ], default='',
+        string='Field56__c')  # 納品種別
     delivery_product_name = fields.Char('Field57__c')  # 納品物件名
-    reporter = fields.Char('Field58__c')  # 通報者
-    support = fields.Char('Field59__c')  # 対応
+    reporter = fields.Selection([
+        ('1', '施主'),
+        ('2', 'IC・設計・建築家'),
+        ('3', '取扱店・代理店担当'),
+        ('4', '搬入業者'),
+        ('5', '運送業者'),
+        ('6', 'リッツウェル社員'),
+        ('7', '工場関係者'),
+    ], default='',
+        string='Field58__c')  # 通報者
+    support = fields.Selection([
+        ('1', '電話・メール対応'),
+        ('2', '現場確認・説明'),
+        ('3', '現場対応・メンテ補修'),
+        ('4', '部品・部材送付（無償）'),
+        ('5', '修理・部材交換（無償）'),
+        ('6', '本体交換（無償）'),
+        ('7', '修理・部材交換（有償）'),
+        ('8', '本体交換（有償）'),
+        ('9', '新規購入'),
+        ('10', 'その他'),
+        ('-', '-'),
+        ('対応', '対応'),
+    ], default='',
+        string='Field59__c')  # 対応
     quality_control_comments = fields.Text('Field60__c')  # 品管コメント
     cause_company_name = fields.Char('Field24__c')  # 原因会社名
     size = fields.Char('Field65__c')  # サイズ
     progress_check = fields.Boolean('Field77__c')  # 進捗確認
     cause_by_quality_control = fields.Char('Field61__c')  # 原因（品管検証）
-    double_cause_by_quality_control = fields.Char('Field62__c')  # 重複原因（品管検証）
+    double_cause_by_quality_control = fields.Selection([
+        ('1', '（営業）業務・手配ミス'),
+        ('2', '（営業）打合せ・接客トラブル'),
+        ('3', '（営業）得意先手配ミス'),
+        ('4', '（工場）業務・手配ミス'),
+        ('5', '（工場）製品不良・製造上ミス'),
+        ('6', '（配送）運送・設置トラブル'),
+        ('7', '（素材）素材・製品の特性'),
+        ('8', '（環境）使用上の問題'),
+        ('9', '（開発）設計要因'),
+        ('10', '原因不明'),
+        ('11', 'その他の問題'),
+        ('-', '-'),
+        ('12', '過剰要求・不満'),
+    ], default='',
+        string='Field62__c')  # 重複原因（品管検証）
     cause_person_name = fields.Char('Field30__c')  # 原因担当者名
     billing_coping_cost = fields.Integer('Field31__c')  # 請求対処コスト
     sales_department_comments = fields.Text('Field44__c')  # 営業部コメント
     report_date = fields.Datetime('Field34__c')  # 通報日
     Initial_response_date_by_person = fields.Datetime('Field35__c')  # 初動対応日(担当者)
     Initial_response_date_by_quality_control = fields.Datetime('Field36__c')  # 初動対応日(品管)
-    double_cause = fields.Char('Field37__c')  # 重複原因リスト
+    double_cause = fields.Selection([
+        ('1', '（営業）業務・手配ミス'),
+        ('2', '（営業）打合せ・接客トラブル'),
+        ('3', '（営業）得意先手配ミス'),
+        ('4', '（工場）業務・手配ミス'),
+        ('5', '（工場）製品不良・製造上ミス'),
+        ('6', '（配送）運送・設置トラブル'),
+        ('7', '（素材）素材・製品の特性'),
+        ('8', '（環境）使用上の問題'),
+        ('9', '（開発）設計要因'),
+        ('10', '原因不明'),
+        ('11', 'その他の問題'),
+        ('-', '-'),
+        ('12', '過剰要求・不満'),
+    ], default='',
+        string='Field37__c')  # 重複原因リスト
     follow_up_report_by_person = fields.Text('Field63__c')  # 続報（担当者）
     freight_cost = fields.Integer('Field41__c')  # 運賃コスト
     cooperative_factory_opinion = fields.Text('Field45__c')  # 協力工場見解
-    manufacturing_department_status = fields.Char('Field46__c')  # 製造部状況
-    product_category = fields.Char('Field47__c')  # 商品カテゴリ
+    manufacturing_department_status = fields.Selection([
+        ('1', '調査中'),
+        ('2', '対応中'),
+        ('3', '対応完了'),
+        ], default='',
+        string='Field46__c')  # 製造部状況
+    product_category = fields.Selection([
+        ('1', 'ソファ'),
+        ('2', 'チェア'),
+        ('3', 'テーブル'),
+        ('4', 'ボード・デスク'),
+        ('5', '小物･ラグ'),
+        ('6', '別注･特注'),
+        ('7', 'OEM'),
+        ('8', '仕入'),
+        ('9', '付属品'),
+        ('10', '廃盤ソファ'),
+        ('11', '廃盤チェア'),
+        ('12', '廃盤テーブル'),
+        ('13', '廃盤ボード・デスク'),
+        ('14', 'その他'),
+    ], default='',
+        string='Field47__c')  # 商品カテゴリ
     product_name = fields.Char('Field48__c')  # 商品名
     product_name2 = fields.Many2one('product.template', 'Field48__c')  # 商品名
     product_number = fields.Char('Field49__c')  # 品番
@@ -100,6 +254,7 @@ class rtw_sf_case(models.Model):
     percentage_of_fault = fields.Float('percentage of fault')
     # , compute="_compute_percentage_of_fault")
     final_cost_total_sales = fields.Float('Final cost/total sales')
+
     # , compute="_compute_final_cost_total_sales")
 
     # def _compute_percentage_of_fault(self):

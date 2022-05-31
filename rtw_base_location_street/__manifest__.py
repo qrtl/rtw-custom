@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "rtw_inquiry",
+    'name': "rtw_base_location_street",
 
     'summary': """
         Short (1 phrase/line) summary of the module's purpose, used as
@@ -20,14 +20,12 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'contacts', 'crm'],
+    'depends': ['base', 'base_location'],
 
     # always loaded
     'data': [
-        'security/ir.model.access.csv',
-        'views/inquiry.xml',
-        'views/crm_lead.xml',
-        # 'views/res_partner.xml',
+        # 'security/ir.model.access.csv',
+        'views/res_city_zip_street.xml',
         'views/templates.xml',
     ],
     # only loaded in demonstration mode

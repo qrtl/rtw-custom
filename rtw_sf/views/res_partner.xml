@@ -17,7 +17,8 @@
                 <xpath expr="//field[@name='name']" position="after">
                     <group attrs="{'invisible': [('is_company','=', True)]}">
                         <group>
-                            <field name="last_name" attrs="{'invisible': [('is_company','=', True)], 'required': [('is_company','=', False)]}" />
+                            <field name="last_name"
+                                   attrs="{'invisible': [('is_company','=', True)], 'required': [('is_company','=', False)]}"/>
                         </group>
                         <group>
                             <field name="first_name" attrs="{'invisible': [('is_company','=', True)]}"/>
@@ -40,6 +41,7 @@
                 </xpath>
                 <xpath expr="//field[@name='user_ids']" position="before">
                     <field name="fax" widget="phone"/>
+                    <field name="contact_type" string="contact_type" attrs="{'required': [('is_company','=', True)]}"/>
                     <field name="channel" widget="many2one"/>
                 </xpath>
                 <xpath expr="//field[@name='company_type']" position="after">
@@ -68,8 +70,10 @@
                                 <field name="fare_payment_terms" string="fare_payment_terms"/>
                             </group>
                             <group>
-                                <field name="industry_id" string="Industry" attrs="{'required': [('is_company','=', True)]}"/>
-                                <field name="channel" string="channel" attrs="{'required': [('is_company','=', True)]}"/>
+                                <field name="contact_type" string="contact_type"
+                                       attrs="{'required': [('is_company','=', True)]}"/>
+                                <field name="channel" string="channel"
+                                       attrs="{'required': [('is_company','=', True)]}"/>
                                 <field name="rival_companies" string="rival_companies"/>
                                 <field name="evaluation" string="evaluation"/>
                                 <field name="annual_revenue" string="annual_revenue"/>
@@ -94,9 +98,10 @@
                                 <field name="department" string="department"/>
                                 <field name="birthdate" string="birthdate"/>
                                 <field name="gender" string="gender"/>
-                                <field name="lead_source" string="lead_source" attrs="{'required': [('is_company','=', False)]}"/>
+                                <field name="lead_source" string="lead_source"
+                                       attrs="{'required': [('is_company','=', False)]}"/>
                                 <field name="media_name" string="media_name"/>
-                                <field name="r_web_site" string="r_web_site"/>
+                                <field name="web" string="web"/>
                                 <field name="need_dm" string="need_dm"/>
                                 <field name="do_not_dm" string="do_not_dm"/>
                                 <field name="dm_unknown" string="dm_unknown"/>
@@ -155,24 +160,24 @@
                             </group>
                         </group>
                         <group string="ROC">
-                            <group>
+
                                 <group>
                                     <field name="lead_source_roc" string="lead_source_roc"/>
                                 </group>
                                 <group>
                                     <field name="interest_roc" string="interest_roc"/>
                                 </group>
-                            </group>
+
                         </group>
                         <group string="キャンペーン">
-                            <group>
+
                                 <group>
                                     <field name="campaign_1" string="campaign_1"/>
                                 </group>
                                 <group>
                                     <field name="campaign_2" string="campaign_2"/>
                                 </group>
-                            </group>
+
                         </group>
                         <group string="管理者">
                             <group>
@@ -221,7 +226,7 @@
                     <field name="site" string="site"/>
                 </field>
                 <xpath expr="//span[hasclass('oe_kanban_partner_links')]" position="after">
-                    <field name="site" />
+                    <field name="site"/>
                 </xpath>
             </field>
         </record>

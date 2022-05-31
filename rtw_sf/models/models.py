@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# from odoo import models, fields, api
+from odoo import models, fields, api
 
 
 # class rtw_sf(models.Model):
@@ -16,3 +16,9 @@
 #     def _value_pc(self):
 #         for record in self:
 #             record.value2 = float(record.value) / 100
+a = fields.Selection([
+        ('h', '高'),
+        ('m', '中'),
+        ('l', '低'),
+        ], default='',
+        string="" )
