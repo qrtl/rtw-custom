@@ -41,6 +41,7 @@
                 </xpath>
                 <xpath expr="//field[@name='user_ids']" position="before">
                     <field name="fax" widget="phone"/>
+                    <field name="industry_id" widget="many2one"/>
                     <field name="contact_type" string="contact_type" attrs="{'required': [('is_company','=', True)]}"/>
                     <field name="channel" widget="many2one"/>
                 </xpath>
@@ -70,6 +71,7 @@
                                 <field name="fare_payment_terms" string="fare_payment_terms"/>
                             </group>
                             <group>
+                                 <field name="industry_id" widget="many2one"/>
                                 <field name="contact_type" string="contact_type"
                                        attrs="{'required': [('is_company','=', True)]}"/>
                                 <field name="channel" string="channel"
