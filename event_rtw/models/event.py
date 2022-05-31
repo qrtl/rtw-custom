@@ -7,19 +7,19 @@ class event_rtw(models.Model):
     _name = 'event_rtw.event_rtw'
     _description = 'event_rtw.event_rtw'
 
-    who_id = fields.Char('WhoId')  # 対象者id C列
+    who_id = fields.Many2one('res.partner', 'WhoId')  # 対象者id C列
     what_id = fields.Char('WhatId')  # タスクid D列
     who_count = fields.Integer('WhoCount')  # 対象者アカウント E列
     what_count = fields.Integer('WhatCount')  # タスク件数 F列
     subject = fields.Char('Subject')  # 表題 G列
-    Location = fields.Char('Location')  # 場所 H列
+    location = fields.Char('Location')  # 場所 H列
     is_all_day_event = fields.Boolean('IsAllDayEvent')  # 終日イベント開催フラグ I列
     activity_datetime = fields.Datetime('ActivityDateTime')  # 活動日 J列
     activity_date = fields.Datetime('ActivityDate')  # 活動日 K列
     duration_in_minutes = fields.Integer('DurationInMinutes')  # 所要時間(分) L列
     description = fields.Text('Description')  # 説明 M列
-    account_id = fields.Char('AccountId')  # アカウントid N列
-    owner_id = fields.Char('OwnerId')  # 所有者Id O列
+    account_id = fields.Many2one('res.partner', "AccountId", copy=False)  # アカウントid N列
+    owner_id = fields.Many2one('res.users', 'OwnerId')  # 所有者Id O列
     type = fields.Char('Type')  # 種類 P列
     # is_private = fields.Boolean('IsPrivate')  # プライベート Q列 ★0のみ
     # show_as = fields.Char('ShowAs')  # 表示方法 R列 ★Busyのみ
@@ -28,9 +28,9 @@ class event_rtw(models.Model):
     is_group_event = fields.Boolean('IsGroupEvent')  # グループイベントかどうか U ★0,1,空白
     group_event_type = fields.Boolean('GroupEventType')  # グループイベントタイプ V ★0,1,空白
     created_date = fields.Datetime('CreatedDate')  # 作成日 W列
-    created_by_id = fields.Char('CreatedById')  # 作成ID X列
+    created_by_id = fields.Many2one('res.users', 'CreatedById')  # 作成ID X列
     last_modified_date = fields.Datetime('LastModifiedDate')  # 最終更新日 Y列
-    last_modified_by_id = fields.Char('LastModifiedById')  # 最終更新者 Z列
+    last_modified_by_id = fields.Many2one('res.users', 'LastModifiedById')  # 最終更新者 Z列
     system_mod_stamp = fields.Datetime('SystemModstamp')  # システム最終更新日 AA列
     is_archived = fields.Boolean('IsArchived')  # アーカイブフラグ AB列
     # is_visible_in_self_service = fields.Boolean('IsVisibleInSelfService')  # AC列 ★0のみ
@@ -53,12 +53,12 @@ class event_rtw(models.Model):
     kpi1 = fields.Char('KPI_1__c')  # KPI項目 AT
     f = fields.Char('KPI__c')  # F AU
     study_meeting_count = fields.Integer('Field4__c')  # 勉強会人数 AV
-    campaign_id = fields.Char('campaign_5__c')  # 関連先(キャンペーン)id AW
+    campaign_id = fields.Many2one('utm.campaign', 'campaign_5__c')  # 関連先(キャンペーン)id AW
     situation = fields.Char('Field1__c')  # 状況 AX
     sr = fields.Char('SR__c')  # SR AY
     new_sales = fields.Boolean('new_customer_2__c')  # 新規営業 AZ ★0,1,空白
     belongs = fields.Char('Field7__c')  # 所属 BA
-    client_id = fields.Char('Field8__c')  # 関連先(取引先名)id BB
+    client_id = fields.Many2one('res.partner', "Field8__c")  # 関連先(取引先名)id BB
     visitor_count = fields.Integer('Field10__c')  # 来場人数 BC
     customer_service_staff = fields.Char('Field12__c')  # 接客担当 BD
     # start_datetime = fields.Datetime('Field25__c')  # 開始時間 BE ★空白のみ

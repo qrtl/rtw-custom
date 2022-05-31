@@ -62,7 +62,7 @@ class task(models.Model):
     sr = fields.Char('SR__c')  # SR AY
     new_sales = fields.Boolean('new_customer_2__c')  # 新規営業 AZ ★0,空白のみ
     belongs = fields.Char('Field7__c')  # 所属 BA
-    client_id = fields.Char('Field8__c')  # 関連先(取引先名)id BB
+    client_id = fields.Many2one('res.partner', "Field8__c")  # 関連先(取引先名)id BB
     visitor_count = fields.Integer('Field10__c')  # 来場人数 BC
     customer_service_staff = fields.Char('Field12__c')  # 接客担当 BD
     start_datetime = fields.Datetime('Field25__c')  # 開始時間 BE
