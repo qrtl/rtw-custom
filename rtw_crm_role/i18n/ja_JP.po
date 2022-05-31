@@ -112,7 +112,7 @@ msgstr "関連取引先責任者"
 #. module: rtw_crm_role
 #: model_terms:ir.ui.view,arch_db:rtw_crm_role.view_crm_form_sf
 msgid "role_ids"
-msgstr ""
+msgstr "関連取引先責任者"
 
 #. module: rtw_crm_role
 #: model:ir.model,name:rtw_crm_role.model_rtw_crm_role
