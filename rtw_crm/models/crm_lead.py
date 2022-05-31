@@ -47,6 +47,29 @@ class rtw_crm(models.Model):
         ('32', 'Archiproducts'),
         ('33', 'その他'),
         ('34', '不明'),
+        ('-', '-'),
+        ('35', '口コミ'),
+        ('36', 'Fax'),
+        ('37', '電話'),
+        ('38', 'RitzwellWebフォーム'),
+        ('39', 'インテリアフェア'),
+        ('40', '仕入調達'),
+        ('41', 'Email'),
+        ('42', '物件情報'),
+        ('43', 'IFFT2007(sozo_comm)'),
+        ('44', '店舗'),
+        ('45', 'コラボイベント'),
+        ('46', '家具店・IC等からの紹介'),
+        ('47', '(R)WEBページ'),
+        ('48', '納品時の案内用紙'),
+        ('49', '雑誌'),
+        ('50', 'IFFT2007(sozo_comm)'),
+        ('51', '店舗'),
+        ('52', 'コラボイベント'),
+        ('53', '家具店・IC等からの紹介'),
+        ('54', '(R)WEBページ'),
+        ('55', '納品時の案内用紙'),
+        ('56', '雑誌'),
     ], default='',
         string='LeadSource')  # 見込み顧客の獲得方法 P列
     isclosed = fields.Boolean('IsClosed')  # 完了済みフラグ Q列
@@ -93,7 +116,7 @@ class rtw_crm(models.Model):
         ('1', '住宅系（戸建・マンション）'),
         ('2', '医療福祉（病院・老健等）'),
         ('3', '宿泊施設（旅館・ホテル等）'),
-        ('4', '公共施設（大学・図書館・他文化施設等）'),
+        ('4', '公共施設（空港・図書館・他文化施設等）'),
         ('5', '商業施設（飲食・物販等）'),
         ('6', 'オフィス・金融関連'),
         ('7', '小物（家具以外）'),
@@ -243,6 +266,9 @@ class rtw_crm(models.Model):
         ('9', 'オイル・レザーキット'),
         ('10', 'カレンダー'),
         ('11', 'その他'),
+        ('-', '-'),
+        ('11', 'ペリーニ'),
+        ('11', 'キリム'),
     ], default='',
         string='Field68__c')  # 商品リスト（その他） CC列
     action1 = fields.Selection([
@@ -360,6 +386,9 @@ class rtw_crm(models.Model):
         ('11', 'LOS'),
         ('12', 'LUPIN(LC)'),
         ('13', 'OSCAR'),
+        ('-', '-'),
+        ('14', 'MT BENCH(M)'),
+        ('15', 'MT BENCH(L)'),
     ], default='',
         string='EC1__c')  # 商品リスト(EC1) CW列
     product_list_ec2 = fields.Selection([
@@ -376,6 +405,9 @@ class rtw_crm(models.Model):
         ('11', 'LOS'),
         ('12', 'LUPIN(LC)'),
         ('13', 'OSCAR'),
+        ('-', '-'),
+        ('14', 'MT BENCH(M)'),
+        ('15', 'MT BENCH(L)'),
     ], default='',
         string='EC2_2__c')  # 商品リスト(EC2) CX列
     l_set = fields.Integer('Lset__c')  # Lセット CY列
@@ -501,6 +533,9 @@ class rtw_crm(models.Model):
         ('11', 'LOS'),
         ('12', 'LUPIN(LC)'),
         ('13', 'OSCAR'),
+        ('-', '-'),
+        ('14', 'MT BENCH(M)'),
+        ('15', 'MT BENCH(L)'),
     ], default='',
         string='EC3__c')  # 商品リスト(EC3) DM列
     product_list_chair1 = fields.Selection([
@@ -610,6 +645,7 @@ class rtw_crm(models.Model):
         ('16', '海外コントラクト'),
         ('17', 'その他'),
         ('18', '集計用'),
+        ('-', '以下未使用'),
         ('19', 'その他コントラクト'),
         ('20', '既存ビジネス'),
         ('21', '新規ビジネス'),

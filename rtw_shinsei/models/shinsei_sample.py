@@ -12,7 +12,7 @@ _STATES = [
 
 class ShinseSampleRequest(models.Model):
     _name = "shinsei.sample"
-    _inherit = _inherit = ["mail.thread", "mail.activity.mixin", "tier.validation"]
+    _inherit = ["mail.thread", "mail.activity.mixin", "tier.validation"]
     _state_from = ["draft"]
     _state_to = ["approved"]
 

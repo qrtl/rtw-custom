@@ -30,6 +30,8 @@ class rtw_sf_partner(models.Model):
         ('3', '見込み有り'),
         ('4', '見込み無し'),
         ('5', '将来見込み有り'),
+        ('-', '以下未使用'),
+        ('6', '見込み無'),
     ], default='',
         string="Rating")  # ok
     site = fields.Char("Site")  # OK
@@ -42,9 +44,9 @@ class rtw_sf_partner(models.Model):
     multiplier_black = fields.Float("multiplier_black")  # 掛率(黒) OK Field7__c
     multiplier_green = fields.Float("multiplier_green")  # 掛率(黒) OK Field8__c
     fare_payment_terms = fields.Selection([
-        ('1', '運賃込み（設置まで）'),
+        ('1', '運賃込み(設置まで)'),
         ('2', '運賃別途'),
-        ('3', '運賃込み（デポ入れまで）'),
+        ('3', '運賃込み(デポ入れまで)'),
     ], default='',
         string="fare_payment_terms")  # 支払条件運賃 OK Field9__c
     categorization = fields.Selection([
@@ -82,10 +84,12 @@ class rtw_sf_partner(models.Model):
         ('32', '企業ブランディングデザイナー'),
         ('33', 'グラフィックデザイナー'),
         ('34', '独占販売権ディーラー'),
-        ('34', '非独占販売権ディーラー'),
-        ('34', '販売代行エージェント'),
-        ('34', 'その他'),
-        ('34', 'Ritzwell'),
+        ('35', '非独占販売権ディーラー'),
+        ('36', '販売代行エージェント'),
+        ('37', 'その他'),
+        ('38', 'Ritzwell'),
+        ('-', '以下無効'),
+        ('39', '関係者販売'),
     ], default='',
         string="categorization")  # 分類 OK Field10__c
     situation = fields.Selection([
@@ -102,7 +106,7 @@ class rtw_sf_partner(models.Model):
     cumulative_sales = fields.Float("cumulative_sales")  # 累計売上金額 OK Field15__c
     potential = fields.Selection([('a', 'A'), ('b', 'B'), ('c', 'C'), ('d', 'D')], string="potential",
                                  default='')  # ポテンシャル OK Field16__c
-    kubun = fields.Selection([('internal', '国内'), ('external', '国外')], string="kubun")  # 区分 OK  Field20__c
+    kubun = fields.Selection([('internal', '国内'), ('external', '海外')], string="kubun")  # 区分 OK  Field20__c
     rival_companies = fields.Boolean("rival_companies", default=0)  # 競合他社 OK Field23__c
     group = fields.Char("group")  # G OK Field21__c
     transaction_category = fields.Selection([
@@ -170,7 +174,29 @@ class rtw_sf_partner(models.Model):
         ('32', 'Archiproducts'),
         ('33', 'その他'),
         ('34', '不明'),
-
+        ('-', '以下未使用'),
+        ('35', '口コミ'),
+        ('36', 'Fax'),
+        ('37', '電話'),
+        ('38', 'RitzwellWebフォーム'),
+        ('39', 'インテリアフェア'),
+        ('40', '仕入調達'),
+        ('41', 'Email'),
+        ('42', '物件情報'),
+        ('43', 'IFFT2007(sozo_comm)'),
+        ('44', '店舗'),
+        ('45', 'コラボイベント'),
+        ('46', '家具店・IC等からの紹介'),
+        ('47', '(R)WEBページ'),
+        ('48', '納品時の案内用紙'),
+        ('49', '雑誌'),
+        ('50', 'IFFT2007(sozo_comm)'),
+        ('51', '店舗'),
+        ('52', 'コラボイベント'),
+        ('53', '家具店・IC等からの紹介'),
+        ('54', '(R)WEBページ'),
+        ('55', '納品時の案内用紙'),
+        ('56', '雑誌'),
     ], default='',
         string="LeadSource")  # OK
     birthdate = fields.Date(string="Birthdate")  # OK
@@ -192,7 +218,17 @@ class rtw_sf_partner(models.Model):
         ('holdings ', '手持'),
     ], default='',
         string="send_catalog")  # カタログ配布 OK Field4__c
-    gender = fields.Char("gender")  # 性別 OK Field6__c
+    gender = fields.Selection([
+        ('1', '女性'),
+        ('2', '男性'),
+        ('3', 'その他'),
+        ('4', '不明'),
+        ('-', '以下不使用'),
+        ('6', '男'),
+        ('7', '女'),
+
+    ], default='',
+        string="gender")  # 性別 OK Field6__c
     in_has = fields.Char("in_has")  # R社内所有者 OK R__c
     do_not_dm = fields.Boolean("do_not_dm", default=0)  # DM不要 OK DoNotDM
     evaluation = fields.Selection([
@@ -216,6 +252,8 @@ class rtw_sf_partner(models.Model):
         ('9', 'Ｒ家族'),
         ('10', 'R友人'),
         ('11', 'その他'),
+        ('-', '以下不使用'),
+        ('12', '施主（その他住宅）'),
     ], default='',
         string="related_attributes")  # 関係者属性 OK HM_OB__c
     cs_number = fields.Char("cs_number")  # 取引先番号 OK Field12__c

@@ -29,7 +29,21 @@ class contract(models.Model):
     toi_no = fields.Char('toi_no')  # 問い合わせNo
     vendor = fields.Char('vendor')  # 納品業者
     campaign_id = fields.Many2one('utm.campaign', 'campaign')  # キャンペーン
-    lead_source = fields.Char(string="lead_source")  # リードソース
+    lead_source = fields.Selection([
+        ('1', '紹介（家具店・住宅関係者）'),
+        ('2', '紹介（家族・知人）'),
+        ('3', '雑誌'),
+        ('4', 'インターネット'),
+        ('5', 'SNS・ソーシャルメディア'),
+        ('6', 'TABROOM'),
+        ('7', '展示場・ショップ'),
+        ('8', 'Rオーナー'),
+        ('9', 'R営業'),
+        ('10', 'ふるさと納税'),
+        ('11', 'G住宅ﾎﾟｲﾝﾄ'),
+        ('12', 'その他'),
+    ], default='',
+        string="lead_source")  # リードソース
     broad_category = fields.Selection([
         ('event_sale', 'イベント・セール'),
         ('catalog', 'カタログ依頼（メール・ＦＡＸ）'),
@@ -300,3 +314,31 @@ class contract(models.Model):
         ('1', '大変不満'),
     ], string="appearance_2",
      default='')  #
+    progress = fields.Selection([
+        ('1', '提出'),
+        ('2', '受理'),
+        ('3', '承認'),
+        ('4', '総務受理'),
+        ('5', '差し戻し'),
+    ], default='',
+        string='Field62__c')  # 報告書進捗
+    approval = fields.Selection([
+        ('1', '未'),
+        ('2', '済'),
+    ], default='',
+        string='Field61__c')  # 上長承認
+    inq_type = fields.Selection([
+        ('1', '社内業務改善'),
+        ('2', '営業活動'),
+        ('3', 'ツール・資料制作依頼'),
+        ('4', 'WEB・広報関連'),
+        ('5', 'その他'),
+    ], default='',
+        string='Field58__c')  # 種別
+    yousei = fields.Selection([
+        ('1', '申請'),
+        ('2', '受理'),
+        ('3', '進行中'),
+        ('4', '完了'),
+    ], default='',
+        string='Field59_yousei__c')  # 進捗
