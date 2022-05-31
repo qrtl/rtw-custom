@@ -1,0 +1,190 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* rtw_crm_role
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-05-31 05:31+0000\n"
+"PO-Revision-Date: 2022-05-31 05:31+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: rtw_crm_role
+#: model:ir.model.fields,field_description:rtw_crm_role.field_rtw_crm_role__contact_id
+msgid "ContactId"
+msgstr "取引先責任者"
+
+#. module: rtw_crm_role
+#: model:ir.model.fields,field_description:rtw_crm_role.field_rtw_crm_role__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: rtw_crm_role
+#: model:ir.model.fields,field_description:rtw_crm_role.field_rtw_crm_role__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: rtw_crm_role
+#: model:ir.model.fields,field_description:rtw_crm_role.field_rtw_crm_role__created_by_id
+msgid "CreatedById"
+msgstr "作成者"
+
+#. module: rtw_crm_role
+#: model:ir.model.fields,field_description:rtw_crm_role.field_rtw_crm_role__created_date
+msgid "CreatedDate"
+msgstr "作成日時"
+
+#. module: rtw_crm_role
+#: model:ir.model.fields,field_description:rtw_crm_role.field_crm_lead__display_name
+#: model:ir.model.fields,field_description:rtw_crm_role.field_rtw_crm_role__display_name
+msgid "Display Name"
+msgstr "表示名"
+
+#. module: rtw_crm_role
+#: model:ir.model.fields,field_description:rtw_crm_role.field_crm_lead__id
+#: model:ir.model.fields,field_description:rtw_crm_role.field_rtw_crm_role__id
+msgid "ID"
+msgstr ""
+
+#. module: rtw_crm_role
+#: model:ir.model.fields,field_description:rtw_crm_role.field_crm_lead____last_update
+#: model:ir.model.fields,field_description:rtw_crm_role.field_rtw_crm_role____last_update
+msgid "Last Modified on"
+msgstr "最終更新日"
+
+#. module: rtw_crm_role
+#: model:ir.model.fields,field_description:rtw_crm_role.field_rtw_crm_role__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: rtw_crm_role
+#: model:ir.model.fields,field_description:rtw_crm_role.field_rtw_crm_role__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: rtw_crm_role
+#: model:ir.model.fields,field_description:rtw_crm_role.field_rtw_crm_role__last_modified_by_id
+msgid "LastModifiedById"
+msgstr "最終更新者"
+
+#. module: rtw_crm_role
+#: model:ir.model.fields,field_description:rtw_crm_role.field_rtw_crm_role__last_modified_date
+msgid "LastModifiedDate"
+msgstr "最終更新日時"
+
+#. module: rtw_crm_role
+#: model:ir.model,name:rtw_crm_role.model_crm_lead
+msgid "Lead/Opportunity"
+msgstr "リード / 案件"
+
+#. module: rtw_crm_role
+#: model:ir.model.fields,field_description:rtw_crm_role.field_rtw_crm_role__name
+msgid "Name"
+msgstr "名称"
+
+#. module: rtw_crm_role
+#: model:ir.model.fields,field_description:rtw_crm_role.field_rtw_crm_role__opportunity_id
+msgid "OpportunityId"
+msgstr "商談"
+
+#. module: rtw_crm_role
+#: model:ir.model.fields,field_description:rtw_crm_role.field_crm_lead__role_ids
+#: model:ir.model.fields,field_description:rtw_crm_role.field_rtw_crm_role__role
+msgid "Role"
+msgstr "役割"
+
+#. module: rtw_crm_role
+#: model:ir.model.fields,field_description:rtw_crm_role.field_rtw_crm_role__system_mod_stamp
+msgid "SystemModstamp"
+msgstr "システム更新日時"
+
+#. module: rtw_crm_role
+#: model:ir.ui.menu,name:rtw_crm_role.menu_1_list
+msgid "crm role"
+msgstr "関連取引先責任者"
+
+#. module: rtw_crm_role
+#: model_terms:ir.ui.view,arch_db:rtw_crm_role.view_crm_form_sf
+msgid "role_ids"
+msgstr ""
+
+#. module: rtw_crm_role
+#: model:ir.model,name:rtw_crm_role.model_rtw_crm_role
+msgid "rtw_crm_role"
+msgstr ""
+
+#. module: rtw_crm_role
+#: model:ir.actions.act_window,name:rtw_crm_role.action_window
+msgid "rtw_crm_role window"
+msgstr "関連取引先責任者"
+
+#. module: rtw_crm_role
+#: model:ir.model.fields.selection,name:rtw_crm_role.selection__rtw_crm_role__role__13
+msgid "その他"
+msgstr ""
+
+#. module: rtw_crm_role
+#: model:ir.model.fields.selection,name:rtw_crm_role.selection__rtw_crm_role__role__12
+msgid "主担当"
+msgstr ""
+
+#. module: rtw_crm_role
+#: model:ir.model.fields.selection,name:rtw_crm_role.selection__rtw_crm_role__role__6
+msgid "予算担当者"
+msgstr ""
+
+#. module: rtw_crm_role
+#: model:ir.model.fields.selection,name:rtw_crm_role.selection__rtw_crm_role__role__5
+msgid "予算決定者"
+msgstr ""
+
+#. module: rtw_crm_role
+#: model:ir.model.fields.selection,name:rtw_crm_role.selection__rtw_crm_role__role__10
+msgid "商品選定者"
+msgstr ""
+
+#. module: rtw_crm_role
+#: model:ir.model.fields.selection,name:rtw_crm_role.selection__rtw_crm_role__role__1
+msgid "意思決定者"
+msgstr ""
+
+#. module: rtw_crm_role
+#: model:ir.model.fields.selection,name:rtw_crm_role.selection__rtw_crm_role__role__4
+msgid "技術担当者"
+msgstr ""
+
+#. module: rtw_crm_role
+#: model:ir.model.fields.selection,name:rtw_crm_role.selection__rtw_crm_role__role__9
+msgid "担当役員"
+msgstr ""
+
+#. module: rtw_crm_role
+#: model:ir.model.fields.selection,name:rtw_crm_role.selection__rtw_crm_role__role__3
+msgid "有力者"
+msgstr ""
+
+#. module: rtw_crm_role
+#: model:ir.model.fields.selection,name:rtw_crm_role.selection__rtw_crm_role__role__2
+msgid "業務担当者"
+msgstr ""
+
+#. module: rtw_crm_role
+#: model:ir.model.fields.selection,name:rtw_crm_role.selection__rtw_crm_role__role__8
+msgid "発注担当者"
+msgstr ""
+
+#. module: rtw_crm_role
+#: model:ir.model.fields.selection,name:rtw_crm_role.selection__rtw_crm_role__role__11
+msgid "設計担当者"
+msgstr ""
+
+#. module: rtw_crm_role
+#: model:ir.model.fields.selection,name:rtw_crm_role.selection__rtw_crm_role__role__7
+msgid "評価者"
+msgstr ""
