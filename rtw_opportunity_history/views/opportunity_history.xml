@@ -1,0 +1,66 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    <record model="ir.ui.view" id="rtw_opportunity_history.list">
+      <field name="name">rtw_opportunity_history_list</field>
+      <field name="model">rtw_opportunity_history</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="phase"/>
+          <field name="amount" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+          <field name="probability"/>
+          <field name="close_date"/>
+          <field name="created_date"/>
+          <field name="created_by_id"/>
+          <field name="currency_id" invisible="1"/>
+        </tree>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="rtw_opportunity_history.action_window">
+      <field name="name">rtw_opportunity_history window</field>
+      <field name="res_model">rtw_opportunity_history</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="rtw_opportunity_history.action_server">
+      <field name="name">rtw_opportunity_history server</field>
+      <field name="model_id" ref="model_rtw_opportunity_history_rtw_opportunity_history"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="rtw_opportunity_history" id="rtw_opportunity_history.menu_root"/>
+-->
+    <!-- menu categories -->
+
+<!--
+    <menuitem name="Menu 1" id="rtw_opportunity_history.menu_1" parent="rtw_opportunity_history.menu_root"/>
+    <menuitem name="Menu 2" id="rtw_opportunity_history.menu_2" parent="rtw_opportunity_history.menu_root"/>
+-->
+    <!-- actions -->
+    <menuitem name="opportunity history" id="rtw_opportunity_history.menu" parent="crm.crm_menu_config"
+              action="rtw_opportunity_history.action_window"/>
+<!--
+    <menuitem name="List" id="rtw_opportunity_history.menu_1_list" parent="rtw_opportunity_history.menu_1"
+              action="rtw_opportunity_history.action_window"/>
+    <menuitem name="Server to list" id="rtw_opportunity_history" parent="rtw_opportunity_history.menu_2"
+              action="rtw_opportunity_history.action_server"/>
+-->
+  </data>
+</odoo>
