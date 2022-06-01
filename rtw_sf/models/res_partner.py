@@ -47,6 +47,7 @@ class rtw_sf_partner(models.Model):
         ('1', '運賃込み(設置まで)'),
         ('2', '運賃別途'),
         ('3', '運賃込み(デポ入れまで)'),
+        ('4', '運賃込み（設置まで）'),
     ], default='',
         string="fare_payment_terms")  # 支払条件運賃 OK Field9__c
     categorization = fields.Selection([
