@@ -199,7 +199,7 @@ class rtw_sf_partner(models.Model):
         ('56', '雑誌'),
     ], default='',
         string="LeadSource")  # OK
-    birthdate = fields.Date(string="Birthdate")  # OK
+    birthdate = fields.Datetime(string="Birthdate")  # OK
     opt_out_email = fields.Boolean(string="HasOptedOutOfEmail", default=0)  # OK
     opt_out_fax = fields.Boolean(string="HasOptedOutOfFax", default=0)  # ok
     do_not_call = fields.Boolean(string="DoNotCall", default=0)  # OK
