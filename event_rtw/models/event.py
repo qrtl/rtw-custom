@@ -7,7 +7,8 @@ class event_rtw(models.Model):
     _name = 'event_rtw.event_rtw'
     _description = 'event_rtw.event_rtw'
 
-    who_id = fields.Many2one('res.partner', 'WhoId')  # 対象者id C列
+    who_id = fields.Char('WhoId')  # 対象者id C列
+    # who_id = fields.Many2one('res.partner', 'WhoId')  # 対象者id C列
     what_id = fields.Char('WhatId')  # タスクid D列
     who_count = fields.Integer('WhoCount')  # 対象者アカウント E列
     what_count = fields.Integer('WhatCount')  # タスク件数 F列
@@ -51,7 +52,7 @@ class event_rtw(models.Model):
     # cost = fields.Integer('Field2__c')  # コスト AR ★空白のみ
     # bill_amount = fields.Integer('Field3__c')  # 請求額 AS ★空白のみ
     kpi1 = fields.Char('KPI_1__c')  # KPI項目 AT
-    f = fields.Char('KPI__c')  # F AU
+    kpi_f = fields.Char('KPI__c')  # F AU
     study_meeting_count = fields.Integer('Field4__c')  # 勉強会人数 AV
     campaign_id = fields.Many2one('utm.campaign', 'campaign_5__c')  # 関連先(キャンペーン)id AW
     situation = fields.Char('Field1__c')  # 状況 AX

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-25 03:11+0000\n"
-"PO-Revision-Date: 2022-05-25 03:11+0000\n"
+"POT-Creation-Date: 2022-05-31 08:57+0000\n"
+"PO-Revision-Date: 2022-05-31 08:57+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -319,17 +319,17 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:task.rtw_sf_task_form
 #: model_terms:ir.ui.view,arch_db:task.task_list
 msgid "activity_date"
-msgstr ""
+msgstr "期日"
 
 #. module: task
 #: model_terms:ir.ui.view,arch_db:task.rtw_sf_task_form
 msgid "activity_origin_type"
-msgstr ""
+msgstr "チャネル"
 
 #. module: task
 #: model_terms:ir.ui.view,arch_db:task.rtw_sf_task_form
 msgid "bill_amount"
-msgstr ""
+msgstr "請求額"
 
 #. module: task
 #: model:ir.model.fields,field_description:task.field_task_task__campaign_id
@@ -339,37 +339,47 @@ msgstr ""
 #. module: task
 #: model_terms:ir.ui.view,arch_db:task.rtw_sf_task_form
 msgid "campaign_id"
-msgstr ""
+msgstr "関連先(キャンペーン)"
 
 #. module: task
 #: model_terms:ir.ui.view,arch_db:task.rtw_sf_task_form
 msgid "client_id"
-msgstr ""
+msgstr "関連先(取引先名)"
 
 #. module: task
 #: model_terms:ir.ui.view,arch_db:task.rtw_sf_task_form
 msgid "cost"
-msgstr ""
+msgstr "コスト"
 
 #. module: task
 #: model_terms:ir.ui.view,arch_db:task.rtw_sf_task_form
 msgid "created_by_id"
-msgstr ""
+msgstr "作成者"
+
+#. module: task
+#: model_terms:ir.ui.view,arch_db:task.rtw_sf_task_form
+msgid "created_date"
+msgstr "作成日"
 
 #. module: task
 #: model_terms:ir.ui.view,arch_db:task.rtw_sf_task_form
 msgid "description"
-msgstr ""
+msgstr "説明"
 
 #. module: task
 #: model_terms:ir.ui.view,arch_db:task.rtw_sf_task_form
 msgid "is_reminder_set"
-msgstr ""
+msgstr "アラーム設定"
 
 #. module: task
 #: model_terms:ir.ui.view,arch_db:task.rtw_sf_task_form
 msgid "last_modified_by_id"
-msgstr ""
+msgstr "最終更新者"
+
+#. module: task
+#: model_terms:ir.ui.view,arch_db:task.rtw_sf_task_form
+msgid "last_modified_date"
+msgstr "最終更新日"
 
 #. module: task
 #: model:ir.model.fields,field_description:task.field_task_task__new_sales
@@ -380,56 +390,61 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:task.rtw_sf_task_form
 #: model_terms:ir.ui.view,arch_db:task.task_list
 msgid "owner_id"
-msgstr ""
+msgstr "割り当て先"
 
 #. module: task
 #: model_terms:ir.ui.view,arch_db:task.rtw_sf_task_form
 msgid "priority"
-msgstr ""
+msgstr "優先度"
+
+#. module: task
+#: model_terms:ir.ui.view,arch_db:task.rtw_sf_task_form
+msgid "reminder_datetime"
+msgstr "アラーム設定日"
 
 #. module: task
 #: model_terms:ir.ui.view,arch_db:task.rtw_sf_task_form
 msgid "start_datetime"
-msgstr ""
+msgstr "開始時間"
 
 #. module: task
 #: model_terms:ir.ui.view,arch_db:task.rtw_sf_task_form
 msgid "status"
-msgstr ""
+msgstr "状況"
 
 #. module: task
 #: model_terms:ir.ui.view,arch_db:task.rtw_sf_task_form
 #: model_terms:ir.ui.view,arch_db:task.task_list
 msgid "subject"
-msgstr ""
+msgstr "件名"
 
 #. module: task
 #: model:ir.actions.act_window,name:task.action_window
 #: model:ir.ui.menu,name:task.menu_root
 msgid "task"
-msgstr ""
+msgstr "ToDo"
 
 #. module: task
 #: model:ir.model,name:task.model_task_task
 msgid "task.task"
-msgstr ""
+msgstr "ToDo"
 
 #. module: task
 #: model_terms:ir.ui.view,arch_db:task.rtw_sf_task_form
 msgid "type"
-msgstr ""
+msgstr "種別"
 
 #. module: task
 #: model_terms:ir.ui.view,arch_db:task.rtw_sf_task_form
 #: model_terms:ir.ui.view,arch_db:task.task_list
 msgid "what_id"
-msgstr ""
+msgstr "関連先(商談他)"
 
 #. module: task
 #: model_terms:ir.ui.view,arch_db:task.rtw_sf_task_form
 #: model_terms:ir.ui.view,arch_db:task.task_list
 msgid "who_id"
-msgstr ""
+msgstr "割り当て先"
 
 #. module: task
 #: model_terms:ir.ui.view,arch_db:task.rtw_sf_task_form

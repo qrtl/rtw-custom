@@ -6,7 +6,13 @@
             <field name="model">event_rtw.event_rtw</field>
             <field name="arch" type="xml">
                 <tree>
+                    <field name="recurrence_start_datetime" string="recurrence_start_datetime"/>
+                    <field name="recurrence_end_date_only" string="recurrence_end_date_only"/>
                     <field name="subject" string="subject"/>
+                    <field name="who_id" string="who_id"/>
+                    <field name="what_id" string="what_id"/>
+                    <field name="owner_id" string="owner_id"/>
+                    <field name="is_all_day_event" string="is_all_day_event"/>
                 </tree>
             </field>
         </record>
@@ -41,27 +47,61 @@
                             <group>
                                 <field name="owner_id" string="owner_id"/>
                                 <field name="subject" string="subject"/>
-                                <field name="f" string="f"/>
+                                <field name="kpi_f" string="kpi_f"/>
                                 <field name="kpi1" string="kpi1"/>
                                 <field name="study_meeting_count" string="study_meeting_count"/>
                                 <field name="who_id" string="who_id"/>
                                 <field name="client_id" string="client_id"/>
+                                <!-- チャネルがどの項目に該当するのか不明 -->
+                                <field name="what_id" string="what_id"/>
                                 <field name="campaign_id" string="campaign_id"/>
-                                <field name="description" string="description"/>
                             </group>
                             <group>
+                                <field name="location" string="location"/>
+                                <field name="sr" string="sr"/>
+                                <field name="recurrence_start_datetime" string="recurrence_start_datetime"/>
+                                <field name="recurrence_end_date_only" string="recurrence_end_date_only"/>
+                                <!-- 曜日がどの項目に該当するのか不明 -->
+                                <field name="is_all_day_event" string="is_all_day_event"/>
+                                <field name="new_sales" string="new_sales"/>
                                 <field name="type" string="type"/>
-                                <field name="status" string="status"/>
-                                <field name="priority" string="priority"/>
-                                <field name="start_datetime" string="start_datetime"/>
-                                <field name="cost" string="cost"/>
-                                <field name="bill_amount" string="bill_amount"/>
+                                <field name="situation" string="situation"/>
+                                <!-- 被招業者がどの項目に該当するのか不明 -->
                             </group>
                         </group>
                         <group>
-                            <field name="is_reminder_set" string="is_reminder_set"/>
-                            <field name="last_modified_by_id" string="last_modified_by_id"/>
-                            <field name="created_by_id" string="created_by_id"/>
+                            <field name="description" string="description"/>
+                        </group>
+                        <group string="SR来場情報">
+                            <group>
+                                <field name="reservation" string="reservation"/>
+                                <field name="estimate_flg" string="estimate_flg"/>
+                                <field name="visitor_type" string="visitor_type"/>
+                                <field name="visitor_set_count" string="visitor_set_count"/>
+                                <field name="visitor_count" string="visitor_count"/>
+                                <field name="lead" string="lead"/>
+                                <field name="visitor_purpose" string="visitor_purpose"/>
+                            </group>
+                            <group>
+                                <field name="guest_book" string="guest_book"/>
+                                <field name="estimated_accrual" string="estimated_accrual"/>
+                                <field name="payment_method" string="payment_method"/>
+                                <field name="omotesando" string="omotesando"/>
+                                <field name="belongs" string="belongs"/>
+                                <field name="customer_service_staff" string="customer_service_staff"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                            </group>
+                            <group>
+                                <field name="is_reminder_set" string="is_reminder_set"/>
+                                <field name="reminder_datetime" string="reminder_datetime"/>
+                                <field name="created_by_id" string="created_by_id"/>
+                                <field name="created_date" string="created_date"/>
+                                <field name="last_modified_by_id" string="last_modified_by_id"/>
+                                <field name="last_modified_date" string="last_modified_date"/>
+                            </group>
                         </group>
                     </sheet>
 <!--                    <div class="oe_chatter">-->
