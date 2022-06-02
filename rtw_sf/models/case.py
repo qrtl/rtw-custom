@@ -11,7 +11,8 @@ class rtw_sf_case(models.Model):
     ]
     _description = 'case'
     _rec_name = "subject"
-
+    
+    case_no = fields.Char("CaseNumber")
     crm_id = fields.Many2one('crm.lead')
     partner_ids = fields.Many2one('res.partner')
     contacts = fields.Many2one('res.partner', "Contact", copy=False)  # コンタクト
