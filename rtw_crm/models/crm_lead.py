@@ -87,11 +87,11 @@ class rtw_crm(models.Model):
     # has_opportunity_line_item = fields.Char('HasOpportunityLineItem')  # 段階名 V列
     # price_book2_id = fields.Char('Pricebook2Id')  # 段階名 W列
     # owner_id = fields.Many2one('res.users', 'OwnerId')  # 所有者Id X列 1
-    # created_date = fields.Datetime('CreatedDate')  # 作成日 Y列
-    # created_by_id = fields.Many2one('res.users', 'CreatedById')  # 作成ID Z列
-    # last_modified_date = fields.Datetime('LastModifiedDate')  # 最終更新日
-    # last_modified_by_id = fields.Many2one('res.users', 'LastModifiedById')  # 最終更新者
-    # system_mod_stamp = fields.Datetime('SystemModstamp')  # システム最終更新日
+    partner_id = fields.Many2one('res.users', 'Partner')
+    created_by_id = fields.Many2one('res.users', 'CreatedById')  # 作成ID AN列
+    last_modified_date = fields.Datetime('LastModifiedDate')  # 最終更新日 AO列
+    last_modified_by_id = fields.Many2one('res.users', 'LastModifiedById')  # 最終更新者 AP列
+    system_mod_stamp = fields.Datetime('SystemModstamp')  # システム最終更新日 AQ列
     last_activity_date = fields.Datetime('LastActivityDate')  # システム最終活動日
     last_stage_changed_date = fields.Datetime('LastStageChangeDate')  # 最終ステージ変更日
     fiscal_year = fields.Integer('FiscalYear')  # 会計年度　注意
