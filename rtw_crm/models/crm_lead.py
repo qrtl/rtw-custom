@@ -361,6 +361,7 @@ class rtw_crm(models.Model):
         ('8', '特注品'),
         ('-', '-以下使用しない-'),
         ('9', 'JK TABLE(L)'),
+        ('10', 'CM TABLE(L)'),
     ], default='',
         string='Lt2__c')  # 商品リスト(Lt2) CT列
     fair_Year = fields.Datetime('Field33__c')  # フェア開催年 CU列
@@ -421,7 +422,7 @@ class rtw_crm(models.Model):
         ('4', 'GO TABLE (S)'),
         ('5', 'JK TABLE(S)'),
         ('6', 'LW TABLE (S)'),
-        ('7', 'MO TABLE (S)'),
+        ('7', 'MO TABLE(S)'),
         ('8', 'OS TABLE(070)'),
         ('9', 'OS TABLE(040)'),
         ('10', 'RV TABLE'),
