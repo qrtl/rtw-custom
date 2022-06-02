@@ -352,7 +352,7 @@ class rtw_crm(models.Model):
         string='Dt1__c')  # 商品リスト(Dt1) CS列
     product_list_lt2 = fields.Selection([
         ('1', 'CM TABLE (L)'),
-        ('2', 'CB TABLE (L)'),
+        ('2', 'CB TABLE(L)'),
         ('3', 'GO TABLE(L)'),
         ('4', 'JK TABLE (L)'),
         ('5', 'LW TABLE(L)'),
@@ -422,7 +422,7 @@ class rtw_crm(models.Model):
         ('11', 'CR TABLE(S)'),
         ('4', 'GO TABLE (S)'),
         ('5', 'JK TABLE(S)'),
-        ('6', 'LW TABLE (S)'),
+        ('6', 'LW TABLE(S)'),
         ('7', 'MO TABLE(S)'),
         ('8', 'OS TABLE(070)'),
         ('9', 'OS TABLE(040)'),
