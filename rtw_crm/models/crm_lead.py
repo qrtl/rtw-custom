@@ -353,7 +353,7 @@ class rtw_crm(models.Model):
     product_list_lt2 = fields.Selection([
         ('1', 'CM TABLE (L)'),
         ('2', 'CB TABLE (L)'),
-        ('3', 'GO TABLE (L)'),
+        ('3', 'GO TABLE(L)'),
         ('4', 'JK TABLE (L)'),
         ('5', 'LW TABLE (L)'),
         ('6', 'MO TABLE(L)'),
@@ -455,7 +455,7 @@ class rtw_crm(models.Model):
     term = fields.Char('Term__c')  # Term DD列
     product_list_ot_st2 = fields.Selection([
         ('1', 'BEATRIX(OT)'),
-        ('2', 'BLAVA（OT)'),
+        ('2', 'BLAVA(OT)'),
         ('3', 'RIVAGE(ST)'),
         ('4', 'VINCENT(ST)'),
         ('5', 'C-LINE(ST)'),
