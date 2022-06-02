@@ -416,7 +416,7 @@ class rtw_crm(models.Model):
         string='EC2_2__c')  # 商品リスト(EC2) CX列
     l_set = fields.Integer('Lset__c')  # Lセット CY列
     product_list_st2 = fields.Selection([
-        ('1', 'CM TABLE (S)'),
+        ('1', 'CM TABLE(S)'),
         ('2', 'CB TABLE(S)'),
         ('3', 'CR TABLE'),
         ('11', 'CR TABLE(S)'),
