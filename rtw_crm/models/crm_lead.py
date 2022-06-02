@@ -420,7 +420,7 @@ class rtw_crm(models.Model):
         ('2', 'CB TABLE(S)'),
         ('3', 'CR TABLE'),
         ('11', 'CR TABLE(S)'),
-        ('4', 'GO TABLE (S)'),
+        ('4', 'GO TABLE(S)'),
         ('5', 'JK TABLE(S)'),
         ('6', 'LW TABLE(S)'),
         ('7', 'MO TABLE(S)'),
