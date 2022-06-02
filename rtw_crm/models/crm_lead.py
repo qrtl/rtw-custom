@@ -268,8 +268,8 @@ class rtw_crm(models.Model):
         ('10', 'カレンダー'),
         ('11', 'その他'),
         ('-', '-'),
-        ('11', 'ペリーニ'),
-        ('11', 'キリム'),
+        ('12', 'ペリーニ'),
+        ('13', 'キリム'),
     ], default='',
         string='Field68__c')  # 商品リスト（その他） CC列
     action1 = fields.Selection([
