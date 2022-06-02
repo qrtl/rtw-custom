@@ -88,6 +88,7 @@ class rtw_crm(models.Model):
     # price_book2_id = fields.Char('Pricebook2Id')  # 段階名 W列
     # owner_id = fields.Many2one('res.users', 'OwnerId')  # 所有者Id X列 1
     r_partner_id = fields.Many2one('res.users', 'Partner')
+    created_date = fields.Datetime('CreatedDate')  # 作成日 AM列
     created_by_id = fields.Many2one('res.users', 'CreatedById')  # 作成ID AN列
     last_modified_date = fields.Datetime('LastModifiedDate')  # 最終更新日 AO列
     last_modified_by_id = fields.Many2one('res.users', 'LastModifiedById')  # 最終更新者 AP列
