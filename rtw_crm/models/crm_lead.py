@@ -355,7 +355,7 @@ class rtw_crm(models.Model):
         ('2', 'CB TABLE (L)'),
         ('3', 'GO TABLE(L)'),
         ('4', 'JK TABLE (L)'),
-        ('5', 'LW TABLE (L)'),
+        ('5', 'LW TABLE(L)'),
         ('6', 'MO TABLE(L)'),
         ('7', 'SI TABLE(L)'),
         ('8', '特注品'),
