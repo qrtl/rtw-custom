@@ -10,6 +10,7 @@ class rtw_crm(models.Model):
     # expected_revenue = fields.Float('ExpectedRevenue')  # 予想売上高 K列
 
     # close_date = fields.Datetime('CloseDate')  # 完了日 M列
+    case_no = fields.Char('CaseNumber')
     x_type = fields.Char('Type')  # N列
     nextstep = fields.Char('NextStep')  # 次の段階 O列
     lead_source = fields.Selection([
