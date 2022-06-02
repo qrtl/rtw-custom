@@ -87,7 +87,7 @@ class rtw_crm(models.Model):
     # has_opportunity_line_item = fields.Char('HasOpportunityLineItem')  # 段階名 V列
     # price_book2_id = fields.Char('Pricebook2Id')  # 段階名 W列
     # owner_id = fields.Many2one('res.users', 'OwnerId')  # 所有者Id X列 1
-    partner_id = fields.Many2one('res.users', 'Partner')
+    r_partner_id = fields.Many2one('res.users', 'Partner')
     created_by_id = fields.Many2one('res.users', 'CreatedById')  # 作成ID AN列
     last_modified_date = fields.Datetime('LastModifiedDate')  # 最終更新日 AO列
     last_modified_by_id = fields.Many2one('res.users', 'LastModifiedById')  # 最終更新者 AP列
