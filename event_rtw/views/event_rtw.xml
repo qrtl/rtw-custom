@@ -7,6 +7,7 @@
         <field name="arch" type="xml">
             <calendar date_start="activity_datetime" date_stop="activity_datetime_end" mode="month" string="Resource" color="sr" event_limit="5" all_day="is_all_day_event">
                 <field name="subject"/>
+                <field name="sr" filters="1"/>
             </calendar>
         </field>
     </record>
