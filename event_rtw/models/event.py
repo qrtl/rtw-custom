@@ -1,11 +1,13 @@
 # -*- coding: utf-8 -*-
 
+import datetime
 from odoo import models, fields, api
 
 
 class event_rtw(models.Model):
     _name = 'event_rtw.event_rtw'
     _description = 'event_rtw.event_rtw'
+    _rec_name = "subject"
 
     who_id = fields.Char('WhoId')  # 対象者id C列
     # who_id = fields.Many2one('res.partner', 'WhoId')  # 対象者id C列
@@ -13,9 +15,11 @@ class event_rtw(models.Model):
     who_count = fields.Integer('WhoCount')  # 対象者アカウント E列
     what_count = fields.Integer('WhatCount')  # タスク件数 F列
     subject = fields.Char('Subject')  # 表題 G列
+    name = fields.Char('name')  # 表題 G列
     location = fields.Char('Location')  # 場所 H列
     is_all_day_event = fields.Boolean('IsAllDayEvent')  # 終日イベント開催フラグ I列
     activity_datetime = fields.Datetime('ActivityDateTime')  # 活動日 J列
+    activity_datetime_end = fields.Datetime('ActivityDateTime_end', compute="_calc_end_time")
     activity_date = fields.Datetime('ActivityDate')  # 活動日 K列
     duration_in_minutes = fields.Integer('DurationInMinutes')  # 所要時間(分) L列
     description = fields.Text('Description')  # 説明 M列
@@ -78,6 +82,21 @@ class event_rtw(models.Model):
     estimated_accrual = fields.Boolean('Field31__c')  # 見積発生（新規商談） BR ★0,1,空白
     omotesando = fields.Boolean('Field35__c')  # 表参道来店 BS ★0,1,空白
 
+    @api.depends('activity_datetime')
+    def _calc_end_time(self):
+        for rec in self:
+            if rec.activity_datetime:
+                rec.activity_datetime_end = rec.activity_datetime + datetime.timedelta(minutes=rec.duration_in_minutes)
+            elif rec.activity_date:
+                time = datetime.time(hour=0, minute=0, second=0)
+                rec.activity_datetime = datetime.datetime.combine(rec.activity_date, time)
+            else:
+                rec.activity_datetime_end = False
+
+    def _calc_activity_time(self):
+        for rec in self:
+            if not rec.activity_datetime:
+                rec.activity_datetime = datetime.datetime.combine(rec.activity_date, "00:00:00")
 #     value = fields.Integer()
 #     value2 = fields.Float(compute="_value_pc", store=True)
 #     description = fields.Text()
