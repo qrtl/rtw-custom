@@ -6,14 +6,24 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-31 08:02+0000\n"
-"PO-Revision-Date: 2022-05-31 08:02+0000\n"
+"POT-Creation-Date: 2022-06-05 03:42+0000\n"
+"PO-Revision-Date: 2022-06-05 03:42+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: event_rtw
+#: model:ir.model.fields.selection,name:event_rtw.selection__calendar_event__guest_book__0
+#: model:ir.model.fields.selection,name:event_rtw.selection__calendar_event__lead__1
+#: model:ir.model.fields.selection,name:event_rtw.selection__calendar_event__reservation__1
+#: model:ir.model.fields.selection,name:event_rtw.selection__calendar_event__situation__0
+#: model:ir.model.fields.selection,name:event_rtw.selection__calendar_event__visitor_purpose__1
+#: model:ir.model.fields.selection,name:event_rtw.selection__calendar_event__visitor_type__1
+msgid "---なし---"
+msgstr ""
 
 #. module: event_rtw
 #: model:ir.model.fields,field_description:event_rtw.field_event_rtw_event_rtw__account_id
@@ -31,11 +41,23 @@ msgid "ActivityDateTime"
 msgstr ""
 
 #. module: event_rtw
+#: model:ir.model.fields,field_description:event_rtw.field_event_rtw_event_rtw__activity_datetime_end
+msgid "ActivityDateTime_end"
+msgstr ""
+
+#. module: event_rtw
+#: model:ir.model,name:event_rtw.model_calendar_event
+msgid "Calendar Event"
+msgstr "カレンダーイベント"
+
+#. module: event_rtw
+#: model:ir.model.fields,field_description:event_rtw.field_calendar_sr__create_uid
 #: model:ir.model.fields,field_description:event_rtw.field_event_rtw_event_rtw__create_uid
 msgid "Created by"
 msgstr ""
 
 #. module: event_rtw
+#: model:ir.model.fields,field_description:event_rtw.field_calendar_sr__create_date
 #: model:ir.model.fields,field_description:event_rtw.field_event_rtw_event_rtw__create_date
 msgid "Created on"
 msgstr ""
@@ -51,14 +73,21 @@ msgid "CreatedDate"
 msgstr ""
 
 #. module: event_rtw
+#: model:ir.model.fields.selection,name:event_rtw.selection__calendar_event__lead__6
+msgid "DM・ニュースレター"
+msgstr ""
+
+#. module: event_rtw
 #: model:ir.model.fields,field_description:event_rtw.field_event_rtw_event_rtw__description
 msgid "Description"
 msgstr ""
 
 #. module: event_rtw
+#: model:ir.model.fields,field_description:event_rtw.field_calendar_event__display_name
+#: model:ir.model.fields,field_description:event_rtw.field_calendar_sr__display_name
 #: model:ir.model.fields,field_description:event_rtw.field_event_rtw_event_rtw__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "表示名"
 
 #. module: event_rtw
 #: model:ir.model.fields,field_description:event_rtw.field_event_rtw_event_rtw__duration_in_minutes
@@ -66,84 +95,96 @@ msgid "DurationInMinutes"
 msgstr ""
 
 #. module: event_rtw
+#: model:ir.model.fields,field_description:event_rtw.field_calendar_event__visitor_count
 #: model:ir.model.fields,field_description:event_rtw.field_event_rtw_event_rtw__visitor_count
 msgid "Field10__c"
-msgstr ""
+msgstr "来場人数"
 
 #. module: event_rtw
+#: model:ir.model.fields,field_description:event_rtw.field_calendar_event__visitor_set_count
 #: model:ir.model.fields,field_description:event_rtw.field_event_rtw_event_rtw__visitor_set_count
 msgid "Field11__c"
-msgstr ""
+msgstr "来場組数"
 
 #. module: event_rtw
 #: model:ir.model.fields,field_description:event_rtw.field_event_rtw_event_rtw__customer_service_staff
 msgid "Field12__c"
-msgstr ""
+msgstr "接客担当"
 
 #. module: event_rtw
+#: model:ir.model.fields,field_description:event_rtw.field_calendar_event__visitor_purpose
 #: model:ir.model.fields,field_description:event_rtw.field_event_rtw_event_rtw__visitor_purpose
 msgid "Field16__c"
-msgstr ""
+msgstr "来場目的"
 
 #. module: event_rtw
+#: model:ir.model.fields,field_description:event_rtw.field_calendar_event__lead
 #: model:ir.model.fields,field_description:event_rtw.field_event_rtw_event_rtw__lead
 msgid "Field17__c"
-msgstr ""
+msgstr "リード（来場）"
 
 #. module: event_rtw
+#: model:ir.model.fields,field_description:event_rtw.field_calendar_event__visitor_type
 #: model:ir.model.fields,field_description:event_rtw.field_event_rtw_event_rtw__visitor_type
 msgid "Field18__c"
-msgstr ""
+msgstr "来場者タイプ"
 
 #. module: event_rtw
+#: model:ir.model.fields,field_description:event_rtw.field_calendar_event__estimate_flg
 #: model:ir.model.fields,field_description:event_rtw.field_event_rtw_event_rtw__estimate_flg
 msgid "Field19__c"
-msgstr ""
+msgstr "事前提案・見積り有"
 
 #. module: event_rtw
+#: model:ir.model.fields,field_description:event_rtw.field_calendar_event__situation
 #: model:ir.model.fields,field_description:event_rtw.field_event_rtw_event_rtw__situation
 msgid "Field1__c"
-msgstr ""
+msgstr "状況"
 
 #. module: event_rtw
+#: model:ir.model.fields,field_description:event_rtw.field_calendar_event__reservation
 #: model:ir.model.fields,field_description:event_rtw.field_event_rtw_event_rtw__reservation
 msgid "Field20__c"
-msgstr ""
+msgstr "予約"
 
 #. module: event_rtw
 #: model:ir.model.fields,field_description:event_rtw.field_event_rtw_event_rtw__with_reservation
 msgid "Field21__c"
-msgstr ""
+msgstr "予約あり"
 
 #. module: event_rtw
 #: model:ir.model.fields,field_description:event_rtw.field_event_rtw_event_rtw__no_reservation
 msgid "Field22__c"
-msgstr ""
+msgstr "予約なし"
 
 #. module: event_rtw
 #: model:ir.model.fields,field_description:event_rtw.field_event_rtw_event_rtw__purchaser
 msgid "Field24__c"
-msgstr ""
+msgstr "購入者"
 
 #. module: event_rtw
+#: model:ir.model.fields,field_description:event_rtw.field_calendar_event__payment_method
 #: model:ir.model.fields,field_description:event_rtw.field_event_rtw_event_rtw__payment_method
 msgid "Field26__c"
-msgstr ""
+msgstr "クレジット/現金購入"
 
 #. module: event_rtw
+#: model:ir.model.fields,field_description:event_rtw.field_calendar_event__guest_book
 #: model:ir.model.fields,field_description:event_rtw.field_event_rtw_event_rtw__guest_book
 msgid "Field30__c"
-msgstr ""
+msgstr "芳名帳/アンケート"
 
 #. module: event_rtw
+#: model:ir.model.fields,field_description:event_rtw.field_calendar_event__estimated_accrual
 #: model:ir.model.fields,field_description:event_rtw.field_event_rtw_event_rtw__estimated_accrual
 msgid "Field31__c"
-msgstr ""
+msgstr "見積発生（新規商談）"
 
 #. module: event_rtw
+#: model:ir.model.fields,field_description:event_rtw.field_calendar_event__omotesando
 #: model:ir.model.fields,field_description:event_rtw.field_event_rtw_event_rtw__omotesando
 msgid "Field35__c"
-msgstr ""
+msgstr "表参道来店"
 
 #. module: event_rtw
 #: model:ir.model.fields,field_description:event_rtw.field_event_rtw_event_rtw__study_meeting_count
@@ -166,6 +207,13 @@ msgid "GroupEventType"
 msgstr ""
 
 #. module: event_rtw
+#: model:ir.model.fields.selection,name:event_rtw.selection__calendar_event__lead__12
+msgid "G住宅ﾎﾟｲﾝﾄ"
+msgstr ""
+
+#. module: event_rtw
+#: model:ir.model.fields,field_description:event_rtw.field_calendar_event__id
+#: model:ir.model.fields,field_description:event_rtw.field_calendar_sr__id
 #: model:ir.model.fields,field_description:event_rtw.field_event_rtw_event_rtw__id
 msgid "ID"
 msgstr ""
@@ -211,16 +259,20 @@ msgid "KPI__c"
 msgstr ""
 
 #. module: event_rtw
+#: model:ir.model.fields,field_description:event_rtw.field_calendar_event____last_update
+#: model:ir.model.fields,field_description:event_rtw.field_calendar_sr____last_update
 #: model:ir.model.fields,field_description:event_rtw.field_event_rtw_event_rtw____last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "最終更新日"
 
 #. module: event_rtw
+#: model:ir.model.fields,field_description:event_rtw.field_calendar_sr__write_uid
 #: model:ir.model.fields,field_description:event_rtw.field_event_rtw_event_rtw__write_uid
 msgid "Last Updated by"
 msgstr ""
 
 #. module: event_rtw
+#: model:ir.model.fields,field_description:event_rtw.field_calendar_sr__write_date
 #: model:ir.model.fields,field_description:event_rtw.field_event_rtw_event_rtw__write_date
 msgid "Last Updated on"
 msgstr ""
@@ -291,8 +343,39 @@ msgid "ReminderDateTime"
 msgstr ""
 
 #. module: event_rtw
+#: model_terms:ir.ui.view,arch_db:event_rtw.view_event_calendar
+msgid "Resource"
+msgstr ""
+
+#. module: event_rtw
+#: model:ir.model.fields.selection,name:event_rtw.selection__calendar_event__lead__18
+msgid "Rオーナー(アフター）"
+msgstr ""
+
+#. module: event_rtw
+#: model:ir.model.fields.selection,name:event_rtw.selection__calendar_event__lead__17
+msgid "Rオーナー(追加・リピート)"
+msgstr ""
+
+#. module: event_rtw
+#: model:ir.model.fields.selection,name:event_rtw.selection__calendar_event__lead__22
+msgid "R営業誘致（営業活動）"
+msgstr ""
+
+#. module: event_rtw
+#: model:ir.model.fields.selection,name:event_rtw.selection__calendar_event__lead__8
+msgid "SNS"
+msgstr ""
+
+#. module: event_rtw
+#: model:ir.model.fields,field_description:event_rtw.field_calendar_event__sr
 #: model:ir.model.fields,field_description:event_rtw.field_event_rtw_event_rtw__sr
 msgid "SR__c"
+msgstr "ショールーム"
+
+#. module: event_rtw
+#: model:ir.model.fields.selection,name:event_rtw.selection__calendar_event__visitor_purpose__10
+msgid "SRフェア"
 msgstr ""
 
 #. module: event_rtw
@@ -311,8 +394,23 @@ msgid "SystemModstamp"
 msgstr ""
 
 #. module: event_rtw
+#: model:ir.model.fields.selection,name:event_rtw.selection__calendar_event__lead__9
+msgid "TABROM"
+msgstr ""
+
+#. module: event_rtw
 #: model:ir.model.fields,field_description:event_rtw.field_event_rtw_event_rtw__type
 msgid "Type"
+msgstr ""
+
+#. module: event_rtw
+#: model:ir.model.fields,field_description:event_rtw.field_calendar_sr__user_ids
+msgid "User"
+msgstr ""
+
+#. module: event_rtw
+#: model:ir.model.fields.selection,name:event_rtw.selection__calendar_event__lead__14
+msgid "WEB検索サイト"
 msgstr ""
 
 #. module: event_rtw
@@ -341,9 +439,29 @@ msgid "X2021__c"
 msgstr ""
 
 #. module: event_rtw
+#: model_terms:ir.ui.view,arch_db:event_rtw.event_rtw_list
+msgid "activity_date"
+msgstr ""
+
+#. module: event_rtw
+#: model_terms:ir.ui.view,arch_db:event_rtw.event_rtw_list
+msgid "activity_datetime"
+msgstr ""
+
+#. module: event_rtw
+#: model_terms:ir.ui.view,arch_db:event_rtw.event_rtw_list
+msgid "activity_datetime_end"
+msgstr ""
+
+#. module: event_rtw
 #: model_terms:ir.ui.view,arch_db:event_rtw.rtw_sf_event_form
 msgid "belongs"
 msgstr "所属"
+
+#. module: event_rtw
+#: model:ir.model,name:event_rtw.model_calendar_sr
+msgid "calendar.sr"
+msgstr ""
 
 #. module: event_rtw
 #: model:ir.model.fields,field_description:event_rtw.field_event_rtw_event_rtw__campaign_id
@@ -381,6 +499,11 @@ msgid "description"
 msgstr "説明"
 
 #. module: event_rtw
+#: model_terms:ir.ui.view,arch_db:event_rtw.event_rtw_list
+msgid "duration_in_minutes"
+msgstr ""
+
+#. module: event_rtw
 #: model_terms:ir.ui.view,arch_db:event_rtw.rtw_sf_event_form
 msgid "estimate_flg"
 msgstr "事前提案・見積り有"
@@ -411,6 +534,7 @@ msgid "guest_book"
 msgstr "芳名帳/アンケート"
 
 #. module: event_rtw
+#: model_terms:ir.ui.view,arch_db:event_rtw.event_rtw_list
 #: model_terms:ir.ui.view,arch_db:event_rtw.rtw_sf_event_form
 msgid "is_all_day_event"
 msgstr "終日行動"
@@ -451,9 +575,16 @@ msgid "location"
 msgstr "場所"
 
 #. module: event_rtw
+#: model:ir.model.fields,field_description:event_rtw.field_calendar_sr__name
+#: model:ir.model.fields,field_description:event_rtw.field_event_rtw_event_rtw__name
+msgid "name"
+msgstr ""
+
+#. module: event_rtw
+#: model:ir.model.fields,field_description:event_rtw.field_calendar_event__new_sales
 #: model:ir.model.fields,field_description:event_rtw.field_event_rtw_event_rtw__new_sales
 msgid "new_customer_2__c"
-msgstr ""
+msgstr "新規営業"
 
 #. module: event_rtw
 #: model_terms:ir.ui.view,arch_db:event_rtw.rtw_sf_event_form
@@ -466,6 +597,7 @@ msgid "omotesando"
 msgstr "表参道来店"
 
 #. module: event_rtw
+#: model_terms:ir.ui.view,arch_db:event_rtw.event_rtw_list
 #: model_terms:ir.ui.view,arch_db:event_rtw.rtw_sf_event_form
 msgid "owner_id"
 msgstr "割り当て先"
@@ -501,6 +633,8 @@ msgid "situation"
 msgstr "状況"
 
 #. module: event_rtw
+#: model:ir.actions.act_window,name:event_rtw.action_sr_tree
+#: model:ir.ui.menu,name:event_rtw.menu_sr_tree_crm
 #: model_terms:ir.ui.view,arch_db:event_rtw.rtw_sf_event_form
 msgid "sr"
 msgstr "SR"
@@ -542,14 +676,208 @@ msgid "visitor_type"
 msgstr "来場者タイプ"
 
 #. module: event_rtw
+#: model_terms:ir.ui.view,arch_db:event_rtw.event_rtw_list
 #: model_terms:ir.ui.view,arch_db:event_rtw.rtw_sf_event_form
 msgid "what_id"
 msgstr "関連先(商談他)"
 
 #. module: event_rtw
+#: model_terms:ir.ui.view,arch_db:event_rtw.event_rtw_list
 #: model_terms:ir.ui.view,arch_db:event_rtw.rtw_sf_event_form
 msgid "who_id"
 msgstr "割り当て先"
+
+#. module: event_rtw
+#: model:ir.model.fields.selection,name:event_rtw.selection__calendar_event__lead__24
+#: model:ir.model.fields.selection,name:event_rtw.selection__calendar_event__visitor_purpose__16
+#: model:ir.model.fields.selection,name:event_rtw.selection__calendar_event__visitor_type__10
+msgid "その他"
+msgstr ""
+
+#. module: event_rtw
+#: model:ir.model.fields.selection,name:event_rtw.selection__calendar_event__lead__11
+msgid "ふるさと納税"
+msgstr ""
+
+#. module: event_rtw
+#: model:ir.model.fields.selection,name:event_rtw.selection__calendar_event__visitor_purpose__7
+msgid "アフター・メンテ"
+msgstr ""
+
+#. module: event_rtw
+#: model:ir.model.fields.selection,name:event_rtw.selection__calendar_event__situation__3
+msgid "アポ済"
+msgstr ""
+
+#. module: event_rtw
+#: model:ir.model.fields.selection,name:event_rtw.selection__calendar_event__visitor_purpose__11
+msgid "イベント"
+msgstr ""
+
+#. module: event_rtw
+#: model:ir.model.fields.selection,name:event_rtw.selection__calendar_event__visitor_type__7
+msgid "オーナー+取引先"
+msgstr ""
+
+#. module: event_rtw
+#: model:ir.model.fields.selection,name:event_rtw.selection__calendar_event__visitor_type__6
+msgid "オーナー（法人）"
+msgstr ""
+
+#. module: event_rtw
+#: model:ir.model.fields.selection,name:event_rtw.selection__calendar_event__lead__10
+msgid "カタログギフト"
+msgstr ""
+
+#. module: event_rtw
+#: model:ir.model.fields.selection,name:event_rtw.selection__calendar_event__situation__5
+msgid "キャンセル"
+msgstr ""
+
+#. module: event_rtw
+#: model:ir.model.fields.selection,name:event_rtw.selection__calendar_event__lead__23
+msgid "ミラノサローネ"
+msgstr ""
+
+#. module: event_rtw
+#: model:ir.model.fields.selection,name:event_rtw.selection__calendar_event__visitor_type__8
+msgid "メディア"
+msgstr ""
+
+#. module: event_rtw
+#: model:ir.model.fields.selection,name:event_rtw.selection__calendar_event__visitor_type__3
+msgid "ユーザー+取引先"
+msgstr ""
+
+#. module: event_rtw
+#: model:ir.model.fields.selection,name:event_rtw.selection__calendar_event__visitor_type__2
+msgid "一般ユーザー"
+msgstr ""
+
+#. module: event_rtw
+#: model:ir.model.fields.selection,name:event_rtw.selection__calendar_event__situation__1
+msgid "予定"
+msgstr ""
+
+#. module: event_rtw
+#: model:ir.model.fields.selection,name:event_rtw.selection__calendar_event__reservation__4
+msgid "予約なし"
+msgstr ""
+
+#. module: event_rtw
+#: model:ir.model.fields.selection,name:event_rtw.selection__calendar_event__reservation__2
+msgid "事前予約"
+msgstr ""
+
+#. module: event_rtw
+#: model:ir.model.fields.selection,name:event_rtw.selection__calendar_event__lead__15
+msgid "他SRから"
+msgstr ""
+
+#. module: event_rtw
+#: model:ir.model.fields.selection,name:event_rtw.selection__calendar_event__lead__16
+msgid "再来場"
+msgstr ""
+
+#. module: event_rtw
+#: model:ir.model.fields.selection,name:event_rtw.selection__calendar_event__visitor_purpose__12
+msgid "勉強会"
+msgstr ""
+
+#. module: event_rtw
+#: model:ir.model.fields.selection,name:event_rtw.selection__calendar_event__visitor_type__4
+msgid "取引先(IC・設計)"
+msgstr ""
+
+#. module: event_rtw
+#: model:ir.model.fields.selection,name:event_rtw.selection__calendar_event__visitor_type__5
+msgid "取引先(販売店他)"
+msgstr ""
+
+#. module: event_rtw
+#: model:ir.model.fields.selection,name:event_rtw.selection__calendar_event__guest_book__1
+msgid "取得済"
+msgstr ""
+
+#. module: event_rtw
+#: model:ir.model.fields.selection,name:event_rtw.selection__calendar_event__visitor_purpose__15
+msgid "取材など"
+msgstr ""
+
+#. module: event_rtw
+#: model:ir.model.fields.selection,name:event_rtw.selection__calendar_event__visitor_purpose__14
+msgid "営業"
+msgstr ""
+
+#. module: event_rtw
+#: model:ir.model.fields.selection,name:event_rtw.selection__calendar_event__lead__20
+msgid "回答なし"
+msgstr ""
+
+#. module: event_rtw
+#: model:ir.model.fields.selection,name:event_rtw.selection__calendar_event__situation__4
+msgid "完了"
+msgstr ""
+
+#. module: event_rtw
+#: model:ir.model.fields.selection,name:event_rtw.selection__calendar_event__lead__13
+msgid "展示場・納入先"
+msgstr ""
+
+#. module: event_rtw
+#: model:ir.model.fields.selection,name:event_rtw.selection__calendar_event__reservation__3
+msgid "当日予約"
+msgstr ""
+
+#. module: event_rtw
+#: model:ir.model.fields.selection,name:event_rtw.selection__calendar_event__visitor_purpose__9
+msgid "打合せ（その他）"
+msgstr ""
+
+#. module: event_rtw
+#: model:ir.model.fields.selection,name:event_rtw.selection__calendar_event__visitor_purpose__8
+msgid "打合せ（プランニング）"
+msgstr ""
+
+#. module: event_rtw
+#: model:ir.model.fields.selection,name:event_rtw.selection__calendar_event__lead__5
+msgid "施主指定"
+msgstr ""
+
+#. module: event_rtw
+#: model:ir.model.fields.selection,name:event_rtw.selection__calendar_event__lead__21
+msgid "未確認/声かけのみ"
+msgstr ""
+
+#. module: event_rtw
+#: model:ir.model.fields.selection,name:event_rtw.selection__calendar_event__guest_book__2
+msgid "未記入"
+msgstr ""
+
+#. module: event_rtw
+#: model:ir.model.fields.selection,name:event_rtw.selection__calendar_event__visitor_type__9
+msgid "業者"
+msgstr ""
+
+#. module: event_rtw
+#: model:ir.model.fields.selection,name:event_rtw.selection__calendar_event__visitor_purpose__13
+msgid "立ち寄り"
+msgstr ""
+
+#. module: event_rtw
+#: model:ir.model.fields.selection,name:event_rtw.selection__calendar_event__lead__4
+msgid "紹介(知人)"
+msgstr ""
+
+#. module: event_rtw
+#: model:ir.model.fields.selection,name:event_rtw.selection__calendar_event__lead__2
+msgid "紹介（IC・設計）"
+msgstr ""
+
+#. module: event_rtw
+#: model:ir.model.fields.selection,name:event_rtw.selection__calendar_event__lead__3
+msgid "紹介（ショップ・販売店）"
+msgstr ""
 
 #. module: event_rtw
 #: model_terms:ir.ui.view,arch_db:event_rtw.rtw_sf_event_form
@@ -557,6 +885,46 @@ msgid "行動："
 msgstr ""
 
 #. module: event_rtw
+#: model:ir.model.fields.selection,name:event_rtw.selection__calendar_event__visitor_purpose__2
+msgid "見学（全体確認）"
+msgstr ""
+
+#. module: event_rtw
 #: model_terms:ir.ui.view,arch_db:event_rtw.rtw_sf_event_form
 msgid "詳細"
+msgstr ""
+
+#. module: event_rtw
+#: model:ir.model.fields.selection,name:event_rtw.selection__calendar_event__situation__2
+msgid "調整中"
+msgstr ""
+
+#. module: event_rtw
+#: model:ir.model.fields.selection,name:event_rtw.selection__calendar_event__visitor_purpose__3
+msgid "購入検討（プランニング）"
+msgstr ""
+
+#. module: event_rtw
+#: model:ir.model.fields.selection,name:event_rtw.selection__calendar_event__visitor_purpose__4
+msgid "購入検討（選定内容確認）"
+msgstr ""
+
+#. module: event_rtw
+#: model:ir.model.fields.selection,name:event_rtw.selection__calendar_event__visitor_purpose__5
+msgid "購入（注文・支払い）"
+msgstr ""
+
+#. module: event_rtw
+#: model:ir.model.fields.selection,name:event_rtw.selection__calendar_event__visitor_purpose__6
+msgid "追加購入"
+msgstr ""
+
+#. module: event_rtw
+#: model:ir.model.fields.selection,name:event_rtw.selection__calendar_event__lead__19
+msgid "通りがかり"
+msgstr ""
+
+#. module: event_rtw
+#: model:ir.model.fields.selection,name:event_rtw.selection__calendar_event__lead__7
+msgid "雑誌・広告"
 msgstr ""

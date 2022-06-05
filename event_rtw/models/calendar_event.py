@@ -91,3 +91,5 @@ class calendar_event_rtw(models.Model):
     estimated_accrual = fields.Boolean('Field31__c')  # 見積発生（新規商談） BR ★0,1,空白
     payment_method = fields.Boolean('Field26__c')  # クレジット/現金購入 BI ★0,1,空白
     omotesando = fields.Boolean('Field35__c')  # 表参道来店 BS ★0,1,空白
+    customer_service_staff = fields.Char('Field12__c')  # 接客担当 BD
+
