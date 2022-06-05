@@ -1,0 +1,44 @@
+<odoo>
+    <data>
+        <record id="calendar_view_sf" model="ir.ui.view">
+            <field name="name">calendar.event.calendar_rtw</field>
+            <field name="model">calendar.event</field>
+            <field name="inherit_id" ref="calendar.view_calendar_event_calendar"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='description']" position="after">
+                    <field name="sr" filters="1"/>
+                    <field name="new_sales"/>
+                </xpath>
+            </field>
+        </record>
+        <record id="calendar_form_sf" model="ir.ui.view">
+            <field name="name">calendar.event.form_rtw</field>
+            <field name="model">calendar.event</field>
+            <field name="inherit_id" ref="calendar.view_calendar_event_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='categ_ids']" position="before">
+                    <field name="sr" filters="1"/>
+                </xpath>
+                <xpath expr="//field[@name='description']" position="after">
+                    <group>
+                        <group>
+                            <field name="reservation"/>
+                            <field name="estimate_flg"/>
+                            <field name="visitor_type"/>
+                            <field name="visitor_set_count"/>
+                            <field name="visitor_count"/>
+                            <field name="lead"/>
+                            <field name="visitor_purpose"/>
+                        </group>
+                        <group>
+                            <field name="guest_book"/>
+                            <field name="estimated_accrual"/>
+                            <field name="payment_method"/>
+                            <field name="omotesando"/>
+                        </group>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
