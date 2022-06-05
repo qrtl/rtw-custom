@@ -414,7 +414,7 @@ class rtw_crm(models.Model):
         ('15', 'MT BENCH(L)'),
     ], default='',
         string='EC2_2__c')  # 商品リスト(EC2) CX列
-    l_set = fields.Integer('Lset__c')  # Lセット CY列
+    l_set = fields.Integer('Lset__c')  #  CY列
     product_list_st2 = fields.Selection([
         ('1', 'CM TABLE(S)'),
         ('2', 'CB TABLE(S)'),
