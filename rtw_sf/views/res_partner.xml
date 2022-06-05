@@ -43,6 +43,7 @@
                     <field name="fare_payment_terms" string="fare_payment_terms"/>
                 </xpath>
                 <xpath expr="//field[@name='user_ids']" position="before">
+                    <field name="no_hyphen_phone" invisible="1"/>
                     <field name="fax" widget="phone"/>
                     <field name="industry_id" widget="many2one"/>
                     <field name="contact_type" string="contact_type" attrs="{'required': [('is_company','=', True)]}"/>
@@ -207,6 +208,7 @@
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='display_name']" position="after">
                     <field name="parent_id" string="parent_id"/>
+                    <field name="no_hyphen_phone" invisible="1"/>
                     <field name="site"/>
                 </xpath>
             </field>
@@ -219,6 +221,13 @@
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='name']" position="after">
                     <field name="site" string="支店"/>
+                </xpath>
+                <xpath expr="//field[@name='phone']" position="replace">
+                    <field name="phone" filter_domain="[
+                    '|', '|',
+                    ('phone', 'ilike', self),
+                    ('no_hyphen_phone', 'ilike', self),
+                    ('mobile', 'ilike', self)]"/>
                 </xpath>
             </field>
         </record>
