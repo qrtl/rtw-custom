@@ -16,14 +16,14 @@ class calendar_event_rtw(models.Model):
         ('3', 'アポ済'),
         ('4', '完了'),
         ('5', 'キャンセル'),
-    ], default="1", string='Field1__c')  # 状況 AX
+    ], default="0", string='Field1__c')  # 状況 AX
     # SR来場情報
     reservation = fields.Selection([
         ('1', '---なし---'),
         ('2', '事前予約'),
         ('3', '当日予約'),
         ('4', '予約なし'),
-    ], default="0", string='Field20__c')  # 予約 BN
+    ], default="1", string='Field20__c')  # 予約 BN
     estimate_flg = fields.Boolean('Field19__c')  # 事前提案・見積り有 BM ★0,1,空白
     visitor_type = fields.Selection([
         ('1', '---なし---'),
