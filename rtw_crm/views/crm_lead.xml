@@ -278,5 +278,41 @@
                 </xpath>
             </field>
         </record>
+
+        <record id="customer_search_view_rtw_oppo" model="ir.ui.view">
+            <field name="name">crm.lead.search_rtw_oppo</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.view_crm_case_opportunities_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="replace">
+                    <field name="name" string="Opportunity" filter_domain="[
+                        '|', '|', '|', '|', '|',
+                        ('partner_id', 'ilike', self),
+                        ('partner_name', 'ilike', self),
+                        ('email_from', 'ilike', self),
+                        ('name', 'ilike', self),
+                        ('description', 'ilike', self),
+                        ('contact_name', 'ilike', self)]"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="customer_search_view_rtw_leads" model="ir.ui.view">
+            <field name="name">crm.lead.search_rtw_leads</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.view_crm_case_leads_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="replace">
+                    <field name="name" string="Opportunity" filter_domain="[
+                        '|', '|', '|', '|', '|',
+                        ('partner_id', 'ilike', self),
+                        ('partner_name', 'ilike', self),
+                        ('email_from', 'ilike', self),
+                        ('name', 'ilike', self),
+                        ('description', 'ilike', self),
+                        ('contact_name', 'ilike', self)]"/>
+                </xpath>
+            </field>
+        </record>
     </data>
 </odoo>
