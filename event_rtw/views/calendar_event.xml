@@ -7,7 +7,7 @@
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='description']" position="after">
                     <field name="sr" filters="1"/>
-                    <field name="new_sales"/>
+                    <field name="opportunity_id"/>
                 </xpath>
             </field>
         </record>
@@ -18,6 +18,8 @@
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='categ_ids']" position="before">
                     <field name="sr" filters="1"/>
+                    <field name="opportunity_id"/>
+                    <field name="new_sales"/>
                 </xpath>
                 <xpath expr="//field[@name='description']" position="after">
                     <group>

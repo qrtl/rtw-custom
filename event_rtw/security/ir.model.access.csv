@@ -1,2 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_event_rtw_event_rtw,event_rtw.event_rtw,model_event_rtw_event_rtw,base.group_user,1,1,1,1
+access_calendar_sr,event_rtw.calendar_sr,model_calendar_sr,base.group_user,1,1,1,1

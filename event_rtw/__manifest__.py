@@ -19,12 +19,13 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'contacts'],
+    'depends': ['base', 'contacts', 'crm'],
 
     # always loaded
     'data': [
         'security/ir.model.access.csv',
         'views/event_rtw.xml',
+        'views/calendar_sr.xml',
         'views/calendar_event.xml',
         'views/templates.xml',
     ],
