@@ -97,7 +97,7 @@ class rtw_crm(models.Model):
     last_stage_changed_date = fields.Datetime('LastStageChangeDate')  # 最終ステージ変更日
     fiscal_year = fields.Integer('FiscalYear')  # 会計年度　注意
     fiscal_quarter = fields.Integer('FiscalQuarter')  # 会計四半期
-    # contact_id = fields.Many2one('res.partner', 'ContactId')  # コンタクトId
+    contact_id = fields.Many2one('res.partner', 'ContactId')  # コンタクトId
     primary_partner_Account_id = fields.Char('PrimaryPartnerAccountId')  # プライマリーパートナーId
     # synced_quote_id = fields.Char('SyncedQuoteId')  # 同期引用Id
     contract_id = fields.One2many('contract.contract', inverse_name="related_opportunity", string='ContractId')  # 契約Id
