@@ -222,13 +222,13 @@
                 <xpath expr="//field[@name='name']" position="after">
                     <field name="site" string="支店"/>
                 </xpath>
-                <xpath expr="//field[@name='phone']" position="replace">
-                    <field name="phone" filter_domain="[
-                    '|', '|',
-                    ('phone', 'ilike', self),
-                    ('no_hyphen_phone', 'ilike', self),
-                    ('mobile', 'ilike', self)]"/>
-                </xpath>
+<!--                <xpath expr="//field[@name='phone']" position="replace">-->
+<!--                    <field name="phone" filter_domain="[-->
+<!--                    '|', '|',-->
+<!--                    ('phone', 'ilike', self),-->
+<!--                    ('no_hyphen_phone', 'ilike', self),-->
+<!--                    ('mobile', 'ilike', self)]"/>-->
+<!--                </xpath>-->
             </field>
         </record>
 

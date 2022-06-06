@@ -383,7 +383,6 @@ class rtw_sf_partner(models.Model):
         for rec in self:
             if rec.phone:
                 rec.no_hyphen_phone = rec.phone.replace("-", "")
-                print(rec.no_hyphen_phone)
             else:
                 rec.no_hyphen_phone = False
 
