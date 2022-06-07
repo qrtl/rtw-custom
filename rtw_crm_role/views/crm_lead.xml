@@ -18,7 +18,7 @@
                             name="role_ids"
                             widget='one2many'
                             domain="[('opportunity_id','in','role_ids')]"
-                            context="{'default_opportunity_id': '1'}">
+                            context="{'default_opportunity_id': id}">
                         <kanban class="o_kanban_mobile" >
                                     <field name="name" />
                                     <field name="role" />
