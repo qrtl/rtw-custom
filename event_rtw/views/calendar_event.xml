@@ -12,6 +12,9 @@
                     <field name="sr" filters="1"/>
                     <field name="opportunity_id"/>
                 </xpath>
+                <field name="partner_ids" position="replace" >
+                        <field name="partner_ids"/>
+                    </field>
             </field>
         </record>
         <record id="calendar_form_sf" model="ir.ui.view">
