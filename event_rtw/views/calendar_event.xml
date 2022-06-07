@@ -43,6 +43,7 @@
                             <field name="estimated_accrual"/>
                             <field name="payment_method"/>
                             <field name="omotesando"/>
+                            <field name="customer_service_staff"/>
                         </group>
                     </group>
                 </xpath>
