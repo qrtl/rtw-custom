@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-05 03:42+0000\n"
-"PO-Revision-Date: 2022-06-05 03:42+0000\n"
+"POT-Creation-Date: 2022-06-07 07:47+0000\n"
+"PO-Revision-Date: 2022-06-07 07:47+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -71,6 +71,11 @@ msgstr ""
 #: model:ir.model.fields,field_description:event_rtw.field_event_rtw_event_rtw__created_date
 msgid "CreatedDate"
 msgstr ""
+
+#. module: event_rtw
+#: model:ir.model.fields,field_description:event_rtw.field_calendar_event__customer_service_staff
+msgid "Customer Service Staff"
+msgstr "接客担当"
 
 #. module: event_rtw
 #: model:ir.model.fields.selection,name:event_rtw.selection__calendar_event__lead__6
