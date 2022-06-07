@@ -16,7 +16,7 @@ class ShinseSampleRequest(models.Model):
     _state_from = ["draft"]
     _state_to = ["approved"]
 
-    _tier_validation_manual_config = True
+    _tier_validation_manual_config = False
 
     @api.model
     def _get_default_requested_by(self):

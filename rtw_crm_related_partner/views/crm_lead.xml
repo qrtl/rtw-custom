@@ -1,7 +1,7 @@
 <odoo>
     <data>
-        <record id="view_crm_form_sf" model="ir.ui.view">
-            <field name="name">crm sf</field>
+        <record id="view_crm_form_related" model="ir.ui.view">
+            <field name="name">crm related</field>
             <field name="model">crm.lead</field>
             <field name="inherit_id" ref="crm.crm_lead_view_form"/>
             <field name="arch" type="xml">
@@ -9,10 +9,10 @@
 <!--                        <field string="role_ids" name="role_ids" widget='many2many_tags'/>-->
 <!--                </xpath>-->
                 <xpath expr="//group[@name='lead_partner']/field[@name='partner_id']" position="after">
-                    <field string="role_ids" name="role_ids" widget='many2many_tags' domain="[('opportunity_id','in','role_ids')]"/>
+                    <field string="related_partners" name="related_partners"/>
                 </xpath>
                 <xpath expr="//group[@name='opportunity_partner']/field[@name='partner_id']" position="after">
-                    <field string="role_ids" name="role_ids" widget='many2many_tags' domain="[('opportunity_id','in','role_ids')]"/>
+                    <field string="related_partners" name="related_partners"/>
                 </xpath>
             </field>
         </record>
