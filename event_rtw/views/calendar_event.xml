@@ -5,6 +5,9 @@
             <field name="model">calendar.event</field>
             <field name="inherit_id" ref="calendar.view_calendar_event_calendar"/>
             <field name="arch" type="xml">
+                <xpath expr="//calendar" position="attributes">
+                    <attribute name="color">sr</attribute>
+                </xpath>
                 <xpath expr="//field[@name='description']" position="after">
                     <field name="sr" filters="1"/>
                     <field name="opportunity_id"/>
