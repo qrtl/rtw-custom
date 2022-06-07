@@ -13,8 +13,25 @@
                     <field string="role_ids" name="role_ids" widget='one2many' domain="[('opportunity_id','in','role_ids')]" context="{'opportunity_id': id}"/>
                 </xpath>
                 <xpath expr="//group[@name='opportunity_partner']/field[@name='partner_id']" position="after">
-                    <field string="role_ids" name="role_ids" widget='many2many_tags' domain="[('opportunity_id','in','role_ids')]"/>
-                    <field string="role_ids" name="role_ids" widget='one2many' domain="[('opportunity_id','in','role_ids')]" context="{'opportunity_id': id}"/>
+                    <field
+                            string="role_ids"
+                            name="role_ids"
+                            widget='one2many'
+                            domain="[('opportunity_id','in','role_ids')]"
+                            context="{'default_opportunity_id': '1'}">
+                        <kanban class="o_kanban_mobile" >
+                                    <field name="name" />
+                                    <field name="role" />
+                                    <templates>
+                                        <t t-name="kanban-box">
+                                            <div class="d-flex flex-column justify-content-between">
+                                                <field name="name"/>
+                                                <field name="role" />
+                                            </div>
+                                        </t>
+                                    </templates>
+                        </kanban>
+                    </field>
                 </xpath>
             </field>
         </record>
