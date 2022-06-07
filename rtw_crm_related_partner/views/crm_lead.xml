@@ -9,6 +9,7 @@
 <!--                        <field string="role_ids" name="role_ids" widget='many2many_tags'/>-->
 <!--                </xpath>-->
                 <xpath expr="//group[@name='lead_partner']/field[@name='partner_id']" position="after">
+<!--                    <field string="related_partners" name="related_partners" widget='many2many_tags'/>-->
                     <field string="related_partners" name="related_partners"/>
                 </xpath>
                 <xpath expr="//group[@name='opportunity_partner']/field[@name='partner_id']" position="after">
