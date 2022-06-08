@@ -202,6 +202,12 @@
                         </group>
                     </page>
                 </xpath>
+                <xpath expr="//div[@class='oe_kanban_details']/field[@name='name']" position="after">
+                    <button type="object" name="get_formview_action" string="Open" class="btn fa fa-external-link btn-warning" />
+                </xpath>
+<!--                <xpath expr="//template/div[@class='oe_kanban_global_click']" position="attributes">-->
+<!--                    <attribute name="t-attf-class">oe_kanban_global_click_edit</attribute>-->
+<!--                </xpath>-->
             </field>
         </record>
         <record id="view_partner_list_sf" model="ir.ui.view">
