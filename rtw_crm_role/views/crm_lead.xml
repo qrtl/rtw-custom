@@ -18,8 +18,11 @@
                             widget='one2many'
                             domain="[('opportunity_id','in','role_ids')]"
                             context="{'default_opportunity_id': id,'default_created_by_id':user_id,'default_last_modified_by_id':user_id}" >
-                        <kanban class="o_kanban_mobile">
+                        <kanban class="o_kanban_small_column">
                             <field name="name"/>
+                            <field name="company_id"/>
+                            <field name="contact_id"/>
+                            <field name="role"/>
                             <templates>
                                 <t t-name="kanban-box">
                                     <div
@@ -36,7 +39,9 @@
                                         </div>
                                     </div>
                                     <div class="d-flex flex-column justify-content-between">
-                                        <field name="name"/>
+                                        <field name="contact_id"/>
+                                        <field name="role"/>
+                                        <field name="company_id"/>
                                     </div>
                                     </div>
                                 </t>

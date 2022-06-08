@@ -10,6 +10,7 @@ class rtw_crm_role(models.Model):
 
     opportunity_id = fields.Many2one('crm.lead', 'OpportunityId')
     contact_id = fields.Many2one('res.partner', 'ContactId')
+    company_id = fields.Many2one(related='contact_id.parent_id')
     name = fields.Char(compute="_get_name")
     role = fields.Selection([
         ('1', '意思決定者'),
