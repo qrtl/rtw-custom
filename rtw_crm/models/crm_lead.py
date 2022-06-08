@@ -736,7 +736,7 @@ class rtw_crm(models.Model):
     elevator_having = fields.Boolean('EV__c', default=0)  # EV有 EQ列
     budget_data = fields.Boolean('SFDC_Budget__c', default=0)  # 予算データ ER列
     lost = fields.Float('Field59__c')  # ロスト ES列
-    p_author = fields.Char('P__c')  # P作成者(代表） ET列
+    p_author = fields.Many2one('res.users', 'P__c')  # P作成者(代表） ET列
     product_list_sofa_bench1 = fields.Selection([
         ('1', 'MT BENCH(M)'),
         ('2', 'MT BENCH(L)'),
