@@ -109,7 +109,7 @@ class rtw_crm(models.Model):
     previous_amount = fields.Float('previousamount__c')  # 直前の金額 AQ列
     opportunity_number = fields.Char('Field4__c')  # 商談番号 AR列　
     last_amount_changed_datetime = fields.Datetime('lastamountchangedatetime__c')  # 最終金額変更日時 AS列
-    presentation = fields.Integer('presentation__c')  # 通常プレゼン AT列 ★0，1，空白あり
+    presentation = fields.Boolean('presentation__c')  # 通常プレゼン AT列 ★0，1，空白あり
     project_details = fields.Text('Field60__c')  # 案件詳細 AU列
     Determined_on_the_day = fields.Boolean('Determinedontheday__c', default=0)  # 当日確定 AV列 ★0，1，空白あり
     delivery_date_unknown = fields.Boolean('Field5__c', default=0)  # 納期不明 AW列 ★0，1，空白あり
@@ -313,7 +313,7 @@ class rtw_crm(models.Model):
     sample_sales_amount = fields.Integer('Field26__c')  # サンプル販売金額 CK列
     push_c = fields.Float('Push_Counter__c')  # Push C(完了予定日を翌月以降に変更した回数をカウント) CL列
     area = fields.Char('Field32_del__c')  # エリア CM列
-    pre_contract_presentation = fields.Integer('Field34_plan2__c')  # 契約前プレゼン CN列
+    pre_contract_presentation = fields.Boolean('Field34_plan2__c')  # 契約前プレゼン CN列
     overlap = fields.Char('Field34__c')  # Overlap CO列
     memo_other = fields.Char('Field28__c')  # メモ（台数など） CP列
     product_list_rug = fields.Selection([

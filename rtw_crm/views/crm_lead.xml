@@ -300,6 +300,10 @@
                         ('description', 'ilike', self),
                         ('contact_name', 'ilike', self)]"/>
                 </xpath>
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="p_author" string="p_author" filter_domain="[
+                        ('p_author', 'ilike', self)]"/>
+                </xpath>
             </field>
         </record>
 
@@ -317,6 +321,10 @@
                         ('name', 'ilike', self),
                         ('description', 'ilike', self),
                         ('contact_name', 'ilike', self)]"/>
+                </xpath>
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="p_author" string="p_author" filter_domain="[
+                        ('p_author', 'ilike', self)]"/>
                 </xpath>
             </field>
         </record>
