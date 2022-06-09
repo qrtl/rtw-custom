@@ -39,7 +39,7 @@
                                         </div>
                                     </div>
                                     <div class="d-flex flex-column justify-content-between">
-                                        <field name="contact_id"/>
+                                        <field name="name"/>
                                         <field name="role"/>
                                         <field name="company_id"/>
                                     </div>
