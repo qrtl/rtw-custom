@@ -785,7 +785,7 @@ class rtw_crm(models.Model):
             'type': 'ir.actions.act_window',
             'name': 'case',
             'res_model': 'rtw_sf_case',
-            'domain': [('contacts', '=', self.id)],
+            'domain': [('crm_id', '=', self.id)],
             'view_mode': 'tree,form',
             'target': 'current',
             'context': {
