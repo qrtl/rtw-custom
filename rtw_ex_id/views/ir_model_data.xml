@@ -1,0 +1,59 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="rtw_ex_id.list">
+      <field name="name">rtw_ex_id list</field>
+      <field name="model">ir.model.data</field>
+      <field name="inherit_id" ref="base.view_model_data_list"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='res_id']" position="after">
+            <field name="del_flag"/>
+                </xpath>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="rtw_ex_id.action_window">
+      <field name="name">rtw_ex_id window</field>
+      <field name="res_model">rtw_ex_id.rtw_ex_id</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="rtw_ex_id.action_server">
+      <field name="name">rtw_ex_id server</field>
+      <field name="model_id" ref="model_rtw_ex_id_rtw_ex_id"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="rtw_ex_id" id="rtw_ex_id.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="rtw_ex_id.menu_1" parent="rtw_ex_id.menu_root"/>
+    <menuitem name="Menu 2" id="rtw_ex_id.menu_2" parent="rtw_ex_id.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="rtw_ex_id.menu_1_list" parent="rtw_ex_id.menu_1"
+              action="rtw_ex_id.action_window"/>
+    <menuitem name="Server to list" id="rtw_ex_id" parent="rtw_ex_id.menu_2"
+              action="rtw_ex_id.action_server"/>
+-->
+  </data>
+</odoo>
