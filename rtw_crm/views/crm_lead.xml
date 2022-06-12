@@ -17,11 +17,18 @@
                         </div>
                     </button>
                 </xpath>
+<!--                <xpath expr="//group[@name='lead_partner']/field[@name='partner_id']" position="after">-->
+<!--                    <field name="contact_id"/>-->
+<!--                </xpath>-->
+<!--                <xpath expr="//group[@name='opportunity_partner']/field[@name='partner_id']" position="after">-->
+<!--                    <field name="contact_id"/>-->
+<!--                </xpath>-->
                 <xpath expr="//notebook" position="before">
                     <group>
                         <group>
-                            <field name="quote_number_by_hukusuke" string="quote_number_by_hukusuke"/>
                             <field name="contract_id" string="contract_id" widget="many2many_tags"/>
+                            <field name="order_no"/>
+                            <field name="quote_number_by_hukusuke" string="quote_number_by_hukusuke"/>
                             <field name="procurement_company" string="procurement_company"/>
                             <field name="crm_type" string="crm_type"/>
                             <field name="delivery_type" string="delivery_type"/>
@@ -274,6 +281,50 @@
                     <field name="partner_id" string="partner_id"/>
                     <field name="partner_name" string="partner_name"/>
                     <field name="date_deadline" string="date_deadline"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="customer_search_view_rtw_oppo" model="ir.ui.view">
+            <field name="name">crm.lead.search_rtw_oppo</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.view_crm_case_opportunities_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="replace">
+                    <field name="name" string="Opportunity" filter_domain="[
+                        '|', '|', '|', '|', '|',
+                        ('partner_id', 'ilike', self),
+                        ('partner_name', 'ilike', self),
+                        ('email_from', 'ilike', self),
+                        ('name', 'ilike', self),
+                        ('description', 'ilike', self),
+                        ('contact_name', 'ilike', self)]"/>
+                </xpath>
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="p_author" string="p_author" filter_domain="[
+                        ('p_author', 'ilike', self)]"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="customer_search_view_rtw_leads" model="ir.ui.view">
+            <field name="name">crm.lead.search_rtw_leads</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.view_crm_case_leads_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="replace">
+                    <field name="name" string="Opportunity" filter_domain="[
+                        '|', '|', '|', '|', '|',
+                        ('partner_id', 'ilike', self),
+                        ('partner_name', 'ilike', self),
+                        ('email_from', 'ilike', self),
+                        ('name', 'ilike', self),
+                        ('description', 'ilike', self),
+                        ('contact_name', 'ilike', self)]"/>
+                </xpath>
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="p_author" string="p_author" filter_domain="[
+                        ('p_author', 'ilike', self)]"/>
                 </xpath>
             </field>
         </record>

@@ -1,0 +1,17 @@
+<odoo>
+  <data>
+    <record id="view_rtw_opportunity_history_form_sf" model="ir.ui.view">
+            <field name="name">rtw_opportunity_history</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@class='oe_chatter']" position="after">
+                    <sheet>
+                        <div>商談履歴</div>
+                        <field name="opportunity_history_ids"/>
+                    </sheet>
+                </xpath>
+            </field>
+        </record>
+  </data>
+</odoo>

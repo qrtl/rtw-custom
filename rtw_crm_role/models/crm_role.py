@@ -6,10 +6,12 @@ from odoo import models, fields, api
 class rtw_crm_role(models.Model):
     _name = 'rtw_crm_role'
     _description = 'rtw_crm_role'
-    _rec_name = "contact_id"
+    _rec_name = "name"
 
     opportunity_id = fields.Many2one('crm.lead', 'OpportunityId')
-    contact_id = fields.Many2one('res.user', 'ContactId')
+    contact_id = fields.Many2one('res.partner', 'ContactId')
+    company_id = fields.Many2one(related='contact_id.parent_id')
+    name = fields.Char(compute="_get_name")
     role = fields.Selection([
         ('1', '意思決定者'),
         ('2', '業務担当者'),
@@ -31,3 +33,13 @@ class rtw_crm_role(models.Model):
     last_modified_date = fields.Datetime('LastModifiedDate')  # 最終更新日 AO列
     last_modified_by_id = fields.Many2one('res.users', 'LastModifiedById')  # 最終更新者 AP列
     system_mod_stamp = fields.Datetime('SystemModstamp')  # システム最終更新日 AQ列
+
+    @api.depends("contact_id")
+    def _get_name(self):
+        for rec in self:
+            if rec.role:
+                print("in")
+                # rec.name = rec.contact_id.name + "(" + dict(rec._fields['role'].selection).get(rec.role) + ")"
+                rec.name = rec.contact_id.name
+            else:
+                rec.name = rec.contact_id.name

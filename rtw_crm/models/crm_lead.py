@@ -87,16 +87,17 @@ class rtw_crm(models.Model):
     # has_opportunity_line_item = fields.Char('HasOpportunityLineItem')  # 段階名 V列
     # price_book2_id = fields.Char('Pricebook2Id')  # 段階名 W列
     # owner_id = fields.Many2one('res.users', 'OwnerId')  # 所有者Id X列 1
-    # created_date = fields.Datetime('CreatedDate')  # 作成日 Y列
-    # created_by_id = fields.Many2one('res.users', 'CreatedById')  # 作成ID Z列
-    # last_modified_date = fields.Datetime('LastModifiedDate')  # 最終更新日
-    # last_modified_by_id = fields.Many2one('res.users', 'LastModifiedById')  # 最終更新者
-    # system_mod_stamp = fields.Datetime('SystemModstamp')  # システム最終更新日
+    r_partner_id = fields.Many2one('res.users', 'Partner')
+    created_date = fields.Datetime('CreatedDate')  # 作成日 AM列
+    created_by_id = fields.Many2one('res.users', 'CreatedById')  # 作成ID AN列
+    last_modified_date = fields.Datetime('LastModifiedDate')  # 最終更新日 AO列
+    last_modified_by_id = fields.Many2one('res.users', 'LastModifiedById')  # 最終更新者 AP列
+    system_mod_stamp = fields.Datetime('SystemModstamp')  # システム最終更新日 AQ列
     last_activity_date = fields.Datetime('LastActivityDate')  # システム最終活動日
     last_stage_changed_date = fields.Datetime('LastStageChangeDate')  # 最終ステージ変更日
     fiscal_year = fields.Integer('FiscalYear')  # 会計年度　注意
     fiscal_quarter = fields.Integer('FiscalQuarter')  # 会計四半期
-    # contact_id = fields.Many2one('res.partner', 'ContactId')  # コンタクトId
+    contact_id = fields.Many2one('res.partner', 'ContactId')  # コンタクトId
     primary_partner_Account_id = fields.Char('PrimaryPartnerAccountId')  # プライマリーパートナーId
     # synced_quote_id = fields.Char('SyncedQuoteId')  # 同期引用Id
     contract_id = fields.One2many('contract.contract', inverse_name="related_opportunity", string='ContractId')  # 契約Id
@@ -108,7 +109,7 @@ class rtw_crm(models.Model):
     previous_amount = fields.Float('previousamount__c')  # 直前の金額 AQ列
     opportunity_number = fields.Char('Field4__c')  # 商談番号 AR列　
     last_amount_changed_datetime = fields.Datetime('lastamountchangedatetime__c')  # 最終金額変更日時 AS列
-    presentation = fields.Integer('presentation__c')  # 通常プレゼン AT列 ★0，1，空白あり
+    presentation = fields.Boolean('presentation__c')  # 通常プレゼン AT列 ★0，1，空白あり
     project_details = fields.Text('Field60__c')  # 案件詳細 AU列
     Determined_on_the_day = fields.Boolean('Determinedontheday__c', default=0)  # 当日確定 AV列 ★0，1，空白あり
     delivery_date_unknown = fields.Boolean('Field5__c', default=0)  # 納期不明 AW列 ★0，1，空白あり
@@ -267,8 +268,8 @@ class rtw_crm(models.Model):
         ('10', 'カレンダー'),
         ('11', 'その他'),
         ('-', '-'),
-        ('11', 'ペリーニ'),
-        ('11', 'キリム'),
+        ('12', 'ペリーニ'),
+        ('13', 'キリム'),
     ], default='',
         string='Field68__c')  # 商品リスト（その他） CC列
     action1 = fields.Selection([
@@ -312,7 +313,7 @@ class rtw_crm(models.Model):
     sample_sales_amount = fields.Integer('Field26__c')  # サンプル販売金額 CK列
     push_c = fields.Float('Push_Counter__c')  # Push C(完了予定日を翌月以降に変更した回数をカウント) CL列
     area = fields.Char('Field32_del__c')  # エリア CM列
-    pre_contract_presentation = fields.Integer('Field34_plan2__c')  # 契約前プレゼン CN列
+    pre_contract_presentation = fields.Boolean('Field34_plan2__c')  # 契約前プレゼン CN列
     overlap = fields.Char('Field34__c')  # Overlap CO列
     memo_other = fields.Char('Field28__c')  # メモ（台数など） CP列
     product_list_rug = fields.Selection([
@@ -351,13 +352,16 @@ class rtw_crm(models.Model):
         string='Dt1__c')  # 商品リスト(Dt1) CS列
     product_list_lt2 = fields.Selection([
         ('1', 'CM TABLE (L)'),
-        ('2', 'CB TABLE (L)'),
-        ('3', 'GO TABLE (L)'),
+        ('2', 'CB TABLE(L)'),
+        ('3', 'GO TABLE(L)'),
         ('4', 'JK TABLE (L)'),
-        ('5', 'LW TABLE (L)'),
+        ('5', 'LW TABLE(L)'),
         ('6', 'MO TABLE(L)'),
         ('7', 'SI TABLE(L)'),
         ('8', '特注品'),
+        ('-', '-以下使用しない-'),
+        ('9', 'JK TABLE(L)'),
+        ('10', 'CM TABLE(L)'),
     ], default='',
         string='Lt2__c')  # 商品リスト(Lt2) CT列
     fair_Year = fields.Datetime('Field33__c')  # フェア開催年 CU列
@@ -410,15 +414,16 @@ class rtw_crm(models.Model):
         ('15', 'MT BENCH(L)'),
     ], default='',
         string='EC2_2__c')  # 商品リスト(EC2) CX列
-    l_set = fields.Integer('Lset__c')  # Lセット CY列
+    l_set = fields.Integer('Lset__c')  #  CY列
     product_list_st2 = fields.Selection([
-        ('1', 'CM TABLE (S)'),
-        ('2', 'CB TABLE (S)'),
+        ('1', 'CM TABLE(S)'),
+        ('2', 'CB TABLE(S)'),
         ('3', 'CR TABLE'),
-        ('4', 'GO TABLE (S)'),
+        ('11', 'CR TABLE(S)'),
+        ('4', 'GO TABLE(S)'),
         ('5', 'JK TABLE(S)'),
-        ('6', 'LW TABLE (S)'),
-        ('7', 'MO TABLE (S)'),
+        ('6', 'LW TABLE(S)'),
+        ('7', 'MO TABLE(S)'),
         ('8', 'OS TABLE(070)'),
         ('9', 'OS TABLE(040)'),
         ('10', 'RV TABLE'),
@@ -451,7 +456,7 @@ class rtw_crm(models.Model):
     term = fields.Char('Term__c')  # Term DD列
     product_list_ot_st2 = fields.Selection([
         ('1', 'BEATRIX(OT)'),
-        ('2', 'BLAVA（OT)'),
+        ('2', 'BLAVA(OT)'),
         ('3', 'RIVAGE(ST)'),
         ('4', 'VINCENT(ST)'),
         ('5', 'C-LINE(ST)'),
@@ -731,7 +736,7 @@ class rtw_crm(models.Model):
     elevator_having = fields.Boolean('EV__c', default=0)  # EV有 EQ列
     budget_data = fields.Boolean('SFDC_Budget__c', default=0)  # 予算データ ER列
     lost = fields.Float('Field59__c')  # ロスト ES列
-    p_author = fields.Char('P__c')  # P作成者(代表） ET列
+    p_author = fields.Many2one('res.users', 'P__c')  # P作成者(代表） ET列
     product_list_sofa_bench1 = fields.Selection([
         ('1', 'MT BENCH(M)'),
         ('2', 'MT BENCH(L)'),
@@ -780,7 +785,7 @@ class rtw_crm(models.Model):
             'type': 'ir.actions.act_window',
             'name': 'case',
             'res_model': 'rtw_sf_case',
-            'domain': [('contacts', '=', self.id)],
+            'domain': [('crm_id', '=', self.id)],
             'view_mode': 'tree,form',
             'target': 'current',
             'context': {

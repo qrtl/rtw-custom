@@ -12,6 +12,7 @@ class rtw_sf_case(models.Model):
     _description = 'case'
     _rec_name = "subject"
 
+    case_no = fields.Char("CaseNumber")
     crm_id = fields.Many2one('crm.lead')
     partner_ids = fields.Many2one('res.partner')
     contacts = fields.Many2one('res.partner', "Contact", copy=False)  # コンタクト
@@ -21,6 +22,7 @@ class rtw_sf_case(models.Model):
     supplied_email = fields.Char('SuppliedEmail')  # L列
     supplied_phone = fields.Char('SuppliedPhone')  # M列
     supplied_company = fields.Char('SuppliedCompany')  # N列
+    record_type_id = fields.Many2one('rtw_sf.record_type', 'RecordTypeId')  # レコードタイプId AH列
     type = fields.Selection([
         ('1', '問合せ/アフター'),
         ('2', '問題/要対応'),
@@ -218,6 +220,7 @@ class rtw_sf_case(models.Model):
         ('11', 'その他の問題'),
         ('-', '-'),
         ('12', '過剰要求・不満'),
+        ('13', '（工場）業務手配ミス'),
     ], default='',
         string='Field37__c')  # 重複原因リスト
     follow_up_report_by_person = fields.Text('Field63__c')  # 続報（担当者）

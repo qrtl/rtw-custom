@@ -1,13 +1,26 @@
 <odoo>
     <data>
         <!-- explicit list view definition -->
+        <record id="view_event_calendar" model="ir.ui.view">
+        <field name="name">event_rtw.event.calendar</field>
+        <field name="model">event_rtw.event_rtw</field>
+        <field name="arch" type="xml">
+            <calendar date_start="activity_datetime" date_stop="activity_datetime_end" mode="month" string="Resource" color="sr" event_limit="5" all_day="is_all_day_event">
+                <field name="subject"/>
+                <field name="sr" filters="1"/>
+            </calendar>
+        </field>
+    </record>
+
         <record model="ir.ui.view" id="event_rtw_list">
             <field name="name">event_rtw_list</field>
             <field name="model">event_rtw.event_rtw</field>
             <field name="arch" type="xml">
                 <tree>
-                    <field name="recurrence_start_datetime" string="recurrence_start_datetime"/>
-                    <field name="recurrence_end_date_only" string="recurrence_end_date_only"/>
+                    <field name="activity_datetime" string="activity_datetime"/>
+                    <field name="activity_datetime_end" string="activity_datetime_end"/>
+                    <field name="activity_date" string="activity_date"/>
+                    <field name="duration_in_minutes" string="duration_in_minutes"/>
                     <field name="subject" string="subject"/>
                     <field name="who_id" string="who_id"/>
                     <field name="what_id" string="what_id"/>
@@ -21,7 +34,7 @@
         <record model="ir.actions.act_window" id="event_rtw.action_window">
             <field name="name">event_rtw</field>
             <field name="res_model">event_rtw.event_rtw</field>
-            <field name="view_mode">tree,kanban,form</field>
+            <field name="view_mode">calendar,tree,kanban,form</field>
         </record>
 
         <record id="rtw_sf_event_form" model="ir.ui.view">

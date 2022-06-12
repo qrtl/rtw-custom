@@ -14,6 +14,9 @@
                         </div>
                     </button>
                 </xpath>
+                <xpath expr="//field[@name='name']" position="replace">
+                    <field name="name" default_focus="1" placeholder="Name" attrs="{'invisible': [('is_company','!=', True)],'required' : [('type', '=', 'contact')]}"/>
+                </xpath>
                 <xpath expr="//field[@name='name']" position="after">
                     <group attrs="{'invisible': [('is_company','=', True)]}">
                         <group>
@@ -29,6 +32,9 @@
                         <field name="site"/>
                     </group>
                 </xpath>
+                <xpath expr="//field[@name='parent_id']" position="before">
+                    <span attrs="{'invisible': [('is_company','=', True)]}">関連会社</span>
+                </xpath>
                 <xpath expr="//field[@name='vat']" position="after">
                     <field name="dummy" string="dummy"/>
                     <field name="situation" string="situation"/>
@@ -40,9 +46,13 @@
                     <field name="fare_payment_terms" string="fare_payment_terms"/>
                 </xpath>
                 <xpath expr="//field[@name='user_ids']" position="before">
+                    <field name="no_hyphen_phone" invisible="1"/>
                     <field name="fax" widget="phone"/>
+                    <field name="industry_id" widget="many2one"/>
                     <field name="contact_type" string="contact_type" attrs="{'required': [('is_company','=', True)]}"/>
                     <field name="channel" widget="many2one"/>
+                    <field name="lead_source" string="lead_source"
+                           attrs="{'required': [('is_company','=', False)]}"/>
                 </xpath>
                 <xpath expr="//field[@name='company_type']" position="after">
                     <!--                    <field name="contact_type" widget="many2one"/>-->
@@ -70,6 +80,7 @@
                                 <field name="fare_payment_terms" string="fare_payment_terms"/>
                             </group>
                             <group>
+                                <field name="industry_id" widget="many2one"/>
                                 <field name="contact_type" string="contact_type"
                                        attrs="{'required': [('is_company','=', True)]}"/>
                                 <field name="channel" string="channel"
@@ -161,22 +172,22 @@
                         </group>
                         <group string="ROC">
 
-                                <group>
-                                    <field name="lead_source_roc" string="lead_source_roc"/>
-                                </group>
-                                <group>
-                                    <field name="interest_roc" string="interest_roc"/>
-                                </group>
+                            <group>
+                                <field name="lead_source_roc" string="lead_source_roc"/>
+                            </group>
+                            <group>
+                                <field name="interest_roc" string="interest_roc"/>
+                            </group>
 
                         </group>
                         <group string="キャンペーン">
 
-                                <group>
-                                    <field name="campaign_1" string="campaign_1"/>
-                                </group>
-                                <group>
-                                    <field name="campaign_2" string="campaign_2"/>
-                                </group>
+                            <group>
+                                <field name="campaign_1" string="campaign_1"/>
+                            </group>
+                            <group>
+                                <field name="campaign_2" string="campaign_2"/>
+                            </group>
 
                         </group>
                         <group string="管理者">
@@ -191,6 +202,12 @@
                         </group>
                     </page>
                 </xpath>
+                <xpath expr="//div[@class='oe_kanban_details']/field[@name='name']" position="after">
+                    <button type="object" name="get_formview_action" string="Open" class="btn fa fa-external-link btn-warning" />
+                </xpath>
+<!--                <xpath expr="//template/div[@class='oe_kanban_global_click']" position="attributes">-->
+<!--                    <attribute name="t-attf-class">oe_kanban_global_click_edit</attribute>-->
+<!--                </xpath>-->
             </field>
         </record>
         <record id="view_partner_list_sf" model="ir.ui.view">
@@ -200,6 +217,7 @@
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='display_name']" position="after">
                     <field name="parent_id" string="parent_id"/>
+                    <field name="no_hyphen_phone" invisible="1"/>
                     <field name="site"/>
                 </xpath>
             </field>
@@ -213,6 +231,13 @@
                 <xpath expr="//field[@name='name']" position="after">
                     <field name="site" string="支店"/>
                 </xpath>
+<!--                <xpath expr="//field[@name='phone']" position="replace">-->
+<!--                    <field name="phone" filter_domain="[-->
+<!--                    '|', '|',-->
+<!--                    ('phone', 'ilike', self),-->
+<!--                    ('no_hyphen_phone', 'ilike', self),-->
+<!--                    ('mobile', 'ilike', self)]"/>-->
+<!--                </xpath>-->
             </field>
         </record>
 

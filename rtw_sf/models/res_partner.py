@@ -24,7 +24,7 @@ class rtw_sf_partner(models.Model):
         string="ownership", )  # OK
     ticker_symbol = fields.Char("TickerSymbol")  # AF 銘柄コード OK
     description = fields.Text("Description")  # OK
-    rating =  fields.Selection([
+    rating = fields.Selection([
         ('1', '重要顧客'),
         ('2', '平均的'),
         ('3', '見込み有り'),
@@ -47,6 +47,7 @@ class rtw_sf_partner(models.Model):
         ('1', '運賃込み(設置まで)'),
         ('2', '運賃別途'),
         ('3', '運賃込み(デポ入れまで)'),
+        ('4', '運賃込み（設置まで）'),
     ], default='',
         string="fare_payment_terms")  # 支払条件運賃 OK Field9__c
     categorization = fields.Selection([
@@ -100,7 +101,8 @@ class rtw_sf_partner(models.Model):
         ('5', '営業対象外'),
     ], default='1',
         string="situation")  # 状況 OK Field11__c
-    address_confirmation_required = fields.Selection([('moving', '（不達）転居'), ('unknown', '（不達）不明')], string="address_confirmation_required")  # 住所要確認 OK Field12__c
+    address_confirmation_required = fields.Selection([('moving', '（不達）転居'), ('unknown', '（不達）不明')],
+                                                     string="address_confirmation_required")  # 住所要確認 OK Field12__c
     last_contract_date = fields.Datetime("last_contract_date")  # 最新成約日 OK Field13__c
     total_number_of_transactions = fields.Integer("total_number_of_transactions")  # 累計取引回数 OK Field14__c
     cumulative_sales = fields.Float("cumulative_sales")  # 累計売上金額 OK Field15__c
@@ -112,7 +114,7 @@ class rtw_sf_partner(models.Model):
     transaction_category = fields.Selection([
         ('sundries', '諸口'),
         ('continuation', '継続'),
-        ], default='sundries',
+    ], default='sundries',
         string="transaction_category")  # 取引区分 OK Field27__c
     campaign_1 = fields.Char("campaign_1")  # キャンペーン① OK Field25__c
     campaign_2 = fields.Char("campaign_2")  # キャンペーン② OK Field26__c
@@ -199,7 +201,7 @@ class rtw_sf_partner(models.Model):
         ('56', '雑誌'),
     ], default='',
         string="LeadSource")  # OK
-    birthdate = fields.Date(string="Birthdate")  # OK
+    birthdate = fields.Datetime(string="Birthdate")  # OK
     opt_out_email = fields.Boolean(string="HasOptedOutOfEmail", default=0)  # OK
     opt_out_fax = fields.Boolean(string="HasOptedOutOfFax", default=0)  # ok
     do_not_call = fields.Boolean(string="DoNotCall", default=0)  # OK
@@ -289,7 +291,7 @@ class rtw_sf_partner(models.Model):
         ('m', '中'),
         ('l', '低'),
     ], default='',
-        string="Influencers",)  # インフルエンサー度 OK Field22__c
+        string="Influencers", )  # インフルエンサー度 OK Field22__c
     occupational_category = fields.Selection([
         ('1', '会社員（専門職以外）'),
         ('2', '会社幹部'),
@@ -358,7 +360,7 @@ class rtw_sf_partner(models.Model):
         ('youtube', 'Youtube'),
         ('other', 'その他'),
     ], string="web",
-     default='')  # WEBサイト OK WEB__c
+        default='')  # WEBサイト OK WEB__c
     media_name = fields.Selection([
         ('1', 'モダンリビング'),
         ('2', "I'm home."),
@@ -375,6 +377,14 @@ class rtw_sf_partner(models.Model):
     ], default='',
         string="media_name")  # 媒体名 OK Field39__c
     case_count = fields.Integer(string="case count", compute="_compute_case_count")
+    no_hyphen_phone = fields.Char("no_hyphen_phone", compute="_get_phone_non_hyphen")
+
+    def _get_phone_non_hyphen(self):
+        for rec in self:
+            if rec.phone:
+                rec.no_hyphen_phone = rec.phone.replace("-", "")
+            else:
+                rec.no_hyphen_phone = False
 
     def _compute_case_count(self):
         for rec in self:
