@@ -810,3 +810,11 @@ class rtw_crm(models.Model):
                 'default_crm_id': self.id
             }
         }
+
+    @api.onchange('stage_id')
+    def _set_opportunity_completion_date(self):
+        if not self.opportunity_completion_date:
+            if self.stage_id.name == "受注成立":
+                self.opportunity_completion_date = fields.datetime.now()
+            if self.stage_id.name == "ロスト":
+                self.opportunity_completion_date = fields.datetime.now()
