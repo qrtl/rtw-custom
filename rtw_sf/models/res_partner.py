@@ -241,7 +241,8 @@ class rtw_sf_partner(models.Model):
     ], default='',
         string="evaluation", help="2015年～2017年　売上金額ベースの評価")  # 評価 OK Field8__c
     dm_unknown = fields.Boolean("dm_unknown", help=">DM欄　未記入", default=0)  # DM不明 OK DM_unknown__c
-    # action2 = fields.Char("action2")  # アクション② OK
+    action1 = fields.Char("action1")  # アクション② OK
+    action2 = fields.Char("action2")  # アクション② OK
     related_attributes = fields.Selection([
         ('1', '施主(住宅系先）'),
         ('2', '施主（ﾏﾝｼｮﾝ系先）'),

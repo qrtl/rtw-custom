@@ -57,6 +57,9 @@
                 <xpath expr="//field[@name='company_type']" position="after">
                     <!--                    <field name="contact_type" widget="many2one"/>-->
                 </xpath>
+                <xpath expr="//page[@name='internal_notes']" position="before">
+                    <field name="description"/>
+                </xpath>
                 <xpath expr="//page[@name='internal_notes']" position="after">
                     <page name="case" string="case">
                         <group>
@@ -95,6 +98,7 @@
                                 <field name="campaign_1" string="campaign_1"/>
                                 <field name="campaign_2" string="campaign_2"/>
                             </group>
+                            <field name="description"/>
                         </group>
 
                     </page>
