@@ -60,7 +60,29 @@
                 </xpath>
             </field>
         </record>
-
+        <record id="view_crm_form_cal" model="ir.ui.view">
+            <field name="name">crm sf cal</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position="inside">
+                        <page string="活動">
+                        <field name="calendar_ids">
+                            <tree>
+                                <field name="name" string="件名"/>
+                                <field name="sr"/>
+                                <field name="opportunity_id"/>
+                                <field name="start"/>
+                                <field name="stop"/>
+                                <field name="user_id" optional="hide"/>
+                                <field name="customer_service_staff" optional="hide"/>
+                                <field name="visitor_count" optional="hide"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
         <record id="calendar_search_view_rtw" model="ir.ui.view">
             <field name="name">calendar.event.search_rtw</field>
             <field name="model">calendar.event</field>

@@ -774,6 +774,10 @@ class rtw_crm(models.Model):
         inverse_name="crm_id",
         string="case", )
     case_count = fields.Integer(string="case count", compute="_compute_case_count")
+    calendar_ids = fields.One2many(
+        comodel_name="calendar.event",
+        inverse_name="opportunity_id",
+        string="calendar", )
 
     def _compute_case_count(self):
         for rec in self:

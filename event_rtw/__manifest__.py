@@ -19,7 +19,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'contacts', 'crm'],
+    'depends': ['base', 'contacts', 'crm', 'rtw_crm'],
 
     # always loaded
     'data': [

@@ -257,6 +257,17 @@
                     <page string="ケース">
                         <field name="case_ids"/>
                     </page>
+<!--                    <page string="活動">-->
+<!--                        <field name="calendar_ids">-->
+<!--                            <tree>-->
+<!--                                <field name="name" string="件名"/>-->
+<!--                                <field name="sr"/>-->
+<!--                                <field name="sr"/>-->
+<!--                                <field name="start"/>-->
+<!--                                <field name="stop"/>-->
+<!--                            </tree>-->
+<!--                        </field>-->
+<!--                    </page>-->
                 </xpath>
             </field>
         </record>
