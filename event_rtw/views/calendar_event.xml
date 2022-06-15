@@ -12,6 +12,9 @@
                     <field name="sr" filters="1"/>
                     <field name="opportunity_id"/>
                 </xpath>
+                <xpath expr="//field[@name='partner_ids']" position="before">
+                    <field name="r_uid"/>
+                </xpath>
                 <field name="partner_ids" position="replace">
                     <field name="partner_ids"/>
                 </field>
