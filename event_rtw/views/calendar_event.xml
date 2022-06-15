@@ -54,6 +54,7 @@
                             <field name="estimated_accrual"/>
                             <field name="payment_method"/>
                             <field name="omotesando"/>
+                            <field name="r_uid"/>
                             <field name="customer_service_staff"/>
                         </group>
                     </group>

@@ -92,6 +92,7 @@ class calendar_event_rtw(models.Model):
     payment_method = fields.Boolean('Field26__c')  # クレジット/現金購入 BI ★0,1,空白
     omotesando = fields.Boolean('Field35__c')  # 表参道来店 BS ★0,1,空白
     customer_service_staff = fields.Many2one('res.users')  # 接客担当 BD
+    r_uid = fields.Many2one('res.users', '担当者')  # 接客担当 BD
     created_date = fields.Datetime('CreatedDate')  # 作成日 W列
     created_by_id = fields.Many2one('res.users', 'CreatedById')  # 作成ID X列
     last_modified_date = fields.Datetime('LastModifiedDate')  # 最終更新日 Y列
