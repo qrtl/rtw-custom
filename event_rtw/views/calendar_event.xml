@@ -33,6 +33,9 @@
             <field name="model">calendar.event</field>
             <field name="inherit_id" ref="calendar.view_calendar_event_form"/>
             <field name="arch" type="xml">
+                <xpath expr="//label[@for='partner_ids']" position="before">
+                    <group><field name="r_uid"/></group>
+                </xpath>
                 <xpath expr="//field[@name='categ_ids']" position="before">
                     <field name="sr" filters="1"/>
                     <field name="opportunity_id"/>
@@ -54,7 +57,6 @@
                             <field name="estimated_accrual"/>
                             <field name="payment_method"/>
                             <field name="omotesando"/>
-                            <field name="r_uid"/>
                             <field name="customer_service_staff"/>
                         </group>
                     </group>
