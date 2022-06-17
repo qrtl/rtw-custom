@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 14.0-20220225\n"
+"Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-06 01:18+0000\n"
-"PO-Revision-Date: 2022-06-06 01:18+0000\n"
+"POT-Creation-Date: 2022-06-17 06:45+0000\n"
+"PO-Revision-Date: 2022-06-17 06:45+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -51,6 +51,11 @@ msgstr ""
 #: model:ir.model.fields,help:rtw_sf.field_res_partner__evaluation
 #: model:ir.model.fields,help:rtw_sf.field_res_users__evaluation
 msgid "2015年～2017年　売上金額ベースの評価"
+msgstr ""
+
+#. module: rtw_sf
+#: model_terms:ir.ui.view,arch_db:rtw_sf.view_partner_form_sf
+msgid "<span attrs=\"{'invisible': [('is_company','=', True)]}\">関連会社</span>"
 msgstr ""
 
 #. module: rtw_sf
@@ -332,7 +337,7 @@ msgstr ""
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__order_no
 msgid "Field1__c"
-msgstr ""
+msgstr "受注番号"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__cause_company_name
@@ -530,7 +535,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:rtw_sf.field_res_partner__first_name
 #: model:ir.model.fields,field_description:rtw_sf.field_res_users__first_name
 msgid "FirstName"
-msgstr "名"
+msgstr ""
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__message_follower_ids
@@ -768,7 +773,7 @@ msgstr "最終更新日"
 #: model:ir.model.fields,field_description:rtw_sf.field_res_partner__last_name
 #: model:ir.model.fields,field_description:rtw_sf.field_res_users__last_name
 msgid "LastName"
-msgstr "姓"
+msgstr ""
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_res_partner__lead_source
@@ -881,6 +886,11 @@ msgstr "従業員数"
 #: model:ir.model.fields.selection,name:rtw_sf.selection__res_partner__categorization__20
 #: model:ir.model.fields.selection,name:rtw_sf.selection__rtw_sf_case__product_category__7
 msgid "OEM"
+msgstr ""
+
+#. module: rtw_sf
+#: model_terms:ir.ui.view,arch_db:rtw_sf.view_partner_form_sf
+msgid "Open"
 msgstr ""
 
 #. module: rtw_sf
@@ -1036,10 +1046,15 @@ msgid "SNS"
 msgstr ""
 
 #. module: rtw_sf
+#: model_terms:ir.ui.view,arch_db:rtw_sf.view_rtw_case_search
+msgid "Search contacts"
+msgstr ""
+
+#. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_res_partner__site
 #: model:ir.model.fields,field_description:rtw_sf.field_res_users__site
 msgid "Site"
-msgstr "支店"
+msgstr ""
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__status
@@ -1182,7 +1197,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:rtw_sf.field_res_users__joint_name
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__cope_order_no_1
 msgid "X1__c"
-msgstr ""
+msgstr "対処受注番号1"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_res_partner__x20
@@ -1193,7 +1208,7 @@ msgstr ""
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__cope_order_no_2
 msgid "X2__c"
-msgstr ""
+msgstr "対処受注番号2"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_res_partner__x30
@@ -1204,7 +1219,7 @@ msgstr ""
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__cope_order_no_3
 msgid "X3__c"
-msgstr ""
+msgstr "対処受注番号3"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_res_partner__x40
@@ -1270,6 +1285,18 @@ msgstr "経理部検認"
 #: model_terms:ir.ui.view,arch_db:rtw_sf.rtw_sf_case_form
 msgid "action details by quality control"
 msgstr "対処内容(品管)"
+
+#. module: rtw_sf
+#: model:ir.model.fields,field_description:rtw_sf.field_res_partner__action_1
+#: model:ir.model.fields,field_description:rtw_sf.field_res_users__action_1
+msgid "action1"
+msgstr ""
+
+#. module: rtw_sf
+#: model:ir.model.fields,field_description:rtw_sf.field_res_partner__action_2
+#: model:ir.model.fields,field_description:rtw_sf.field_res_users__action_2
+msgid "action2"
+msgstr ""
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_res_partner__address_confirmation_required
@@ -2901,6 +2928,11 @@ msgstr ""
 #. module: rtw_sf
 #: model:ir.model.fields.selection,name:rtw_sf.selection__res_partner__situation__4
 msgid "未取引"
+msgstr ""
+
+#. module: rtw_sf
+#: model_terms:ir.ui.view,arch_db:rtw_sf.view_rtw_case_search
+msgid "未完了"
 msgstr ""
 
 #. module: rtw_sf

@@ -125,7 +125,7 @@ class rtw_sf_case(models.Model):
         ('7', '工場関係者'),
     ], default='',
         string='Field52__c')  # 発見者
-    opportunity = fields.Many2one('crm.lead')  # 商談
+    opportunity = fields.Many2one('crm.lead', 'opportunity')  # 商談
     delivery_date = fields.Datetime('Field5__c')  # 納品日
     occurrence_status = fields.Selection([
         ('1', '納品後・使用中'),
