@@ -8,7 +8,8 @@
             <field name="arch" type="xml">
                 <tree>
                     <field name="subject"/>
-                    <field name="opportunity"/>
+                    <field name="crm_id"/>
+                    <field name="contacts"/>
                     <field name="order_no"/>
                     <field name="cope_order_no_1"/>
                     <field name="cope_order_no_2" optional="hide"/>
