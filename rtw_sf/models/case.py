@@ -11,6 +11,7 @@ class rtw_sf_case(models.Model):
     ]
     _description = 'case'
     _rec_name = "subject"
+    _order = "id DESC"
 
     case_no = fields.Char("CaseNumber")
     crm_id = fields.Many2one('crm.lead')
