@@ -310,9 +310,11 @@
                     <field name="expected_revenue"/>
                     <field name="delivery_date_unknown"/>
                     <field name="previous_amount"/>
+                    <field name="opportunity_number"/>
                     <field name="created_date"/>
                     <field name="partner_name"/>
                     <field name="contact_name"/>
+                    <field name="name"/>
                     <field name="probability"/>
                     <field name="stage_id"/>
                     <field name="opportunity_type"/>
