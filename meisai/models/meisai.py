@@ -33,7 +33,8 @@ class meisai(models.Model):
     # maker = fields.Char('maker__c')  # メーカー/品番 Z列 ★空白のみ
     # list_price = fields.Float('teika__c')  # 定価 AA列 ★空白のみ
     # volume = fields.Float('suuryou__c')  # 数量 AB列 ★空白のみ
-    application_id = fields.Char('Field15__c')  # 経費精算・申請ID AC列
+    # application_id = fields.Char('Field15__c')  # 経費精算・申請ID AC列
+    application_id = fields.Many2one('shinsei.shinsei', 'Field15__c')  # 経費精算・申請ID AC列
 
 #     value = fields.Integer()
 #     value2 = fields.Float(compute="_value_pc", store=True)
