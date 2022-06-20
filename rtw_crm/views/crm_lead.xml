@@ -302,6 +302,28 @@
             </field>
         </record>
 
+        <record model="ir.ui.view" id="rtw_sale_manage_list">
+            <field name="name">rtw_sale_manage_list</field>
+            <field name="model">crm.lead</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="expected_revenue"/>
+                    <field name="delivery_date_unknown"/>
+                    <field name="previous_amount"/>
+                    <field name="created_date"/>
+                    <field name="partner_name"/>
+                    <field name="contact_name"/>
+                    <field name="probability"/>
+                    <field name="stage_id"/>
+                    <field name="opportunity_type"/>
+                    <field name="fair"/>
+                    <field name="progress_check_date"/>
+                    <field name="progress_check_date"/>
+                    <field name="user_id"/>
+                    <field name="date_deadline"/>
+                </tree>
+            </field>
+        </record>
         <record id="customer_search_view_rtw_oppo" model="ir.ui.view">
             <field name="name">crm.lead.search_rtw_oppo</field>
             <field name="model">crm.lead</field>
@@ -345,5 +367,21 @@
                 </xpath>
             </field>
         </record>
+
+        <record id="action_sale_manage" model="ir.actions.act_window">
+            <field name="name">売上管理</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">crm.lead</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="rtw_sale_manage_list"/>
+            <field name="context">{"search_default_assigned_to_me":1}</field>
+        </record>
+
+        <menuitem
+                id="menu_sale_manage_crm"
+                action="action_sale_manage"
+                parent="crm.crm_menu_report"
+                sequence="10"
+        />
     </data>
 </odoo>
