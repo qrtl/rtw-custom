@@ -98,6 +98,11 @@ class calendar_event_rtw(models.Model):
     last_modified_date = fields.Datetime('LastModifiedDate')  # 最終更新日 Y列
     last_modified_by_id = fields.Many2one('res.users', 'LastModifiedById')  # 最終更新者 Z列
     system_mod_stamp = fields.Datetime('SystemModstamp')  # システム最終更新日 AA列
+    short_description = fields.Char(compute="_get_sort_description")
 
-
-
+    def _get_sort_description(self):
+        for rec in self:
+            if rec.description:
+                rec.short_description = rec.description
+            else:
+                rec.short_description = False

@@ -28,6 +28,7 @@
                 <xpath expr="//field[@name='name']" position="after">
                     <field name="sr"/>
                     <field name="opportunity_id"/>
+                    <field name="short_description" widget="char" string="説明"/>
                 </xpath>
             </field>
         </record>
