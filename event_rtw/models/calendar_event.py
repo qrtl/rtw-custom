@@ -99,6 +99,7 @@ class calendar_event_rtw(models.Model):
     last_modified_by_id = fields.Many2one('res.users', 'LastModifiedById')  # 最終更新者 Z列
     system_mod_stamp = fields.Datetime('SystemModstamp')  # システム最終更新日 AA列
     short_description = fields.Char(compute="_get_sort_description")
+    campaign = fields.Many2one("utm.campaign")
 
     def _get_sort_description(self):
         for rec in self:

@@ -43,6 +43,7 @@
                 <xpath expr="//field[@name='categ_ids']" position="before">
                     <field name="sr" filters="1"/>
                     <field name="opportunity_id"/>
+                    <field name="campaign"/>
                     <field name="new_sales"/>
                 </xpath>
                 <xpath expr="//field[@name='description']" position="after">

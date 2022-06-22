@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 14.0\n"
+"Project-Id-Version: Odoo Server 14.0-20220225\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-22 06:07+0000\n"
-"PO-Revision-Date: 2022-06-22 06:07+0000\n"
+"POT-Creation-Date: 2022-06-22 08:09+0000\n"
+"PO-Revision-Date: 2022-06-22 08:09+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -180,7 +180,7 @@ msgstr "完了日"
 #: model:ir.model.fields,field_description:rtw_sf.field_res_users__mc_subscriber
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__contacts
 msgid "Contact"
-msgstr "取引先責任者"
+msgstr "取引先担当者"
 
 #. module: rtw_sf
 #: model_terms:ir.ui.view,arch_db:rtw_sf.rtw_sf_case_form
@@ -530,7 +530,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:rtw_sf.field_res_partner__first_name
 #: model:ir.model.fields,field_description:rtw_sf.field_res_users__first_name
 msgid "FirstName"
-msgstr ""
+msgstr "名"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__message_follower_ids
@@ -768,7 +768,7 @@ msgstr "最終更新日"
 #: model:ir.model.fields,field_description:rtw_sf.field_res_partner__last_name
 #: model:ir.model.fields,field_description:rtw_sf.field_res_users__last_name
 msgid "LastName"
-msgstr ""
+msgstr "姓"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_res_partner__lead_source
@@ -1046,7 +1046,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:rtw_sf.field_res_partner__site
 #: model:ir.model.fields,field_description:rtw_sf.field_res_users__site
 msgid "Site"
-msgstr ""
+msgstr "支店"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__status
@@ -1296,6 +1296,12 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:rtw_sf.view_partner_form_sf
 msgid "address_confirmation_required"
 msgstr "住所要確認"
+
+#. module: rtw_sf
+#: model:ir.model.fields,field_description:rtw_sf.field_res_partner__age
+#: model:ir.model.fields,field_description:rtw_sf.field_res_users__age
+msgid "age"
+msgstr "年齢"
 
 #. module: rtw_sf
 #: model_terms:ir.ui.view,arch_db:rtw_sf.view_partner_form_sf
@@ -2038,7 +2044,7 @@ msgstr "競合他社"
 #. module: rtw_sf
 #: model:ir.model,name:rtw_sf.model_res_partner_channel
 msgid "rtw_sf.partner_channel"
-msgstr "チャネル"
+msgstr "チャンネル"
 
 #. module: rtw_sf
 #: model:ir.model,name:rtw_sf.model_res_partner_transactions
