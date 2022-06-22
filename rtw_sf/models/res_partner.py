@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-
+from datetime import date
 from odoo import models, fields, api
 
 
@@ -380,10 +380,23 @@ class rtw_sf_partner(models.Model):
     case_count = fields.Integer(string="case count", compute="_compute_case_count")
     no_hyphen_phone = fields.Char("no_hyphen_phone", compute="_get_phone_non_hyphen")
 
+    age = fields.Integer("age", compute="_get_age")
+
     # 関連項目
     rel_industry = fields.Char(related='parent_id.industry_id.name')
     rel_contact_type = fields.Char(related='parent_id.contact_type.name')
     rel_channel = fields.Char(related='parent_id.channel.name')
+
+    def _get_age(self):
+        for rec in self:
+            print(rec.birthdate)
+            if rec.birthdate:
+                print(rec.birthdate)
+                today = date.today()
+                birthday = rec.birthdate
+                rec.age = (int(today.strftime("%Y%m%d")) - int(birthday.strftime("%Y%m%d"))) // 10000
+            else:
+                rec.age = False
 
     def _get_phone_non_hyphen(self):
         for rec in self:
