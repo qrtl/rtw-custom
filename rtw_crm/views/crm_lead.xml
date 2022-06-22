@@ -30,15 +30,15 @@
                             <field name="order_no"/>
                             <field name="quote_number_by_hukusuke" string="quote_number_by_hukusuke"/>
                             <field name="procurement_company" string="procurement_company"/>
-                            <field name="crm_type" string="crm_type"/>
-                            <field name="delivery_type" string="delivery_type"/>
+                            <field name="crm_type" string="crm_type" required="1"/>
+                            <field name="delivery_type" string="delivery_type"  required="1"/>
                             <field name="facility_name" string="facility_name"/>
                             <field name="website" string="website"/>
                             <field name="Use_Purpose1" string="Use_Purpose1"/>
                             <field name="Use_Purpose2" string="Use_Purpose2"/>
                             <field name="Use_Purpose3" string="Use_Purpose3"/>
                             <field name="Use_Purpose" string="Use_Purpose"/>
-                            <field name="lead_source" string="lead_source"/>
+                            <field name="lead_source" string="lead_source"  required="1"/>
                             <field name="action1" string="action1"/>
                             <field name="action2" string="action2"/>
                             <field name="omotesando_visit" string="omotesando_visit"/>
