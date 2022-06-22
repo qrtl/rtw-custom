@@ -380,6 +380,11 @@ class rtw_sf_partner(models.Model):
     case_count = fields.Integer(string="case count", compute="_compute_case_count")
     no_hyphen_phone = fields.Char("no_hyphen_phone", compute="_get_phone_non_hyphen")
 
+    # 関連項目
+    rel_industry = fields.Char(related='parent_id.industry_id.name')
+    rel_contact_type = fields.Char(related='parent_id.contact_type.name')
+    rel_channel = fields.Char(related='parent_id.channel.name')
+
     def _get_phone_non_hyphen(self):
         for rec in self:
             if rec.phone:
