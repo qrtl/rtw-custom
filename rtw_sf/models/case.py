@@ -96,7 +96,7 @@ class rtw_sf_case(models.Model):
         ('l', '低'),
         ], default='',
         string='Priority')  # 優先順位 v
-    description = fields.Char('Description')  # 説明
+    description = fields.Text('Description')  # 説明
     isclosed = fields.Boolean('IsClosed')  # 完了済みフラグ
     closed_date = fields.Datetime('ClosedDate')  # 完了日
     is_escalated = fields.Boolean('IsEscalated')  # エスカレーションフラグ
