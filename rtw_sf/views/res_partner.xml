@@ -126,7 +126,6 @@
                                 <field name="department" string="department"/>
                                 <field name="birthdate" string="birthdate" widget="date"/>
                                 <field name="age"/>
-                                <label for="age" string="才"/>
                                 <field name="gender" string="gender"/>
                                 <field name="lead_source" string="lead_source"
                                        attrs="{'required': [('is_company','=', False)]}"/>
