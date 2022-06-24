@@ -1,0 +1,167 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* feed_comment
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-06-20 09:11+0000\n"
+"PO-Revision-Date: 2022-06-20 09:11+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: feed_comment
+#: model:ir.model.fields,field_description:feed_comment.field_feed_comment__client_oauth_link
+msgid "ClientOauthLink"
+msgstr ""
+
+#. module: feed_comment
+#: model:ir.model.fields,field_description:feed_comment.field_feed_comment__comment_body
+msgid "CommentBody"
+msgstr ""
+
+#. module: feed_comment
+#: model:ir.model.fields,field_description:feed_comment.field_feed_comment__comment_type
+msgid "CommentType"
+msgstr ""
+
+#. module: feed_comment
+#: model:ir.model.fields,field_description:feed_comment.field_feed_comment__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: feed_comment
+#: model:ir.model.fields,field_description:feed_comment.field_feed_comment__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: feed_comment
+#: model:ir.model.fields,field_description:feed_comment.field_feed_comment__created_by_id
+msgid "CreatedById"
+msgstr ""
+
+#. module: feed_comment
+#: model:ir.model.fields,field_description:feed_comment.field_feed_comment__created_date
+msgid "CreatedDate"
+msgstr ""
+
+#. module: feed_comment
+#: model:ir.model.fields,field_description:feed_comment.field_feed_comment__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: feed_comment
+#: model:ir.model.fields,field_description:feed_comment.field_feed_comment__feed_item_id
+msgid "FeedItemId"
+msgstr ""
+
+#. module: feed_comment
+#: model:ir.model.fields,field_description:feed_comment.field_feed_comment__id
+msgid "ID"
+msgstr ""
+
+#. module: feed_comment
+#: model:ir.model.fields,field_description:feed_comment.field_feed_comment__inserted_by_id
+msgid "InsertedById"
+msgstr ""
+
+#. module: feed_comment
+#: model:ir.model.fields,field_description:feed_comment.field_feed_comment__is_rich_text
+msgid "IsRichText"
+msgstr ""
+
+#. module: feed_comment
+#: model:ir.model.fields,field_description:feed_comment.field_feed_comment____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: feed_comment
+#: model:ir.model.fields,field_description:feed_comment.field_feed_comment__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: feed_comment
+#: model:ir.model.fields,field_description:feed_comment.field_feed_comment__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: feed_comment
+#: model:ir.model.fields,field_description:feed_comment.field_feed_comment__last_edit_by_id
+msgid "LastEditById"
+msgstr ""
+
+#. module: feed_comment
+#: model:ir.model.fields,field_description:feed_comment.field_feed_comment__last_edit_date
+msgid "LastEditDate"
+msgstr ""
+
+#. module: feed_comment
+#: model:ir.model.fields,field_description:feed_comment.field_feed_comment__related_record_id
+msgid "RelatedRecordId"
+msgstr ""
+
+#. module: feed_comment
+#: model:ir.model.fields,field_description:feed_comment.field_feed_comment__revision
+msgid "Revision"
+msgstr ""
+
+#. module: feed_comment
+#: model:ir.model.fields,field_description:feed_comment.field_feed_comment__status
+msgid "Status"
+msgstr ""
+
+#. module: feed_comment
+#: model:ir.model.fields,field_description:feed_comment.field_feed_comment__system_mod_stamp
+msgid "SystemModstamp"
+msgstr ""
+
+#. module: feed_comment
+#: model:ir.model.fields,field_description:feed_comment.field_feed_comment__thread_children_count
+msgid "ThreadChildrenCount"
+msgstr ""
+
+#. module: feed_comment
+#: model:ir.model.fields,field_description:feed_comment.field_feed_comment__thread_last_updated_date
+msgid "ThreadLastUpdatedDate"
+msgstr ""
+
+#. module: feed_comment
+#: model:ir.model.fields,field_description:feed_comment.field_feed_comment__thread_level
+msgid "ThreadLevel"
+msgstr ""
+
+#. module: feed_comment
+#: model_terms:ir.ui.view,arch_db:feed_comment.feed_comment_list
+msgid "comment_body"
+msgstr "コメント"
+
+#. module: feed_comment
+#: model_terms:ir.ui.view,arch_db:feed_comment.feed_comment_list
+msgid "created_by_id"
+msgstr "作成者"
+
+#. module: feed_comment
+#: model_terms:ir.ui.view,arch_db:feed_comment.feed_comment_list
+msgid "created_date"
+msgstr "作成日"
+
+#. module: feed_comment
+#: model:ir.model,name:feed_comment.model_feed_comment
+msgid "feed.comment"
+msgstr ""
+
+#. module: feed_comment
+#: model:ir.actions.act_window,name:feed_comment.action_window
+#: model:ir.ui.menu,name:feed_comment.menu_root
+msgid "feed_comment"
+msgstr "フィードコメント"
+
+#. module: feed_comment
+#: model_terms:ir.ui.view,arch_db:feed_comment.feed_comment_list
+msgid "feed_item_id"
+msgstr "フィードアイテム"
