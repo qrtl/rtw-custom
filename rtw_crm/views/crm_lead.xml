@@ -364,6 +364,7 @@
                         ('partner_name', 'ilike', self),
                         ('email_from', 'ilike', self),
                         ('name', 'ilike', self),
+                        ('order_no', 'ilike', self),
                         ('description', 'ilike', self),
                         ('contact_name', 'ilike', self)]"/>
                 </xpath>
