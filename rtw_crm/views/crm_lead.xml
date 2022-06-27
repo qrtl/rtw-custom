@@ -30,7 +30,7 @@
                             <field name="order_no"/>
                             <field name="quote_number_by_hukusuke" string="quote_number_by_hukusuke"/>
                             <field name="procurement_company" string="procurement_company"/>
-                            <field name="opportunity_type" string="crm_type" required="1"/>
+                            <field name="crm_type" string="crm_type" required="1"/>
                             <field name="delivery_type" string="delivery_type"  required="1"/>
                             <field name="facility_name" string="facility_name"/>
                             <field name="website" string="website"/>
