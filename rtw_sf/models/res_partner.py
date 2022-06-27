@@ -378,7 +378,8 @@ class rtw_sf_partner(models.Model):
     ], default='',
         string="media_name")  # 媒体名 OK Field39__c
     case_count = fields.Integer(string="case count", compute="_compute_case_count")
-    no_hyphen_phone = fields.Char("no_hyphen_phone", compute="_get_phone_non_hyphen")
+    no_hyphen_phone = fields.Char("no_hyphen_phone", compute="_get_phone_non_hyphen", store=True)
+    no_hyphen_mobile = fields.Char("no_hyphen_mobile", compute="_get_phone_non_mobile", store=True)
 
     age = fields.Integer("age", compute="_get_age")
 
@@ -386,6 +387,12 @@ class rtw_sf_partner(models.Model):
     rel_industry = fields.Char(related='parent_id.industry_id.name')
     rel_contact_type = fields.Char(related='parent_id.contact_type.name')
     rel_channel = fields.Char(related='parent_id.channel.name')
+
+    def _search_npp(self, no_hyphen_phone, args=None, operator='ilike', limit=100):
+        if operator == 'like':
+            operator = 'ilike'
+        versions = self.search([('name', operator, no_hyphen_phone)], limit=limit)
+        return versions.name_get()
 
     def _get_age(self):
         for rec in self:
@@ -398,12 +405,22 @@ class rtw_sf_partner(models.Model):
             else:
                 rec.age = False
 
+    @api.depends("phone")
     def _get_phone_non_hyphen(self):
         for rec in self:
             if rec.phone:
+                print("phone")
                 rec.no_hyphen_phone = rec.phone.replace("-", "")
             else:
                 rec.no_hyphen_phone = False
+
+    @api.depends("mobile")
+    def _get_phone_non_mobile(self):
+        for rec in self:
+            if rec.mobile:
+                rec.no_hyphen_mobile = rec.mobile.replace("-", "")
+            else:
+                rec.no_hyphen_mobile = False
 
     def _compute_case_count(self):
         for rec in self:
