@@ -107,3 +107,11 @@ class calendar_event_rtw(models.Model):
                 rec.short_description = rec.description
             else:
                 rec.short_description = False
+    
+    @api.model
+    def _get_public_fields(self):
+        res = super()._get_public_fields()
+        res.update(
+            {'sr'}
+        )
+        return res
