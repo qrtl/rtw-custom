@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 14.0\n"
+"Project-Id-Version: Odoo Server 14.0-20220225\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-08 04:36+0000\n"
-"PO-Revision-Date: 2022-06-08 04:36+0000\n"
+"POT-Creation-Date: 2022-06-28 07:57+0000\n"
+"PO-Revision-Date: 2022-06-28 07:57+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -325,7 +325,7 @@ msgstr ""
 #. module: rtw_crm
 #: model:ir.model.fields,field_description:rtw_crm.field_crm_lead__contact_id
 msgid "ContactId"
-msgstr ""
+msgstr "取引先責任者"
 
 #. module: rtw_crm
 #: model:ir.model.fields,field_description:rtw_crm.field_crm_lead__contract_id
@@ -340,12 +340,12 @@ msgstr "ケース作成"
 #. module: rtw_crm
 #: model:ir.model.fields,field_description:rtw_crm.field_crm_lead__created_by_id
 msgid "CreatedById"
-msgstr ""
+msgstr "作成者"
 
 #. module: rtw_crm
 #: model:ir.model.fields,field_description:rtw_crm.field_crm_lead__created_date
 msgid "CreatedDate"
-msgstr ""
+msgstr "作成日"
 
 #. module: rtw_crm
 #: model:ir.model.fields.selection,name:rtw_crm.selection__crm_lead__product_list_sofa1__6
@@ -466,7 +466,7 @@ msgstr ""
 #. module: rtw_crm
 #: model:ir.model.fields,field_description:rtw_crm.field_crm_lead__product_others
 msgid "Field14__c"
-msgstr ""
+msgstr "商品その他（補足）"
 
 #. module: rtw_crm
 #: model:ir.model.fields,field_description:rtw_crm.field_crm_lead__competition_a
@@ -1032,17 +1032,17 @@ msgstr "最終更新日"
 #. module: rtw_crm
 #: model:ir.model.fields,field_description:rtw_crm.field_crm_lead__last_activity_date
 msgid "LastActivityDate"
-msgstr ""
+msgstr "最終活動日"
 
 #. module: rtw_crm
 #: model:ir.model.fields,field_description:rtw_crm.field_crm_lead__last_amount_changed_history_id
 msgid "LastAmountChangedHistoryId"
-msgstr ""
+msgstr "最終金額変更履歴"
 
 #. module: rtw_crm
 #: model:ir.model.fields,field_description:rtw_crm.field_crm_lead__last_close_date_changed_history_id
 msgid "LastCloseDateChangedHistoryId"
-msgstr ""
+msgstr "最終完了日変更履歴"
 
 #. module: rtw_crm
 #: model:ir.model.fields,field_description:rtw_crm.field_crm_lead__last_event_comment
@@ -1052,17 +1052,17 @@ msgstr "最終行動コメント"
 #. module: rtw_crm
 #: model:ir.model.fields,field_description:rtw_crm.field_crm_lead__last_modified_by_id
 msgid "LastModifiedById"
-msgstr ""
+msgstr "最終更新者"
 
 #. module: rtw_crm
 #: model:ir.model.fields,field_description:rtw_crm.field_crm_lead__last_modified_date
 msgid "LastModifiedDate"
-msgstr ""
+msgstr "最終更新日"
 
 #. module: rtw_crm
 #: model:ir.model.fields,field_description:rtw_crm.field_crm_lead__last_stage_changed_date
 msgid "LastStageChangeDate"
-msgstr ""
+msgstr "最終ステージ変更日"
 
 #. module: rtw_crm
 #: model:ir.model,name:rtw_crm.model_crm_lead
@@ -1219,7 +1219,7 @@ msgstr "受注NO"
 #. module: rtw_crm
 #: model:ir.model.fields,field_description:rtw_crm.field_crm_lead__nextstep
 msgid "NextStep"
-msgstr ""
+msgstr "次の段階"
 
 #. module: rtw_crm
 #: model:ir.model.fields.selection,name:rtw_crm.selection__crm_lead__crm_type__9
@@ -1259,7 +1259,7 @@ msgstr "現場納品日"
 #: model_terms:ir.ui.view,arch_db:rtw_crm.customer_search_view_rtw_leads
 #: model_terms:ir.ui.view,arch_db:rtw_crm.customer_search_view_rtw_oppo
 msgid "Opportunity"
-msgstr ""
+msgstr "案件"
 
 #. module: rtw_crm
 #: model:ir.model.fields.selection,name:rtw_crm.selection__crm_lead__product_list_sofa1__10
@@ -1282,7 +1282,7 @@ msgstr "P作成者(代表）"
 #. module: rtw_crm
 #: model:ir.model.fields,field_description:rtw_crm.field_crm_lead__r_partner_id
 msgid "Partner"
-msgstr ""
+msgstr "取引先"
 
 #. module: rtw_crm
 #: model:ir.model.fields,field_description:rtw_crm.field_crm_lead__primary_partner_Account_id
@@ -1436,7 +1436,7 @@ msgstr "受注段階コード"
 #. module: rtw_crm
 #: model:ir.model.fields,field_description:rtw_crm.field_crm_lead__system_mod_stamp
 msgid "SystemModstamp"
-msgstr ""
+msgstr "システム最終更新日"
 
 #. module: rtw_crm
 #: model:ir.model.fields.selection,name:rtw_crm.selection__crm_lead__competitive_product_other__1
@@ -1478,7 +1478,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:rtw_crm.field_crm_lead__crm_type
 #: model:ir.model.fields,field_description:rtw_crm.field_crm_lead__x_type
 msgid "Type"
-msgstr ""
+msgstr "商談種別"
 
 #. module: rtw_crm
 #: model:ir.model.fields.selection,name:rtw_crm.selection__crm_lead__product_list_board1__3
@@ -1535,7 +1535,7 @@ msgstr "100万金額"
 #. module: rtw_crm
 #: model:ir.model.fields,field_description:rtw_crm.field_crm_lead__million_order_amount
 msgid "X100_amount_a__c"
-msgstr ""
+msgstr "100万受注額"
 
 #. module: rtw_crm
 #: model:ir.model.fields,field_description:rtw_crm.field_crm_lead__total_million_order_count
@@ -1629,6 +1629,11 @@ msgid "budget_data"
 msgstr ""
 
 #. module: rtw_crm
+#: model:ir.model.fields,field_description:rtw_crm.field_crm_lead__calendar_ids
+msgid "calendar"
+msgstr "カレンダ"
+
+#. module: rtw_crm
 #: model_terms:ir.ui.view,arch_db:rtw_crm.view_crm_form_sf
 msgid "campaign_id"
 msgstr "キャンペーン"
@@ -1697,7 +1702,7 @@ msgstr "完了予定日（A)\t"
 #. module: rtw_crm
 #: model_terms:ir.ui.view,arch_db:rtw_crm.view_crm_form_sf
 msgid "contract_id"
-msgstr ""
+msgstr "契約"
 
 #. module: rtw_crm
 #: model_terms:ir.ui.view,arch_db:rtw_crm.view_crm_form_sf
@@ -1707,13 +1712,7 @@ msgstr "経費"
 #. module: rtw_crm
 #: model_terms:ir.ui.view,arch_db:rtw_crm.view_crm_form_sf
 msgid "crm_type"
-msgstr ""
-
-#. module: rtw_crm
-#: model_terms:ir.ui.view,arch_db:rtw_crm.view_crm_list_sf
-#: model_terms:ir.ui.view,arch_db:rtw_crm.view_crm_list_sf2
-msgid "date_deadline"
-msgstr ""
+msgstr "商談種別"
 
 #. module: rtw_crm
 #: model_terms:ir.ui.view,arch_db:rtw_crm.view_crm_form_sf
@@ -1907,21 +1906,10 @@ msgstr "Overlap"
 
 #. module: rtw_crm
 #: model_terms:ir.ui.view,arch_db:rtw_crm.customer_search_view_rtw_leads
+#: model_terms:ir.ui.view,arch_db:rtw_crm.customer_search_view_rtw_oppo
 #: model_terms:ir.ui.view,arch_db:rtw_crm.view_crm_form_sf
 msgid "p_author"
 msgstr "P作成者(代表）"
-
-#. module: rtw_crm
-#: model_terms:ir.ui.view,arch_db:rtw_crm.view_crm_list_sf
-#: model_terms:ir.ui.view,arch_db:rtw_crm.view_crm_list_sf2
-msgid "partner_id"
-msgstr ""
-
-#. module: rtw_crm
-#: model_terms:ir.ui.view,arch_db:rtw_crm.view_crm_list_sf
-#: model_terms:ir.ui.view,arch_db:rtw_crm.view_crm_list_sf2
-msgid "partner_name"
-msgstr ""
 
 #. module: rtw_crm
 #: model_terms:ir.ui.view,arch_db:rtw_crm.view_crm_form_sf
@@ -2608,6 +2596,11 @@ msgid "中材"
 msgstr ""
 
 #. module: rtw_crm
+#: model_terms:ir.ui.view,arch_db:rtw_crm.customer_search_view_rtw_oppo
+msgid "今年"
+msgstr ""
+
+#. module: rtw_crm
 #: model:ir.model.fields.selection,name:rtw_crm.selection__crm_lead__lead_source__40
 msgid "仕入調達"
 msgstr ""
@@ -2696,6 +2689,12 @@ msgid "地下"
 msgstr ""
 
 #. module: rtw_crm
+#: model:ir.actions.act_window,name:rtw_crm.action_sale_manage
+#: model:ir.ui.menu,name:rtw_crm.menu_sale_manage_crm
+msgid "売上管理"
+msgstr ""
+
+#. module: rtw_crm
 #: model:ir.model.fields.selection,name:rtw_crm.selection__crm_lead__lead_source__25
 msgid "外部イベント"
 msgstr ""
@@ -2704,6 +2703,12 @@ msgstr ""
 #: model:ir.model.fields.selection,name:rtw_crm.selection__crm_lead__competition_a__13
 #: model:ir.model.fields.selection,name:rtw_crm.selection__crm_lead__competition_b__12
 msgid "大塚家具"
+msgstr ""
+
+#. module: rtw_crm
+#: model_terms:ir.ui.view,arch_db:rtw_crm.view_crm_list_sf
+#: model_terms:ir.ui.view,arch_db:rtw_crm.view_crm_list_sf2
+msgid "完了予定日"
 msgstr ""
 
 #. module: rtw_crm
@@ -3010,6 +3015,12 @@ msgid "関係者直販"
 msgstr ""
 
 #. module: rtw_crm
+#: model_terms:ir.ui.view,arch_db:rtw_crm.view_crm_list_sf
+#: model_terms:ir.ui.view,arch_db:rtw_crm.view_crm_list_sf2
+msgid "関連会社"
+msgstr ""
+
+#. module: rtw_crm
 #: model:ir.model.fields.selection,name:rtw_crm.selection__crm_lead__crm_type__18
 msgid "集計用"
 msgstr ""
@@ -3024,6 +3035,12 @@ msgstr ""
 #: model:ir.model.fields.selection,name:rtw_crm.selection__crm_lead__action1__1
 #: model:ir.model.fields.selection,name:rtw_crm.selection__crm_lead__lead_source__37
 msgid "電話"
+msgstr ""
+
+#. module: rtw_crm
+#: model_terms:ir.ui.view,arch_db:rtw_crm.view_crm_list_sf
+#: model_terms:ir.ui.view,arch_db:rtw_crm.view_crm_list_sf2
+msgid "顧客"
 msgstr ""
 
 #. module: rtw_crm
