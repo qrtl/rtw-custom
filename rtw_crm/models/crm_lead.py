@@ -778,6 +778,12 @@ class rtw_crm(models.Model):
         comodel_name="calendar.event",
         inverse_name="opportunity_id",
         string="calendar", )
+    belong = fields.Char(compute="_get_belong", store=True)
+
+    @api.depends('user_id')
+    def _get_belong(self):
+        for rec in self:
+            rec.belong = self.env['crm.team'].search([('member_ids.id', '=', rec.user_id.id)]).name
 
     def _compute_case_count(self):
         for rec in self:
