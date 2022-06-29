@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-20 04:40+0000\n"
-"PO-Revision-Date: 2022-06-20 04:40+0000\n"
+"POT-Creation-Date: 2022-06-29 23:49+0000\n"
+"PO-Revision-Date: 2022-06-29 23:49+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -18,212 +18,212 @@ msgstr ""
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__subtotal
 msgid "Ashoukei__c"
-msgstr ""
+msgstr "小計(明細)"
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__create_uid
 msgid "Created by"
-msgstr ""
+msgstr "作成者"
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__create_date
 msgid "Created on"
-msgstr ""
+msgstr "作成日"
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__created_by_id
 msgid "CreatedById"
-msgstr ""
+msgstr "作成者"
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__created_date
 msgid "CreatedDate"
-msgstr ""
+msgstr "作成日"
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "表示名"
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__scheduled_end_time
 msgid "End_time__c"
-msgstr ""
+msgstr "予定終了時間"
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__applicant2
 msgid "Field10__c"
-msgstr ""
+msgstr "申請者"
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__business_trip_start_date
 msgid "Field11__c"
-msgstr ""
+msgstr "出張開始日"
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__business_trip_end_date
 msgid "Field12__c"
-msgstr ""
+msgstr "出張終了日"
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__lodging_day_amount
 msgid "Field13__c"
-msgstr ""
+msgstr "宿泊日数"
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__lodging_expense
 msgid "Field14__c"
-msgstr ""
+msgstr "宿泊費"
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__daily_allowance
 msgid "Field15__c"
-msgstr ""
+msgstr "日当"
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__delivery_location
 msgid "Field18__c"
-msgstr ""
+msgstr "納品場所"
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__product_no
 msgid "Field1__c"
-msgstr ""
+msgstr "品番"
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__sample_total_amount
 msgid "Field20__c"
-msgstr ""
+msgstr "サンプル合計"
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__cardboard_amount
 msgid "Field21__c"
-msgstr ""
+msgstr "強化段ボール数"
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__delivery_location2
 msgid "Field23__c"
-msgstr ""
+msgstr "納品場所"
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__applicant
 msgid "Field24__c"
-msgstr ""
+msgstr "申請者"
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__claim_order_no
 msgid "Field25__c"
-msgstr ""
+msgstr "フェア/クレーム注番"
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__target_persons
 msgid "Field26__c"
-msgstr ""
+msgstr "対象者"
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__reason
 msgid "Field27__c"
-msgstr ""
+msgstr "内容/理由"
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__cost
 msgid "Field28__c"
-msgstr ""
+msgstr "経費(税別)"
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__postage
 msgid "Field29__c"
-msgstr ""
+msgstr "送料"
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__specification1
 msgid "Field2__c"
-msgstr ""
+msgstr "仕様１"
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__situation_report
 msgid "Field30__c"
-msgstr ""
+msgstr "状況報告"
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__processed_contents
 msgid "Field31__c"
-msgstr ""
+msgstr "処理内容"
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__comment_by_charge
 msgid "Field32__c"
-msgstr ""
+msgstr "担当者コメント"
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__fixtures_name
 msgid "Field34__c"
-msgstr ""
+msgstr "備品名"
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__classification
 msgid "Field35__c"
-msgstr ""
+msgstr "種別"
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__date_time
 msgid "Field36__c"
-msgstr ""
+msgstr "日時"
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__verification_method
 msgid "Field37__c"
-msgstr ""
+msgstr "検証方法"
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__target
 msgid "Field38__c"
-msgstr ""
+msgstr "目標"
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__purpose
 msgid "Field39__c"
-msgstr ""
+msgstr "目的"
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__project_outline
 msgid "Field40__c"
-msgstr ""
+msgstr "企画概要"
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__no_product
 msgid "Field41__c"
-msgstr ""
+msgstr "商品無し"
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__approval_process
 msgid "Field42__c"
-msgstr ""
+msgstr "承認プロセス"
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__report
 msgid "Field43__c"
-msgstr ""
+msgstr "報告書"
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__request
 msgid "Field44__c"
-msgstr ""
+msgstr "問題提起/要請"
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__progress
 msgid "Field45__c"
-msgstr ""
+msgstr "進捗"
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__business_partner_manager
 msgid "Field46__c"
-msgstr ""
+msgstr "取引先責任者"
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__progress_report
 msgid "Field52__c"
-msgstr ""
+msgstr "進捗(報告書)"
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__id
@@ -233,52 +233,52 @@ msgstr ""
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei____last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "最終更新日"
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "最終更新者"
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "最終更新日"
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__last_modified_by_id
 msgid "LastModifiedById"
-msgstr ""
+msgstr "最終更新者"
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__last_modified_date
 msgid "LastModifiedDate"
-msgstr ""
+msgstr "最終更新日"
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__name
 msgid "Name"
-msgstr ""
+msgstr "件名"
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__order_no
 msgid "Ordering_no__c"
-msgstr ""
+msgstr "発注NO"
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__owner
 msgid "OwnerId"
-msgstr ""
+msgstr "所有者"
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__record_type_id
 msgid "RecordTypeId"
-msgstr ""
+msgstr "レコードタイプ"
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__system_mod_stamp
 msgid "SystemModstamp"
-msgstr ""
+msgstr "システム最終更新日"
 
 #. module: shinsei
 #: model_terms:ir.ui.view,arch_db:shinsei.shinsei_list
@@ -288,52 +288,52 @@ msgstr "申請日"
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__time_zone
 msgid "atwaork__c"
-msgstr ""
+msgstr "時間帯"
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__department
 msgid "busho__c"
-msgstr ""
+msgstr "所属部署"
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__day_off_work
 msgid "emp_day__c"
-msgstr ""
+msgstr "休日出勤日"
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__end_date
 msgid "end_day__c"
-msgstr ""
+msgstr "終了日"
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__scheduled_transfer_date
 msgid "furikae_day__c"
-msgstr ""
+msgstr "振替予定日"
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__time_zone2
 msgid "furikae_jikan__c"
-msgstr ""
+msgstr "時間帯"
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__temporary_advance
 msgid "karibarai__c"
-msgstr ""
+msgstr "仮払金"
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__number_of_days
 msgid "kikan__c"
-msgstr ""
+msgstr "日数"
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__job_description
 msgid "kinmu__c"
-msgstr ""
+msgstr "勤務内容"
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__vacation_classification
 msgid "kubun__c"
-msgstr ""
+msgstr "休暇区分"
 
 #. module: shinsei
 #: model_terms:ir.ui.view,arch_db:shinsei.shinsei_list
@@ -348,12 +348,12 @@ msgstr "所有者"
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__application_reason
 msgid "riyuu__c"
-msgstr ""
+msgstr "申請理由"
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__change
 msgid "saiteisyutsu__c"
-msgstr ""
+msgstr "変更"
 
 #. module: shinsei
 #: model:ir.actions.act_window,name:shinsei.action_window
@@ -369,34 +369,34 @@ msgstr ""
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__application_date
 msgid "shinsei_day__c"
-msgstr ""
+msgstr "申請日"
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__other
 msgid "sonota__c"
-msgstr ""
+msgstr "その他"
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__start_date
 msgid "start_day__c"
-msgstr ""
+msgstr "開始日"
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__scheduled_start_time
 msgid "starttime__c"
-msgstr ""
+msgstr "予定開始時間"
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__revision
 msgid "syuusei__c"
-msgstr ""
+msgstr "修正"
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__withdrawal
 msgid "torisage__c"
-msgstr ""
+msgstr "取下げ"
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__total_amount_tax_excluded
 msgid "zeinuki_goukei__c"
-msgstr ""
+msgstr "合計金額(税抜)"
