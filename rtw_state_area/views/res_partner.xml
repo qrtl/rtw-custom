@@ -1,0 +1,15 @@
+<odoo>
+    <data>
+        <record id="view_partner_form_sf" model="ir.ui.view">
+            <field name="name">partner sf</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='region']" position="after">
+<!--                    <field name="region" string="region"/>-->
+                    <field name="rel_region" force_save="1"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

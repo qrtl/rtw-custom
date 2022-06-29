@@ -216,12 +216,11 @@
                         </group>
                         <group string="管理者">
                             <group>
-                                <group>
+
                                     <field name="region" string="region"/>
-                                </group>
-                                <group>
+
                                     <field name="not_use" string="not_use"/>
-                                </group>
+
                             </group>
                         </group>
                     </page>
