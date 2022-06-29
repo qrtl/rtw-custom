@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0-20220225\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-29 06:36+0000\n"
-"PO-Revision-Date: 2022-06-29 06:36+0000\n"
+"POT-Creation-Date: 2022-06-29 08:39+0000\n"
+"PO-Revision-Date: 2022-06-29 08:39+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -84,17 +84,17 @@ msgstr "取引先No"
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__message_needaction
 msgid "Action Needed"
-msgstr ""
+msgstr "要アクション"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__activity_ids
 msgid "Activities"
-msgstr ""
+msgstr "活動"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__activity_exception_decoration
 msgid "Activity Exception Decoration"
-msgstr ""
+msgstr "例外の活動を示す文字装飾"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__activity_state
@@ -167,7 +167,7 @@ msgstr "ケース詳細"
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__case_no
 msgid "CaseNumber"
-msgstr ""
+msgstr "ケース番号"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__closed_date
@@ -193,7 +193,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:rtw_sf.field_res_partner_transactions__create_uid
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__create_uid
 msgid "Created by"
-msgstr ""
+msgstr "作成者"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_res_partner_channel__create_date
@@ -201,7 +201,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:rtw_sf.field_res_partner_transactions__create_date
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__create_date
 msgid "Created on"
-msgstr ""
+msgstr "作成日"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__created_by_id
@@ -312,22 +312,22 @@ msgstr ""
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__initial_explanation_by_person
 msgid "Field10__c"
-msgstr ""
+msgstr "初動説明(担当者)"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__action_details_by_quality_control
 msgid "Field11__c"
-msgstr ""
+msgstr "対処内容(品管)"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__total_sales
 msgid "Field12__c"
-msgstr ""
+msgstr "売上総額"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__coping_cost
 msgid "Field13__c"
-msgstr ""
+msgstr "対処コスト"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__order_no
@@ -337,42 +337,42 @@ msgstr "受注番号"
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__cause_company_name
 msgid "Field24__c"
-msgstr ""
+msgstr "原因会社名"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__cause_person_name
 msgid "Field30__c"
-msgstr ""
+msgstr "原因担当者名"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__billing_coping_cost
 msgid "Field31__c"
-msgstr ""
+msgstr "請求対処コスト"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__report_date
 msgid "Field34__c"
-msgstr ""
+msgstr "通報日"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__Initial_response_date_by_person
 msgid "Field35__c"
-msgstr ""
+msgstr "初動対応日(担当者)"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__Initial_response_date_by_quality_control
 msgid "Field36__c"
-msgstr ""
+msgstr "初動対応日(品管)"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__double_cause
 msgid "Field37__c"
-msgstr ""
+msgstr "重複原因リスト"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__freight_cost
 msgid "Field41__c"
-msgstr ""
+msgstr "運賃コスト"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__billed_freight_cost
@@ -382,88 +382,88 @@ msgstr "請求運賃コスト"
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__sales_department_comments
 msgid "Field44__c"
-msgstr ""
+msgstr "営業部コメント"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__cooperative_factory_opinion
 msgid "Field45__c"
-msgstr ""
+msgstr "協力工場見解"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__manufacturing_department_status
 msgid "Field46__c"
-msgstr ""
+msgstr "製造部状況"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__product_category
 msgid "Field47__c"
-msgstr ""
+msgstr "商品カテゴリ"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__product_name
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__product_name2
 msgid "Field48__c"
-msgstr ""
+msgstr "商品名"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__product_number
 msgid "Field49__c"
-msgstr ""
+msgstr "品番"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__delivery_prefectures
 msgid "Field4__c"
-msgstr ""
+msgstr "納品先都道府県"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__specification
 msgid "Field50__c"
-msgstr ""
+msgstr "仕様"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__quantity
 msgid "Field51__c"
-msgstr ""
+msgstr "数量"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__discoverer
 msgid "Field52__c"
-msgstr ""
+msgstr "発見者"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__occurrence_status
 msgid "Field53__c"
-msgstr ""
+msgstr "発生状況"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__carrier
 msgid "Field54__c"
-msgstr ""
+msgstr "運送･搬入業者"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__delivery_municipality
 msgid "Field55__c"
-msgstr ""
+msgstr "納品先市町村郡"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__delivery_type
 msgid "Field56__c"
-msgstr ""
+msgstr "納品種別"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__delivery_product_name
 msgid "Field57__c"
-msgstr ""
+msgstr "納品物件名"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__reporter
 msgid "Field58__c"
-msgstr ""
+msgstr "通報者"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__support
 msgid "Field59__c"
-msgstr ""
+msgstr "対応"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__delivery_date
@@ -473,58 +473,58 @@ msgstr "仕入先番号"
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__quality_control_comments
 msgid "Field60__c"
-msgstr ""
+msgstr "品管コメント"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__cause_by_quality_control
 msgid "Field61__c"
-msgstr ""
+msgstr "原因(品管検証)"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__double_cause_by_quality_control
 msgid "Field62__c"
-msgstr ""
+msgstr "重複原因(品管検証)"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__follow_up_report_by_person
 msgid "Field63__c"
-msgstr ""
+msgstr "続報(担当者)"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__size
 msgid "Field65__c"
-msgstr ""
+msgstr "サイズ"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__probate_by_president
 msgid "Field6__c"
-msgstr ""
+msgstr "社長検認"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__progress_check
 msgid "Field77__c"
-msgstr ""
+msgstr "進捗確認"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__accounting_department_probate
 msgid "Field7__c"
-msgstr ""
+msgstr "経理部検認"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__sales_department_probate
 msgid "Field8__c"
-msgstr ""
+msgstr "営業部検認"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__manufacturing_department_probate
 msgid "Field9__c"
-msgstr ""
+msgstr "製造部検認"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__final_cost_total_sales
 #: model_terms:ir.ui.view,arch_db:rtw_sf.rtw_sf_case_form
 msgid "Final cost/total sales"
-msgstr ""
+msgstr "最終コスト/総売上高"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_res_partner__first_name
@@ -535,17 +535,17 @@ msgstr "名"
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__message_follower_ids
 msgid "Followers"
-msgstr ""
+msgstr "フォロワー"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__message_channel_ids
 msgid "Followers (Channels)"
-msgstr ""
+msgstr "フォロワー (チャネル)"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__message_partner_ids
 msgid "Followers (Partners)"
-msgstr ""
+msgstr "フォロワー (パートナー)"
 
 #. module: rtw_sf
 #: model:ir.model.fields,help:rtw_sf.field_rtw_sf_case__activity_type_icon
@@ -679,12 +679,12 @@ msgstr "初動対応日(品管)"
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__message_is_follower
 msgid "Is Follower"
-msgstr ""
+msgstr "フォロー中　"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__isclosed
 msgid "IsClosed"
-msgstr ""
+msgstr "クローズ済"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__is_closed_on_create
@@ -713,7 +713,7 @@ msgstr "自己完了"
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__is_visible_in_self_service
 msgid "IsVisibleInSelfService"
-msgstr ""
+msgstr "セルフサービス表示"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_res_partner____last_update
@@ -730,7 +730,7 @@ msgstr "最終更新日"
 #: model:ir.model.fields,field_description:rtw_sf.field_res_partner_transactions__write_uid
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "最終更新者"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_res_partner_channel__write_date
@@ -738,7 +738,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:rtw_sf.field_res_partner_transactions__write_date
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "最終更新日"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_res_partner__last_cu_request_date
@@ -809,12 +809,12 @@ msgstr "郵送先町名番地"
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__message_main_attachment_id
 msgid "Main Attachment"
-msgstr ""
+msgstr "主な添付"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__message_has_error
 msgid "Message Delivery error"
-msgstr ""
+msgstr "メッセージ配信エラー"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__message_ids
@@ -824,7 +824,7 @@ msgstr ""
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__my_activity_date_deadline
 msgid "My Activity Deadline"
-msgstr ""
+msgstr "活動期限"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_res_partner__rel_industry
@@ -836,17 +836,17 @@ msgstr "名称"
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__activity_date_deadline
 msgid "Next Activity Deadline"
-msgstr ""
+msgstr "次の活動期限"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__activity_summary
 msgid "Next Activity Summary"
-msgstr ""
+msgstr "次の活動サマリ"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__activity_type_id
 msgid "Next Activity Type"
-msgstr ""
+msgstr "次の活動タイプ"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__message_needaction_counter
@@ -942,12 +942,12 @@ msgstr "ケース所有者"
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__parents
 msgid "Parents"
-msgstr ""
+msgstr "親"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__partner_ids
 msgid "Partner"
-msgstr ""
+msgstr "取引先"
 
 #. module: rtw_sf
 #: model:ir.model.fields.selection,name:rtw_sf.selection__res_partner__media_name__7
@@ -957,7 +957,7 @@ msgstr ""
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__priority
 msgid "Priority"
-msgstr ""
+msgstr "優先度"
 
 #. module: rtw_sf
 #: model:ir.model.fields.selection,name:rtw_sf.selection__res_partner__lead_source__18
@@ -993,7 +993,7 @@ msgstr "報告先"
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__activity_user_id
 msgid "Responsible User"
-msgstr ""
+msgstr "担当者"
 
 #. module: rtw_sf
 #: model:ir.model.fields.selection,name:rtw_sf.selection__res_partner__categorization__38
@@ -1090,22 +1090,22 @@ msgstr ""
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__supplied_company
 msgid "SuppliedCompany"
-msgstr ""
+msgstr "供給会社"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__supplied_email
 msgid "SuppliedEmail"
-msgstr ""
+msgstr "供給メール"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__supplied_name
 msgid "SuppliedName"
-msgstr ""
+msgstr "供給名"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__supplied_phone
 msgid "SuppliedPhone"
-msgstr ""
+msgstr "供給電話"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__system_mod_stamp
@@ -1137,7 +1137,7 @@ msgstr ""
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__type
 msgid "Type"
-msgstr ""
+msgstr "種別"
 
 #. module: rtw_sf
 #: model:ir.model.fields,help:rtw_sf.field_rtw_sf_case__activity_exception_decoration
@@ -1925,7 +1925,7 @@ msgstr "支払い条件2"
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__percentage_of_fault
 #: model_terms:ir.ui.view,arch_db:rtw_sf.rtw_sf_case_form
 msgid "percentage of fault"
-msgstr ""
+msgstr "故障率"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_res_partner__potential
