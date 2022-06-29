@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 14.0\n"
+"Project-Id-Version: Odoo Server 14.0-20220225\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-27 00:34+0000\n"
-"PO-Revision-Date: 2022-05-27 00:34+0000\n"
+"POT-Creation-Date: 2022-06-28 07:59+0000\n"
+"PO-Revision-Date: 2022-06-28 07:59+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -89,6 +89,26 @@ msgid "Display Name"
 msgstr "表示名"
 
 #. module: rtw_inquiry
+#: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__inq_type
+msgid "Field58__c"
+msgstr ""
+
+#. module: rtw_inquiry
+#: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__yousei
+msgid "Field59_yousei__c"
+msgstr ""
+
+#. module: rtw_inquiry
+#: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__approval
+msgid "Field61__c"
+msgstr ""
+
+#. module: rtw_inquiry
+#: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__progress
+msgid "Field62__c"
+msgstr ""
+
+#. module: rtw_inquiry
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__message_follower_ids
 msgid "Followers"
 msgstr ""
@@ -106,6 +126,11 @@ msgstr ""
 #. module: rtw_inquiry
 #: model:ir.model.fields,help:rtw_inquiry.field_rtw_sf_inquiry__activity_type_icon
 msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: rtw_inquiry
+#: model:ir.model.fields.selection,name:rtw_inquiry.selection__rtw_sf_inquiry__lead_source__11
+msgid "G住宅ﾎﾟｲﾝﾄ"
 msgstr ""
 
 #. module: rtw_inquiry
@@ -152,7 +177,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:rtw_inquiry.field_res_partner__inquiry
 #: model:ir.model.fields,field_description:rtw_inquiry.field_res_users__inquiry
 msgid "Inquiry"
-msgstr ""
+msgstr "問い合わせ"
 
 #. module: rtw_inquiry
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__message_is_follower
@@ -362,8 +387,23 @@ msgid "Responsible User"
 msgstr ""
 
 #. module: rtw_inquiry
+#: model:ir.model.fields.selection,name:rtw_inquiry.selection__rtw_sf_inquiry__lead_source__8
+msgid "Rオーナー"
+msgstr ""
+
+#. module: rtw_inquiry
+#: model:ir.model.fields.selection,name:rtw_inquiry.selection__rtw_sf_inquiry__lead_source__9
+msgid "R営業"
+msgstr ""
+
+#. module: rtw_inquiry
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__message_has_sms_error
 msgid "SMS Delivery error"
+msgstr ""
+
+#. module: rtw_inquiry
+#: model:ir.model.fields.selection,name:rtw_inquiry.selection__rtw_sf_inquiry__lead_source__5
+msgid "SNS・ソーシャルメディア"
 msgstr ""
 
 #. module: rtw_inquiry
@@ -386,6 +426,11 @@ msgid "SystemModstamp"
 msgstr ""
 
 #. module: rtw_inquiry
+#: model:ir.model.fields.selection,name:rtw_inquiry.selection__rtw_sf_inquiry__lead_source__6
+msgid "TABROOM"
+msgstr ""
+
+#. module: rtw_inquiry
 #: model:ir.model.fields,help:rtw_inquiry.field_rtw_sf_inquiry__activity_exception_decoration
 msgid "Type of the exception activity on record."
 msgstr ""
@@ -403,6 +448,11 @@ msgstr ""
 #. module: rtw_inquiry
 #: model:ir.model.fields.selection,name:rtw_inquiry.selection__rtw_sf_inquiry__means__1
 msgid "WEBフォーム"
+msgstr ""
+
+#. module: rtw_inquiry
+#: model:ir.model.fields.selection,name:rtw_inquiry.selection__rtw_sf_inquiry__inq_type__4
+msgid "WEB・広報関連"
 msgstr ""
 
 #. module: rtw_inquiry
@@ -588,7 +638,7 @@ msgstr "問い合わせ・アンケート"
 #: model:ir.model.fields,field_description:rtw_inquiry.field_res_partner__inquiry_count
 #: model:ir.model.fields,field_description:rtw_inquiry.field_res_users__inquiry_count
 msgid "inquiry count"
-msgstr ""
+msgstr "問い合わせ回数"
 
 #. module: rtw_inquiry
 #: model_terms:ir.ui.view,arch_db:rtw_inquiry.rtw_sf_inquiry_form
@@ -597,6 +647,7 @@ msgstr "最終更新者"
 
 #. module: rtw_inquiry
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__lead_source
+#: model_terms:ir.ui.view,arch_db:rtw_inquiry.rtw_sf_inquiry_form
 msgid "lead_source"
 msgstr ""
 
@@ -720,6 +771,7 @@ msgstr "⑥商品カテゴリ"
 
 #. module: rtw_inquiry
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__product_name1
+#: model_terms:ir.ui.view,arch_db:rtw_inquiry.rtw_sf_inquiry_form
 msgid "product_name1"
 msgstr ""
 
@@ -747,11 +799,6 @@ msgstr "⑤商品名"
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__product_name6
 msgid "product_name6"
 msgstr "⑥商品名"
-
-#. module: rtw_inquiry
-#: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__progress
-msgid "progress"
-msgstr ""
 
 #. module: rtw_inquiry
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__proposal_ability
@@ -877,11 +924,18 @@ msgstr "YES"
 
 #. module: rtw_inquiry
 #: model:ir.model.fields.selection,name:rtw_inquiry.selection__rtw_sf_inquiry__broad_category__other
+#: model:ir.model.fields.selection,name:rtw_inquiry.selection__rtw_sf_inquiry__inq_type__5
+#: model:ir.model.fields.selection,name:rtw_inquiry.selection__rtw_sf_inquiry__lead_source__12
 #: model:ir.model.fields.selection,name:rtw_inquiry.selection__rtw_sf_inquiry__magazine_site__10
 #: model:ir.model.fields.selection,name:rtw_inquiry.selection__rtw_sf_inquiry__means__5
 #: model:ir.model.fields.selection,name:rtw_inquiry.selection__rtw_sf_inquiry__originator__3
 #: model:ir.model.fields.selection,name:rtw_inquiry.selection__rtw_sf_inquiry__support__4
 msgid "その他"
+msgstr ""
+
+#. module: rtw_inquiry
+#: model:ir.model.fields.selection,name:rtw_inquiry.selection__rtw_sf_inquiry__lead_source__10
+msgid "ふるさと納税"
 msgstr ""
 
 #. module: rtw_inquiry
@@ -906,6 +960,11 @@ msgstr ""
 #. module: rtw_inquiry
 #: model:ir.model.fields.selection,name:rtw_inquiry.selection__rtw_sf_inquiry__broad_category__event_sale
 msgid "イベント・セール"
+msgstr ""
+
+#. module: rtw_inquiry
+#: model:ir.model.fields.selection,name:rtw_inquiry.selection__rtw_sf_inquiry__lead_source__4
+msgid "インターネット"
 msgstr ""
 
 #. module: rtw_inquiry
@@ -990,6 +1049,7 @@ msgstr ""
 
 #. module: rtw_inquiry
 #: model:ir.model.fields.selection,name:rtw_inquiry.selection__rtw_sf_inquiry__classification__2
+#: model:ir.model.fields.selection,name:rtw_inquiry.selection__rtw_sf_inquiry__inq_type__3
 msgid "ツール・資料制作依頼"
 msgstr ""
 
@@ -1091,7 +1151,9 @@ msgid "取引条件の確認"
 msgstr ""
 
 #. module: rtw_inquiry
+#: model:ir.model.fields.selection,name:rtw_inquiry.selection__rtw_sf_inquiry__progress__2
 #: model:ir.model.fields.selection,name:rtw_inquiry.selection__rtw_sf_inquiry__report_progress__2
+#: model:ir.model.fields.selection,name:rtw_inquiry.selection__rtw_sf_inquiry__yousei__2
 msgid "受理"
 msgstr ""
 
@@ -1131,6 +1193,11 @@ msgid "商店建築"
 msgstr ""
 
 #. module: rtw_inquiry
+#: model_terms:ir.ui.view,arch_db:rtw_inquiry.view_crm_form_sf
+msgid "問合せ・アンケート"
+msgstr ""
+
+#. module: rtw_inquiry
 #: model:ir.model.fields.selection,name:rtw_inquiry.selection__rtw_sf_inquiry__support__13
 msgid "営業引継ぎ"
 msgstr ""
@@ -1143,6 +1210,11 @@ msgstr ""
 #. module: rtw_inquiry
 #: model:ir.model.fields.selection,name:rtw_inquiry.selection__rtw_sf_inquiry__mid_category__7
 msgid "営業日時・時間"
+msgstr ""
+
+#. module: rtw_inquiry
+#: model:ir.model.fields.selection,name:rtw_inquiry.selection__rtw_sf_inquiry__inq_type__2
+msgid "営業活動"
 msgstr ""
 
 #. module: rtw_inquiry
@@ -1168,11 +1240,17 @@ msgid "大変満足"
 msgstr ""
 
 #. module: rtw_inquiry
-#: model:ir.model.fields.selection,name:rtw_inquiry.selection__rtw_sf_inquiry__progress__2
+#: model:ir.model.fields.selection,name:rtw_inquiry.selection__rtw_sf_inquiry__yousei__4
 msgid "完了"
 msgstr ""
 
 #. module: rtw_inquiry
+#: model:ir.model.fields.selection,name:rtw_inquiry.selection__rtw_sf_inquiry__lead_source__7
+msgid "展示場・ショップ"
+msgstr ""
+
+#. module: rtw_inquiry
+#: model:ir.model.fields.selection,name:rtw_inquiry.selection__rtw_sf_inquiry__progress__5
 #: model:ir.model.fields.selection,name:rtw_inquiry.selection__rtw_sf_inquiry__report_progress__5
 msgid "差し戻し"
 msgstr ""
@@ -1195,11 +1273,13 @@ msgid "感動"
 msgstr ""
 
 #. module: rtw_inquiry
+#: model:ir.model.fields.selection,name:rtw_inquiry.selection__rtw_sf_inquiry__progress__3
 #: model:ir.model.fields.selection,name:rtw_inquiry.selection__rtw_sf_inquiry__report_progress__3
 msgid "承認"
 msgstr ""
 
 #. module: rtw_inquiry
+#: model:ir.model.fields.selection,name:rtw_inquiry.selection__rtw_sf_inquiry__progress__1
 #: model:ir.model.fields.selection,name:rtw_inquiry.selection__rtw_sf_inquiry__report_progress__1
 msgid "提出"
 msgstr ""
@@ -1267,7 +1347,7 @@ msgid "満足"
 msgstr ""
 
 #. module: rtw_inquiry
-#: model:ir.model.fields.selection,name:rtw_inquiry.selection__rtw_sf_inquiry__progress__1
+#: model:ir.model.fields.selection,name:rtw_inquiry.selection__rtw_sf_inquiry__yousei__1
 msgid "申請"
 msgstr ""
 
@@ -1278,6 +1358,7 @@ msgstr ""
 
 #. module: rtw_inquiry
 #: model:ir.model.fields.selection,name:rtw_inquiry.selection__rtw_sf_inquiry__classification__1
+#: model:ir.model.fields.selection,name:rtw_inquiry.selection__rtw_sf_inquiry__inq_type__1
 msgid "社内業務改善"
 msgstr ""
 
@@ -1317,6 +1398,17 @@ msgid "納品関連"
 msgstr ""
 
 #. module: rtw_inquiry
+#: model:ir.model.fields.selection,name:rtw_inquiry.selection__rtw_sf_inquiry__lead_source__1
+msgid "紹介（家具店・住宅関係者）"
+msgstr ""
+
+#. module: rtw_inquiry
+#: model:ir.model.fields.selection,name:rtw_inquiry.selection__rtw_sf_inquiry__lead_source__2
+msgid "紹介（家族・知人）"
+msgstr ""
+
+#. module: rtw_inquiry
+#: model:ir.model.fields.selection,name:rtw_inquiry.selection__rtw_sf_inquiry__progress__4
 #: model:ir.model.fields.selection,name:rtw_inquiry.selection__rtw_sf_inquiry__report_progress__4
 msgid "総務受理"
 msgstr ""
@@ -1359,6 +1451,16 @@ msgstr ""
 #. module: rtw_inquiry
 #: model:ir.model.fields.selection,name:rtw_inquiry.selection__rtw_sf_inquiry__broad_category__buy_method
 msgid "購入方法"
+msgstr ""
+
+#. module: rtw_inquiry
+#: model:ir.model.fields.selection,name:rtw_inquiry.selection__rtw_sf_inquiry__yousei__3
+msgid "進行中"
+msgstr ""
+
+#. module: rtw_inquiry
+#: model:ir.model.fields.selection,name:rtw_inquiry.selection__rtw_sf_inquiry__lead_source__3
+msgid "雑誌"
 msgstr ""
 
 #. module: rtw_inquiry
