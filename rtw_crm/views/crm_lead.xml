@@ -51,7 +51,7 @@
                             <field name="expected_revenue" string="expected_revenue"/>
                             <field name="rate" string="rate"/>
                             <field name="progress_check_date" string="progress_check_date"/>
-                            <field name="completion_scheduled_date" string="completion_scheduled_date"/>
+<!--                            <field name="completion_scheduled_date" string="completion_scheduled_date"/>-->
                             <field name="delivery_date_unknown" string="delivery_date_unknown"/>
                             <field name="nextstep" string="nextstep"/>
                             <field name="probability" string="probability"/>

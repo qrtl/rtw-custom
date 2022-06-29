@@ -495,7 +495,7 @@ class rtw_crm(models.Model):
         ('11', '廃盤品'),
     ], default='',
         string='X3__c')  # 商品リスト(ソファ3) DI列
-    completion_scheduled_date = fields.Datetime('A__c')  # 完了予定日（A) DJ列
+    # completion_scheduled_date = fields.Datetime('A__c')  # 完了予定日（A) DJ列
     product_list_sofa1 = fields.Selection([
         ('1', 'ARLES'),
         ('2', 'ARMSTRONG'),
