@@ -338,7 +338,7 @@ class rtw_sf_partner(models.Model):
     #     ('9', '四国'),
     #     ('10', '九州・沖縄'),
     # ], default='',
-    region = fields.Char(compute="_get_region", string="region", store=True)  # 地域 OK Field34__c
+    region = fields.Char(compute="_get_region", string="region", store=True, ondelete='set null')  # 地域 OK Field34__c
     stop_letter = fields.Boolean("stop_letter", default=0)  # LETTER停止 OK LETTER__c
     # kin = fields.Char("Field36__c")  # 親類（親戚・家族） OK
     kin = fields.Many2one('res.partner', "kin", copy=False)  # Field36__c
@@ -446,7 +446,6 @@ class rtw_sf_partner(models.Model):
     def _get_phone_non_hyphen(self):
         for rec in self:
             if rec.phone:
-                print("phone")
                 rec.no_hyphen_phone = rec.phone.replace("-", "")
             else:
                 rec.no_hyphen_phone = False
