@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-20 04:39+0000\n"
-"PO-Revision-Date: 2022-06-20 04:39+0000\n"
+"POT-Creation-Date: 2022-06-30 00:10+0000\n"
+"PO-Revision-Date: 2022-06-30 00:10+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -18,72 +18,72 @@ msgstr ""
 #. module: meisai
 #: model:ir.model.fields,field_description:meisai.field_meisai_meisai__create_uid
 msgid "Created by"
-msgstr ""
+msgstr "作成者"
 
 #. module: meisai
 #: model:ir.model.fields,field_description:meisai.field_meisai_meisai__create_date
 msgid "Created on"
-msgstr ""
+msgstr "作成日"
 
 #. module: meisai
 #: model:ir.model.fields,field_description:meisai.field_meisai_meisai__created_by_id
 msgid "CreatedById"
-msgstr ""
+msgstr "作成者"
 
 #. module: meisai
 #: model:ir.model.fields,field_description:meisai.field_meisai_meisai__created_date
 msgid "CreatedDate"
-msgstr ""
+msgstr "作成日"
 
 #. module: meisai
 #: model:ir.model.fields,field_description:meisai.field_meisai_meisai__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "表示名"
 
 #. module: meisai
 #: model:ir.model.fields,field_description:meisai.field_meisai_meisai__application_id
 msgid "Field15__c"
-msgstr ""
+msgstr "経費精算・申請ID"
 
 #. module: meisai
 #: model:ir.model.fields,field_description:meisai.field_meisai_meisai__category
 msgid "Field16__c"
-msgstr ""
+msgstr "カテゴリ"
 
 #. module: meisai
 #: model:ir.model.fields,field_description:meisai.field_meisai_meisai__date
 msgid "Field1__c"
-msgstr ""
+msgstr "日付"
 
 #. module: meisai
 #: model:ir.model.fields,field_description:meisai.field_meisai_meisai__purpose
 msgid "Field3__c"
-msgstr ""
+msgstr "目的/訪問先"
 
 #. module: meisai
 #: model:ir.model.fields,field_description:meisai.field_meisai_meisai__order_no
 msgid "Field4__c"
-msgstr ""
+msgstr "注番"
 
 #. module: meisai
 #: model:ir.model.fields,field_description:meisai.field_meisai_meisai__payee
 msgid "Field5__c"
-msgstr ""
+msgstr "交通機関/領収書名"
 
 #. module: meisai
 #: model:ir.model.fields,field_description:meisai.field_meisai_meisai__interval_departure
 msgid "Field6__c"
-msgstr ""
+msgstr "区間(出発)"
 
 #. module: meisai
 #: model:ir.model.fields,field_description:meisai.field_meisai_meisai__interval_arrival
 msgid "Field7__c"
-msgstr ""
+msgstr "区間(到着)"
 
 #. module: meisai
 #: model:ir.model.fields,field_description:meisai.field_meisai_meisai__amount
 msgid "Field8__c"
-msgstr ""
+msgstr "金額"
 
 #. module: meisai
 #: model:ir.model.fields,field_description:meisai.field_meisai_meisai__id
@@ -93,42 +93,42 @@ msgstr ""
 #. module: meisai
 #: model:ir.model.fields,field_description:meisai.field_meisai_meisai____last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "最終更新日"
 
 #. module: meisai
 #: model:ir.model.fields,field_description:meisai.field_meisai_meisai__write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "最終更新者"
 
 #. module: meisai
 #: model:ir.model.fields,field_description:meisai.field_meisai_meisai__write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "最終更新日"
 
 #. module: meisai
 #: model:ir.model.fields,field_description:meisai.field_meisai_meisai__last_modified_by_id
 msgid "LastModifiedById"
-msgstr ""
+msgstr "最終更新者"
 
 #. module: meisai
 #: model:ir.model.fields,field_description:meisai.field_meisai_meisai__last_modified_date
 msgid "LastModifiedDate"
-msgstr ""
+msgstr "最終更新日"
 
 #. module: meisai
 #: model:ir.model.fields,field_description:meisai.field_meisai_meisai__name
 msgid "Name"
-msgstr ""
+msgstr "件名"
 
 #. module: meisai
 #: model:ir.model.fields,field_description:meisai.field_meisai_meisai__sf_no
 msgid "S_F__c"
-msgstr ""
+msgstr "S/F番号"
 
 #. module: meisai
 #: model:ir.model.fields,field_description:meisai.field_meisai_meisai__system_mod_stamp
 msgid "SystemModstamp"
-msgstr ""
+msgstr "システム最終更新日"
 
 #. module: meisai
 #: model_terms:ir.ui.view,arch_db:meisai.meisai_list
