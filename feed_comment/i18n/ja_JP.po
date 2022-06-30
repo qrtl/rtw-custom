@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-20 09:11+0000\n"
-"PO-Revision-Date: 2022-06-20 09:11+0000\n"
+"POT-Creation-Date: 2022-06-30 00:19+0000\n"
+"PO-Revision-Date: 2022-06-30 00:19+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -18,47 +18,47 @@ msgstr ""
 #. module: feed_comment
 #: model:ir.model.fields,field_description:feed_comment.field_feed_comment__client_oauth_link
 msgid "ClientOauthLink"
-msgstr ""
+msgstr "クライアントオーサリンク"
 
 #. module: feed_comment
 #: model:ir.model.fields,field_description:feed_comment.field_feed_comment__comment_body
 msgid "CommentBody"
-msgstr ""
+msgstr "コメント"
 
 #. module: feed_comment
 #: model:ir.model.fields,field_description:feed_comment.field_feed_comment__comment_type
 msgid "CommentType"
-msgstr ""
+msgstr "コメントタイプ"
 
 #. module: feed_comment
 #: model:ir.model.fields,field_description:feed_comment.field_feed_comment__create_uid
 msgid "Created by"
-msgstr ""
+msgstr "作成者"
 
 #. module: feed_comment
 #: model:ir.model.fields,field_description:feed_comment.field_feed_comment__create_date
 msgid "Created on"
-msgstr ""
+msgstr "作成日"
 
 #. module: feed_comment
 #: model:ir.model.fields,field_description:feed_comment.field_feed_comment__created_by_id
 msgid "CreatedById"
-msgstr ""
+msgstr "作成者"
 
 #. module: feed_comment
 #: model:ir.model.fields,field_description:feed_comment.field_feed_comment__created_date
 msgid "CreatedDate"
-msgstr ""
+msgstr "作成日"
 
 #. module: feed_comment
 #: model:ir.model.fields,field_description:feed_comment.field_feed_comment__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "表示名"
 
 #. module: feed_comment
 #: model:ir.model.fields,field_description:feed_comment.field_feed_comment__feed_item_id
 msgid "FeedItemId"
-msgstr ""
+msgstr "フィードアイテム"
 
 #. module: feed_comment
 #: model:ir.model.fields,field_description:feed_comment.field_feed_comment__id
@@ -68,72 +68,72 @@ msgstr ""
 #. module: feed_comment
 #: model:ir.model.fields,field_description:feed_comment.field_feed_comment__inserted_by_id
 msgid "InsertedById"
-msgstr ""
+msgstr "添付者"
 
 #. module: feed_comment
 #: model:ir.model.fields,field_description:feed_comment.field_feed_comment__is_rich_text
 msgid "IsRichText"
-msgstr ""
+msgstr "リッチテキスト"
 
 #. module: feed_comment
 #: model:ir.model.fields,field_description:feed_comment.field_feed_comment____last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "最終更新日"
 
 #. module: feed_comment
 #: model:ir.model.fields,field_description:feed_comment.field_feed_comment__write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "最終更新者"
 
 #. module: feed_comment
 #: model:ir.model.fields,field_description:feed_comment.field_feed_comment__write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "最終更新日"
 
 #. module: feed_comment
 #: model:ir.model.fields,field_description:feed_comment.field_feed_comment__last_edit_by_id
 msgid "LastEditById"
-msgstr ""
+msgstr "最終編集者"
 
 #. module: feed_comment
 #: model:ir.model.fields,field_description:feed_comment.field_feed_comment__last_edit_date
 msgid "LastEditDate"
-msgstr ""
+msgstr "最終編集日"
 
 #. module: feed_comment
 #: model:ir.model.fields,field_description:feed_comment.field_feed_comment__related_record_id
 msgid "RelatedRecordId"
-msgstr ""
+msgstr "関連レコード"
 
 #. module: feed_comment
 #: model:ir.model.fields,field_description:feed_comment.field_feed_comment__revision
 msgid "Revision"
-msgstr ""
+msgstr "改版"
 
 #. module: feed_comment
 #: model:ir.model.fields,field_description:feed_comment.field_feed_comment__status
 msgid "Status"
-msgstr ""
+msgstr "ステータス"
 
 #. module: feed_comment
 #: model:ir.model.fields,field_description:feed_comment.field_feed_comment__system_mod_stamp
 msgid "SystemModstamp"
-msgstr ""
+msgstr "システム最終更新日"
 
 #. module: feed_comment
 #: model:ir.model.fields,field_description:feed_comment.field_feed_comment__thread_children_count
 msgid "ThreadChildrenCount"
-msgstr ""
+msgstr "スレッド子の数"
 
 #. module: feed_comment
 #: model:ir.model.fields,field_description:feed_comment.field_feed_comment__thread_last_updated_date
 msgid "ThreadLastUpdatedDate"
-msgstr ""
+msgstr "スレッド最終更新日"
 
 #. module: feed_comment
 #: model:ir.model.fields,field_description:feed_comment.field_feed_comment__thread_level
 msgid "ThreadLevel"
-msgstr ""
+msgstr "スレッドレベル"
 
 #. module: feed_comment
 #: model_terms:ir.ui.view,arch_db:feed_comment.feed_comment_list
