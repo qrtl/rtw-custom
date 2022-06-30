@@ -7,7 +7,7 @@
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='region']" position="after">
 <!--                    <field name="region" string="region"/>-->
-                    <field name="rel_region" force_save="1"/>
+                    <field name="rel_region" force_save="1" invisible="1"/>
                 </xpath>
             </field>
         </record>
