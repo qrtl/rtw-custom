@@ -298,6 +298,7 @@
                     <field name="partner_id" string="顧客"/>
                     <field name="partner_name" string="関連会社"/>
                     <field name="date_deadline" string="完了予定日"/>
+                    <field name="On_site_delivery_date" string="現場納品日"/>
                 </xpath>
             </field>
         </record>

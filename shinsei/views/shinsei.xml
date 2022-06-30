@@ -1,5 +1,27 @@
 <odoo>
     <data>
+         <record id="shinsei_filter" model="ir.ui.view">
+        <field name="name" >shinsei sesrch view</field>
+        <field name="model">shinsei.shinsei</field>
+        <field name="arch" type="xml">
+            <search string="approval">
+
+                    <filter
+                        name="needs_review"
+                        string="Needs my Review"
+                        domain="[('reviewer_ids','in',uid), ('state', 'not in', ['done', 'cancel'])]"
+                        help="My Purchases to review"
+                    />
+                    <filter
+                        name="tier_validated"
+                        string="Validated"
+                        domain="[('validated', '=', True)]"
+                        help="Purchase Requests validated and ready to be confirmed"
+                    />
+
+            </search>
+        </field>
+        </record>
         <!-- explicit list view definition -->
         <record model="ir.ui.view" id="shinsei_list">
             <field name="name">shinsei_list</field>
