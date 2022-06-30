@@ -338,7 +338,7 @@ class rtw_sf_partner(models.Model):
     #     ('9', '四国'),
     #     ('10', '九州・沖縄'),
     # ], default='',
-    region = fields.Char(compute="_get_region", string="region", store=True, ondelete='set null')  # 地域 OK Field34__c
+    region = fields.Char(compute="_get_region", string="region", store=True, ondelete='CASCADE')  # 地域 OK Field34__c
     stop_letter = fields.Boolean("stop_letter", default=0)  # LETTER停止 OK LETTER__c
     # kin = fields.Char("Field36__c")  # 親類（親戚・家族） OK
     kin = fields.Many2one('res.partner', "kin", copy=False)  # Field36__c
@@ -401,7 +401,6 @@ class rtw_sf_partner(models.Model):
         area9 = ["香川県", "愛媛県", "徳島県", "高知県"]
         area10 = ["福岡県", "大分県", "熊本県", "佐賀県", "長崎県", "宮崎県", "鹿児島県", "沖縄県"]
         for rec in self:
-            print(rec.state_id.name)
             if rec.state_id.name in area1:
                 rec.region = "関東"
             elif rec.state_id.name in area2:
