@@ -7,6 +7,7 @@
             <field name="model">rtw_sf_case</field>
             <field name="arch" type="xml">
                 <tree>
+                    <field name="id" options="{'format': 0}" string="ケース番号"/>
                     <field name="subject"/>
                     <field name="crm_id"/>
                     <field name="contacts"/>
@@ -41,6 +42,7 @@
                         </group>
                         <group>
                             <group>
+                                <field name="id" options="{'format': 0}" string="ケース番号"/>
                                 <field name="owner_id" string="OwnerId"/>
                                 <field name="crm_id" string="crm_id"/>
                                 <field name="parents" string="parents case"/>
@@ -266,7 +268,8 @@
             <field name="arch" type="xml">
                 <search string="Search contacts">
                     <field name="subject"
-                           filter_domain="['|','|','|','|',
+                           filter_domain="['|','|','|','|','|',
+                           ('id','ilike',self),
                            ('subject','ilike',self),
                            ('order_no','ilike',self),
                            ('cope_order_no_1','ilike',self),

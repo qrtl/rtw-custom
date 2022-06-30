@@ -41,7 +41,7 @@ class shinsei(models.Model):
         index=True,
     )
 
-    owner = fields.Many2one('res.users', 'OwnerId')  # 所有者Id B
+    owner = fields.Many2one('res.users', 'OwnerId', default=lambda self: self.env.user)  # 所有者Id B
     # is_deleted = fields.Integer('IsDeleted')  # 削除フラグ C ★0のみ
     name = fields.Char('Name')  # 件名 D
     record_type_id = fields.Char('RecordTypeId')  # レコードタイプ E
@@ -117,7 +117,14 @@ class shinsei(models.Model):
     progress = fields.Char('Field45__c')  # 進捗 BW
     business_partner_manager = fields.Many2one('res.partner', 'Field46__c')  # 取引先責任者 BX
     progress_report = fields.Char('Field52__c')  # 進捗（報告書） BY
-
+    shinsei_type = fields.Selection([
+        ("sample", "サンプル制作依頼"),
+        ("kikaku", "企画・広報関連申請"),
+        ("bihin", "備品破損・滅失報告書"),
+        ("syucho", "出張申請"),
+        ("buppin", "物品購入申請"),
+        ("keihi", "経費精算"),
+    ], string="申請種別")
 #     value = fields.Integer()
 #     value2 = fields.Float(compute="_value_pc", store=True)
 #     description = fields.Text()
