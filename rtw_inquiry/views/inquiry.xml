@@ -80,6 +80,8 @@
                                     <field name="mid_category" string="mid_category"/>
                                     <field name="detail" string="detail"/>
                                     <field name="support" string="support"/>
+                                    <field name="crm_1" string="crm_1"/>
+<!--                                    <field name="crm_2" string="crm_2"/>-->
                                 </group>
                                 <group>
                                     <field name="magazine_site" string="magazine_site"/>
