@@ -1,5 +1,6 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_rtw_sf_rtw_partner_channel,rtw_sf.partner_channel,model_res_partner_channel,base.group_user,1,1,1,1
 access_rtw_sf_rtw_partner_x_type,rtw_sf.partner_contact_type,model_res_partner_contact_type,base.group_user,1,1,1,1
+access_rtw_sf_rtw_partner_condition,res.partner_condition,model_res_partner_condition,base.group_user,1,1,1,1
 access_rtw_sf_rtw_case,rtw_sf.case,model_rtw_sf_case,base.group_user,1,1,1,1
 access_rtw_sf_rtw_partner_transactions,rtw_sf.partner_transactions,model_res_partner_transactions,base.group_user,1,1,1,1

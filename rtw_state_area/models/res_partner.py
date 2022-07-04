@@ -21,26 +21,29 @@ class rtw_res_partner_area(models.Model):
         area9 = ["香川県", "愛媛県", "徳島県", "高知県"]
         area10 = ["福岡県", "大分県", "熊本県", "佐賀県", "長崎県", "宮崎県", "鹿児島県", "沖縄県"]
         for rec in self:
-            print(rec.state_id.name)
-            if rec.state_id.name in area1:
-                rec.region = "1"
-            elif rec.state_id.name in area2:
-                rec.region = "2"
-            elif rec.state_id.name in area3:
-                rec.region = "3"
-            elif rec.state_id.name in area4:
-                rec.region = "4"
-            elif rec.state_id.name in area5:
-                rec.region = "5"
-            elif rec.state_id.name in area6:
-                rec.region = "6"
-            elif rec.state_id.name in area7:
-                rec.region = "7"
-            elif rec.state_id.name in area8:
-                rec.region = "8"
-            elif rec.state_id.name in area9:
-                rec.region = "9"
-            elif rec.state_id.name in area10:
-                rec.region = "10"
+            if rec.state_id:
+                print(rec.state_id.name)
+                if rec.state_id.name in area1:
+                    rec.region = "1"
+                elif rec.state_id.name in area2:
+                    rec.region = "2"
+                elif rec.state_id.name in area3:
+                    rec.region = "3"
+                elif rec.state_id.name in area4:
+                    rec.region = "4"
+                elif rec.state_id.name in area5:
+                    rec.region = "5"
+                elif rec.state_id.name in area6:
+                    rec.region = "6"
+                elif rec.state_id.name in area7:
+                    rec.region = "7"
+                elif rec.state_id.name in area8:
+                    rec.region = "8"
+                elif rec.state_id.name in area9:
+                    rec.region = "9"
+                elif rec.state_id.name in area10:
+                    rec.region = "10"
+                else:
+                    rec.region = ""
             else:
                 rec.region = ""

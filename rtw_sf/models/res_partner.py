@@ -383,6 +383,8 @@ class rtw_sf_partner(models.Model):
 
     age = fields.Integer("age", compute="_get_age")
 
+    condition = fields.Many2many('res.partner.condition')
+
     # 関連項目
     rel_industry = fields.Char(related='parent_id.industry_id.name')
     rel_contact_type = fields.Char(related='parent_id.contact_type.name')

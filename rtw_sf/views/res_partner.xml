@@ -14,6 +14,9 @@
                         </div>
                     </button>
                 </xpath>
+                 <xpath expr="//field[@name='company_type']" position="before">
+                     <group><field name="condition" widget='many2many_tags' /></group>
+                 </xpath>
                 <xpath expr="//field[@name='name']" position="replace">
                     <field name="name" default_focus="1" placeholder="Name"
                            attrs="{'invisible': [('is_company','!=', True)],'required' : [('type', '=', 'contact')]}"/>
@@ -275,6 +278,11 @@
                         ('state_id.name', 'ilike', self),
                         ('email', 'ilike', self), ]</attribute>
                 </field>
+                <xpath expr="//filter[@name='type_company']" position="after">
+                    <separator/>
+                    <filter name="condition" string="除外理由なし" domain="[('condition', '=', False)]"/>
+                    <filter name="condition" string="除外理由あり" domain="[('condition', '=', True)]"/>
+                </xpath>
             </field>
         </record>
 
