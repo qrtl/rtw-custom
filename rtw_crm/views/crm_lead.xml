@@ -299,6 +299,7 @@
                     <field name="partner_name" string="関連会社"/>
                     <field name="date_deadline" string="完了予定日"/>
                     <field name="On_site_delivery_date" string="現場納品日"/>
+                    <field name="omotesando_visit" string="表参道来店" optional="hide"/>
                 </xpath>
             </field>
         </record>
