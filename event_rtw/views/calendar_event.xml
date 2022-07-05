@@ -7,6 +7,7 @@
             <field name="arch" type="xml">
                 <xpath expr="//calendar" position="attributes">
                     <attribute name="color">sr</attribute>
+                    <attribute name="event_open_popup">False</attribute>
                 </xpath>
                 <xpath expr="//field[@name='description']" position="after">
                     <field name="sr" filters="1"/>
