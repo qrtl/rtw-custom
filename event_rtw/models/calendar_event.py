@@ -100,6 +100,14 @@ class calendar_event_rtw(models.Model):
     system_mod_stamp = fields.Datetime('SystemModstamp')  # システム最終更新日 AA列
     short_description = fields.Char(compute="_get_sort_description")
     campaign = fields.Many2one("utm.campaign")
+    crm_date_deadline = fields.Date(related="opportunity_id.date_deadline")
+    currency_id = fields.Many2one('res.currency', compute='_get_currency_id')
+    crm_expected_revenue = fields.Monetary(related="opportunity_id.expected_revenue")
+    crm_stage_id = fields.Many2one(related="opportunity_id.stage_id")
+
+    def _get_currency_id(self):
+        for rec in self:
+            rec.currency_id = rec.env.ref('base.main_company').currency_id
 
     def _get_sort_description(self):
         for rec in self:

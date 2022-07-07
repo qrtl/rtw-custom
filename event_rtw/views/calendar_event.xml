@@ -29,8 +29,31 @@
                 <xpath expr="//field[@name='name']" position="after">
                     <field name="sr"/>
                     <field name="opportunity_id"/>
+                    <field name="crm_stage_id"/>
+                    <field name="crm_date_deadline"/>
+                    <field name="currency_id" invisible="1"/>
+                    <field name="crm_expected_revenue" widget="monetary" options="{'currency_field': 'currency_id'}"/>
                     <field name="short_description" widget="char" string="説明"/>
                 </xpath>
+            </field>
+        </record>
+        <record id="calendar_list_crm_sf" model="ir.ui.view">
+            <field name="name">calendar_crm_rtw</field>
+            <field name="model">calendar.event</field>
+            <field name="arch" type="xml">
+                 <tree>
+                    <field name="sr"/>
+                    <field name="opportunity_id"/>
+                    <field name="crm_stage_id"/>
+                    <field name="crm_date_deadline"/>
+                    <field name="currency_id" invisible="1"/>
+                    <field name="crm_expected_revenue" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                    <field name="start"/>
+                     <field name="start_date"/>
+                     <field name="r_uid"/>
+                     <field name="customer_service_staff"/>
+                     <field name="user_id"/>
+                </tree>
             </field>
         </record>
         <record id="calendar_form_sf" model="ir.ui.view">
@@ -67,6 +90,11 @@
                         </group>
                     </group>
                 </xpath>
+                <xpath expr="//field[@name='opportunity_id']" position="after">
+                    <field name="crm_date_deadline"/>
+                    <field name="currency_id" invisible="1"/>
+                    <field name="crm_expected_revenue" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                </xpath>
             </field>
         </record>
         <record id="view_crm_form_cal" model="ir.ui.view">
@@ -92,11 +120,38 @@
                 </xpath>
             </field>
         </record>
+
+        <record id="action_event_crm_tree" model="ir.actions.act_window">
+            <field name="name">イベントレポート</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">calendar.event</field>
+            <field name="view_id" ref="calendar_list_crm_sf"/>
+            <field name="context">{"search_default_is_showroom":1}</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem
+                id="action_event_crm_tree"
+                action="action_event_crm_tree"
+                parent="calendar.mail_menu_calendar"
+                sequence="10"
+        />
+
         <record id="calendar_search_view_rtw" model="ir.ui.view">
             <field name="name">calendar.event.search_rtw</field>
             <field name="model">calendar.event</field>
              <field name="inherit_id" ref="calendar.view_calendar_event_search"/>
             <field name="arch" type="xml">
+                <xpath expr="//filter[@name='mymeetings']" position="before">
+                    <filter string="ShowRoom" name="is_showroom" domain="[('sr','!=', False)]"/>
+                    <filter string="今年" name="year" domain="[
+                    '|',
+                    '&amp;',
+                    ('crm_date_deadline','&lt;=', time.strftime('%%Y-12-31')),
+                    ('crm_date_deadline','&gt;=',time.strftime('%%Y-01-01')),
+                    '&amp;',
+                    ('start','&lt;=', time.strftime('%%Y-12-31 00:00:00')),
+                    ('start','&gt;=',time.strftime('%%Y-01-01 00:00:00'))]"/>
+                </xpath>
                 <xpath expr="//group" position="inside">
                     <filter string="ShowRoom" name="showroom" domain="[]" context="{'group_by': 'sr'}"/>
                 </xpath>
