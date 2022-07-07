@@ -22,7 +22,7 @@
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">crm.lead</field>
             <field name="view_id" ref="view_crm_event_list"/>
-<!--            <field name="context">{"search_default_year":1,"search_default_is_showroom":1,"search_default_has_opportunity":1}</field>-->
+            <field name="context">{"search_default_event_year":1,"search_default_is_showroom":1}</field>
             <field name="view_mode">tree,form</field>
         </record>
         <menuitem
@@ -42,7 +42,7 @@
                     <separator/>
 <!--                    <filter string="商談あり" name="has_opportunity" domain="[('opportunity_id','!=', False)]"/>-->
                     <separator/>
-                    <filter string="今年のイベント" name="year" domain="[
+                    <filter string="今年のイベント" name="event_year" domain="[
                     '|',
                     '&amp;',
                     ('date_deadline','&lt;=', time.strftime('%%Y-12-31')),
