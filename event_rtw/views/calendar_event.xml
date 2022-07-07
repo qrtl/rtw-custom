@@ -126,7 +126,7 @@
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">calendar.event</field>
             <field name="view_id" ref="calendar_list_crm_sf"/>
-            <field name="context">{"search_default_is_showroom":1}</field>
+            <field name="context">{"search_default_year":1,"search_default_is_showroom":1,"search_default_has_opportunity":1}</field>
             <field name="view_mode">tree,form</field>
         </record>
         <menuitem
@@ -142,7 +142,10 @@
              <field name="inherit_id" ref="calendar.view_calendar_event_search"/>
             <field name="arch" type="xml">
                 <xpath expr="//filter[@name='mymeetings']" position="before">
-                    <filter string="ShowRoom" name="is_showroom" domain="[('sr','!=', False)]"/>
+                    <filter string="ショールーム" name="is_showroom" domain="[('sr','!=', False)]"/>
+                    <separator/>
+                    <filter string="商談あり" name="has_opportunity" domain="[('opportunity_id','!=', False)]"/>
+                    <separator/>
                     <filter string="今年" name="year" domain="[
                     '|',
                     '&amp;',
@@ -153,7 +156,7 @@
                     ('start','&gt;=',time.strftime('%%Y-01-01 00:00:00'))]"/>
                 </xpath>
                 <xpath expr="//group" position="inside">
-                    <filter string="ShowRoom" name="showroom" domain="[]" context="{'group_by': 'sr'}"/>
+                    <filter string="ShowRoom" name="ショールーム" domain="[]" context="{'group_by': 'sr'}"/>
                 </xpath>
             </field>
         </record>
