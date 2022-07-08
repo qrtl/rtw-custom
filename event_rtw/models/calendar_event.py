@@ -124,3 +124,12 @@ class calendar_event_rtw(models.Model):
             {'sr'}
         )
         return res
+
+    @api.onchange('sr', 'situation', 'start')
+    def _crm_set(self):
+        for rec in self:
+            if rec.opportunity_id:
+                rec.opportunity_id.last_event = rec.start
+                rec.opportunity_id.event_showroom = rec.sr.name
+                rec.opportunity_id.event_situations = dict(rec._fields['situation'].selection).get(rec.situation)
+

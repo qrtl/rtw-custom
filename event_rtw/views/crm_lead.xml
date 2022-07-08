@@ -14,7 +14,7 @@
                     <field name="calendar_ids" string="来場数"/>
                     <field name="last_event" string="最終来場日時"/>
                     <field name="event_showroom" string="SR"/>
-<!--                    <field name="event_situations" string="状況"/>-->
+                    <field name="event_situations" string="状況"/>
                 </tree>
             </field>
         </record>
