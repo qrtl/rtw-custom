@@ -22,6 +22,7 @@
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">crm.lead</field>
             <field name="view_id" ref="view_crm_event_list"/>
+            <field name="search_view_id" ref="crm_event_search_view_rtw"/>
             <field name="context">{"search_default_event_year":1,"search_default_is_showroom":1}</field>
             <field name="view_mode">tree,form</field>
         </record>
@@ -35,7 +36,7 @@
         <record id="crm_event_search_view_rtw" model="ir.ui.view">
             <field name="name">crm.event.search_rtw</field>
             <field name="model">crm.lead</field>
-            <field name="inherit_id" ref="crm.view_crm_case_opportunities_filter"/>
+<!--            <field name="inherit_id" ref="crm.view_crm_case_opportunities_filter"/>-->
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='user_id']" position="after">
                     <filter string="ショールーム" name="is_showroom" domain="[('event_showroom','!=', False)]"/>

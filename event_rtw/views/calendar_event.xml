@@ -51,6 +51,7 @@
                     <field name="crm_expected_revenue" widget="monetary" options="{'currency_field': 'currency_id'}"/>
                     <field name="start"/>
                      <field name="start_date"/>
+                     <field name="crm_r_id"/>
                      <field name="r_uid"/>
                      <field name="customer_service_staff"/>
                      <field name="user_id"/>

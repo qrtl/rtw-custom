@@ -104,6 +104,7 @@ class calendar_event_rtw(models.Model):
     currency_id = fields.Many2one('res.currency', compute='_get_currency_id')
     crm_expected_revenue = fields.Monetary(related="opportunity_id.expected_revenue")
     crm_stage_id = fields.Many2one(related="opportunity_id.stage_id")
+    crm_r_id = fields.Many2one(related="opportunity_id.user_id")
 
     def _get_currency_id(self):
         for rec in self:
