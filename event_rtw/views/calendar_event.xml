@@ -34,6 +34,7 @@
                     <field name="currency_id" invisible="1"/>
                     <field name="crm_expected_revenue" widget="monetary" options="{'currency_field': 'currency_id'}"/>
                     <field name="short_description" widget="char" string="説明"/>
+                    <field name="situation"/>
                 </xpath>
             </field>
         </record>
@@ -55,6 +56,7 @@
                      <field name="r_uid"/>
                      <field name="customer_service_staff"/>
                      <field name="user_id"/>
+                     <field name="situation"/>
                 </tree>
             </field>
         </record>
@@ -96,6 +98,7 @@
                     <field name="crm_date_deadline"/>
                     <field name="currency_id" invisible="1"/>
                     <field name="crm_expected_revenue" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                    <field name="situation"/>
                 </xpath>
             </field>
         </record>
