@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0-20220225\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-28 07:59+0000\n"
-"PO-Revision-Date: 2022-06-28 07:59+0000\n"
+"POT-Creation-Date: 2022-07-08 00:46+0000\n"
+"PO-Revision-Date: 2022-07-08 00:46+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -23,32 +23,32 @@ msgstr ""
 #. module: rtw_inquiry
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__message_needaction
 msgid "Action Needed"
-msgstr ""
+msgstr "要アクション"
 
 #. module: rtw_inquiry
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__activity_ids
 msgid "Activities"
-msgstr ""
+msgstr "活動"
 
 #. module: rtw_inquiry
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__activity_exception_decoration
 msgid "Activity Exception Decoration"
-msgstr ""
+msgstr "例外の活動を示す文字装飾"
 
 #. module: rtw_inquiry
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__activity_state
 msgid "Activity State"
-msgstr ""
+msgstr "活動状態"
 
 #. module: rtw_inquiry
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__activity_type_icon
 msgid "Activity Type Icon"
-msgstr ""
+msgstr "活動種別アイコン"
 
 #. module: rtw_inquiry
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__message_attachment_count
 msgid "Attachment Count"
-msgstr ""
+msgstr "添付数"
 
 #. module: rtw_inquiry
 #: model_terms:ir.ui.view,arch_db:rtw_inquiry.view_crm_form_sf
@@ -59,22 +59,22 @@ msgstr ""
 #. module: rtw_inquiry
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__create_uid
 msgid "Created by"
-msgstr ""
+msgstr "作成者"
 
 #. module: rtw_inquiry
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__create_date
 msgid "Created on"
-msgstr ""
+msgstr "作成日"
 
 #. module: rtw_inquiry
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__created_by_id
 msgid "CreatedById"
-msgstr ""
+msgstr "作成者"
 
 #. module: rtw_inquiry
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__created_date
 msgid "CreatedDate"
-msgstr ""
+msgstr "作成日"
 
 #. module: rtw_inquiry
 #: model_terms:ir.ui.view,arch_db:rtw_inquiry.rtw_sf_inquiry_form
@@ -91,37 +91,37 @@ msgstr "表示名"
 #. module: rtw_inquiry
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__inq_type
 msgid "Field58__c"
-msgstr ""
+msgstr "種別"
 
 #. module: rtw_inquiry
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__yousei
 msgid "Field59_yousei__c"
-msgstr ""
+msgstr "進捗"
 
 #. module: rtw_inquiry
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__approval
 msgid "Field61__c"
-msgstr ""
+msgstr "上長承認"
 
 #. module: rtw_inquiry
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__progress
 msgid "Field62__c"
-msgstr ""
+msgstr "報告書進捗"
 
 #. module: rtw_inquiry
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__message_follower_ids
 msgid "Followers"
-msgstr ""
+msgstr "フォロワー"
 
 #. module: rtw_inquiry
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__message_channel_ids
 msgid "Followers (Channels)"
-msgstr ""
+msgstr "フォロワー (チャネル)"
 
 #. module: rtw_inquiry
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__message_partner_ids
 msgid "Followers (Partners)"
-msgstr ""
+msgstr "フォロワー (パートナー)"
 
 #. module: rtw_inquiry
 #: model:ir.model.fields,help:rtw_inquiry.field_rtw_sf_inquiry__activity_type_icon
@@ -153,7 +153,7 @@ msgstr ""
 #. module: rtw_inquiry
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__activity_exception_icon
 msgid "Icon"
-msgstr ""
+msgstr "アイコン"
 
 #. module: rtw_inquiry
 #: model:ir.model.fields,help:rtw_inquiry.field_rtw_sf_inquiry__activity_exception_icon
@@ -182,7 +182,7 @@ msgstr "問い合わせ"
 #. module: rtw_inquiry
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__message_is_follower
 msgid "Is Follower"
-msgstr ""
+msgstr "フォロー中"
 
 #. module: rtw_inquiry
 #: model:ir.model.fields,field_description:rtw_inquiry.field_crm_lead____last_update
@@ -194,27 +194,27 @@ msgstr "最終更新日"
 #. module: rtw_inquiry
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "最終更新者"
 
 #. module: rtw_inquiry
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "最終更新日"
 
 #. module: rtw_inquiry
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__last_activity_date
 msgid "LastActivityDate"
-msgstr ""
+msgstr "最終活動日"
 
 #. module: rtw_inquiry
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__last_modified_by_id
 msgid "LastModifiedById"
-msgstr ""
+msgstr "最終更新者"
 
 #. module: rtw_inquiry
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__last_modified_date
 msgid "LastModifiedDate"
-msgstr ""
+msgstr "最終更新日"
 
 #. module: rtw_inquiry
 #: model:ir.model,name:rtw_inquiry.model_crm_lead
@@ -224,22 +224,22 @@ msgstr "リード / 案件"
 #. module: rtw_inquiry
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__message_main_attachment_id
 msgid "Main Attachment"
-msgstr ""
+msgstr "主な添付"
 
 #. module: rtw_inquiry
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__message_has_error
 msgid "Message Delivery error"
-msgstr ""
+msgstr "メッセージ配信エラー"
 
 #. module: rtw_inquiry
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__message_ids
 msgid "Messages"
-msgstr ""
+msgstr "メッセージ"
 
 #. module: rtw_inquiry
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__my_activity_date_deadline
 msgid "My Activity Deadline"
-msgstr ""
+msgstr "活動期限"
 
 #. module: rtw_inquiry
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__name
@@ -249,27 +249,27 @@ msgstr "件名"
 #. module: rtw_inquiry
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__activity_date_deadline
 msgid "Next Activity Deadline"
-msgstr ""
+msgstr "次の活動期限"
 
 #. module: rtw_inquiry
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__activity_summary
 msgid "Next Activity Summary"
-msgstr ""
+msgstr "次の活動サマリ"
 
 #. module: rtw_inquiry
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__activity_type_id
 msgid "Next Activity Type"
-msgstr ""
+msgstr "次の活動タイプ"
 
 #. module: rtw_inquiry
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__message_needaction_counter
 msgid "Number of Actions"
-msgstr ""
+msgstr "アクションの数"
 
 #. module: rtw_inquiry
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__message_has_error_counter
 msgid "Number of errors"
-msgstr ""
+msgstr "エラー数"
 
 #. module: rtw_inquiry
 #: model:ir.model.fields,help:rtw_inquiry.field_rtw_sf_inquiry__message_needaction_counter
@@ -294,7 +294,7 @@ msgstr ""
 #. module: rtw_inquiry
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__owner_id
 msgid "OwnerId"
-msgstr ""
+msgstr "所有者"
 
 #. module: rtw_inquiry
 #: model:ir.model.fields.selection,name:rtw_inquiry.selection__rtw_sf_inquiry__magazine_site__8
@@ -379,12 +379,12 @@ msgstr ""
 #. module: rtw_inquiry
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__record_type_id
 msgid "RecordTypeId"
-msgstr ""
+msgstr "レコードタイプ"
 
 #. module: rtw_inquiry
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__activity_user_id
 msgid "Responsible User"
-msgstr ""
+msgstr "担当者"
 
 #. module: rtw_inquiry
 #: model:ir.model.fields.selection,name:rtw_inquiry.selection__rtw_sf_inquiry__lead_source__8
@@ -399,7 +399,7 @@ msgstr ""
 #. module: rtw_inquiry
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__message_has_sms_error
 msgid "SMS Delivery error"
-msgstr ""
+msgstr "SMS配信エラー"
 
 #. module: rtw_inquiry
 #: model:ir.model.fields.selection,name:rtw_inquiry.selection__rtw_sf_inquiry__lead_source__5
@@ -423,7 +423,7 @@ msgstr ""
 #. module: rtw_inquiry
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__system_mod_stamp
 msgid "SystemModstamp"
-msgstr ""
+msgstr "システム最終更新日"
 
 #. module: rtw_inquiry
 #: model:ir.model.fields.selection,name:rtw_inquiry.selection__rtw_sf_inquiry__lead_source__6
@@ -438,12 +438,12 @@ msgstr ""
 #. module: rtw_inquiry
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__message_unread
 msgid "Unread Messages"
-msgstr ""
+msgstr "未読メッセージ件数"
 
 #. module: rtw_inquiry
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__message_unread_counter
 msgid "Unread Messages Counter"
-msgstr ""
+msgstr "未読メッセージカウンター"
 
 #. module: rtw_inquiry
 #: model:ir.model.fields.selection,name:rtw_inquiry.selection__rtw_sf_inquiry__means__1
@@ -458,7 +458,7 @@ msgstr ""
 #. module: rtw_inquiry
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__website_message_ids
 msgid "Website Messages"
-msgstr ""
+msgstr "ウェブサイトメッセージ"
 
 #. module: rtw_inquiry
 #: model:ir.model.fields,help:rtw_inquiry.field_rtw_sf_inquiry__website_message_ids
@@ -474,7 +474,7 @@ msgstr "取引先"
 #. module: rtw_inquiry
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__admitted
 msgid "admitted"
-msgstr ""
+msgstr "了承"
 
 #. module: rtw_inquiry
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__appearance
@@ -495,7 +495,7 @@ msgstr "大分類"
 #. module: rtw_inquiry
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__campaign_id
 msgid "campaign"
-msgstr ""
+msgstr "キャンペーン"
 
 #. module: rtw_inquiry
 #: model_terms:ir.ui.view,arch_db:rtw_inquiry.rtw_sf_inquiry_form
@@ -505,12 +505,12 @@ msgstr "キャンペーン"
 #. module: rtw_inquiry
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__classification
 msgid "classification"
-msgstr ""
+msgstr "分類"
 
 #. module: rtw_inquiry
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__comment
 msgid "comment"
-msgstr ""
+msgstr "コメント"
 
 #. module: rtw_inquiry
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__confirm_user_information
@@ -526,7 +526,7 @@ msgstr "確認"
 #. module: rtw_inquiry
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__contact
 msgid "contact"
-msgstr ""
+msgstr "連絡先"
 
 #. module: rtw_inquiry
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__contact_person
@@ -548,7 +548,7 @@ msgstr "関連商談①"
 #. module: rtw_inquiry
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__crm_2
 msgid "crm_2"
-msgstr ""
+msgstr "関連商談②"
 
 #. module: rtw_inquiry
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__customer_testimonials
@@ -565,7 +565,7 @@ msgstr "日時"
 #. module: rtw_inquiry
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__deign
 msgid "deign"
-msgstr ""
+msgstr "デザイン"
 
 #. module: rtw_inquiry
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__delivery_work
@@ -649,7 +649,7 @@ msgstr "最終更新者"
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__lead_source
 #: model_terms:ir.ui.view,arch_db:rtw_inquiry.rtw_sf_inquiry_form
 msgid "lead_source"
-msgstr ""
+msgstr "リードソース"
 
 #. module: rtw_inquiry
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__magazine_site
@@ -690,7 +690,7 @@ msgstr "DM希望"
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__number
 #: model_terms:ir.ui.view,arch_db:rtw_inquiry.rtw_sf_inquiry_form
 msgid "no"
-msgstr ""
+msgstr "No"
 
 #. module: rtw_inquiry
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__non_response
@@ -727,7 +727,7 @@ msgstr "発信者"
 #. module: rtw_inquiry
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__other
 msgid "other"
-msgstr ""
+msgstr "その他(4)"
 
 #. module: rtw_inquiry
 #: model_terms:ir.ui.view,arch_db:rtw_inquiry.rtw_sf_inquiry_form
@@ -773,7 +773,7 @@ msgstr "⑥商品カテゴリ"
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__product_name1
 #: model_terms:ir.ui.view,arch_db:rtw_inquiry.rtw_sf_inquiry_form
 msgid "product_name1"
-msgstr ""
+msgstr "①商品名"
 
 #. module: rtw_inquiry
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__product_name2
@@ -819,17 +819,17 @@ msgstr "友人の勧め"
 #. module: rtw_inquiry
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__record_type_id_name
 msgid "record_type_id_name"
-msgstr ""
+msgstr "レコードタイプ名"
 
 #. module: rtw_inquiry
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__report_progress
 msgid "report_progress"
-msgstr ""
+msgstr "報告書進捗状況"
 
 #. module: rtw_inquiry
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__request
 msgid "request"
-msgstr ""
+msgstr "申込"
 
 #. module: rtw_inquiry
 #: model:ir.actions.act_window,name:rtw_inquiry.action_window
@@ -882,7 +882,7 @@ msgstr "ＳＲ誘致"
 #. module: rtw_inquiry
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__status_report
 msgid "status_report"
-msgstr ""
+msgstr "状況報告"
 
 #. module: rtw_inquiry
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__summary
@@ -899,12 +899,12 @@ msgstr "対応"
 #. module: rtw_inquiry
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__survey_no
 msgid "survey_no"
-msgstr ""
+msgstr "アンケートNo"
 
 #. module: rtw_inquiry
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__toi_no
 msgid "toi_no"
-msgstr ""
+msgstr "問い合わせNo"
 
 #. module: rtw_inquiry
 #: model:ir.model.fields,field_description:rtw_inquiry.field_rtw_sf_inquiry__use
