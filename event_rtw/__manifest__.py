@@ -27,7 +27,7 @@
         'views/event_rtw.xml',
         'views/calendar_sr.xml',
         'views/calendar_event.xml',
-        'views/crm_lead.xml',
+        # 'views/crm_lead.xml',
         'views/templates.xml',
     ],
     # only loaded in demonstration mode
