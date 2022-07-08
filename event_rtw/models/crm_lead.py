@@ -29,6 +29,6 @@ class calendar_event_rtw(models.Model):
                         # situations = dict(l._fields['situation'].selection).get(l.situation)
                 rec.last_event = start
                 rec.event_showroom = showroom
-                rec.event_situations = situations
+                # rec.event_situations = situations
             else:
                 rec.last_event = False
