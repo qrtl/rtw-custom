@@ -48,7 +48,7 @@
                             <field name="previous_amount" string="previous_amount"/>
                             <field name="sample_sale" string="sample_sale"/>
                             <field name="sample_sales_amount" string="sample_sales_amount"/>
-<!--                            <field name="reference_price" string="reference_price"/>-->
+                            <field name="reference_price" string="reference_price"/>
                             <field name="rate" string="rate"/>
                             <field name="progress_check_date" string="progress_check_date"/>
 <!--                            <field name="completion_scheduled_date" string="completion_scheduled_date"/>-->
