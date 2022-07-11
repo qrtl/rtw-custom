@@ -180,7 +180,7 @@ msgstr "完了日"
 #: model:ir.model.fields,field_description:rtw_sf.field_res_users__mc_subscriber
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__contacts
 msgid "Contact"
-msgstr "連絡先"
+msgstr ""
 
 #. module: rtw_sf
 #: model_terms:ir.ui.view,arch_db:rtw_sf.rtw_sf_case_form
@@ -1189,7 +1189,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:rtw_sf.field_res_users__joint_name
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__cope_order_no_1
 msgid "X1__c"
-msgstr "連名1"
+msgstr ""
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_res_partner__x20
@@ -1277,18 +1277,6 @@ msgstr "経理部検認"
 #: model_terms:ir.ui.view,arch_db:rtw_sf.rtw_sf_case_form
 msgid "action details by quality control"
 msgstr "対処内容(品管)"
-
-#. module: rtw_sf
-#: model:ir.model.fields,field_description:rtw_sf.field_res_partner__action_1
-#: model:ir.model.fields,field_description:rtw_sf.field_res_users__action_1
-msgid "action1"
-msgstr "アクション①"
-
-#. module: rtw_sf
-#: model:ir.model.fields,field_description:rtw_sf.field_res_partner__action_2
-#: model:ir.model.fields,field_description:rtw_sf.field_res_users__action_2
-msgid "action2"
-msgstr "アクション②"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_res_partner__address_confirmation_required

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-
+from datetime import date
 from odoo import models, fields, api
 
 
@@ -241,7 +241,8 @@ class rtw_sf_partner(models.Model):
     ], default='',
         string="evaluation", help="2015年～2017年　売上金額ベースの評価")  # 評価 OK Field8__c
     dm_unknown = fields.Boolean("dm_unknown", help=">DM欄　未記入", default=0)  # DM不明 OK DM_unknown__c
-    # action2 = fields.Char("action2")  # アクション② OK
+    action_1 = fields.Char("action1")  # アクション1⃣ OK
+    action_2 = fields.Char("action2")  # アクション② OK
     related_attributes = fields.Selection([
         ('1', '施主(住宅系先）'),
         ('2', '施主（ﾏﾝｼｮﾝ系先）'),
@@ -336,8 +337,8 @@ class rtw_sf_partner(models.Model):
         ('8', '中国'),
         ('9', '四国'),
         ('10', '九州・沖縄'),
-    ], default='',
-        string="region")  # 地域 OK Field34__c
+    ], default='',)
+    # region = fields.Char(compute="_get_region", string="region", store=True, ondelete='CASCADE')  # 地域 OK Field34__c
     stop_letter = fields.Boolean("stop_letter", default=0)  # LETTER停止 OK LETTER__c
     # kin = fields.Char("Field36__c")  # 親類（親戚・家族） OK
     kin = fields.Many2one('res.partner', "kin", copy=False)  # Field36__c
@@ -377,14 +378,86 @@ class rtw_sf_partner(models.Model):
     ], default='',
         string="media_name")  # 媒体名 OK Field39__c
     case_count = fields.Integer(string="case count", compute="_compute_case_count")
-    no_hyphen_phone = fields.Char("no_hyphen_phone", compute="_get_phone_non_hyphen")
+    no_hyphen_phone = fields.Char("no_hyphen_phone", compute="_get_phone_non_hyphen", store=True)
+    no_hyphen_mobile = fields.Char("no_hyphen_mobile", compute="_get_phone_non_mobile", store=True)
 
+    age = fields.Integer("age", compute="_get_age")
+
+    condition = fields.Many2many('res.partner.condition')
+
+    # 関連項目
+    rel_industry = fields.Char(related='parent_id.industry_id.name')
+    rel_contact_type = fields.Char(related='parent_id.contact_type.name')
+    rel_channel = fields.Char(related='parent_id.channel.name')
+
+    # @api.depends('state_id')
+    # def _get_region(self):
+    #     area1 = ["東京都", "神奈川県", "千葉県", "埼玉県"]
+    #     area2 = ["栃木県", "群馬県", "茨城県"]
+    #     area3 = ["北海道", "青森県", "宮城県", "岩手県", "秋田県", "山形県", "福島県"]
+    #     area4 = ["山梨県", "長野県", "新潟県"]
+    #     area5 = ["静岡県", "三重県", "愛知県", "岐阜県"]
+    #     area6 = ["石川県", "富山県", "福井県"]
+    #     area7 = ["大阪府", "京都府", "滋賀県", "奈良県", "兵庫県", "和歌山県"]
+    #     area8 = ["広島県", "岡山県", "山口県", "島根県", "鳥取県"]
+    #     area9 = ["香川県", "愛媛県", "徳島県", "高知県"]
+    #     area10 = ["福岡県", "大分県", "熊本県", "佐賀県", "長崎県", "宮崎県", "鹿児島県", "沖縄県"]
+    #     for rec in self:
+    #         if rec.state_id.name in area1:
+    #             rec.region = "関東"
+    #         elif rec.state_id.name in area2:
+    #             rec.region = "北関東"
+    #         elif rec.state_id.name in area3:
+    #             rec.region = "東北・北海道"
+    #         elif rec.state_id.name in area4:
+    #             rec.region = "甲信越"
+    #         elif rec.state_id.name in area5:
+    #             rec.region = "東海"
+    #         elif rec.state_id.name in area6:
+    #             rec.region = "北陸"
+    #         elif rec.state_id.name in area7:
+    #             rec.region = "関西"
+    #         elif rec.state_id.name in area8:
+    #             rec.region = "中国"
+    #         elif rec.state_id.name in area9:
+    #             rec.region = "四国"
+    #         elif rec.state_id.name in area10:
+    #             rec.region = "九州・沖縄"
+    #         else:
+    #             rec.region = ""
+
+    def _search_npp(self, no_hyphen_phone, args=None, operator='ilike', limit=100):
+        if operator == 'like':
+            operator = 'ilike'
+        versions = self.search([('name', operator, no_hyphen_phone)], limit=limit)
+        return versions.name_get()
+
+    def _get_age(self):
+        for rec in self:
+            print(rec.birthdate)
+            if rec.birthdate:
+                print(rec.birthdate)
+                today = date.today()
+                birthday = rec.birthdate
+                rec.age = (int(today.strftime("%Y%m%d")) - int(birthday.strftime("%Y%m%d"))) // 10000
+            else:
+                rec.age = False
+
+    @api.depends("phone")
     def _get_phone_non_hyphen(self):
         for rec in self:
             if rec.phone:
                 rec.no_hyphen_phone = rec.phone.replace("-", "")
             else:
                 rec.no_hyphen_phone = False
+
+    @api.depends("mobile")
+    def _get_phone_non_mobile(self):
+        for rec in self:
+            if rec.mobile:
+                rec.no_hyphen_mobile = rec.mobile.replace("-", "")
+            else:
+                rec.no_hyphen_mobile = False
 
     def _compute_case_count(self):
         for rec in self:

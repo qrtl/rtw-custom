@@ -7,8 +7,8 @@ class rtw_crm(models.Model):
     _inherit = 'crm.lead'
 
     stage_sort_order = fields.Integer('StageSortOrder')  # 受注段階コード H列
-    # expected_revenue = fields.Float('ExpectedRevenue')  # 予想売上高 K列
-
+    # expected_revenue = fields.Monetary('ExpectedRevenue')  # 予想売上高 K列
+    reference_price = fields.Monetary(compute="_get_reference_price", currency_field='company_currency', store=True, racking=True)
     # close_date = fields.Datetime('CloseDate')  # 完了日 M列
     x_type = fields.Char('Type')  # N列
     nextstep = fields.Char('NextStep')  # 次の段階 O列
@@ -495,7 +495,7 @@ class rtw_crm(models.Model):
         ('11', '廃盤品'),
     ], default='',
         string='X3__c')  # 商品リスト(ソファ3) DI列
-    completion_scheduled_date = fields.Datetime('A__c')  # 完了予定日（A) DJ列
+    # completion_scheduled_date = fields.Datetime('A__c')  # 完了予定日（A) DJ列
     product_list_sofa1 = fields.Selection([
         ('1', 'ARLES'),
         ('2', 'ARMSTRONG'),
@@ -774,6 +774,16 @@ class rtw_crm(models.Model):
         inverse_name="crm_id",
         string="case", )
     case_count = fields.Integer(string="case count", compute="_compute_case_count")
+    calendar_ids = fields.One2many(
+        comodel_name="calendar.event",
+        inverse_name="opportunity_id",
+        string="calendar", )
+    belong = fields.Char(compute="_get_belong", store=True)
+
+    @api.depends('user_id')
+    def _get_belong(self):
+        for rec in self:
+            rec.belong = self.env['crm.team'].search([('member_ids.id', '=', rec.user_id.id)]).name
 
     def _compute_case_count(self):
         for rec in self:
@@ -810,3 +820,25 @@ class rtw_crm(models.Model):
                 'default_crm_id': self.id
             }
         }
+
+    @api.onchange('stage_id')
+    def _set_opportunity_completion_date(self):
+        if not self.opportunity_completion_date:
+            if self.stage_id.name == "受注成立" or self.stage_id.name == "ロスト":
+                self.opportunity_completion_date = fields.datetime.now()
+        elif self.opportunity_completion_date:
+            if self.stage_id.name != "受注成立" or self.stage_id.name != "ロスト":
+                self.opportunity_completion_date = False
+            if self._origin.stage_id.name != self.stage_id.name:
+                if self.stage_id.name == "受注成立" or self.stage_id.name == "ロスト":
+                    self.opportunity_completion_date = fields.datetime.now()
+
+    @api.depends('expected_revenue', 'rate')
+    def _get_reference_price(self):
+        for rec in self:
+            if rec.rate >0 :
+                reference_price = rec.expected_revenue * rec.rate / 100
+                print(reference_price)
+                rec.reference_price = reference_price
+            else:
+                rec.reference_price = rec.expected_revenue

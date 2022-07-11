@@ -5,7 +5,7 @@ from odoo import models, fields, api
 
 class rtw_crm_inq(models.Model):
     _inherit = 'crm.lead'
-    inquiry = fields.One2many('rtw_sf.inquiry', inverse_name='contact_person')
+    inquiry = fields.One2many('rtw_sf.inquiry', inverse_name='crm_1')
     inquiry_count = fields.Integer(string="inquiry count", compute="_compute_inquiry_count")
 
     def _compute_inquiry_count(self):
@@ -22,10 +22,11 @@ class rtw_crm_inq(models.Model):
             'view_mode': 'form',
             'target': 'current',
             'context': {
-                'default_id': self.id,
-                'default_contact_person': self.id,
+                # 'default_id': self.id,
+                'default_contact_person': self.partner_id.id,
                 'default_created_by_id': self.env.user.id,
                 'default_last_modified_by_id': self.env.user.id,
                 'default_owner_id': self.env.user.id,
+                'default_crm_1': self.id
             }
         }

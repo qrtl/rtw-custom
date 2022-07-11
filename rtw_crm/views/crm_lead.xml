@@ -30,15 +30,15 @@
                             <field name="order_no"/>
                             <field name="quote_number_by_hukusuke" string="quote_number_by_hukusuke"/>
                             <field name="procurement_company" string="procurement_company"/>
-                            <field name="crm_type" string="crm_type"/>
-                            <field name="delivery_type" string="delivery_type"/>
+                            <field name="crm_type" string="crm_type" required="1"/>
+                            <field name="delivery_type" string="delivery_type"  required="1"/>
                             <field name="facility_name" string="facility_name"/>
                             <field name="website" string="website"/>
                             <field name="Use_Purpose1" string="Use_Purpose1"/>
                             <field name="Use_Purpose2" string="Use_Purpose2"/>
                             <field name="Use_Purpose3" string="Use_Purpose3"/>
                             <field name="Use_Purpose" string="Use_Purpose"/>
-                            <field name="lead_source" string="lead_source"/>
+                            <field name="lead_source" string="lead_source"  required="1"/>
                             <field name="action1" string="action1"/>
                             <field name="action2" string="action2"/>
                             <field name="omotesando_visit" string="omotesando_visit"/>
@@ -48,10 +48,10 @@
                             <field name="previous_amount" string="previous_amount"/>
                             <field name="sample_sale" string="sample_sale"/>
                             <field name="sample_sales_amount" string="sample_sales_amount"/>
-                            <field name="expected_revenue" string="expected_revenue"/>
+                            <field name="reference_price" string="reference_price"/>
                             <field name="rate" string="rate"/>
                             <field name="progress_check_date" string="progress_check_date"/>
-                            <field name="completion_scheduled_date" string="completion_scheduled_date"/>
+<!--                            <field name="completion_scheduled_date" string="completion_scheduled_date"/>-->
                             <field name="delivery_date_unknown" string="delivery_date_unknown"/>
                             <field name="nextstep" string="nextstep"/>
                             <field name="probability" string="probability"/>
@@ -257,6 +257,17 @@
                     <page string="ケース">
                         <field name="case_ids"/>
                     </page>
+<!--                    <page string="活動">-->
+<!--                        <field name="calendar_ids">-->
+<!--                            <tree>-->
+<!--                                <field name="name" string="件名"/>-->
+<!--                                <field name="sr"/>-->
+<!--                                <field name="sr"/>-->
+<!--                                <field name="start"/>-->
+<!--                                <field name="stop"/>-->
+<!--                            </tree>-->
+<!--                        </field>-->
+<!--                    </page>-->
                 </xpath>
             </field>
         </record>
@@ -265,10 +276,13 @@
             <field name="model">crm.lead</field>
             <field name="inherit_id" ref="crm.crm_case_tree_view_leads"/>
             <field name="arch" type="xml">
+                <xpath expr="//field[@name='phone']" position="after">
+                    <field name="opportunity_completion_date"/>
+                </xpath>
                 <xpath expr="//field[@name='name']" position="after">
-                    <field name="partner_id" string="partner_id"/>
-                    <field name="partner_name" string="partner_name"/>
-                    <field name="date_deadline" string="date_deadline"/>
+                    <field name="partner_id" string="顧客"/>
+                    <field name="partner_name" string="関連会社"/>
+                    <field name="date_deadline" string="完了予定日"/>
                 </xpath>
             </field>
         </record>
@@ -277,27 +291,61 @@
             <field name="model">crm.lead</field>
             <field name="inherit_id" ref="crm.crm_case_tree_view_oppor"/>
             <field name="arch" type="xml">
+                <xpath expr="//field[@name='phone']" position="after">
+                    <field name="opportunity_completion_date"/>
+                </xpath>
                 <xpath expr="//field[@name='name']" position="after">
-                    <field name="partner_id" string="partner_id"/>
-                    <field name="partner_name" string="partner_name"/>
-                    <field name="date_deadline" string="date_deadline"/>
+                    <field name="partner_id" string="顧客"/>
+                    <field name="partner_name" string="関連会社"/>
+                    <field name="date_deadline" string="完了予定日"/>
+                    <field name="On_site_delivery_date" string="現場納品日"/>
+                    <field name="omotesando_visit" string="表参道来店" optional="hide"/>
                 </xpath>
             </field>
         </record>
 
+        <record model="ir.ui.view" id="rtw_sale_manage_list">
+            <field name="name">rtw_sale_manage_list</field>
+            <field name="model">crm.lead</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="expected_revenue"/>
+                    <field name="delivery_date_unknown"/>
+                    <field name="previous_amount"/>
+                    <field name="opportunity_number"/>
+                    <field name="created_date"/>
+                    <field name="partner_name"/>
+                    <field name="contact_name"/>
+                    <field name="name"/>
+                    <field name="probability"/>
+                    <field name="stage_id"/>
+                    <field name="opportunity_type"/>
+                    <field name="fair"/>
+                    <field name="progress_check_date"/>
+                    <field name="Determined_on_the_day"/>
+                    <field name="user_id"/>
+                    <field name="belong"/>
+                    <field name="date_deadline"/>
+                </tree>
+            </field>
+        </record>
         <record id="customer_search_view_rtw_oppo" model="ir.ui.view">
             <field name="name">crm.lead.search_rtw_oppo</field>
             <field name="model">crm.lead</field>
             <field name="inherit_id" ref="crm.view_crm_case_opportunities_filter"/>
             <field name="arch" type="xml">
+                 <xpath expr="//field[@name='user_id']" position="after">
+                    <filter string="今年" name="year" domain="[('date_deadline','&lt;=', time.strftime('%%Y-12-31')),('date_deadline','&gt;=',time.strftime('%%Y-01-01'))]"/>
+                </xpath>
                 <xpath expr="//field[@name='name']" position="replace">
                     <field name="name" string="Opportunity" filter_domain="[
-                        '|', '|', '|', '|', '|',
+                        '|', '|', '|', '|', '|','|',
                         ('partner_id', 'ilike', self),
                         ('partner_name', 'ilike', self),
                         ('email_from', 'ilike', self),
                         ('name', 'ilike', self),
                         ('description', 'ilike', self),
+                        ('order_no', 'ilike', self),
                         ('contact_name', 'ilike', self)]"/>
                 </xpath>
                 <xpath expr="//field[@name='name']" position="after">
@@ -319,6 +367,7 @@
                         ('partner_name', 'ilike', self),
                         ('email_from', 'ilike', self),
                         ('name', 'ilike', self),
+                        ('order_no', 'ilike', self),
                         ('description', 'ilike', self),
                         ('contact_name', 'ilike', self)]"/>
                 </xpath>
@@ -328,5 +377,21 @@
                 </xpath>
             </field>
         </record>
+
+        <record id="action_sale_manage" model="ir.actions.act_window">
+            <field name="name">売上管理</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">crm.lead</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="rtw_sale_manage_list"/>
+            <field name="context">{"search_default_assigned_to_me":1,"search_default_year":1}</field>
+        </record>
+
+        <menuitem
+                id="menu_sale_manage_crm"
+                action="action_sale_manage"
+                parent="crm.crm_menu_report"
+                sequence="10"
+        />
     </data>
 </odoo>

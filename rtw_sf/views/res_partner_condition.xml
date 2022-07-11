@@ -1,0 +1,78 @@
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+
+        <record model="ir.ui.view" id="res_partner_condition_list">
+            <field name="name">res_partner_condition_list</field>
+            <field name="model">res.partner.condition</field>
+            <field name="arch" type="xml">
+                <tree editable="top">
+                    <field name="name"/>
+                    <field name="archive"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="res_partner_condition_form" model="ir.ui.view">
+            <field name="name">res_partner_condition.form</field>
+            <field name="model">res.partner.condition</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+<!--                        <field name="status" widget="statusbar" options="{'clickable':1}"/>-->
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="archive"/>
+                        </group>
+                    </sheet>
+<!--                    <div class="oe_chatter">-->
+<!--                        <field name="message_follower_ids" widget="mail_followers"/>-->
+<!--                        <field name="activity_ids" modifiers="{}" id="activity_ids"/>-->
+<!--                        <field name="message_ids" widget="mail_thread"/>-->
+<!--                    </div>-->
+                </form>
+            </field>
+        </record>
+
+
+        <!-- actions opening views on models -->
+        <record id="action_condition_tree" model="ir.actions.act_window">
+            <field name="name">condition</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner.condition</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem
+                id="menu_condition_tree"
+                action="action_condition_tree"
+                parent="contacts.res_partner_menu_config"
+                sequence="30"
+        />
+
+<!--        <record id="view_rtw_case_search" model="ir.ui.view">-->
+<!--            <field name="name">rtw_sf_case.search</field>-->
+<!--            <field name="model">rtw_sf_case</field>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <search string="Search contacts">-->
+<!--                    <field name="subject"-->
+<!--                           filter_domain="['|','|','|','|','|',-->
+<!--                           ('id','ilike',self),-->
+<!--                           ('subject','ilike',self),-->
+<!--                           ('order_no','ilike',self),-->
+<!--                           ('cope_order_no_1','ilike',self),-->
+<!--                           ('cope_order_no_2','ilike',self),-->
+<!--                           ('cope_order_no_3','ilike',self)-->
+<!--                           ]"/>-->
+<!--                    <filter string="未完了" domain="[('isclosed', '!=', True)]" name="not_close"></filter>-->
+<!--&lt;!&ndash;                    <group expand="0" string="Group By">&ndash;&gt;-->
+<!--&lt;!&ndash;                        <filter string="Company" name="parent_id" context="{'group_by': 'parent_id'}"></filter>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <filter string="Country" name="country_id" context="{'group_by': 'country_id'}"></filter>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <filter string="Sales person" name="salesperson_id" context="{'group_by': 'user_id'}"></filter>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </group>&ndash;&gt;-->
+<!--                </search>-->
+<!--            </field>-->
+<!--        </record>-->
+    </data>
+</odoo>

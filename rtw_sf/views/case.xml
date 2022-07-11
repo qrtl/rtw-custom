@@ -7,10 +7,17 @@
             <field name="model">rtw_sf_case</field>
             <field name="arch" type="xml">
                 <tree>
+                    <field name="id" options="{'format': 0}" string="ケース番号"/>
                     <field name="subject"/>
+                    <field name="crm_id"/>
+                    <field name="contacts"/>
+                    <field name="order_no"/>
+                    <field name="cope_order_no_1"/>
+                    <field name="cope_order_no_2" optional="hide"/>
+                    <field name="cope_order_no_3" optional="hide"/>
                     <field name="status"/>
-                     <field name="created_date" string="CreatedDate"/>
-                     <field name="owner_id" string="OwnerId"/>
+                    <field name="created_date" string="CreatedDate"/>
+                    <field name="owner_id" string="OwnerId"/>
                     <!--          <field name="contacts"/>-->
                     <!--          <field name="accounts"/>-->
                     <!--          <field name="parents"/>-->
@@ -24,16 +31,18 @@
             <field name="arch" type="xml">
                 <form>
                     <header>
-                        <field name="status" widget="statusbar"  options="{'clickable':1}"/>
+                        <field name="status" widget="statusbar" options="{'clickable':1}"/>
                     </header>
                     <sheet>
                         <group>
                             <h2>
-                                件名：<field name="subject"/>
+                                件名：
+                                <field name="subject"/>
                             </h2>
                         </group>
                         <group>
                             <group>
+                                <field name="id" options="{'format': 0}" string="ケース番号"/>
                                 <field name="owner_id" string="OwnerId"/>
                                 <field name="crm_id" string="crm_id"/>
                                 <field name="parents" string="parents case"/>
@@ -51,7 +60,7 @@
 
                             </group>
                             <group>
-<!--                                <field name="status" string="Status"/>-->
+                                <!--                                <field name="status" string="Status"/>-->
                                 <field name="manufacturing_department_status" string="manufacturing department status"/>
                                 <field name="occurrence_status" string="occurrence status"/>
                                 <field name="priority" string="priority"/>
@@ -215,43 +224,35 @@
                 action="action_case_tree"
                 web_icon="rtw_sf,static/description/case.png"
         />
-                <menuitem
+        <menuitem
                 id="menu_case_tree_crm"
                 action="action_case_tree"
                 parent="crm.crm_menu_root"
                 sequence="30"
         />
-        <!-- server action to the one above -->
-        <!--
-            <record model="ir.actions.server" id="rtw_sf.action_server">
-              <field name="name">rtw_sf server</field>
-              <field name="model_id" ref="model_rtw_sf_rtw_sf"/>
-              <field name="state">code</field>
-              <field name="code">
-                action = {
-                  "type": "ir.actions.act_window",
-                  "view_mode": "tree,form",
-                  "res_model": model._name,
-                }
-              </field>
-            </record>
-        -->
 
-        <!-- Top menu item -->
-        <!--
-            <menuitem name="rtw_sf" id="rtw_sf.menu_root"/>
-        -->
-        <!-- menu categories -->
-        <!--
-            <menuitem name="Menu 1" id="rtw_sf.menu_1" parent="rtw_sf.menu_root"/>
-            <menuitem name="Menu 2" id="rtw_sf.menu_2" parent="rtw_sf.menu_root"/>
-        -->
-        <!-- actions -->
-        <!--
-            <menuitem name="List" id="rtw_sf.menu_1_list" parent="rtw_sf.menu_1"
-                      action="rtw_sf.action_window"/>
-            <menuitem name="Server to list" id="rtw_sf" parent="rtw_sf.menu_2"
-                      action="rtw_sf.action_server"/>
-        -->
+        <record id="view_rtw_case_search" model="ir.ui.view">
+            <field name="name">rtw_sf_case.search</field>
+            <field name="model">rtw_sf_case</field>
+            <field name="arch" type="xml">
+                <search string="Search contacts">
+                    <field name="subject"
+                           filter_domain="['|','|','|','|','|',
+                           ('id','ilike',self),
+                           ('subject','ilike',self),
+                           ('order_no','ilike',self),
+                           ('cope_order_no_1','ilike',self),
+                           ('cope_order_no_2','ilike',self),
+                           ('cope_order_no_3','ilike',self)
+                           ]"/>
+                    <filter string="未完了" domain="[('isclosed', '!=', True)]" name="not_close"></filter>
+<!--                    <group expand="0" string="Group By">-->
+<!--                        <filter string="Company" name="parent_id" context="{'group_by': 'parent_id'}"></filter>-->
+<!--                        <filter string="Country" name="country_id" context="{'group_by': 'country_id'}"></filter>-->
+<!--                        <filter string="Sales person" name="salesperson_id" context="{'group_by': 'user_id'}"></filter>-->
+<!--                    </group>-->
+                </search>
+            </field>
+        </record>
     </data>
 </odoo>

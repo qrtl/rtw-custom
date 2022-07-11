@@ -17,7 +17,7 @@
                             name="role_ids"
                             widget='one2many'
                             domain="[('opportunity_id','in','role_ids')]"
-                            context="{'default_opportunity_id': id,'default_created_by_id':user_id,'default_last_modified_by_id':user_id}" >
+                            context="{'default_opportunity_id': id,'default_created_by_id':user_id,'default_last_modified_by_id':user_id}">
                         <kanban class="o_kanban_small_column">
                             <field name="name"/>
                             <field name="company_id"/>
@@ -26,23 +26,24 @@
                             <templates>
                                 <t t-name="kanban-box">
                                     <div
-                            t-attf-class="oe_kanban_global_click"
-                        >
-                                    <div class="o_dropdown_kanban dropdown">
-                                        <a class="dropdown-toggle o-no-caret btn" role="button" data-toggle="dropdown"
-                                           data-display="static" href="#" aria-label="Dropdown menu"
-                                           title="Dropdown menu">
-                                            <span class="fa fa-ellipsis-v"/>
-                                        </a>
-                                        <div class="dropdown-menu" role="menu">
-                                            <a role="menuitem" type="delete" class="dropdown-item">Delete</a>
+                                            t-attf-class="oe_kanban_global_click"
+                                    >
+                                        <div class="o_dropdown_kanban dropdown">
+                                            <a class="dropdown-toggle o-no-caret btn" role="button"
+                                               data-toggle="dropdown"
+                                               data-display="static" href="#" aria-label="Dropdown menu"
+                                               title="Dropdown menu">
+                                                <span class="fa fa-ellipsis-v"/>
+                                            </a>
+                                            <div class="dropdown-menu" role="menu">
+                                                <a role="menuitem" type="delete" class="dropdown-item">Delete</a>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="d-flex flex-column justify-content-between">
-                                        <field name="name"/>
-                                        <field name="role"/>
-                                        <field name="company_id"/>
-                                    </div>
+                                        <div class="d-flex flex-column justify-content-between">
+                                            <field name="name"/>
+                                            <field name="role"/>
+                                            <field name="company_id"/>
+                                        </div>
                                     </div>
                                 </t>
                             </templates>
@@ -55,6 +56,28 @@
 
                         </form>
                     </field>
+                </xpath>
+            </field>
+        </record>
+        <record id="crm_search_view_rtw_oppo_role" model="ir.ui.view">
+            <field name="name">crm.lead.search_rtw_oppo_role</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.view_crm_case_opportunities_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="role_ids" string="関連取引先責任者" filter_domain="[
+                        ('role_ids', 'ilike', self)]"/>
+                </xpath>
+            </field>
+        </record>
+        <record id="crm_search_view_rtw_leads_role" model="ir.ui.view">
+            <field name="name">crm.lead.search_rtw_leads</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.view_crm_case_leads_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="role_ids" string="関連取引先責任者" filter_domain="[
+                        ('role_ids', 'ilike', self)]"/>
                 </xpath>
             </field>
         </record>

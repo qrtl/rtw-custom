@@ -92,11 +92,44 @@ class calendar_event_rtw(models.Model):
     payment_method = fields.Boolean('Field26__c')  # クレジット/現金購入 BI ★0,1,空白
     omotesando = fields.Boolean('Field35__c')  # 表参道来店 BS ★0,1,空白
     customer_service_staff = fields.Many2one('res.users')  # 接客担当 BD
+    r_uid = fields.Many2one('res.users', '担当者')  # 接客担当 BD
     created_date = fields.Datetime('CreatedDate')  # 作成日 W列
     created_by_id = fields.Many2one('res.users', 'CreatedById')  # 作成ID X列
     last_modified_date = fields.Datetime('LastModifiedDate')  # 最終更新日 Y列
     last_modified_by_id = fields.Many2one('res.users', 'LastModifiedById')  # 最終更新者 Z列
     system_mod_stamp = fields.Datetime('SystemModstamp')  # システム最終更新日 AA列
+    short_description = fields.Char(compute="_get_sort_description")
+    campaign = fields.Many2one("utm.campaign")
+    crm_date_deadline = fields.Date(related="opportunity_id.date_deadline")
+    currency_id = fields.Many2one('res.currency', compute='_get_currency_id')
+    crm_expected_revenue = fields.Monetary(related="opportunity_id.expected_revenue")
+    crm_stage_id = fields.Many2one(related="opportunity_id.stage_id")
+    crm_r_id = fields.Many2one(related="opportunity_id.user_id")
 
+    def _get_currency_id(self):
+        for rec in self:
+            rec.currency_id = rec.env.ref('base.main_company').currency_id
 
+    def _get_sort_description(self):
+        for rec in self:
+            if rec.description:
+                rec.short_description = rec.description
+            else:
+                rec.short_description = False
+    
+    @api.model
+    def _get_public_fields(self):
+        res = super()._get_public_fields()
+        res.update(
+            {'sr'}
+        )
+        return res
+
+    @api.onchange('sr', 'situation', 'start')
+    def _crm_set(self):
+        for rec in self:
+            if rec.opportunity_id:
+                rec.opportunity_id.last_event = rec.start
+                rec.opportunity_id.event_showroom = rec.sr.name
+                rec.opportunity_id.event_situations = dict(rec._fields['situation'].selection).get(rec.situation)
 

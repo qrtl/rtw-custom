@@ -11,6 +11,7 @@ class rtw_sf_case(models.Model):
     ]
     _description = 'case'
     _rec_name = "subject"
+    _order = "id DESC"
 
     case_no = fields.Char("CaseNumber")
     crm_id = fields.Many2one('crm.lead')
@@ -95,7 +96,7 @@ class rtw_sf_case(models.Model):
         ('l', '低'),
         ], default='',
         string='Priority')  # 優先順位 v
-    description = fields.Char('Description')  # 説明
+    description = fields.Text('Description')  # 説明
     isclosed = fields.Boolean('IsClosed')  # 完了済みフラグ
     closed_date = fields.Datetime('ClosedDate')  # 完了日
     is_escalated = fields.Boolean('IsEscalated')  # エスカレーションフラグ
@@ -124,7 +125,7 @@ class rtw_sf_case(models.Model):
         ('7', '工場関係者'),
     ], default='',
         string='Field52__c')  # 発見者
-    opportunity = fields.Many2one('crm.lead')  # 商談
+    opportunity = fields.Many2one('crm.lead', 'opportunity')  # 商談
     delivery_date = fields.Datetime('Field5__c')  # 納品日
     occurrence_status = fields.Selection([
         ('1', '納品後・使用中'),

@@ -1,13 +1,47 @@
 # -*- coding: utf-8 -*-
-
-from odoo import models, fields, api
+from odoo import api, models, fields
+_STATES = [
+    ("draft", "Draft"),
+    ("to_approve", "To be approved"),
+    ("approved", "Approved"),
+    ("rejected", "Rejected"),
+    ("done", "Done"),
+]
 
 
 class shinsei(models.Model):
     _name = 'shinsei.shinsei'
-    _description = 'shinsei.shinsei'
+    _inherit = ["mail.thread", "mail.activity.mixin", "tier.validation"]
+    _state_from = ["draft"]
+    _state_to = ["approved"]
 
-    owner = fields.Many2one('res.users', 'OwnerId')  # 所有者Id B
+    _tier_validation_manual_config = False
+
+    @api.model
+    def _get_default_requested_by(self):
+        return self.env["res.users"].browse(self.env.uid)
+
+    state = fields.Selection(
+        selection=_STATES,
+        string="Status",
+        index=True,
+        tracking=True,
+        required=True,
+        copy=False,
+        default="draft",
+    )
+
+    requested_by = fields.Many2one(
+        comodel_name="res.users",
+        string="Requested by",
+        required=True,
+        copy=False,
+        tracking=True,
+        default=_get_default_requested_by,
+        index=True,
+    )
+
+    owner = fields.Many2one('res.users', 'OwnerId', default=lambda self: self.env.user)  # 所有者Id B
     # is_deleted = fields.Integer('IsDeleted')  # 削除フラグ C ★0のみ
     name = fields.Char('Name')  # 件名 D
     record_type_id = fields.Char('RecordTypeId')  # レコードタイプ E
@@ -83,7 +117,14 @@ class shinsei(models.Model):
     progress = fields.Char('Field45__c')  # 進捗 BW
     business_partner_manager = fields.Many2one('res.partner', 'Field46__c')  # 取引先責任者 BX
     progress_report = fields.Char('Field52__c')  # 進捗（報告書） BY
-
+    shinsei_type = fields.Selection([
+        ("sample", "サンプル制作依頼"),
+        ("kikaku", "企画・広報関連申請"),
+        ("bihin", "備品破損・滅失報告書"),
+        ("syucho", "出張申請"),
+        ("buppin", "物品購入申請"),
+        ("keihi", "経費精算"),
+    ], string="申請種別")
 #     value = fields.Integer()
 #     value2 = fields.Float(compute="_value_pc", store=True)
 #     description = fields.Text()
@@ -92,3 +133,9 @@ class shinsei(models.Model):
 #     def _value_pc(self):
 #         for record in self:
 #             record.value2 = float(record.value) / 100
+
+    @api.model
+    def _get_under_validation_exceptions(self):
+        res = super(shinsei, self)._get_under_validation_exceptions()
+        res.append("route_id")
+        return res
