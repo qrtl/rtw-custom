@@ -8,7 +8,7 @@ class rtw_crm(models.Model):
 
     stage_sort_order = fields.Integer('StageSortOrder')  # 受注段階コード H列
     # expected_revenue = fields.Monetary('ExpectedRevenue')  # 予想売上高 K列
-    reference_price = fields.Monetary(compute="_get_reference_price", currency_field='company_currency', store=True, racking=True)
+    # reference_price = fields.Monetary(compute="_get_reference_price", currency_field='company_currency', store=True, racking=True)
     # close_date = fields.Datetime('CloseDate')  # 完了日 M列
     x_type = fields.Char('Type')  # N列
     nextstep = fields.Char('NextStep')  # 次の段階 O列
