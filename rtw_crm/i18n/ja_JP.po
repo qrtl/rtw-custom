@@ -1762,6 +1762,11 @@ msgstr "審査"
 #. module: rtw_crm
 #: model_terms:ir.ui.view,arch_db:rtw_crm.view_crm_form_sf
 msgid "expected_revenue"
+msgstr "売上見込\t"
+
+#. module: rtw_crm
+#: model_terms:ir.ui.view,arch_db:rtw_crm.view_crm_form_sf
+msgid "reference_price"
 msgstr "参考上代\t"
 
 #. module: rtw_crm

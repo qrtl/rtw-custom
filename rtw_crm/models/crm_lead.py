@@ -7,8 +7,8 @@ class rtw_crm(models.Model):
     _inherit = 'crm.lead'
 
     stage_sort_order = fields.Integer('StageSortOrder')  # 受注段階コード H列
-    # expected_revenue = fields.Float('ExpectedRevenue')  # 予想売上高 K列
-
+    # expected_revenue = fields.Monetary('ExpectedRevenue')  # 予想売上高 K列
+    reference_price = fields.Monetary(compute="_get_reference_price", currency_field='company_currency', store=True, racking=True)
     # close_date = fields.Datetime('CloseDate')  # 完了日 M列
     x_type = fields.Char('Type')  # N列
     nextstep = fields.Char('NextStep')  # 次の段階 O列
@@ -833,3 +833,12 @@ class rtw_crm(models.Model):
                 if self.stage_id.name == "受注成立" or self.stage_id.name == "ロスト":
                     self.opportunity_completion_date = fields.datetime.now()
 
+    @api.depends('expected_revenue', 'rate')
+    def _get_reference_price(self):
+        for rec in self:
+            if rec.rate >0 :
+                reference_price = rec.expected_revenue * rec.rate
+                print(reference_price)
+                rec.reference_price = reference_price
+            else:
+                rec.reference_price = rec.expected_revenue
