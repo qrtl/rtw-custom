@@ -392,7 +392,8 @@
             <field name="res_model">ir.filters</field>
             <field name="view_mode">tree,form</field>
             <field name="view_id" ref="base.ir_filters_view_tree"/>
-            <field name="context">{"search_default_model_id":"crm.lead","user_id":uid}</field>
+            <field name="context">{"search_default_model_id":"crm.lead"}</field>
+            <field name="domain">[('user_id', '=', uid)]</field>
         </record>
 
         <menuitem
