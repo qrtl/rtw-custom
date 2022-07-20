@@ -1,0 +1,16 @@
+<odoo>
+    <data>
+        <record id="view_crm_role_crm" model="ir.ui.view">
+            <field name="name">partner role crm</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='internal_notes']" position="after">
+                    <page name="relate crm" string="関連商談">
+                        <field name="rel_crm"/>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
