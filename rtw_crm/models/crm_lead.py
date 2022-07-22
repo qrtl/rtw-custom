@@ -8,10 +8,11 @@ class rtw_crm(models.Model):
 
     stage_sort_order = fields.Integer('StageSortOrder')  # 受注段階コード H列
     # expected_revenue = fields.Monetary('ExpectedRevenue')  # 予想売上高 K列
-    reference_price = fields.Monetary(compute="_get_reference_price", currency_field='company_currency', store=True, racking=True)
+    reference_price = fields.Monetary(compute="_get_reference_price", currency_field='company_currency', store=True,
+                                      tracking=True)
     # close_date = fields.Datetime('CloseDate')  # 完了日 M列
     x_type = fields.Char('Type')  # N列
-    nextstep = fields.Char('NextStep')  # 次の段階 O列
+    nextstep = fields.Char('NextStep', tracking=True)  # 次の段階 O列
     lead_source = fields.Selection([
         ('1', '通常営業'),
         ('2', 'リサーチ・新規開拓'),
@@ -71,7 +72,7 @@ class rtw_crm(models.Model):
         ('55', '納品時の案内用紙'),
         ('56', '雑誌'),
     ], default='',
-        string='LeadSource')  # 見込み顧客の獲得方法 P列
+        string='LeadSource', tracking=True)  # 見込み顧客の獲得方法 P列
     isclosed = fields.Boolean('IsClosed')  # 完了済みフラグ Q列
     is_won = fields.Boolean('IsWon')  # 成約フラグ R列
     forecast_category = fields.Char('ForecastCategory')  # 予測カテゴリ S列
@@ -82,7 +83,7 @@ class rtw_crm(models.Model):
         ('4', '最終交渉'),
         ('5', '受注成立'),
     ], default='',
-        string='ForecastCategoryName')  # 予測カテゴリ名 T列
+        string='ForecastCategoryName', tracking=True)  # 予測カテゴリ名 T列
     # campaign_id = fields.Char('CampaignId')  # キャンペーンId U列
     # has_opportunity_line_item = fields.Char('HasOpportunityLineItem')  # 段階名 V列
     # price_book2_id = fields.Char('Pricebook2Id')  # 段階名 W列
@@ -100,19 +101,19 @@ class rtw_crm(models.Model):
     contact_id = fields.Many2one('res.partner', 'ContactId')  # コンタクトId
     primary_partner_Account_id = fields.Char('PrimaryPartnerAccountId')  # プライマリーパートナーId
     # synced_quote_id = fields.Char('SyncedQuoteId')  # 同期引用Id
-    contract_id = fields.One2many('contract.contract', inverse_name="related_opportunity", string='ContractId')  # 契約Id
+    contract_id = fields.One2many('contract.contract', inverse_name="related_opportunity", string='ContractId', tracking=True)  # 契約Id
     last_amount_changed_history_id = fields.Char('LastAmountChangedHistoryId')  # 最終金額変更履歴
     last_close_date_changed_history_id = fields.Char('LastCloseDateChangedHistoryId')  # 最終完了日変更履歴
-    progress_check_date = fields.Datetime('Field1__c')  # 進捗確認日 AN列
-    quote_number_by_hukusuke = fields.Char('Field2__c')  # 福助で採番される見積番号 AO列
+    progress_check_date = fields.Datetime('Field1__c', tracking=True)  # 進捗確認日 AN列
+    quote_number_by_hukusuke = fields.Char('Field2__c', tracking=True)  # 福助で採番される見積番号 AO列
     quote_number = fields.Char('Field3_del__c')  # 見積番号 AP列
-    previous_amount = fields.Float('previousamount__c')  # 直前の金額 AQ列
+    previous_amount = fields.Float('previousamount__c', tracking=True)  # 直前の金額 AQ列
     opportunity_number = fields.Char('Field4__c')  # 商談番号 AR列　
     last_amount_changed_datetime = fields.Datetime('lastamountchangedatetime__c')  # 最終金額変更日時 AS列
     presentation = fields.Boolean('presentation__c')  # 通常プレゼン AT列 ★0，1，空白あり
     project_details = fields.Text('Field60__c')  # 案件詳細 AU列
     Determined_on_the_day = fields.Boolean('Determinedontheday__c', default=0)  # 当日確定 AV列 ★0，1，空白あり
-    delivery_date_unknown = fields.Boolean('Field5__c', default=0)  # 納期不明 AW列 ★0，1，空白あり
+    delivery_date_unknown = fields.Boolean('Field5__c', default=0, tracking=True)  # 納期不明 AW列 ★0，1，空白あり
     delivery_type = fields.Selection([
         ('1', '住宅系（戸建・マンション）'),
         ('2', '医療福祉（病院・老健等）'),
@@ -123,9 +124,9 @@ class rtw_crm(models.Model):
         ('7', '小物（家具以外）'),
         ('8', 'その他'),
     ], default='',
-        string='Field6__c')  # 納入先種別 AX列
+        string='Field6__c', tracking=True)  # 納入先種別 AX列
     order_amount = fields.Float('Field7__c')  # 受注額 AY列　注意
-    omotesando_visit = fields.Boolean('Field87__c', default=0)  # 表参道来店 AZ列 ★0，1，空白あり
+    omotesando_visit = fields.Boolean('Field87__c', default=0, tracking=True)  # 表参道来店 AZ列 ★0，1，空白あり
     fair = fields.Char('Field22__c')  # Fair BA列
     million_amount = fields.Float('X100_amount__c')  # 100万金額 BB列
     million_order_amount = fields.Float('X100_amount_a__c')  # 100万受注額 BC列 注意
@@ -175,7 +176,7 @@ class rtw_crm(models.Model):
         ('9', 'ワークスペース'),
         ('10', 'その他'),
     ], default='',
-        string='Field63_purpose__c')  # 使用用途① BL列
+        string='Field63_purpose__c', tracking=True)  # 使用用途① BL列
     Use_Purpose2 = fields.Selection([
         ('1', 'ダイニング'),
         ('2', 'ラウンジ・カフェ'),
@@ -188,7 +189,7 @@ class rtw_crm(models.Model):
         ('9', 'ワークスペース'),
         ('10', 'その他'),
     ], default='',
-        string='Field64_purpose__c')  # 使用用途② BM列
+        string='Field64_purpose__c', tracking=True)  # 使用用途② BM列
     Use_Purpose3 = fields.Selection([
         ('1', 'ダイニング'),
         ('2', 'ラウンジ・カフェ'),
@@ -201,13 +202,13 @@ class rtw_crm(models.Model):
         ('9', 'ワークスペース'),
         ('10', 'その他'),
     ], default='',
-        string='Field65_purpose__c')  # 使用用途③ BN列
+        string='Field65_purpose__c', tracking=True)  # 使用用途③ BN列
     other = fields.Boolean('ITEM_other_08__c', default=0)  # その他 BO列 ★0，1，空白あり
     ac = fields.Boolean('CHAI_2__c', default=0)  # AC BP列 ★0，空白あり
-    website = fields.Char('WEB__c')  # WEBサイト BQ列
+    website = fields.Char('WEB__c', tracking=True)  # WEBサイト BQ列
     competitive_reason = fields.Text('Field31__c')  # 競合理由 BR列
-    order_no = fields.Char('NO__c')  # 受注NO BS列
-    facility_name = fields.Char('Field64__c')  # 施設名 BT列
+    order_no = fields.Char('NO__c', tracking=True)  # 受注NO BS列
+    facility_name = fields.Char('Field64__c', tracking=True)  # 施設名 BT列
     competition_other = fields.Char('Field17__c')  # 競合（その他） BU列
     competitive_product_d = fields.Selection([
         ('1', 'Dt'),
@@ -287,7 +288,7 @@ class rtw_crm(models.Model):
         ('12', 'ミラノサローネ'),
         ('13', 'その他'),
     ], default='',
-        string='Field23__c')  # アクション① CD列
+        string='Field23__c', tracking=True)  # アクション① CD列
     memo = fields.Text('Field35_del__c')  # メモ CE列
     branch = fields.Char('Branch__c')  # Branch CF列
     action2 = fields.Selection([
@@ -302,16 +303,16 @@ class rtw_crm(models.Model):
         ('9', '(R)WEBフォーム'),
         ('10', 'その他'),
     ], default='',
-        string='Field24__c')  # アクション② CG列
+        string='Field24__c', tracking=True)  # アクション② CG列
     last_event_comment = fields.Text('LastEventComment__c')  # 最終行動コメント CH列
     diana_count = fields.Float('DIANA__c')  # DIANA台数 CI列
     sample_sale = fields.Selection([
         ('all', '全て'),
         ('same', '一部'),
         ], default='',
-        string='Field25__c')  # サンプル販売 CJ列
-    sample_sales_amount = fields.Integer('Field26__c')  # サンプル販売金額 CK列
-    push_c = fields.Float('Push_Counter__c')  # Push C(完了予定日を翌月以降に変更した回数をカウント) CL列
+        string='Field25__c', tracking=True)  # サンプル販売 CJ列
+    sample_sales_amount = fields.Integer('Field26__c', tracking=True)  # サンプル販売金額 CK列
+    push_c = fields.Float('Push_Counter__c', tracking=True)  # Push C(完了予定日を翌月以降に変更した回数をカウント) CL列
     area = fields.Char('Field32_del__c')  # エリア CM列
     pre_contract_presentation = fields.Boolean('Field34_plan2__c')  # 契約前プレゼン CN列
     overlap = fields.Char('Field34__c')  # Overlap CO列
@@ -665,8 +666,8 @@ class rtw_crm(models.Model):
         ('30', '該当なし（不明）'),
         ('31', 'マンション一般邸（IC直販）'),
     ], default='',
-        string="Type") #
-    accuracy = fields.Float('Field38__c')  # 確度（変更前） DT列　注意
+        string="Type", tracking=True)
+    accuracy = fields.Float('Field38__c', tracking=True)  # 確度（変更前） DT列　注意
     last_accuracy_changed_date = fields.Datetime('Field39__c')  # 最終確度変更日時 DU列
     result = fields.Selection([
         ('1', 'R〇競×'),
@@ -676,7 +677,7 @@ class rtw_crm(models.Model):
         ('5', '不明'),
     ], default='',
         string='Field40__c')  # 結果 DV列
-    On_site_delivery_date = fields.Datetime('Field43__c')  # 現場納品日 DW列
+    On_site_delivery_date = fields.Datetime('Field43__c', tracking=True)  # 現場納品日 DW列
     beatrix_count = fields.Float('BEATRIX_count__c')  # BEATRIX台数 DX列
     jabara_count = fields.Float('JABARA__c')  # JABARA台数 DY列
     lf_set_count = fields.Float('LF__c')  # LFセット数 DZ列
@@ -702,7 +703,7 @@ class rtw_crm(models.Model):
         ('8', '特注'),
     ], default='',
         string='OT2__c')  # 商品リスト(ソファOT2) EB列
-    rate = fields.Float('Field74__c')  # 掛率 EC列
+    rate = fields.Float('Field74__c', tracking=True)  # 掛率 EC列
     dummy = fields.Boolean('Field75__c', defaule=0)  # ﾀﾞﾐｰ ED列
     lw_set_count = fields.Float('LW_5__c')  # LWセット数 EE列
     trw_candidate = fields.Boolean('TRW__c', defaule=0)  # TRW候補 EF列
@@ -731,9 +732,9 @@ class rtw_crm(models.Model):
         ('4', '4F～'),
         ('ug', '地下'),
     ], default='',
-        string='Field57__c')  # 設置階 EO列
-    delivery_route_required_confirmation = fields.Boolean('Field58__c', default=0)  # 搬入経路要確認 EP列
-    elevator_having = fields.Boolean('EV__c', default=0)  # EV有 EQ列
+        string='Field57__c', tracking=True)  # 設置階 EO列
+    delivery_route_required_confirmation = fields.Boolean('Field58__c', default=0, tracking=True)  # 搬入経路要確認 EP列
+    elevator_having = fields.Boolean('EV__c', default=0, tracking=True)  # EV有 EQ列
     budget_data = fields.Boolean('SFDC_Budget__c', default=0)  # 予算データ ER列
     lost = fields.Float('Field59__c')  # ロスト ES列
     p_author = fields.Many2one('res.users', 'P__c')  # P作成者(代表） ET列
@@ -759,15 +760,15 @@ class rtw_crm(models.Model):
         ('8', '特注品'),
     ], default='',
         string='Bench2__c')  # 商品リスト（Bench2) EV列
-    procurement_company = fields.Many2one('res.partner', 'Field77__c')  # 調達会社 EW列
-    address_no = fields.Char('Field78__c')  # 〒 EX列
-    address = fields.Char('Field79__c')  # 住所 EY列
-    tel = fields.Char('Field80__c')  # 電話 EZ列
-    person_name = fields.Char('Field81__c')  # 名前 FA列
-    furigana = fields.Char('Field82__c')  # フリガナ FB列
-    depot = fields.Char('Field83__c')  # デポ FC列
-    depot_arrival_date = fields.Datetime('Field84__c')  # デポ着日 FD列
-    to_arrangement_depot = fields.Boolean('Field85__c', default=0)  # 手配デポまで FE列
+    procurement_company = fields.Many2one('res.partner', 'Field77__c', tracking=True)  # 調達会社 EW列
+    address_no = fields.Char('Field78__c', tracking=True)  # 〒 EX列
+    address = fields.Char('Field79__c', tracking=True)  # 住所 EY列
+    tel = fields.Char('Field80__c', tracking=True)  # 電話 EZ列
+    person_name = fields.Char('Field81__c', tracking=True)  # 名前 FA列
+    furigana = fields.Char('Field82__c', tracking=True)  # フリガナ FB列
+    depot = fields.Char('Field83__c', tracking=True)  # デポ FC列
+    depot_arrival_date = fields.Datetime('Field84__c', tracking=True)  # デポ着日 FD列
+    to_arrangement_depot = fields.Boolean('Field85__c', default=0, tracking=True)  # 手配デポまで FE列
     special_remarks = fields.Text('Field86__c')  # Photographer FF列
     case_ids = fields.One2many(
         comodel_name="rtw_sf_case",
