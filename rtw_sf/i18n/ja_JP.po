@@ -1489,7 +1489,7 @@ msgstr "納品種別"
 #. module: rtw_sf
 #: model_terms:ir.ui.view,arch_db:rtw_sf.view_partner_form_sf
 msgid "department"
-msgstr "取引先部門"
+msgstr "部署"
 
 #. module: rtw_sf
 #: model_terms:ir.ui.view,arch_db:rtw_sf.rtw_sf_case_form
