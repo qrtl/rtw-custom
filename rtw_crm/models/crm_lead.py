@@ -442,7 +442,7 @@ class rtw_crm(models.Model):
         ('10', 'RV TABLE'),
     ], default='',
         string='St1__c')  # 商品リスト(St1) DA列
-    opportunity_completion_date = fields.Datetime('Field72__c')  # 商談完了日 DB列
+    opportunity_completion_date = fields.Datetime('Field72__c', tracking=True)  # 商談完了日 DB列
     product_list_ot_st1 = fields.Selection([
         ('1', 'BEATRIX(OT)'),
         ('2', 'BLAVA（OT)'),
@@ -780,6 +780,13 @@ class rtw_crm(models.Model):
         string="calendar", )
     belong = fields.Char(compute="_get_belong", store=True)
 
+    tracking_deadline = fields.Date(compute="_set_deadline", store=True, tracking=True)
+
+    @api.depends('date_deadline')
+    def _set_deadline(self):
+        for rec in self:
+            rec.tracking_deadline = rec.date_deadline
+
     @api.depends('user_id')
     def _get_belong(self):
         for rec in self:
@@ -837,7 +844,7 @@ class rtw_crm(models.Model):
     def _get_reference_price(self):
         for rec in self:
             if rec.rate >0 :
-                reference_price = rec.expected_revenue * rec.rate / 100
+                reference_price = rec.expected_revenue / rec.rate * 100
                 print(reference_price)
                 rec.reference_price = reference_price
             else:

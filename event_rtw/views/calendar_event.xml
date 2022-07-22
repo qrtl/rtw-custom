@@ -163,6 +163,12 @@
                 <xpath expr="//group" position="inside">
                     <filter string="ShowRoom" name="ショールーム" domain="[]" context="{'group_by': 'sr'}"/>
                 </xpath>
+                <field name="name" position="attributes">
+                    <attribute name="filter_domain">['|',
+                        ('name', 'ilike', self),
+                        ('description', 'ilike', self), ]
+                    </attribute>
+                </field>
             </field>
         </record>
     </data>

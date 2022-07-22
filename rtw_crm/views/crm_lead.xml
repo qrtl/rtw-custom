@@ -386,6 +386,23 @@
             <field name="view_id" ref="rtw_sale_manage_list"/>
             <field name="context">{"search_default_assigned_to_me":1,"search_default_year":1}</field>
         </record>
+        <record id="action_filter_list" model="ir.actions.act_window">
+            <field name="name">フィルタ</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">ir.filters</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="base.ir_filters_view_tree"/>
+            <field name="context">{"search_default_model_id":"crm.lead"}</field>
+            <field name="domain">[('user_id', '=', uid)]</field>
+        </record>
+
+        <menuitem
+                name="フィルタ管理"
+                id="menu_filter_list"
+                action="action_filter_list"
+                parent="crm.crm_menu_config"
+                sequence="10"
+        />
 
         <menuitem
                 id="menu_sale_manage_crm"

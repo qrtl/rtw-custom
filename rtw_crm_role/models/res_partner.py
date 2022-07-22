@@ -6,10 +6,15 @@ from odoo import models, fields, api
 class rtw_crm_role_partner(models.Model):
     _inherit = 'res.partner'
 
-    crm_ids = fields.Many2many(
-        comodel_name='crm.lead',
-        relation="partner_crm_rel",
-        inverse_name='crm_ids')
+    rel_crm = fields.Many2many(
+        comodel_name="crm.lead",
+        compute="_get_rel_crm",
+        inverse_name='partner_id')
+
+    def _get_rel_crm(self):
+        for rec in self:
+            print(self.id)
+            rec.rel_crm = self.env['crm.lead'].search([('role_ids.contact_id', '=', self.id)])
     # role = fields.Selection([
     #     ('1', '意思決定者'),
     #     ('2', '業務担当者'),
