@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 14.0\n"
+"Project-Id-Version: Odoo Server 14.0-20220225\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-11 00:02+0000\n"
-"PO-Revision-Date: 2022-05-11 00:02+0000\n"
+"POT-Creation-Date: 2022-07-09 03:22+0000\n"
+"PO-Revision-Date: 2022-07-09 03:22+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -23,87 +23,82 @@ msgstr ""
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__accounts
 msgid "Account"
-msgstr ""
-
-#. module: contract
-#: model:ir.model,name:contract.model_res_partner
-msgid "Account.csv"
-msgstr ""
+msgstr "取引先"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__message_needaction
 msgid "Action Needed"
-msgstr ""
+msgstr "要アクション"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__activated_by_id
 msgid "ActivatedById"
-msgstr ""
+msgstr "有効化設定者"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__activated_date
 msgid "ActivatedDate"
-msgstr ""
+msgstr "有効日"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__activity_ids
 msgid "Activities"
-msgstr ""
+msgstr "活動"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__activity_exception_decoration
 msgid "Activity Exception Decoration"
-msgstr ""
+msgstr "例外の活動を示す文字装飾"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__activity_state
 msgid "Activity State"
-msgstr ""
+msgstr "活動状態"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__activity_type_icon
 msgid "Activity Type Icon"
-msgstr ""
+msgstr "活動種別アイコン"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__message_attachment_count
 msgid "Attachment Count"
-msgstr ""
+msgstr "添付数"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__billing_city
 msgid "BillingCity"
-msgstr ""
+msgstr "請求先市区町村"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__billing_country
 msgid "BillingCountry"
-msgstr ""
+msgstr "請求先国"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__billing_postal_code
 msgid "BillingPostalCode"
-msgstr ""
+msgstr "請求先郵便番号"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__billing_state
 msgid "BillingState"
-msgstr ""
+msgstr "請求先都道府県/州"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__billing_Street
 msgid "BillingStreet"
-msgstr ""
+msgstr "請求先町名番地"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__company_signed_date
 msgid "CompanySignedDate"
-msgstr ""
+msgstr "自社調印日"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__company_signed_id
 msgid "CompanySignedId"
-msgstr ""
+msgstr "自社調印者"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_res_partner__contract
@@ -114,47 +109,47 @@ msgstr "契約"
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__contract_number
 msgid "ContractNumber"
-msgstr ""
+msgstr "契約番号"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__contract_term
 msgid "ContractTerm"
-msgstr ""
+msgstr "契約期間（月）"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__create_uid
 msgid "Created by"
-msgstr ""
+msgstr "作成者"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__create_date
 msgid "Created on"
-msgstr ""
+msgstr "作成日"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__created_by_id
 msgid "CreatedById"
-msgstr ""
+msgstr "作成者"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__created_date
 msgid "CreatedDate"
-msgstr ""
+msgstr "作成日"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__customer_signed_date
 msgid "CustomerSignedDate"
-msgstr ""
+msgstr "顧客調印日"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__customer_signed_id
 msgid "CustomerSignedId"
-msgstr ""
+msgstr "顧客調印者"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__description
 msgid "Description"
-msgstr ""
+msgstr "説明"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__display_name
@@ -165,142 +160,142 @@ msgstr "表示名"
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__tel_fax
 msgid "FAX__c"
-msgstr ""
+msgstr "電話・FAX"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__campaign_id
 msgid "Field12__c"
-msgstr ""
+msgstr "キャンペーンId"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__transaction_method
 msgid "Field14__c"
-msgstr ""
+msgstr "取引方法"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__payment_terms_fare
 msgid "Field15__c"
-msgstr ""
+msgstr "支払条件運賃"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__address_change
 msgid "Field17__c"
-msgstr ""
+msgstr "住所変更"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__transaction_terms_change
 msgid "Field18__c"
-msgstr ""
+msgstr "取引条件変更"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__change_description
 msgid "Field19__c"
-msgstr ""
+msgstr "変更説明"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__lending_reason
 msgid "Field1__c"
-msgstr ""
+msgstr "貸出理由"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__consolidation
 msgid "Field20__c"
-msgstr ""
+msgstr "統廃合"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__name_change
 msgid "Field21__c"
-msgstr ""
+msgstr "取引先名・部門名変更"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__transaction_category
 msgid "Field26__c"
-msgstr ""
+msgstr "取引区分"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__related_opportunity
 msgid "Field27__c"
-msgstr ""
+msgstr "関連商談"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__partner_manager
 msgid "Field29__c"
-msgstr ""
+msgstr "取引先責任者"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__confirmed_by_superior
 msgid "Field2__c"
-msgstr ""
+msgstr "上長確認済"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__transaction_method_personal
 msgid "Field37__c"
-msgstr ""
+msgstr "取引方法（個）"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__payment_terms_fare_personal
 msgid "Field38__c"
-msgstr ""
+msgstr "支払条件運賃（個）"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__transaction_method_personal2
 msgid "Field39__c"
-msgstr ""
+msgstr "取引区分（個）"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__implementation_plan
 msgid "Field3__c"
-msgstr ""
+msgstr "実行案"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__rate_black
 msgid "Field40__c"
-msgstr ""
+msgstr "掛率（黒）"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__rate_green
 msgid "Field41__c"
-msgstr ""
+msgstr "掛率（緑）"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__rate_black_personal
 msgid "Field42__c"
-msgstr ""
+msgstr "掛率（黒）個"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__rate_green_personal
 msgid "Field43__c"
-msgstr ""
+msgstr "掛率（緑）個"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__update_reason
 msgid "Field5__c"
-msgstr ""
+msgstr "更新理由"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__long_term_lending
 msgid "Field7__c"
-msgstr ""
+msgstr "長期貸出【参照】"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__classification1
 msgid "Field8__c"
-msgstr ""
+msgstr "分類1"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__message_follower_ids
 msgid "Followers"
-msgstr ""
+msgstr "フォロワー"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__message_channel_ids
 msgid "Followers (Channels)"
-msgstr ""
+msgstr "フォロワー (チャネル)"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__message_partner_ids
 msgid "Followers (Partners)"
-msgstr ""
+msgstr "フォロワー (パートナー)"
 
 #. module: contract
 #: model:ir.model.fields,help:contract.field_contract_contract__activity_type_icon
@@ -316,7 +311,7 @@ msgstr ""
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__activity_exception_icon
 msgid "Icon"
-msgstr ""
+msgstr "アイコン"
 
 #. module: contract
 #: model:ir.model.fields,help:contract.field_contract_contract__activity_exception_icon
@@ -337,7 +332,7 @@ msgstr ""
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__message_is_follower
 msgid "Is Follower"
-msgstr ""
+msgstr "フォロー中"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract____last_update
@@ -348,67 +343,67 @@ msgstr "最終更新日"
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "最終更新者"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "最終更新日"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__last_modified_by_id
 msgid "LastModifiedById"
-msgstr ""
+msgstr "最終更新者"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__last_modified_date
 msgid "LastModifiedDate"
-msgstr ""
+msgstr "最終更新日"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__message_main_attachment_id
 msgid "Main Attachment"
-msgstr ""
+msgstr "主な添付"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__message_has_error
 msgid "Message Delivery error"
-msgstr ""
+msgstr "メッセージ配信エラー"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__message_ids
 msgid "Messages"
-msgstr ""
+msgstr "メッセージ"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__my_activity_date_deadline
 msgid "My Activity Deadline"
-msgstr ""
+msgstr "活動期限"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__activity_date_deadline
 msgid "Next Activity Deadline"
-msgstr ""
+msgstr "次の活動期限"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__activity_summary
 msgid "Next Activity Summary"
-msgstr ""
+msgstr "次の活動サマリ"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__activity_type_id
 msgid "Next Activity Type"
-msgstr ""
+msgstr "次の活動タイプ"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__message_needaction_counter
 msgid "Number of Actions"
-msgstr ""
+msgstr "アクションの数"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__message_has_error_counter
 msgid "Number of errors"
-msgstr ""
+msgstr "エラー数"
 
 #. module: contract
 #: model:ir.model.fields,help:contract.field_contract_contract__message_needaction_counter
@@ -428,67 +423,67 @@ msgstr ""
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__owner_expiration_notice
 msgid "OwnerExpirationNotice"
-msgstr ""
+msgstr "所有者に対する終了通知"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__owner_id
 msgid "OwnerId"
-msgstr ""
+msgstr "契約所有者"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__record_type_id
 msgid "RecordTypeId"
-msgstr ""
+msgstr "契約レコードタイプ"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__activity_user_id
 msgid "Responsible User"
-msgstr ""
+msgstr "担当者"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__sales_amount_declaration
 msgid "Sales_amount_declaration__c"
-msgstr ""
+msgstr "売上目標"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__shipping_city
 msgid "ShippingCity"
-msgstr ""
+msgstr "配送先市区町村"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__shipping_country
 msgid "ShippingCountry"
-msgstr ""
+msgstr "配送先国"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__shipping_postal_code
 msgid "ShippingPostalCode"
-msgstr ""
+msgstr "配送先郵便番号"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__shipping_state
 msgid "ShippingState"
-msgstr ""
+msgstr "配送先都道府県/州"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__shipping_street
 msgid "ShippingStreet"
-msgstr ""
+msgstr "配送先町名番地"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__special_terms
 msgid "SpecialTerms"
-msgstr ""
+msgstr "特別条件"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__start_date
 msgid "StartDate"
-msgstr ""
+msgstr "契約開始日"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__status
 msgid "Status"
-msgstr ""
+msgstr "状況"
 
 #. module: contract
 #: model:ir.model.fields,help:contract.field_contract_contract__activity_state
@@ -502,12 +497,12 @@ msgstr ""
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__status_code
 msgid "StatusCode"
-msgstr ""
+msgstr "状況コード"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__system_mod_stamp
 msgid "SystemModstamp"
-msgstr ""
+msgstr "システム最終更新日"
 
 #. module: contract
 #: model:ir.model.fields,help:contract.field_contract_contract__activity_exception_decoration
@@ -517,31 +512,37 @@ msgstr ""
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__message_unread
 msgid "Unread Messages"
-msgstr ""
+msgstr "未読メッセージ件数"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__message_unread_counter
 msgid "Unread Messages Counter"
-msgstr ""
+msgstr "未読メッセージカウンター"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__website
 msgid "WEB__c"
-msgstr ""
+msgstr "WEBサイト"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__payment_terms1_personal
 msgid "X1_100__c"
-msgstr ""
+msgstr "支払条件1（個）"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__payment_terms2_personal
 msgid "X2_100__c"
-msgstr ""
+msgstr "支払条件2（個）"
 
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__classification2
 msgid "X2__c"
+msgstr "分類2"
+
+#. module: contract
+#: model_terms:ir.ui.view,arch_db:contract.contract_list
+#: model_terms:ir.ui.view,arch_db:contract.rtw_sf_contract_form
+msgid "accounts"
 msgstr ""
 
 #. module: contract
@@ -614,6 +615,7 @@ msgid "contract_number"
 msgstr "契約番号"
 
 #. module: contract
+#: model_terms:ir.ui.view,arch_db:contract.contract_list
 #: model_terms:ir.ui.view,arch_db:contract.rtw_sf_contract_form
 msgid "contract_term"
 msgstr "契約期間（月）"
@@ -642,6 +644,11 @@ msgstr "顧客調印者"
 #: model_terms:ir.ui.view,arch_db:contract.rtw_sf_contract_form
 msgid "description"
 msgstr "説明"
+
+#. module: contract
+#: model:ir.model,name:contract.model_res_partner
+msgid "inquiry"
+msgstr ""
 
 #. module: contract
 #: model_terms:ir.ui.view,arch_db:contract.rtw_sf_contract_form
@@ -699,11 +706,13 @@ msgid "rate_green_personal"
 msgstr "掛率（緑）個"
 
 #. module: contract
+#: model_terms:ir.ui.view,arch_db:contract.contract_list
 #: model_terms:ir.ui.view,arch_db:contract.rtw_sf_contract_form
 msgid "record_type_id"
 msgstr "契約レコードタイプ"
 
 #. module: contract
+#: model_terms:ir.ui.view,arch_db:contract.contract_list
 #: model_terms:ir.ui.view,arch_db:contract.rtw_sf_contract_form
 msgid "related_opportunity"
 msgstr "関連商談"
@@ -711,7 +720,7 @@ msgstr "関連商談"
 #. module: contract
 #: model:ir.model.fields,field_description:contract.field_contract_contract__sales_amount_results
 msgid "sales_results__c"
-msgstr ""
+msgstr "現状売上（直近一年間）"
 
 #. module: contract
 #: model_terms:ir.ui.view,arch_db:contract.rtw_sf_contract_form
@@ -739,11 +748,13 @@ msgid "shipping_street"
 msgstr "番地"
 
 #. module: contract
+#: model_terms:ir.ui.view,arch_db:contract.contract_list
 #: model_terms:ir.ui.view,arch_db:contract.rtw_sf_contract_form
 msgid "start_date"
 msgstr "契約開始日"
 
 #. module: contract
+#: model_terms:ir.ui.view,arch_db:contract.contract_list
 #: model_terms:ir.ui.view,arch_db:contract.rtw_sf_contract_form
 msgid "status"
 msgstr "状況"
