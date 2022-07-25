@@ -204,7 +204,7 @@ class rtw_sf_case(models.Model):
     cause_person_name = fields.Char('Field30__c')  # 原因担当者名
     billing_coping_cost = fields.Integer('Field31__c')  # 請求対処コスト
     sales_department_comments = fields.Text('Field44__c')  # 営業部コメント
-    report_date = fields.Datetime('Field34__c')  # 通報日
+    report_date = fields.Datetime('Field34__c', default=lambda self: fields.Datetime.now())  # 通報日
     Initial_response_date_by_person = fields.Datetime('Field35__c')  # 初動対応日(担当者)
     Initial_response_date_by_quality_control = fields.Datetime('Field36__c')  # 初動対応日(品管)
     double_cause = fields.Selection([
