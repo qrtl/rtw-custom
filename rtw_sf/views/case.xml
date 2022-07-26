@@ -27,14 +27,14 @@
             <field name="model">rtw_sf_case</field>
             <field name="arch" type="xml">
                 <tree>
-                    <field name="id" options="{'format': 0}" string="ケース番号"/>
+                    <field name="display_id" options="{'format': 0}" string="ケース番号"/>
                     <field name="owner_id" string="OwnerId"/>
                     <field name="order_no"/>
                     <field name="cope_order_no_1"/>
                     <field name="cope_order_no_2"/>
                     <field name="cope_order_no_3" />
-                    <field name="report_date" string="通報日"/>
-                    <field name="delivery_date" string="納品日"/>
+                    <field name="report_date_only" string="通報日"/>
+                    <field name="report_delivery_date" string="納品日"/>
                     <field name="quantity" string="数量"/>
                     <field name="subject"/>
                     <field name="description"/>

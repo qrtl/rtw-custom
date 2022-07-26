@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-
+import dateutil.parser
+from datetime import datetime, date, time
 from odoo import models, fields, api
 
 
@@ -258,8 +259,25 @@ class rtw_sf_case(models.Model):
     percentage_of_fault = fields.Float('percentage of fault')
     # , compute="_compute_percentage_of_fault")
     final_cost_total_sales = fields.Float('Final cost/total sales')
+    display_id = fields.Integer(related="id")
+    report_date_only = fields.Date(compute="_get_report_day", string="通報日")
+    report_delivery_date = fields.Date(compute="_get_delivery_date", string="納品日")
 
-    # , compute="_compute_final_cost_total_sales")
+    def _get_delivery_date(self):
+        for rec in self:
+            if rec.delivery_date:
+                rec.report_delivery_date = rec.delivery_date.date()
+            else:
+                rec.report_delivery_date = False
+
+    def _get_report_day(self):
+        for rec in self:
+            if rec.report_date:
+                rec.report_date_only = rec.report_date.date()
+            else:
+                rec.report_date_only = False
+
+                # , compute="_compute_final_cost_total_sales")
 
     # def _compute_percentage_of_fault(self):
     #     for rec in self:
