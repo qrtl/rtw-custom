@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 14.0\n"
+"Project-Id-Version: Odoo Server 14.0-20220225\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-22 09:23+0000\n"
-"PO-Revision-Date: 2022-07-22 09:23+0000\n"
+"POT-Creation-Date: 2022-07-26 02:22+0000\n"
+"PO-Revision-Date: 2022-07-26 02:22+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -70,21 +70,16 @@ msgid "Account"
 msgstr "取引先"
 
 #. module: rtw_sf
-#: model:ir.model,name:rtw_sf.model_res_partner
-msgid "Account.csv"
-msgstr ""
-
-#. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_res_partner__account_id
 #: model:ir.model.fields,field_description:rtw_sf.field_res_users__account_id
 msgid "AccountId"
-msgstr "取引先名"
+msgstr "取引先ID"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_res_partner__account_number
 #: model:ir.model.fields,field_description:rtw_sf.field_res_users__account_number
 msgid "AccountNumber"
-msgstr "取引先番号"
+msgstr "取引先No"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__message_needaction
@@ -151,7 +146,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:rtw_sf.field_res_partner__birthdate
 #: model:ir.model.fields,field_description:rtw_sf.field_res_users__birthdate
 msgid "Birthdate"
-msgstr "誕生日"
+msgstr "生年月日"
 
 #. module: rtw_sf
 #: model:ir.model.fields.selection,name:rtw_sf.selection__res_partner__evaluation__b
@@ -196,7 +191,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:rtw_sf.field_res_users__mc_subscriber
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__contacts
 msgid "Contact"
-msgstr ""
+msgstr "連絡先"
 
 #. module: rtw_sf
 #: model_terms:ir.ui.view,arch_db:rtw_sf.rtw_sf_case_form
@@ -271,7 +266,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:rtw_sf.field_res_partner__department
 #: model:ir.model.fields,field_description:rtw_sf.field_res_users__department
 msgid "Department"
-msgstr "取引先部門"
+msgstr "部門"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_res_partner__description
@@ -596,7 +591,7 @@ msgstr "所有者によるコメント未読の有無"
 #: model:ir.model.fields,field_description:rtw_sf.field_res_partner__opt_out_email
 #: model:ir.model.fields,field_description:rtw_sf.field_res_users__opt_out_email
 msgid "HasOptedOutOfEmail"
-msgstr "メール送信除外"
+msgstr "メール配信停止"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_res_partner__opt_out_fax
@@ -803,31 +798,31 @@ msgstr "リードソース"
 #: model:ir.model.fields,field_description:rtw_sf.field_res_partner__mailing_city
 #: model:ir.model.fields,field_description:rtw_sf.field_res_users__mailing_city
 msgid "MailingCity"
-msgstr "市町村(郵送先)"
+msgstr "郵送先市区町村"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_res_partner__mailing_country
 #: model:ir.model.fields,field_description:rtw_sf.field_res_users__mailing_country
 msgid "MailingCountry"
-msgstr "国(郵送先)"
+msgstr "郵送先国"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_res_partner__mailing_postal_code
 #: model:ir.model.fields,field_description:rtw_sf.field_res_users__mailing_postal_code
 msgid "MailingPostalCode"
-msgstr "郵便番号(郵送先)"
+msgstr "郵送先郵便番号"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_res_partner__mailing_state
 #: model:ir.model.fields,field_description:rtw_sf.field_res_users__mailing_state
 msgid "MailingState"
-msgstr "都道府県(郵送先)"
+msgstr "郵送先都道府県/州"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_res_partner__mailing_street
 #: model:ir.model.fields,field_description:rtw_sf.field_res_users__mailing_street
 msgid "MailingStreet"
-msgstr "番地(郵送先)"
+msgstr "郵送先町名番地"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__message_main_attachment_id
@@ -924,42 +919,43 @@ msgstr "発生場所"
 #: model:ir.model.fields,field_description:rtw_sf.field_res_partner__other_city
 #: model:ir.model.fields,field_description:rtw_sf.field_res_users__other_city
 msgid "OtherCity"
-msgstr "市町村(その他)"
+msgstr "その他市区町村"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_res_partner__other_country
 #: model:ir.model.fields,field_description:rtw_sf.field_res_users__other_country
 msgid "OtherCountry"
-msgstr "国(その他)"
+msgstr "その他国"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_res_partner__other_phone
 #: model:ir.model.fields,field_description:rtw_sf.field_res_users__other_phone
 msgid "OtherPhone"
-msgstr "その他の電話"
+msgstr "その他電話番号"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_res_partner__other_postal_code
 #: model:ir.model.fields,field_description:rtw_sf.field_res_users__other_postal_code
 msgid "OtherPostalCode"
-msgstr "郵便番号(その他)"
+msgstr "その他郵便番号"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_res_partner__other_state
 #: model:ir.model.fields,field_description:rtw_sf.field_res_users__other_state
 msgid "OtherState"
-msgstr "都道府県(その他)"
+msgstr "その他都道府県/州"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_res_partner__other_street
 #: model:ir.model.fields,field_description:rtw_sf.field_res_users__other_street
 msgid "OtherStreet"
-msgstr "番地(その他)"
+msgstr "その他町名番地"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__owner_id
 #: model_terms:ir.ui.view,arch_db:rtw_sf.rtw_sf_case_form
 #: model_terms:ir.ui.view,arch_db:rtw_sf.rtw_sf_case_list
+#: model_terms:ir.ui.view,arch_db:rtw_sf.rtw_sf_case_list_report
 msgid "OwnerId"
 msgstr "ケース所有者"
 
@@ -1152,7 +1148,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:rtw_sf.field_res_partner__ticker_symbol
 #: model:ir.model.fields,field_description:rtw_sf.field_res_users__ticker_symbol
 msgid "TickerSymbol"
-msgstr "株式コード"
+msgstr "銘柄コード"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_res_partner_transactions__name
@@ -1219,7 +1215,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:rtw_sf.field_res_users__joint_name
 #: model:ir.model.fields,field_description:rtw_sf.field_rtw_sf_case__cope_order_no_1
 msgid "X1__c"
-msgstr "連名"
+msgstr "連名1"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_res_partner__x20
@@ -1312,13 +1308,13 @@ msgstr "対処内容(品管)"
 #: model:ir.model.fields,field_description:rtw_sf.field_res_partner__action_1
 #: model:ir.model.fields,field_description:rtw_sf.field_res_users__action_1
 msgid "action1"
-msgstr ""
+msgstr "アクション①"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_res_partner__action_2
 #: model:ir.model.fields,field_description:rtw_sf.field_res_users__action_2
 msgid "action2"
-msgstr ""
+msgstr "アクション②"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_res_partner__address_confirmation_required
@@ -1538,7 +1534,7 @@ msgstr "納品種別"
 #. module: rtw_sf
 #: model_terms:ir.ui.view,arch_db:rtw_sf.view_partner_form_sf
 msgid "department"
-msgstr "取引先部門"
+msgstr "部署"
 
 #. module: rtw_sf
 #: model_terms:ir.ui.view,arch_db:rtw_sf.rtw_sf_case_form
@@ -1614,7 +1610,6 @@ msgstr "運賃コスト"
 
 #. module: rtw_sf
 #: model:ir.model.fields,field_description:rtw_sf.field_res_partner__gender
-#: model:ir.model.fields,field_description:rtw_sf.field_res_users__gender
 #: model_terms:ir.ui.view,arch_db:rtw_sf.view_partner_form_sf
 msgid "gender"
 msgstr "性別"
@@ -1670,6 +1665,11 @@ msgstr "産業"
 #: model_terms:ir.ui.view,arch_db:rtw_sf.rtw_sf_case_form
 msgid "initial explanation by person"
 msgstr "初動説明（担当者）"
+
+#. module: rtw_sf
+#: model:ir.model,name:rtw_sf.model_res_partner
+msgid "inquiry"
+msgstr ""
 
 #. module: rtw_sf
 #: model:ir.model.fields.selection,name:rtw_sf.selection__res_partner__web__insta
@@ -2296,8 +2296,14 @@ msgid "グラフィックデザイナー"
 msgstr ""
 
 #. module: rtw_sf
+#: model:ir.ui.menu,name:rtw_sf.action_case_report
+msgid "ケース抽出"
+msgstr ""
+
+#. module: rtw_sf
 #: model_terms:ir.ui.view,arch_db:rtw_sf.rtw_sf_case_form
 #: model_terms:ir.ui.view,arch_db:rtw_sf.rtw_sf_case_list
+#: model_terms:ir.ui.view,arch_db:rtw_sf.rtw_sf_case_list_report
 msgid "ケース番号"
 msgstr ""
 
@@ -2449,6 +2455,11 @@ msgid "リース業"
 msgstr ""
 
 #. module: rtw_sf
+#: model:ir.ui.menu,name:rtw_sf.case_report_root
+msgid "レポート"
+msgstr ""
+
+#. module: rtw_sf
 #: model:ir.model.fields.selection,name:rtw_sf.selection__res_partner__media_name__10
 msgid "ヴィズスタ"
 msgstr ""
@@ -2482,6 +2493,11 @@ msgstr ""
 #. module: rtw_sf
 #: model:ir.model.fields.selection,name:rtw_sf.selection__res_partner__region__10
 msgid "九州・沖縄"
+msgstr ""
+
+#. module: rtw_sf
+#: model_terms:ir.ui.view,arch_db:rtw_sf.view_rtw_case_search
+msgid "今年"
 msgstr ""
 
 #. module: rtw_sf
@@ -2935,6 +2951,11 @@ msgid "教員"
 msgstr ""
 
 #. module: rtw_sf
+#: model_terms:ir.ui.view,arch_db:rtw_sf.rtw_sf_case_list_report
+msgid "数量"
+msgstr ""
+
+#. module: rtw_sf
 #: model:ir.model.fields.selection,name:rtw_sf.selection__res_partner__situation__1
 #: model:ir.model.fields.selection,name:rtw_sf.selection__rtw_sf_case__status__new
 msgid "新規"
@@ -3102,6 +3123,11 @@ msgid "納品後・使用中"
 msgstr ""
 
 #. module: rtw_sf
+#: model_terms:ir.ui.view,arch_db:rtw_sf.rtw_sf_case_list_report
+msgid "納品日"
+msgstr ""
+
+#. module: rtw_sf
 #: model:ir.model.fields.selection,name:rtw_sf.selection__rtw_sf_case__occurrence_status__2
 msgid "納品時"
 msgstr ""
@@ -3232,6 +3258,11 @@ msgstr ""
 #. module: rtw_sf
 #: model:ir.model.fields.selection,name:rtw_sf.selection__res_partner__lead_source__23
 msgid "通りがかり"
+msgstr ""
+
+#. module: rtw_sf
+#: model_terms:ir.ui.view,arch_db:rtw_sf.rtw_sf_case_list_report
+msgid "通報日"
 msgstr ""
 
 #. module: rtw_sf

@@ -18,9 +18,26 @@
                     <field name="status"/>
                     <field name="created_date" string="CreatedDate"/>
                     <field name="owner_id" string="OwnerId"/>
-                    <!--          <field name="contacts"/>-->
-                    <!--          <field name="accounts"/>-->
-                    <!--          <field name="parents"/>-->
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="rtw_sf_case_list_report">
+            <field name="name">rtw_sf_case_list_report</field>
+            <field name="model">rtw_sf_case</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="display_id" options="{'format': 0}" string="ケース番号"/>
+                    <field name="owner_id" string="OwnerId"/>
+                    <field name="order_no"/>
+                    <field name="cope_order_no_1"/>
+                    <field name="cope_order_no_2"/>
+                    <field name="cope_order_no_3" />
+                    <field name="report_date_only" string="通報日"/>
+                    <field name="report_delivery_date" string="納品日"/>
+                    <field name="quantity" string="数量"/>
+                    <field name="subject"/>
+                    <field name="description"/>
                 </tree>
             </field>
         </record>
@@ -212,12 +229,21 @@
             <field name="view_mode">tree,form,pivot,graph</field>
             <field name="view_id" ref="rtw_sf_case_list"/>
         </record>
+        <record id="action_case_report" model="ir.actions.act_window">
+            <field name="name">ケース抽出</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">rtw_sf_case</field>
+            <field name="view_mode">tree,form,pivot,graph</field>
+            <field name="view_id" ref="rtw_sf_case_list_report"/>
+            <field name="context">{"search_default_this_year":1}</field>
+        </record>
         <menuitem
                 id="menu_case_tree"
                 action="action_case_tree"
                 parent="contacts.menu_contacts"
                 sequence="30"
         />
+
         <menuitem
                 name="case"
                 id="menu_case_root"
@@ -228,6 +254,19 @@
                 id="menu_case_tree_crm"
                 action="action_case_tree"
                 parent="crm.crm_menu_root"
+                sequence="30"
+        />
+        <menuitem
+                id="case_report_root"
+                name="レポート"
+                parent="menu_case_root"
+                sequence="30"
+        />
+        <menuitem
+                id="action_case_report"
+                name="ケース抽出"
+                action="action_case_report"
+                parent="case_report_root"
                 sequence="30"
         />
 
@@ -246,6 +285,12 @@
                            ('cope_order_no_3','ilike',self)
                            ]"/>
                     <filter string="未完了" domain="[('isclosed', '!=', True)]" name="not_close"></filter>
+                    <separator />
+                    <filter string="今年" name="this_year" domain="[
+                    '&amp;',
+                    ('report_date','&lt;=', time.strftime('%%Y-12-31')),
+                    ('report_date','&gt;=',time.strftime('%%Y-01-01')),]"/>
+
 <!--                    <group expand="0" string="Group By">-->
 <!--                        <filter string="Company" name="parent_id" context="{'group_by': 'parent_id'}"></filter>-->
 <!--                        <filter string="Country" name="country_id" context="{'group_by': 'country_id'}"></filter>-->

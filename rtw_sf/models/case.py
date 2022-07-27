@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-
+import dateutil.parser
+from datetime import datetime, date, time
 from odoo import models, fields, api
 
 
@@ -204,7 +205,7 @@ class rtw_sf_case(models.Model):
     cause_person_name = fields.Char('Field30__c')  # 原因担当者名
     billing_coping_cost = fields.Integer('Field31__c')  # 請求対処コスト
     sales_department_comments = fields.Text('Field44__c')  # 営業部コメント
-    report_date = fields.Datetime('Field34__c')  # 通報日
+    report_date = fields.Datetime('Field34__c', default=lambda self: fields.Datetime.now())  # 通報日
     Initial_response_date_by_person = fields.Datetime('Field35__c')  # 初動対応日(担当者)
     Initial_response_date_by_quality_control = fields.Datetime('Field36__c')  # 初動対応日(品管)
     double_cause = fields.Selection([
@@ -258,8 +259,25 @@ class rtw_sf_case(models.Model):
     percentage_of_fault = fields.Float('percentage of fault')
     # , compute="_compute_percentage_of_fault")
     final_cost_total_sales = fields.Float('Final cost/total sales')
+    display_id = fields.Integer(related="id")
+    report_date_only = fields.Date(compute="_get_report_day", string="通報日")
+    report_delivery_date = fields.Date(compute="_get_delivery_date", string="納品日")
 
-    # , compute="_compute_final_cost_total_sales")
+    def _get_delivery_date(self):
+        for rec in self:
+            if rec.delivery_date:
+                rec.report_delivery_date = rec.delivery_date.date()
+            else:
+                rec.report_delivery_date = False
+
+    def _get_report_day(self):
+        for rec in self:
+            if rec.report_date:
+                rec.report_date_only = rec.report_date.date()
+            else:
+                rec.report_date_only = False
+
+                # , compute="_compute_final_cost_total_sales")
 
     # def _compute_percentage_of_fault(self):
     #     for rec in self:
