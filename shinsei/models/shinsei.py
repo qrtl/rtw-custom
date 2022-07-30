@@ -67,8 +67,8 @@ class shinsei(models.Model):
     application_date = fields.Datetime('shinsei_day__c')  # 申請日 Y
     # scheduled_end_time2 = fields.Datetime('End_time2__c')  # 終了予定時間 Z ★空白のみ
     target_persons = fields.Char('Field26__c')  # 対象者 AA
-    product_no = fields.Char('Field1__c')  # 品番 AB
-    specification1 = fields.Text('Field2__c')  # 仕様１ AC
+    application_item = fields.Char('Field1__c')  # 申請項目 AB
+    purpose = fields.Text('Field2__c')  # 用途・目的 AC
     reason = fields.Text('Field27__c')  # 内容/理由 AD
     time_zone = fields.Char('atwaork__c')  # 時間帯 AE
     scheduled_start_time = fields.Integer('starttime__c')  # 予定開始時間 AF
@@ -94,10 +94,10 @@ class shinsei(models.Model):
     verification_method = fields.Text('Field37__c')  # 検証方法 AZ
     target = fields.Text('Field38__c')  # 目標 BA
     # interval_arrival = fields.Char('Field9__c')  # 区間（到着） BB ★空白のみ
-    delivery_location = fields.Datetime('Field18__c')  # 納品場所 BC
+    desired_delivery_date = fields.Datetime('Field18__c')  # 希望納期 BC
     sample_total_amount = fields.Integer('Field20__c')  # サンプル合計 BD
     time_zone2 = fields.Char('furikae_jikan__c')  # 時間帯 BE
-    applicant2 = fields.Char('Field10__c')  # 申請者 BF
+    place_of_business = fields.Char('Field10__c')  # 出張先 BF
     subtotal = fields.Integer('Ashoukei__c')  # 小計（明細） BG
     business_trip_start_date = fields.Datetime('Field11__c')  # 出張開始日 BH
     business_trip_end_date = fields.Datetime('Field12__c')  # 出張終了日 BI
@@ -108,7 +108,7 @@ class shinsei(models.Model):
     total_amount_tax_excluded = fields.Integer('zeinuki_goukei__c')  # 合計金額（税抜） BN
     cardboard_amount = fields.Integer('Field21__c')  # 強化段ボール数 BO
     purpose = fields.Text('Field39__c')  # 目的 BP
-    delivery_location2 = fields.Char('Field23__c')  # 納品場所 BQ
+    delivery_location = fields.Char('Field23__c')  # 納品場所 BQ
     project_outline = fields.Text('Field40__c')  # 企画概要 BR
     no_product = fields.Boolean('Field41__c')  # 商品無し BS ★0,1,空白
     approval_process = fields.Char('Field42__c')  # 承認プロセス BT

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-29 23:49+0000\n"
-"PO-Revision-Date: 2022-06-29 23:49+0000\n"
+"POT-Creation-Date: 2022-07-30 04:27+0000\n"
+"PO-Revision-Date: 2022-07-30 04:27+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,9 +16,59 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: shinsei
+#: model_terms:ir.ui.view,arch_db:shinsei.view_shinsei_form
+msgid "(A)経費明細合計"
+msgstr ""
+
+#. module: shinsei
+#: model_terms:ir.ui.view,arch_db:shinsei.view_shinsei_form
+msgid "(B)出張関連項目"
+msgstr ""
+
+#. module: shinsei
+#: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__message_needaction
+msgid "Action Needed"
+msgstr "要アクション"
+
+#. module: shinsei
+#: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__activity_ids
+msgid "Activities"
+msgstr "活動"
+
+#. module: shinsei
+#: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "例外の活動を示す文字装飾"
+
+#. module: shinsei
+#: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__activity_state
+msgid "Activity State"
+msgstr "活動状態"
+
+#. module: shinsei
+#: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "活動種別アイコン"
+
+#. module: shinsei
+#: model:ir.model.fields.selection,name:shinsei.selection__shinsei_shinsei__state__approved
+msgid "Approved"
+msgstr "承認済"
+
+#. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__subtotal
 msgid "Ashoukei__c"
 msgstr "小計(明細)"
+
+#. module: shinsei
+#: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__message_attachment_count
+msgid "Attachment Count"
+msgstr "添付数"
+
+#. module: shinsei
+#: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__can_review
+msgid "Can Review"
+msgstr ""
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__create_uid
@@ -42,8 +92,19 @@ msgstr "作成日"
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__display_name
+#: model:ir.model.fields,field_description:shinsei.field_tier_definition__display_name
 msgid "Display Name"
 msgstr "表示名"
+
+#. module: shinsei
+#: model:ir.model.fields.selection,name:shinsei.selection__shinsei_shinsei__state__done
+msgid "Done"
+msgstr "完了"
+
+#. module: shinsei
+#: model:ir.model.fields.selection,name:shinsei.selection__shinsei_shinsei__state__draft
+msgid "Draft"
+msgstr "ドラフト"
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__scheduled_end_time
@@ -51,9 +112,9 @@ msgid "End_time__c"
 msgstr "予定終了時間"
 
 #. module: shinsei
-#: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__applicant2
+#: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__place_of_business
 msgid "Field10__c"
-msgstr "申請者"
+msgstr "出張先"
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__business_trip_start_date
@@ -81,14 +142,14 @@ msgid "Field15__c"
 msgstr "日当"
 
 #. module: shinsei
-#: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__delivery_location
+#: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__desired_delivery_date
 msgid "Field18__c"
-msgstr "納品場所"
+msgstr "希望納期"
 
 #. module: shinsei
-#: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__product_no
+#: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__application_item
 msgid "Field1__c"
-msgstr "品番"
+msgstr "申請項目"
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__sample_total_amount
@@ -101,9 +162,9 @@ msgid "Field21__c"
 msgstr "強化段ボール数"
 
 #. module: shinsei
-#: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__delivery_location2
+#: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__delivery_location
 msgid "Field23__c"
-msgstr "納品場所"
+msgstr ""
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__applicant
@@ -134,11 +195,6 @@ msgstr "経費(税別)"
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__postage
 msgid "Field29__c"
 msgstr "送料"
-
-#. module: shinsei
-#: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__specification1
-msgid "Field2__c"
-msgstr "仕様１"
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__situation_report
@@ -226,12 +282,66 @@ msgid "Field52__c"
 msgstr "進捗(報告書)"
 
 #. module: shinsei
-#: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__id
-msgid "ID"
+#: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__message_follower_ids
+msgid "Followers"
+msgstr "フォロワー"
+
+#. module: shinsei
+#: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__message_channel_ids
+msgid "Followers (Channels)"
+msgstr "フォロワー (チャネル)"
+
+#. module: shinsei
+#: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "フォロワー (パートナー)"
+
+#. module: shinsei
+#: model:ir.model.fields,help:shinsei.field_shinsei_shinsei__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "例えばフォントの素晴らしいアイコンFA-タスク"
+
+#. module: shinsei
+#: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__has_comment
+msgid "Has Comment"
 msgstr ""
 
 #. module: shinsei
+#: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__id
+#: model:ir.model.fields,field_description:shinsei.field_tier_definition__id
+msgid "ID"
+msgstr "申請NO"
+
+#. module: shinsei
+#: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__activity_exception_icon
+msgid "Icon"
+msgstr "アイコン"
+
+#. module: shinsei
+#: model:ir.model.fields,help:shinsei.field_shinsei_shinsei__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "例外的なアクティビティを示唆するアイコン"
+
+#. module: shinsei
+#: model:ir.model.fields,help:shinsei.field_shinsei_shinsei__message_needaction
+#: model:ir.model.fields,help:shinsei.field_shinsei_shinsei__message_unread
+msgid "If checked, new messages require your attention."
+msgstr "チェックされている場合は、新しいメッセージに注意が必要です。"
+
+#. module: shinsei
+#: model:ir.model.fields,help:shinsei.field_shinsei_shinsei__message_has_error
+#: model:ir.model.fields,help:shinsei.field_shinsei_shinsei__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "チェックした場合、一部のメッセージが配信エラーが発生しています。"
+
+#. module: shinsei
+#: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__message_is_follower
+msgid "Is Follower"
+msgstr "フォロー中　"
+
+#. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei____last_update
+#: model:ir.model.fields,field_description:shinsei.field_tier_definition____last_update
 msgid "Last Modified on"
 msgstr "最終更新日"
 
@@ -256,9 +366,89 @@ msgid "LastModifiedDate"
 msgstr "最終更新日"
 
 #. module: shinsei
+#: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "主な添付"
+
+#. module: shinsei
+#: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__message_has_error
+msgid "Message Delivery error"
+msgstr "メッセージ配信エラー"
+
+#. module: shinsei
+#: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__message_ids
+msgid "Messages"
+msgstr "メッセージ"
+
+#. module: shinsei
+#: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "活動期限"
+
+#. module: shinsei
+#: model_terms:ir.ui.view,arch_db:shinsei.shinsei_filter
+msgid "My Purchases to review"
+msgstr ""
+
+#. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__name
 msgid "Name"
 msgstr "件名"
+
+#. module: shinsei
+#: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__need_validation
+msgid "Need Validation"
+msgstr ""
+
+#. module: shinsei
+#: model_terms:ir.ui.view,arch_db:shinsei.shinsei_filter
+msgid "Needs my Review"
+msgstr ""
+
+#. module: shinsei
+#: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "次の活動期限"
+
+#. module: shinsei
+#: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__activity_summary
+msgid "Next Activity Summary"
+msgstr "次の活動サマリ"
+
+#. module: shinsei
+#: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__activity_type_id
+msgid "Next Activity Type"
+msgstr "次の活動タイプ"
+
+#. module: shinsei
+#: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__next_review
+msgid "Next Review"
+msgstr ""
+
+#. module: shinsei
+#: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__message_needaction_counter
+msgid "Number of Actions"
+msgstr "アクションの数"
+
+#. module: shinsei
+#: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__message_has_error_counter
+msgid "Number of errors"
+msgstr "エラー数"
+
+#. module: shinsei
+#: model:ir.model.fields,help:shinsei.field_shinsei_shinsei__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "アクションを必要とするメッセージの数"
+
+#. module: shinsei
+#: model:ir.model.fields,help:shinsei.field_shinsei_shinsei__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "配信エラーのメッセージ数"
+
+#. module: shinsei
+#: model:ir.model.fields,help:shinsei.field_shinsei_shinsei__message_unread_counter
+msgid "Number of unread messages"
+msgstr "未読メッセージ件数"
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__order_no
@@ -271,9 +461,59 @@ msgid "OwnerId"
 msgstr "所有者"
 
 #. module: shinsei
+#: model_terms:ir.ui.view,arch_db:shinsei.shinsei_filter
+msgid "Purchase Requests validated and ready to be confirmed"
+msgstr ""
+
+#. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__record_type_id
 msgid "RecordTypeId"
 msgstr "レコードタイプ"
+
+#. module: shinsei
+#: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__rejected
+#: model:ir.model.fields.selection,name:shinsei.selection__shinsei_shinsei__state__rejected
+msgid "Rejected"
+msgstr "拒否済"
+
+#. module: shinsei
+#: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__rejected_message
+msgid "Rejected Message"
+msgstr ""
+
+#. module: shinsei
+#: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__requested_by
+msgid "Requested by"
+msgstr "申請者"
+
+#. module: shinsei
+#: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__activity_user_id
+msgid "Responsible User"
+msgstr "担当者"
+
+#. module: shinsei
+#: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__reviewer_ids
+msgid "Reviewers"
+msgstr ""
+
+#. module: shinsei
+#: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "SMS配信エラー"
+
+#. module: shinsei
+#: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__state
+msgid "Status"
+msgstr "ステータス"
+
+#. module: shinsei
+#: model:ir.model.fields,help:shinsei.field_shinsei_shinsei__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__system_mod_stamp
@@ -281,9 +521,70 @@ msgid "SystemModstamp"
 msgstr "システム最終更新日"
 
 #. module: shinsei
+#: model:ir.model,name:shinsei.model_tier_definition
+msgid "Tier Definition"
+msgstr ""
+
+#. module: shinsei
+#: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__to_validate_message
+msgid "To Validate Message"
+msgstr ""
+
+#. module: shinsei
+#: model:ir.model.fields.selection,name:shinsei.selection__shinsei_shinsei__state__to_approve
+msgid "To be approved"
+msgstr "承認待ち"
+
+#. module: shinsei
+#: model:ir.model.fields,help:shinsei.field_shinsei_shinsei__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "記録上の例外アクティビティのタイプ。"
+
+#. module: shinsei
+#: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__message_unread
+msgid "Unread Messages"
+msgstr "未読メッセージ"
+
+#. module: shinsei
+#: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "未読メッセージカウンター"
+
+#. module: shinsei
+#: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__validated
+#: model_terms:ir.ui.view,arch_db:shinsei.shinsei_filter
+msgid "Validated"
+msgstr "検証済"
+
+#. module: shinsei
+#: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__validated_message
+msgid "Validated Message"
+msgstr ""
+
+#. module: shinsei
+#: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__review_ids
+msgid "Validations"
+msgstr ""
+
+#. module: shinsei
+#: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__website_message_ids
+msgid "Website Messages"
+msgstr "ウェブサイトメッセージ"
+
+#. module: shinsei
+#: model:ir.model.fields,help:shinsei.field_shinsei_shinsei__website_message_ids
+msgid "Website communication history"
+msgstr "ウェブサイトコミュニケーション履歴"
+
+#. module: shinsei
 #: model_terms:ir.ui.view,arch_db:shinsei.shinsei_list
 msgid "application_date"
 msgstr "申請日"
+
+#. module: shinsei
+#: model_terms:ir.ui.view,arch_db:shinsei.shinsei_filter
+msgid "approval"
+msgstr ""
 
 #. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__time_zone
@@ -358,6 +659,7 @@ msgstr "変更"
 #. module: shinsei
 #: model:ir.actions.act_window,name:shinsei.action_window
 #: model:ir.ui.menu,name:shinsei.menu_root
+#: model_terms:ir.ui.view,arch_db:shinsei.view_shinsei_form
 msgid "shinsei"
 msgstr "申請"
 
@@ -392,6 +694,11 @@ msgid "syuusei__c"
 msgstr "修正"
 
 #. module: shinsei
+#: model_terms:ir.ui.view,arch_db:shinsei.view_shinsei_form
+msgid "test"
+msgstr ""
+
+#. module: shinsei
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__withdrawal
 msgid "torisage__c"
 msgstr "取下げ"
@@ -400,3 +707,100 @@ msgstr "取下げ"
 #: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__total_amount_tax_excluded
 msgid "zeinuki_goukei__c"
 msgstr "合計金額(税抜)"
+
+#. module: shinsei
+#: model:ir.model.fields.selection,name:shinsei.selection__shinsei_shinsei__shinsei_type__sample
+msgid "サンプル制作依頼"
+msgstr ""
+
+#. module: shinsei
+#: model_terms:ir.ui.view,arch_db:shinsei.view_shinsei_form
+msgid "サンプル制作申請書"
+msgstr ""
+
+#. module: shinsei
+#: model_terms:ir.ui.view,arch_db:shinsei.view_shinsei_form
+msgid "システム情報"
+msgstr ""
+
+#. module: shinsei
+#: model:ir.model.fields.selection,name:shinsei.selection__shinsei_shinsei__shinsei_type__kikaku
+#: model_terms:ir.ui.view,arch_db:shinsei.view_shinsei_form
+msgid "企画・広報関連申請"
+msgstr ""
+
+#. module: shinsei
+#: model:ir.model.fields.selection,name:shinsei.selection__shinsei_shinsei__shinsei_type__bihin
+msgid "備品破損・滅失報告書"
+msgstr ""
+
+#. module: shinsei
+#: model_terms:ir.ui.view,arch_db:shinsei.view_shinsei_form
+msgid "再提出"
+msgstr ""
+
+#. module: shinsei
+#: model:ir.model.fields.selection,name:shinsei.selection__shinsei_shinsei__shinsei_type__syucho
+msgid "出張申請"
+msgstr ""
+
+#. module: shinsei
+#: model_terms:ir.ui.view,arch_db:shinsei.view_shinsei_form
+msgid "出張申請書"
+msgstr ""
+
+#. module: shinsei
+#: model_terms:ir.ui.view,arch_db:shinsei.view_shinsei_form
+msgid "取引先関連情報"
+msgstr ""
+
+#. module: shinsei
+#: model_terms:ir.ui.view,arch_db:shinsei.view_shinsei_form
+msgid "報告内容"
+msgstr ""
+
+#. module: shinsei
+#: model_terms:ir.ui.view,arch_db:shinsei.view_shinsei_form
+msgid "情報"
+msgstr ""
+
+#. module: shinsei
+#: model:ir.model.fields.selection,name:shinsei.selection__shinsei_shinsei__shinsei_type__buppin
+#: model_terms:ir.ui.view,arch_db:shinsei.view_shinsei_form
+msgid "物品購入申請"
+msgstr ""
+
+#. module: shinsei
+#: model_terms:ir.ui.view,arch_db:shinsei.view_shinsei_form
+msgid "申請内容"
+msgstr ""
+
+#. module: shinsei
+#: model:ir.model.fields,field_description:shinsei.field_shinsei_shinsei__shinsei_type
+msgid "申請種別"
+msgstr ""
+
+#. module: shinsei
+#: model_terms:ir.ui.view,arch_db:shinsei.view_shinsei_form
+msgid "申請金額（合計）"
+msgstr ""
+
+#. module: shinsei
+#: model_terms:ir.ui.view,arch_db:shinsei.view_shinsei_form
+msgid "管理者"
+msgstr ""
+
+#. module: shinsei
+#: model_terms:ir.ui.view,arch_db:shinsei.view_shinsei_form
+msgid "精算額"
+msgstr ""
+
+#. module: shinsei
+#: model:ir.model.fields.selection,name:shinsei.selection__shinsei_shinsei__shinsei_type__keihi
+msgid "経費精算"
+msgstr ""
+
+#. module: shinsei
+#: model_terms:ir.ui.view,arch_db:shinsei.view_shinsei_form
+msgid "経費精算書"
+msgstr ""
