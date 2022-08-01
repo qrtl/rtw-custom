@@ -276,13 +276,37 @@
             <field name="arch" type="xml">
                 <search string="Search contacts">
                     <field name="subject"
-                           filter_domain="['|','|','|','|','|',
+                           filter_domain="[
+                           '|','|','|','|','|','|','|','|','|','|',
+                           '|','|','|','|','|','|','|','|','|','|',
+                           '|','|','|','|','|','|',
                            ('id','ilike',self),
                            ('subject','ilike',self),
                            ('order_no','ilike',self),
                            ('cope_order_no_1','ilike',self),
                            ('cope_order_no_2','ilike',self),
-                           ('cope_order_no_3','ilike',self)
+                           ('cope_order_no_3','ilike',self),
+                           ('crm_id','ilike',self),
+                           ('accounts','ilike',self),
+                           ('contacts','ilike',self),
+                           ('delivery_product_name','ilike',self),
+                           ('product_name','ilike',self),
+                           ('product_number','ilike',self),
+                           ('size','ilike',self),
+                           ('specification','ilike',self),
+                           ('delivery_prefectures','ilike',self),
+                           ('delivery_municipality','ilike',self),
+                           ('carrier','ilike',self),
+                           ('description','ilike',self),
+                           ('initial_explanation_by_person','ilike',self),
+                           ('follow_up_report_by_person','ilike',self),
+                           ('action_details_by_quality_control','ilike',self),
+                           ('sales_department_comments','ilike',self),
+                           ('cooperative_factory_opinion','ilike',self),
+                           ('quality_control_comments','ilike',self),
+                           ('cause_by_quality_control','ilike',self),
+                           ('cause_company_name','ilike',self),
+                           ('cause_person_name','ilike',self)
                            ]"/>
                     <filter string="未完了" domain="[('isclosed', '!=', True)]" name="not_close"></filter>
                     <separator />

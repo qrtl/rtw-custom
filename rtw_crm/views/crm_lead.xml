@@ -339,14 +339,36 @@
                 </xpath>
                 <xpath expr="//field[@name='name']" position="replace">
                     <field name="name" string="Opportunity" filter_domain="[
-                        '|', '|', '|', '|', '|','|',
+                        '|', '|', '|', '|', '|', '|', '|', '|', '|', '|',
+                        '|', '|', '|', '|', '|', '|', '|', '|', '|', '|',
+                        '|', '|', '|', '|', '|',
                         ('partner_id', 'ilike', self),
                         ('partner_name', 'ilike', self),
                         ('email_from', 'ilike', self),
                         ('name', 'ilike', self),
-                        ('description', 'ilike', self),
                         ('order_no', 'ilike', self),
-                        ('contact_name', 'ilike', self)]"/>
+                        ('description', 'ilike', self),
+                        ('contact_name', 'ilike', self),
+                        ('phone', 'ilike', self),
+                        ('tag_ids', 'ilike', self),
+                        ('quote_number_by_hukusuke', 'ilike', self),
+                        ('procurement_company', 'ilike', self),
+                        ('facility_name', 'ilike', self),
+                        ('Use_Purpose', 'ilike', self),
+                        ('campaign_id', 'ilike', self),
+                        ('progress_check', 'ilike', self),
+                        ('mobile', 'ilike', self),
+                        ('furigana', 'ilike', self),
+                        ('person_name', 'ilike', self),
+                        ('tel', 'ilike', self),
+                        ('address_no', 'ilike', self),
+                        ('address', 'ilike', self),
+                        ('depot', 'ilike', self),
+                        ('special_remarks', 'ilike', self),
+                        ('memo', 'ilike', self),
+                        ('memo_trw', 'ilike', self),
+                        ('photographer', 'ilike', self)
+                        ]"/>
                 </xpath>
                 <xpath expr="//field[@name='name']" position="after">
                     <field name="p_author" string="p_author" filter_domain="[
@@ -362,6 +384,8 @@
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='name']" position="replace">
                     <field name="name" string="Opportunity" filter_domain="[
+                        '|', '|', '|', '|', '|', '|', '|', '|', '|', '|',
+                        '|', '|', '|', '|', '|', '|', '|', '|', '|', '|',
                         '|', '|', '|', '|', '|',
                         ('partner_id', 'ilike', self),
                         ('partner_name', 'ilike', self),
@@ -369,7 +393,27 @@
                         ('name', 'ilike', self),
                         ('order_no', 'ilike', self),
                         ('description', 'ilike', self),
-                        ('contact_name', 'ilike', self)]"/>
+                        ('contact_name', 'ilike', self),
+                        ('phone', 'ilike', self),
+                        ('tag_ids', 'ilike', self),
+                        ('quote_number_by_hukusuke', 'ilike', self),
+                        ('procurement_company', 'ilike', self),
+                        ('facility_name', 'ilike', self),
+                        ('Use_Purpose', 'ilike', self),
+                        ('campaign_id', 'ilike', self),
+                        ('progress_check', 'ilike', self),
+                        ('mobile', 'ilike', self),
+                        ('furigana', 'ilike', self),
+                        ('person_name', 'ilike', self),
+                        ('tel', 'ilike', self),
+                        ('address_no', 'ilike', self),
+                        ('address', 'ilike', self),
+                        ('depot', 'ilike', self),
+                        ('special_remarks', 'ilike', self),
+                        ('memo', 'ilike', self),
+                        ('memo_trw', 'ilike', self),
+                        ('photographer', 'ilike', self)
+                        ]"/>
                 </xpath>
                 <xpath expr="//field[@name='name']" position="after">
                     <field name="p_author" string="p_author" filter_domain="[
