@@ -67,6 +67,7 @@
                             <field name="application_date" required="1"/>
                             <field name="department"/>
                             <field name="requested_by" widget="many2one_avatar_user"/>
+                            <field name="manager"/>
                         </group>
                         <div attrs="{'invisible': [('shinsei_type','!=', 'sample')]}">
                             <group string="サンプル制作申請書">
