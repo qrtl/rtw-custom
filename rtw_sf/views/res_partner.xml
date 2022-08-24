@@ -32,7 +32,8 @@
                         </group>
                     </group>
                     <group>
-                        <field name="kana" required="1"/>
+<!--                        <field name="kana" required="1"/>-->
+                        <field name="kana"/>
                         <field name="site"/>
                     </group>
                 </xpath>
