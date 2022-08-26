@@ -341,7 +341,7 @@
                     <field name="name" string="Opportunity" filter_domain="[
                         '|', '|', '|', '|', '|', '|', '|', '|', '|', '|',
                         '|', '|', '|', '|', '|', '|', '|', '|', '|', '|',
-                        '|', '|', '|', '|', 
+                        '|', '|', '|', '|',
                         ('partner_id', 'ilike', self),
                         ('partner_name', 'ilike', self),
                         ('email_from', 'ilike', self),
