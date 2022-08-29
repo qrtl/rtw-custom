@@ -145,10 +145,10 @@
                             </group>
                         </div>
                         <div attrs="{'invisible': [('shinsei_type','!=', 'syucho')]}">
-                            <group string="出張申請書">
-                                <field name="report" attrs="{'required': [('shinsei_type','=', 'syucho')]}"/>
-                                <field name="progress_report"/>
-                            </group>
+<!--                            <group string="出張申請書">-->
+<!--                                <field name="report" attrs="{'required': [('shinsei_type','=', 'syucho')]}"/>-->
+<!--                                <field name="progress_report"/>-->
+<!--                            </group>-->
                             <group string="申請内容">
                                 <group>
                                     <field name="place_of_business"/>
