@@ -1,6 +1,19 @@
 <odoo>
     <data>
         <!-- explicit list view definition -->
+        <record id="rtw_inquiry_list" model="ir.ui.view">
+            <field name="name">rtw_sf_inquiry.list</field>
+            <field name="model">rtw_sf.inquiry</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" string="name"/>
+                    <field name="owner_id" string="owner_id"/>
+                    <field name="contact_person" string="contact_person"/>
+                    <field name="situation" string="situation"/>
+                    <field name="crm_1" string="crm_1"/>
+                </tree>
+            </field>
+        </record>
         <!--
             <record model="ir.ui.view" id="rtw_inquiry.list">
               <field name="name">rtw_inquiry list</field>
