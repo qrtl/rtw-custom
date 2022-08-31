@@ -1,0 +1,121 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* rtw_crm_partner_non_edit
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-08-31 03:28+0000\n"
+"PO-Revision-Date: 2022-08-31 03:28+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: rtw_crm_partner_non_edit
+#: model:ir.model.fields,field_description:rtw_crm_partner_non_edit.field_crm_lead__city_d
+#: model_terms:ir.ui.view,arch_db:rtw_crm_partner_non_edit.view_crm_form_partner_non_edit
+msgid "City"
+msgstr "市区町村"
+
+#. module: rtw_crm_partner_non_edit
+#: model:ir.model.fields,field_description:rtw_crm_partner_non_edit.field_crm_lead__partner_name_d
+msgid "Company Name"
+msgstr "会社名"
+
+#. module: rtw_crm_partner_non_edit
+#: model:ir.model.fields,field_description:rtw_crm_partner_non_edit.field_crm_lead__contact_name_d
+msgid "Contact Name"
+msgstr "連絡先名"
+
+#. module: rtw_crm_partner_non_edit
+#: model:ir.model.fields,field_description:rtw_crm_partner_non_edit.field_crm_lead__country_id_d
+#: model_terms:ir.ui.view,arch_db:rtw_crm_partner_non_edit.view_crm_form_partner_non_edit
+msgid "Country"
+msgstr "国"
+
+#. module: rtw_crm_partner_non_edit
+#: model:ir.model.fields,field_description:rtw_crm_partner_non_edit.field_crm_lead__display_name
+msgid "Display Name"
+msgstr "表示名"
+
+#. module: rtw_crm_partner_non_edit
+#: model:ir.model.fields,field_description:rtw_crm_partner_non_edit.field_crm_lead__id
+msgid "ID"
+msgstr ""
+
+#. module: rtw_crm_partner_non_edit
+#: model:ir.model.fields,field_description:rtw_crm_partner_non_edit.field_crm_lead__function_d
+msgid "Job Position"
+msgstr "職位"
+
+#. module: rtw_crm_partner_non_edit
+#: model:ir.model.fields,field_description:rtw_crm_partner_non_edit.field_crm_lead____last_update
+msgid "Last Modified on"
+msgstr "最終更新日"
+
+#. module: rtw_crm_partner_non_edit
+#: model:ir.model,name:rtw_crm_partner_non_edit.model_crm_lead
+msgid "Lead/Opportunity"
+msgstr "リード / 案件"
+
+#. module: rtw_crm_partner_non_edit
+#: model:ir.model.fields,field_description:rtw_crm_partner_non_edit.field_crm_lead__mobile_d
+msgid "Mobile"
+msgstr "携帯電話"
+
+#. module: rtw_crm_partner_non_edit
+#: model:ir.model.fields,field_description:rtw_crm_partner_non_edit.field_crm_lead__state_id_d
+#: model_terms:ir.ui.view,arch_db:rtw_crm_partner_non_edit.view_crm_form_partner_non_edit
+msgid "State"
+msgstr "都道府県"
+
+#. module: rtw_crm_partner_non_edit
+#: model:ir.model.fields,field_description:rtw_crm_partner_non_edit.field_crm_lead__street_d
+msgid "Street"
+msgstr "町名番地"
+
+#. module: rtw_crm_partner_non_edit
+#: model_terms:ir.ui.view,arch_db:rtw_crm_partner_non_edit.view_crm_form_partner_non_edit
+msgid "Street 2..."
+msgstr "町名番地2..."
+
+#. module: rtw_crm_partner_non_edit
+#: model_terms:ir.ui.view,arch_db:rtw_crm_partner_non_edit.view_crm_form_partner_non_edit
+msgid "Street..."
+msgstr "町名番地..."
+
+#. module: rtw_crm_partner_non_edit
+#: model:ir.model.fields,field_description:rtw_crm_partner_non_edit.field_crm_lead__street2_d
+msgid "Street2"
+msgstr "町名番地2"
+
+#. module: rtw_crm_partner_non_edit
+#: model:ir.model.fields,help:rtw_crm_partner_non_edit.field_crm_lead__partner_name_d
+msgid ""
+"The name of the future partner company that will be created while converting"
+" the lead into opportunity"
+msgstr "リードから案件に変換される際に作成される取引先の名称"
+
+#. module: rtw_crm_partner_non_edit
+#: model:ir.model.fields,field_description:rtw_crm_partner_non_edit.field_crm_lead__title_d
+msgid "Title"
+msgstr "タイトル"
+
+#. module: rtw_crm_partner_non_edit
+#: model:ir.model.fields,field_description:rtw_crm_partner_non_edit.field_crm_lead__website_d
+msgid "Website"
+msgstr "ウェブサイト"
+
+#. module: rtw_crm_partner_non_edit
+#: model_terms:ir.ui.view,arch_db:rtw_crm_partner_non_edit.view_crm_form_partner_non_edit
+msgid "ZIP"
+msgstr "郵便番号"
+
+#. module: rtw_crm_partner_non_edit
+#: model:ir.model.fields,field_description:rtw_crm_partner_non_edit.field_crm_lead__zip_d
+msgid "Zip"
+msgstr "郵便番号"
