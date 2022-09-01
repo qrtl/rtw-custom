@@ -70,7 +70,7 @@ class rtw_crm_partner_non_edit(models.Model):
         if any(partner['country_id']):
             values = {'country_id_d': partner['country_id']}
         else:
-            values = {'country_id_d': ''}
+            values = {'country_id_d': False}
             # values = {'country_id_d': self['country_id']}
         return values
 
@@ -78,7 +78,7 @@ class rtw_crm_partner_non_edit(models.Model):
         if any(partner['state_id']):
             values = {'state_id_d': partner['state_id']}
         else:
-            values = {'state_id_d': ''}
+            values = {'state_id_d': False}
             # values = {'state_id_d': self['state_id']}
         return values
 
