@@ -6,24 +6,21 @@
             <field name="inherit_id" ref="crm.crm_lead_view_form"/>
             <field name="arch" type="xml">
                 <xpath expr="//notebook/page[@name='lead']/group/group/field[@name='partner_name']" position="replace">
-                    <field name="partner_name"  invisible="1"/>
+                    <field name="partner_name" invisible="1"/>
                     <field name="partner_name_d"/>
                 </xpath>
                 <xpath expr="//notebook/page[@name='lead']/group/group/div[@class='o_address_format']"
                        position="replace">
                     <div class="o_address_format">
-                        <field name="street" id="street_page_lead" placeholder="Street..." class="o_address_street" invisible="1"/>
+                        <field name="street" id="street_page_lead" placeholder="Street..." class="o_address_street"
+                               invisible="1"/>
                         <field name="street2" placeholder="Street 2..." class="o_address_street" invisible="1"/>
                         <field name="city" placeholder="City" class="o_address_city" invisible="1"/>
-                        <field name="state_id" class="o_address_state" placeholder="State" options='{"no_open": True}' invisible="1"/>
+                        <field name="state_id" class="o_address_state" placeholder="State" options='{"no_open": True}'
+                               invisible="1"/>
                         <field name="zip" placeholder="ZIP" class="o_address_zip" invisible="1"/>
-                        <field name="country_id" placeholder="Country" class="o_address_country" options='{"no_open": True, "no_create": True}' invisible="1"/>
-                        <field name="street" id="street_page_lead" invisible="1"/>
-                        <field name="street2" invisible="1"/>
-                        <field name="city" invisible="1"/>
-                        <field name="state_id" invisible="1"/>
-                        <field name="zip" invisible="1"/>
-                        <field name="country_id" invisible="1"/>
+                        <field name="country_id" placeholder="Country" class="o_address_country"
+                               options='{"no_open": True, "no_create": True}' invisible="1"/>
                         <field name="street_d" id="street_page_lead" class="o_address_street"/>
                         <field name="street2_d" class="o_address_street"/>
                         <field name="city_d" class="o_address_city"/>
@@ -36,8 +33,9 @@
                     <field name="website" invisible="1"/>
                     <field name="website_d" widget="url"/>
                 </xpath>
-                <xpath expr="//notebook/page[@name='lead']/group/group/div/field[@name='contact_name']" position="replace">
-                    <field name="contact_name"  id="contact_name_page_lead" invisible="1"/>
+                <xpath expr="//notebook/page[@name='lead']/group/group/div/field[@name='contact_name']"
+                       position="replace">
+                    <field name="contact_name" id="contact_name_page_lead" invisible="1"/>
                     <field name="contact_name_d" id="contact_name_page_lead"/>
                 </xpath>
                 <xpath expr="//notebook/page[@name='lead']/group/group/div/field[@name='title']" position="replace">
@@ -52,6 +50,64 @@
                     <field name="mobile" invisible="1"/>
                     <field name="mobile_d" id="mobile_page_lead" widget="phone"/>
                 </xpath>
+                <!-- ↓確認用(前の項目＋新規追加項目比較)↓-->
+<!--                <xpath expr="//notebook/page[@name='lead']/group/group/field[@name='partner_name']" position="after">-->
+<!--                    <field name="partner_name_d"/>-->
+<!--                </xpath>-->
+<!--                <xpath expr="//notebook/page[@name='lead']/group/group/div[@class='o_address_format']"-->
+<!--                       position="after">-->
+<!--                    <div class="o_address_format">-->
+<!--                        <field name="street_d" id="street_page_lead" class="o_address_street"/>-->
+<!--                        <field name="street2_d" class="o_address_street"/>-->
+<!--                        <field name="city_d" class="o_address_city"/>-->
+<!--                        <field name="state_id_d" class="o_address_state"/>-->
+<!--                        <field name="zip_d" class="o_address_zip"/>-->
+<!--                        <field name="country_id_d" class="o_address_country"/>-->
+<!--                    </div>-->
+<!--                </xpath>-->
+<!--                <xpath expr="//notebook/page[@name='lead']/group/group/field[@name='website']" position="after">-->
+<!--                    <field name="website_d" widget="url"/>-->
+<!--                </xpath>-->
+<!--                <xpath expr="//notebook/page[@name='lead']/group/group/div/field[@name='contact_name']"-->
+<!--                       position="after">-->
+<!--                    <field name="contact_name_d" id="contact_name_page_lead"/>-->
+<!--                </xpath>-->
+<!--                <xpath expr="//notebook/page[@name='lead']/group/group/div/field[@name='title']" position="after">-->
+<!--                    <field name="title_d"/>-->
+<!--                </xpath>-->
+<!--                <xpath expr="//notebook/page[@name='lead']/group/group/field[@name='function']" position="after">-->
+<!--                    <field name="function_d"/>-->
+<!--                </xpath>-->
+<!--                <xpath expr="//notebook/page[@name='lead']/group/group/div/field[@name='mobile']" position="after">-->
+<!--                    <field name="mobile_d" id="mobile_page_lead" widget="phone"/>-->
+<!--                </xpath>-->
+            </field>
+        </record>
+        <record id="crm_lead_tree_opportunity_partner_non_edit" model="ir.ui.view">
+            <field name="name">crm lead tree opportunity partner non edit</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_case_tree_view_oppor"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='contact_name']" position="replace">
+                    <field name="contact_name" invisible="1"/>
+                    <field name="contact_name_d" optional="show"/>
+                </xpath>
+                <xpath expr="//field[@name='city']" position="replace">
+                    <field name="city" invisible="1"/>
+                    <field name="city_d" optional="hide"/>
+                </xpath>
+                <xpath expr="//field[@name='state_id']" position="replace">
+                    <field name="state_id" invisible="1"/>
+                    <field name="state_id_d" optional="hide"/>
+                </xpath>
+                <xpath expr="//field[@name='country_id']" position="replace">
+                    <field name="country_id" invisible="1"/>
+                    <field name="country_id_d" optional="hide"/>
+                </xpath>
+                <!-- ↓確認用(前の項目＋新規追加項目比較)↓-->
+<!--                <xpath expr="//field[@name='contact_name']" position="after">-->
+<!--                    <field name="contact_name_d" optional="show"/>-->
+<!--                </xpath>-->
             </field>
         </record>
     </data>
