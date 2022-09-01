@@ -70,6 +70,9 @@
                 <xpath expr="//notebook" position="inside">
                     <page string="納品先情報">
                         <group>
+                            <h4>取引先情報の変更は別途作業してください。</h4>
+                        </group>
+                        <group>
                             <group>
                                 <field name="furigana" string="furigana"/>
                                 <field name="person_name" string="person_name"/>
