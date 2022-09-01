@@ -13,5 +13,5 @@ class GoogleCalendarService(GoogleCalendarService):
 
     def insert(self, values, token=None, timeout=TIMEOUT):
         print("test")
-        return super().insert(token=token, timeout=timeout)
+        return super().insert(values, token=token, timeout=timeout)
 
