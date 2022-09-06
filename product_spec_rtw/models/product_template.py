@@ -65,7 +65,7 @@ class ProductSpecRtw(models.Model):
         ('bom', '構成品'),
         ('product', '製品'),
     ], default='',
-        string="ownership", )
+        string="kubun", )
 
     @api.depends('shipping_cost_unit_price', 'sai')
     def _shipping_cost_calc(self):
