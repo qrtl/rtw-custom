@@ -60,6 +60,7 @@ class ProductSpecRtw(models.Model):
     necessary_length_of_the_cloth_a = fields.Float("necessary length of the cloth A")
     necessary_length_of_the_cloth_b = fields.Float("necessary length of the cloth B")
     catalog = fields.Many2many("product.catalog", string="Catalog")
+    series = fields.Char("series")
     @api.depends('shipping_cost_unit_price', 'sai')
     def _shipping_cost_calc(self):
         cost = 0
