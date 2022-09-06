@@ -214,7 +214,7 @@ class contract(models.Model):
     not_meet = fields.Boolean('not_meet')  # 会っていない
     not_meet_2 = fields.Boolean('not_meet_2')  # 会っていない
     crm_1 = fields.Many2one('crm.lead', 'crm_1')  # 関連商談①
-    crm_2 = fields.Many2one('crm.lead', 'crm_2')  # 関連商談②
+    crm_2 = fields.Many2one('crm.lead', '関連商談②')  # 関連商談②
     order_no = fields.Char("order_no")
     product_category_1 = fields.Char("product_category_1")
     product_category_2 = fields.Char("product_category_2")
