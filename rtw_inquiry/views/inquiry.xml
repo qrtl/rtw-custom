@@ -94,7 +94,7 @@
                                     <field name="detail" string="detail"/>
                                     <field name="support" string="support"/>
                                     <field name="crm_1" string="crm_1"/>
-                                    <field name="crm_2" string="crm_2"/>
+                                    <field name="crm_2" string="関連商談②"/>
                                 </group>
                                 <group>
                                     <field name="magazine_site" string="magazine_site"/>
