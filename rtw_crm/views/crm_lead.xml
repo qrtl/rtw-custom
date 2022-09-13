@@ -68,34 +68,34 @@
                     </group>
                 </xpath>
                 <xpath expr="//notebook" position="inside">
-<!--                    <page string="納品先情報">-->
-<!--                        <group>-->
-<!--                            <h4 style="color:red">注意：配送先が異なる場合はこちらに入力してください。</h4>-->
-<!--                        </group>-->
-<!--                        <group>-->
-<!--                            <group>-->
-<!--                                <field name="furigana" string="furigana"/>-->
-<!--                                <field name="person_name" string="person_name"/>-->
-<!--                                <field name="tel" string="tel"/>-->
-<!--                                <field name="installation_floor" string="installation_floor"/>-->
-<!--                                <field name="elevator_having" string="elevator_having"/>-->
-<!--                                <field name="address_no" string="address_no"/>-->
-<!--                                <field name="address" string="address"/>-->
-<!--                            </group>-->
-<!--                            <group>-->
-<!--                                <field name="to_arrangement_depot" string="to_arrangement_depot"/>-->
-<!--                                <field name="depot" string="depot"/>-->
-<!--                                <field name="depot_arrival_date" string="depot_arrival_date"/>-->
-<!--                                <field name="On_site_delivery_date" string="On_site_delivery_date"/>-->
-<!--                                <field name="delivery_route_required_confirmation"-->
-<!--                                       string="delivery_route_required_confirmation"/>-->
-<!--                            </group>-->
+                    <page string="納品先情報">
+                        <group>
+                            <h4 style="color:red">注意：配送先が異なる場合はこちらに入力してください。</h4>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="furigana" string="furigana"/>
+                                <field name="person_name" string="person_name"/>
+                                <field name="tel" string="tel"/>
+                                <field name="installation_floor" string="installation_floor"/>
+                                <field name="elevator_having" string="elevator_having"/>
+                                <field name="address_no" string="address_no"/>
+                                <field name="address" string="address"/>
+                            </group>
+                            <group>
+                                <field name="to_arrangement_depot" string="to_arrangement_depot"/>
+                                <field name="depot" string="depot"/>
+                                <field name="depot_arrival_date" string="depot_arrival_date"/>
+                                <field name="On_site_delivery_date" string="On_site_delivery_date"/>
+                                <field name="delivery_route_required_confirmation"
+                                       string="delivery_route_required_confirmation"/>
+                            </group>
 
-<!--                        </group>-->
-<!--                        <group>-->
-<!--                            <field name="special_remarks" string="special_remarks"/>-->
-<!--                        </group>-->
-<!--                    </page>-->
+                        </group>
+                        <group>
+                            <field name="special_remarks" string="special_remarks"/>
+                        </group>
+                    </page>
                     <page string="フェア情報">
                         <group>
                             <group>
