@@ -71,9 +71,8 @@ class ProductImageImportWizard(models.TransientModel):
                         raise Warning("Could not find the product '%s'" % product)
                 except Exception as e:
                     # raise Warning("Please provide correct URL for product '%s' or check your image size.!" % product)
-                    print(e)
+                    # print(e)
             else:
-                print(image_path)
                 try:
                     with open(image_path, 'rb') as image:
                         image_base64 = base64.b64encode(image.read())

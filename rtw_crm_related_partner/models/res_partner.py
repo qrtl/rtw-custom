@@ -29,7 +29,6 @@ class rtw_crm_role_partner(models.Model):
     def _get_name(self):
         for rec in self:
             if rec.role:
-                print("in")
                 rec.name = rec.name + "(" + dict(rec._fields['role'].selection).get(rec.role) + ")"
             else:
                 rec.name = rec.name

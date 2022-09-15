@@ -18,7 +18,6 @@ class calendar_event_rtw(models.Model):
             if rec.calendar_ids:
                 i = 0
                 for l in rec.calendar_ids:
-                    print(dict(l._fields['situation'].selection).get(l.situation))
                     if i == 0:
                         start = l.start
                         showroom = l.sr.name

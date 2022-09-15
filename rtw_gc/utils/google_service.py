@@ -6,12 +6,10 @@ from odoo.addons.google_calendar.utils.google_calendar import GoogleCalendarServ
 
 class GoogleCalendarService(GoogleCalendarService):
     def get_events(self, sync_token=None, token=None, timeout=TIMEOUT):
-        print("test")
         # if xxx:
         #     (custom logic here)
         return super().get_events(sync_token=sync_token, token=token, timeout=timeout)
 
     def insert(self, values, token=None, timeout=TIMEOUT):
-        print("test")
         return super().insert(values, token=token, timeout=timeout)
 

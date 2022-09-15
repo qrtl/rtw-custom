@@ -25,7 +25,6 @@ class MrpProduction(models.Model):
         for value in self:
             if value.state == 'draft':
                 sale_ids = self.env['sale.order'].search([('name', '=', value.origin)])
-                print(sale_ids, 'mrp')
                 if sale_ids:
                     value.mrp_reference = value.name
                 #                     print(value.mrp_reference,'mrp_reference')
@@ -42,7 +41,6 @@ class MrpProduction(models.Model):
                 mrp_ids = self.env['mrp.production'].search([('name', '=', value.mrp_reference)])
                 for ele in mrp_ids:
                     value.mrp_reference = ele.mrp_reference
-                print(value.mrp_reference, 'MO')
 
     sale_reference = fields.Char('SO Reference', compute='_compute_reference_value', store=True)
     mrp_reference = fields.Char('MO Reference', compute='_compute_reference_mo', store=True)

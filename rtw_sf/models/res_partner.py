@@ -434,9 +434,7 @@ class rtw_sf_partner(models.Model):
 
     def _get_age(self):
         for rec in self:
-            print(rec.birthdate)
             if rec.birthdate:
-                print(rec.birthdate)
                 today = date.today()
                 birthday = rec.birthdate
                 rec.age = (int(today.strftime("%Y%m%d")) - int(birthday.strftime("%Y%m%d"))) // 10000
@@ -483,7 +481,6 @@ class rtw_sf_partner(models.Model):
     def _compute_name(self):
         for rec in self:
             name = rec.name
-            print(rec.company_type)
             if rec.company_type == "person":
                 if rec.last_name == False and rec.first_name:
                     name = rec.first_name
@@ -492,4 +489,3 @@ class rtw_sf_partner(models.Model):
                 if rec.first_name and rec.last_name:
                     name = rec.last_name + " " + rec.first_name
             rec.name = name
-            print(name)

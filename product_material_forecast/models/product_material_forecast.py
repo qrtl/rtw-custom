@@ -11,7 +11,6 @@ class product_material_forecast(models.Model):
     def _po_count(self):
         sumqty = 0
         for line in self:
-            print(line.id)
             # self.po_count = self.env['purchase.order.line'].search_count([('product_id', '=', line.id)])
             order_lines = self.env['purchase.order.line'].search([
                 ('product_id', '=', line.id),
