@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="open_filter_view" model="ir.actions.act_window">
+            <field name="name">Filter</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">ir.filters</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'search_default_my_filters': 1}</field>
+        </record>
+       <menuitem name="filter" id="crm_lead_filter_tree" parent="crm.crm_menu_root"
+                  action="open_filter_view"/>
+    </data>
+</odoo>
