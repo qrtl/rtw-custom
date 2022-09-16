@@ -70,6 +70,7 @@ class ProductImageImportWizard(models.TransientModel):
                     elif not product_id and self.pdt_operation == '2':
                         raise Warning("Could not find the product '%s'" % product)
                 except Exception as e:
+                    print(e)
                     # raise Warning("Please provide correct URL for product '%s' or check your image size.!" % product)
                     # print(e)
             else:
