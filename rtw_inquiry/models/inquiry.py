@@ -342,3 +342,14 @@ class contract(models.Model):
         ('4', '完了'),
     ], default='',
         string='Field59_yousei__c')  # 進捗
+
+    def open_one2many_line(self, context=None):
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'Open Line',
+            'view_type': 'form',
+            'view_mode': 'form',
+            'res_model': self._name,
+            'res_id': self.id,
+            'target': 'current',
+        }
