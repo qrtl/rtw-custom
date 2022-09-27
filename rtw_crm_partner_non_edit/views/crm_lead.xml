@@ -110,5 +110,27 @@
 <!--                </xpath>-->
             </field>
         </record>
+        <record id="view_crm_list_sf2_partner_non_edit" model="ir.ui.view">
+            <field name="name">view_crm_list_sf2_partner_non_edit</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="rtw_crm.view_crm_list_sf2"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='partner_name']" position="replace">
+                    <field name="partner_name" invisible="1"/>
+                    <field name="partner_name_d" string="関連会社" optional="show"/>
+                </xpath>
+            </field>
+        </record>
+        <record id="view_crm_list_sf_partner_non_edit" model="ir.ui.view">
+            <field name="name">view_crm_list_sf_partner_non_edit</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="rtw_crm.view_crm_list_sf"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='partner_name']" position="replace">
+                    <field name="partner_name" invisible="1"/>
+                    <field name="partner_name_d" string="関連会社" optional="show"/>
+                </xpath>
+            </field>
+        </record>
     </data>
 </odoo>
