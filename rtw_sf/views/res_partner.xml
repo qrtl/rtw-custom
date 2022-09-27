@@ -280,7 +280,7 @@
 <!--                    ('mobile', 'ilike', self)]" string="phone"/>-->
 <!--                </xpath>-->
                 <field name="name" position="attributes">
-                    <attribute name="filter_domain">['|','|','|','|','|','|','|',
+                    <attribute name="filter_domain">['|','|','|','|','|','|','|','|',
                         ('phone', 'ilike', self),
                         ('no_hyphen_phone', 'ilike', self),
                         ('mobile', 'ilike', self),
@@ -288,7 +288,8 @@
                         ('display_name', 'ilike', self),
                         ('ref', '=', self),
                         ('state_id.name', 'ilike', self),
-                        ('email', 'ilike', self), ]</attribute>
+                        ('email', 'ilike', self),
+                        ('kana', 'ilike', self),]</attribute>
                 </field>
                 <xpath expr="//filter[@name='type_company']" position="after">
                     <separator/>
