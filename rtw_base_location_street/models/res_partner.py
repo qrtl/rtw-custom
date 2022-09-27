@@ -11,7 +11,6 @@ class ResPartner(models.Model):
 
     @api.depends("zip_id")
     def _compute_street(self):
-        print("test")
         if hasattr(super(), "_compute_city_id"):
             super()._compute_city_id()  # pragma: no cover
         for record in self:

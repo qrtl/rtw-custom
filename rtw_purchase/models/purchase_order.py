@@ -9,7 +9,6 @@ class rtw_purchase(models.Model):
     # @api.model
     def action_purchase_form(self):
         self.ensure_one()
-        print(self.id)
         action = self.env.ref("purchase.purchase_form_action")
         form = self.env.ref("purchase.purchase_order_form")
         action = action.read()[0]

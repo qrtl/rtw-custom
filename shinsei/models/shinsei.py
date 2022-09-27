@@ -186,7 +186,6 @@ class shinsei(models.Model):
     def _get_manager(self):
         for rec in self:
             if rec.requested_by.employee_id.parent_id:
-                print(rec.requested_by.employee_id.parent_id.name)
                 rec.manager = rec.requested_by.employee_id.parent_id.user_id
             else:
                 rec.manager = rec.requested_by

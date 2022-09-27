@@ -22,7 +22,6 @@ class rtw_res_partner_area(models.Model):
         area10 = ["福岡県", "大分県", "熊本県", "佐賀県", "長崎県", "宮崎県", "鹿児島県", "沖縄県"]
         for rec in self:
             if rec.state_id:
-                print(rec.state_id.name)
                 if rec.state_id.name in area1:
                     rec.region = "1"
                 elif rec.state_id.name in area2:

@@ -846,7 +846,6 @@ class rtw_crm(models.Model):
         for rec in self:
             if rec.rate >0 :
                 reference_price = rec.expected_revenue / rec.rate * 100
-                print(reference_price)
                 rec.reference_price = reference_price
             else:
                 rec.reference_price = rec.expected_revenue

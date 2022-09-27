@@ -13,7 +13,6 @@ class rtw_crm_role_partner(models.Model):
 
     def _get_rel_crm(self):
         for rec in self:
-            print(self.id)
             rec.rel_crm = self.env['crm.lead'].search([('role_ids.contact_id', '=', self.id)])
     # role = fields.Selection([
     #     ('1', '意思決定者'),

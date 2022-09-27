@@ -13,7 +13,6 @@ class rtw_crm_inq(models.Model):
             inquiry_count = self.env['rtw_sf.inquiry'].search_count([('contact_person', '=', rec.id)])
             rec.inquiry_count = inquiry_count
 
-
     def create_inquiry(self):
         return {
             'type': 'ir.actions.act_window',
@@ -30,3 +29,4 @@ class rtw_crm_inq(models.Model):
                 'default_crm_1': self.id
             }
         }
+

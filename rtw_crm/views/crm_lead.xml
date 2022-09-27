@@ -70,7 +70,7 @@
                 <xpath expr="//notebook" position="inside">
                     <page string="納品先情報">
                         <group>
-                            <h4>取引先情報の変更は別途作業してください。</h4>
+                            <h4 style="color:red">注意：配送先が異なる場合はこちらに入力してください。</h4>
                         </group>
                         <group>
                             <group>
