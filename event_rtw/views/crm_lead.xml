@@ -6,7 +6,7 @@
             <field name="arch" type="xml">
                 <tree>
                     <field name="name"/>
-                    <field name="role_ids" string="関連先担当者" optional="hide"/>
+                    <field name="role_ids" widget="many2many_tags" string="関連先担当者" optional="hide"/>
                     <field name="company_currency" invisible="1"/>
                     <field name="expected_revenue"/>
                     <field name="date_deadline"/>

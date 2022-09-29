@@ -43,7 +43,7 @@
             <field name="model">calendar.event</field>
             <field name="arch" type="xml">
                  <tree>
-                     <field name="name" string="件名"/>
+                     <field name="name" string="件名" optional="hide"/>
                      <field name="sr"/>
                      <field name="opportunity_id"/>
                      <field name="crm_stage_id"/>
@@ -52,7 +52,7 @@
                      <field name="crm_expected_revenue" widget="monetary" options="{'currency_field': 'currency_id'}"/>
                      <field name="start"/>
                      <field name="start_date"/>
-                     <field name="partner_ids" string="関係者"/>
+                     <field name="partner_ids" widget="many2many_tags" string="関係者" optional="hide"/>
                      <field name="crm_r_id"/>
                      <field name="r_uid"/>
                      <field name="customer_service_staff"/>
