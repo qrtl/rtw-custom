@@ -103,6 +103,7 @@
                                     <field name="sr_attracting" string="sr_attracting"/>
                                     <field name="event_information_notices" string="event_information_notices"/>
                                     <field name="confirm_user_information" string="confirm_user_information"/>
+                                    <field name="owners_desk" string="オーナーズデスク"/>
                                 </group>
                             </group>
                             <group>
