@@ -63,6 +63,10 @@
                             domain="[('type', '=', 'delivery')]"
                     />
                     <field
+                            name="forwarding_address_zip"
+                            string="納品設置先郵便番号"
+                            attrs="{'invisible': [('sipping_to', '=', 'depo')]}"/>
+                    <field
                             name="forwarding_address"
                             string="納品設置先"
                             attrs="{'invisible': [('sipping_to', '=', 'depo')]}"/>

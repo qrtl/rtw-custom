@@ -20,7 +20,7 @@ class sale_order_rtw(models.Model):
         string="process", default='draft')
     preferred_delivery_date = fields.Date(string="Preferred delivery date", tracking=True)
     preferred_delivery_period = fields.Char(string="Preferred delivery period")
-
+    forwarding_address_zip = fields.Char("forwarding address zip")
     forwarding_address = fields.Text(
         string="forwarding address",
         required=False,
