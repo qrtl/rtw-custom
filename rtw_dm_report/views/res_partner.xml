@@ -30,7 +30,7 @@
             <field name="res_model">res.partner</field>
             <field name="view_id" ref="view_partner_dm_list"/>
             <field name="domain">[
-                ("is_company","=",False),
+                ("parent_id","not ilike","個人"),
                 ("parent_id","not ilike",("閉鎖","倒産","不明","不達","移転","個人")),
                 ("last_name","not ilike",("退職","転勤","異動","育休","産休","不明")),
                 ]
