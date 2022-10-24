@@ -16,6 +16,10 @@
                     <field name="phone"/>
                     <field name="fax"/>
                     <field name="parent_id"/>
+                    <field name="department"/>
+                    <field name="title"/>
+                    <field name="calender"/>
+                    <field name="ny_card"/>
                 </tree>
             </field>
         </record>
