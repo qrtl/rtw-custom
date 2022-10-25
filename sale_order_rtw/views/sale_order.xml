@@ -137,6 +137,13 @@
                 <xpath expr="/form/sheet/notebook/page/field[@name='order_line']/tree/field[@name='product_uom_qty']"
                        position="after">
                     <field name="memo"/>
+                    <field name="item_sale_attach_ids" string="attach"/>
+                    <button
+                        name="action_get_item_sale_attach_view"
+                        string="View files"
+                        type="object"
+                        icon="fa-paperclip"
+                    />
                 </xpath>
             </field>
         </record>
