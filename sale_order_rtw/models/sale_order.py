@@ -42,6 +42,8 @@ class sale_order_rtw(models.Model):
     ], string="配送")
     shipping_to_text = fields.Char(string="配送ラベル")
     estimated_shipping_date = fields.Date('Estimated shipping date')
+    overseas = fields.Boolean(string="海外")
+
     #     value = fields.Integer()
     #     value2 = fields.Float(compute="_value_pc", store=True)
     #     description = fields.Text()

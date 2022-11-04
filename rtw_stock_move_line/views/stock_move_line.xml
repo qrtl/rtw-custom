@@ -23,6 +23,10 @@
                 <tree>
                     <field name="product_id"/>
                     <field name="sale_id"/>
+                    <field name="title"/>
+                    <field name="spec" widget="many2many_tags"/>
+                    <field name="custom" widget="many2many_tags"/>
+                    <field name="customer_id"/>
                     <field name="result_package_id"/>
                     <field name="depo_date"/>
                     <field name="sai" sum="sai"/>

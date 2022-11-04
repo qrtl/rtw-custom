@@ -20,13 +20,14 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'crm'],
+    'depends': ['base', 'crm', 'rtw_inquiry', 'rtw_sf'],
 
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
         'views/crm_lead.xml',
         'views/res_partner.xml',
+        'views/inquiry.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

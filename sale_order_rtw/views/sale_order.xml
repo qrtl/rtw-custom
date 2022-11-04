@@ -29,6 +29,9 @@
                             attrs="{'invisible': [('items_under_consideration', '=', False)]}"/>
                 </xpath>
                 <xpath expr="//field[@name='name']" position="before">
+                    <div attrs="{'invisible': [('overseas', '=', False)]}">
+                        <span style="color:red">海外</span>
+                        </div>
                     <div class="o_row d-flex">
                         <label for="title" string="title"/>
                         <field name="title"/>
@@ -40,6 +43,8 @@
                 <xpath expr="//div[@class='oe_title']" position="after">
                     <group>
 <!--                        <field name="items_under_consideration" string="Items under consideration" widget="toggle_button"/>-->
+                        <field name="overseas"/>
+
                         <field name="status" string="status" widget="selection_badge"/>
                         <field name="customer_order_number" string="Customer Order Number"/>
 

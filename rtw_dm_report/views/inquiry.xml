@@ -1,0 +1,46 @@
+<odoo>
+    <data>
+        <record id="view_inquiry_dm_list" model="ir.ui.view">
+            <field name="name">crm partner list</field>
+            <field name="model">rtw_sf.inquiry</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="id"/>
+                    <field name="owner_id"/>
+                    <field name="name"/>
+                    <field name="create_date"/>
+                    <field name="write_date"/>
+                    <field name="created_date"/>
+                    <field name="__last_update"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_inquiry_dm_tree" model="ir.actions.act_window">
+            <field name="name">送付リスト</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">rtw_sf.inquiry</field>
+            <field name="view_id" ref="view_inquiry_dm_list"/>
+            <field name="domain">[
+                ("record_type_id","ilike","アンケート"),
+                ("need_dm","=",True),
+                '|',("create_date",">=","2022-01-01 00:00:00"),("created_date",">=","2022-01-01 00:00:00")
+                ]
+            </field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem
+                name="レポート"
+                id="menu_inquiry_report"
+                parent="rtw_inquiry.menu_root"
+                sequence="10"
+        />
+        <menuitem
+                id="menu_inquiry_dm"
+                action="action_inquiry_dm_tree"
+                parent="menu_inquiry_report"
+                sequence="10"
+        />
+    </data>
+</odoo>
