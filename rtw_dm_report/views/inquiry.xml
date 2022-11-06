@@ -7,11 +7,28 @@
                 <tree>
                     <field name="id"/>
                     <field name="owner_id"/>
-                    <field name="name"/>
+                    <field name="last_name" string="姓"/>
+                    <field name="first_name" string="名"/>
+                    <field name="in_has"/>
+                    <field name="zip"/>
+                    <field name="state_id"/>
+                    <field name="city"/>
+                    <field name="street"/>
+                    <field name="street2"/>
+                    <field name="mailing_postal_code" string="郵送先 郵便番号"/>
+                    <field name="mailing_state" string="郵送先 都道府県"/>
+                    <field name="mailing_city" string="郵送先 市町村"/>
+                    <field name="mailing_street" string="郵送先 番地"/>
+                    <field name="phone"/>
+                    <field name="mobile"/>
+                    <field name="fax"/>
+                    <field name="parent_id"/>
+                    <field name="department"/>
+                    <field name="title"/>
+                    <field name="calender"/>
+                    <field name="ny_card"/>
                     <field name="create_date"/>
-                    <field name="write_date"/>
                     <field name="created_date"/>
-                    <field name="__last_update"/>
                 </tree>
             </field>
         </record>
