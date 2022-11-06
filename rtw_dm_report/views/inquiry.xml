@@ -10,25 +10,25 @@
                     <field name="last_name" string="姓"/>
                     <field name="first_name" string="名"/>
                     <field name="in_has"/>
-                    <field name="zip"/>
-                    <field name="state_id"/>
-                    <field name="city"/>
-                    <field name="street"/>
-                    <field name="street2"/>
+                    <field name="zip" string="郵便番号"/>
+                    <field name="state_id" string="都道府県"/>
+                    <field name="city" string="市町村"/>
+                    <field name="street" string="番地1"/>
+                    <field name="street2" string="番地2"/>
                     <field name="mailing_postal_code" string="郵送先 郵便番号"/>
                     <field name="mailing_state" string="郵送先 都道府県"/>
                     <field name="mailing_city" string="郵送先 市町村"/>
                     <field name="mailing_street" string="郵送先 番地"/>
-                    <field name="phone"/>
-                    <field name="mobile"/>
-                    <field name="fax"/>
-                    <field name="parent_id"/>
-                    <field name="department"/>
-                    <field name="title"/>
-                    <field name="calender"/>
-                    <field name="ny_card"/>
-                    <field name="create_date"/>
-                    <field name="created_date"/>
+                    <field name="phone" string="電話番号"/>
+                    <field name="mobile" string="携帯電話"/>
+                    <field name="fax" string="FAX"/>
+                    <field name="parent_id" string="関連会社"/>
+                    <field name="department" string="部署"/>
+                    <field name="title" string="役職"/>
+                    <field name="calender" string="カレンダ"/>
+                    <field name="ny_card" string="年賀状"/>
+                    <field name="create_date" string="作成日時"/>
+                    <field name="created_date" string="作成日時（SF）"/>
                 </tree>
             </field>
         </record>
