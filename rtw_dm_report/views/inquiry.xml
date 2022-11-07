@@ -40,7 +40,6 @@
             <field name="view_id" ref="view_inquiry_dm_list"/>
             <field name="domain">[
                 ("record_type_id","ilike","アンケート"),
-                ("need_dm","=",True),
                 '|',("create_date",">=","2022-01-01 00:00:00"),("created_date",">=","2022-01-01 00:00:00")
                 ]
             </field>
