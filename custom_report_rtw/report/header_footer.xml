@@ -8,6 +8,9 @@
                     <t t-if="type == 'quotation'">
                         <span>quotation</span>
                     </t>
+                     <t t-if="type == 'invoice'">
+                        <span>invoice</span>
+                    </t>
                 </div>
                 <div class="col-3 text-right" style="margin-top:22px;" t-field="company.report_header" name="moto"/>
                 <div class="col-3 mb4">
@@ -85,6 +88,9 @@
                 <div class="col-3 text-center" style="font-size:48px;text-align:center">
                     <t t-if="type == 'quotation'">
                         <span>quotation</span>
+                    </t>
+                    <t t-if="type == 'invoice'">
+                        <span>invoice</span>
                     </t>
                 </div>
                 <div class="col-3 text-right" style="margin-top:22px;" t-field="company.report_header" name="moto"/>

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "custom_report_rtw",
+    'name': "rtw_report",
 
     'summary': """
         Short (1 phrase/line) summary of the module's purpose, used as
@@ -20,22 +20,17 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'sale', 'account', 'product_spec_rtw'],
+    'depends': ['base'],
 
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
-        'report/report_quotation.xml',
         'report/external_layout.xml',
-        'report/internal_layout.xml',
-        'report/header_footer.xml',
-        'report/mrp.xml',
+        'report/layout.xml',
+        'report/report.xml',
+        'report/sale_order.xml',
         'report/invoice.xml',
-        'views/views.xml',
         'views/templates.xml',
-        # "views/sale_views.xml",
-        # "views/assets.xml",
-        "views/res_company_view.xml"
     ],
     # only loaded in demonstration mode
     'demo': [
