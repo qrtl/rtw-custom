@@ -89,7 +89,7 @@
                 <t t-foreach="o.invoice_line_ids" t-as="l">
                     <tr>
                         <td class="text-center">
-                            <span t-field="l.product_id"/>
+                            <span t-field="l.product_id.name"/>
                              <t
                                     t-set="images"
                                     t-value="l.product_id.mapped('image_1920')"
@@ -98,11 +98,12 @@
                                 <t t-foreach="images" t-as="image">
                                         <div colspan="99" style="border: 0;">
                                             <div style="text-align: left;">
-
+                                            <t t-if="image">
                                                 <img
                                                         t-att-src="image_data_uri(image)"
                                                         style="max-width: 100%;max-height: 800px; padding-top: 10px;"
                                                 />
+                                                </t>
                                             </div>
                                         </div>
                                 </t>
@@ -151,17 +152,28 @@
             </tbody>
         </table>
         <div class="row">
-            <div class="col-7 md7">
+            <div class="col-8 md8">
                 <t t-if="o.payment_state == 'paid'">
                                    <div class="stamp">Paid</div>
                                 </t>
             </div>
-            <div class="col-5 md5">
-                <span t-field="o.amount_total"/>
+            <div class="col-4 md4">
+                <hr/>
+                Total Amount:  <span t-field="o.amount_total"/>
+                <hr/>
+                <hr/>
             </div>
         </div>
         <div class="row" >
-            <div class="col-6 md6"></div>
+            <div class="col-6 md6">
+                <b><span>Payment:</span><span style="color:red"> <span t-field="o.invoice_payment_term_id"/></span></b>
+                <div t-field="o.invoice_payment_term_id.note"/>
+                <br/>
+                <b><span>Delivery:</span><span style="color:red"> DDP</span></b>
+                <div>All the costs of transportation to the final destination are included.
+   Buyer also is responsible to unload the goods from the vehicle
+                    at the final destination.</div>
+            </div>
             <div class="col-6 md6">
                 <div>Bank infomation</div>
                 <table>
